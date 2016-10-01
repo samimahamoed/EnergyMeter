@@ -1,0 +1,50 @@
+.TH "ade7880_write32_tx_buff_ut" 3 "Mon Feb 24 2014" "Version V1" "EMS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ade7880_write32_tx_buff_ut \- 
+.PP
+ADE7880 write cmd msg structure\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <spi_ade7880_protocol\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "uint8_t msg_all[\fBWR_MSG_LENGTH\fP+sizeof(uint32_t)] \fB__attribute__\fP ((aligned))"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBaddress_byte_ut\fP \fBaddress_byte\fP"
+.br
+.ti -1c
+.RI "} \fB__attribute__\fP ((aligned))"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+ADE7880 write cmd msg structure\&. 
+.PP
+Definition at line 85 of file spi_ade7880_protocol\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "uint8_t msg_all [\fBWR_MSG_LENGTH\fP + sizeof(uint32_t)] __attribute__ ((aligned))"
+
+.SS "struct ade7880_write32_tx_buff_ut::@16 __attribute__ ((aligned))"
+
+.SH "Field Documentation"
+.PP 
+.SS "\fBaddress_byte_ut\fP address_byte"
+
+.PP
+Definition at line 91 of file spi_ade7880_protocol\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for EMS from the source code\&.

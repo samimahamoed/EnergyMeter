@@ -1,0 +1,220 @@
+.TH "spi_ade7880_protocol.h" 3 "Mon Feb 24 2014" "Version V1" "EMS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+spi_ade7880_protocol.h \- 
+.PP
+\fIFile:\fP \fBspi_ade7880_protocol\&.h\fP 
+.br
+  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "union \fBaddress_byte_ut\fP"
+.br
+.RI "\fIaddress byte of msg structure RPi to ADE7880 \fP"
+.ti -1c
+.RI "union \fBvalue_ut\fP"
+.br
+.ti -1c
+.RI "union \fBade7880_read32_tx_buff_ut\fP"
+.br
+.RI "\fIADE7880 read cmd msg structure\&. \fP"
+.ti -1c
+.RI "union \fBade7880_read16_tx_buff_ut\fP"
+.br
+.RI "\fIADE7880 read cmd msg structure\&. \fP"
+.ti -1c
+.RI "union \fBade7880_read8_tx_buff_ut\fP"
+.br
+.RI "\fIADE7880 read cmd msg structure\&. \fP"
+.ti -1c
+.RI "union \fBade7880_write32_tx_buff_ut\fP"
+.br
+.RI "\fIADE7880 write cmd msg structure\&. \fP"
+.ti -1c
+.RI "union \fBade7880_write16_tx_buff_ut\fP"
+.br
+.RI "\fIADE7880 write cmd msg structure\&. \fP"
+.ti -1c
+.RI "union \fBade7880_write8_tx_buff_ut\fP"
+.br
+.RI "\fIADE7880 write cmd msg structure\&. \fP"
+.ti -1c
+.RI "union \fBade7880_read_tx_buff_ut\fP"
+.br
+.RI "\fIADE7880 write cmd msg structure\&. \fP"
+.ti -1c
+.RI "union \fBade7880_write_tx_buff_ut\fP"
+.br
+.RI "\fIADE7880 write cmd msg structure\&. \fP"
+.ti -1c
+.RI "union \fBade7880_ram_lock_msg_ut\fP"
+.br
+.RI "\fIADE7880 write cmd msg structure\&. \fP"
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBADE7880_RD\fP   1"
+.br
+.ti -1c
+.RI "#define \fBADE7880_WR\fP   0"
+.br
+.ti -1c
+.RI "#define \fBDUMMY_MSG\fP   0x00000000"
+.br
+.ti -1c
+.RI "#define \fBRD_MSG_LENGTH\fP   3"
+.br
+.ti -1c
+.RI "#define \fBWR_MSG_LENGTH\fP   3"
+.br
+.ti -1c
+.RI "#define \fBRAM_LOCK_MSG_LENGTH\fP   4"
+.br
+.ti -1c
+.RI "#define \fBREG_LENGTH\fP(_x)   (sizeof(_x))"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "uint16_t \fBtarget_register\fP \fB__attribute__\fP ((packed))"
+.br
+.ti -1c
+.RI "uint32_t \fBspi_read\fP (uint8_t chip_select, uint8_t chip_address, uint16_t \fBtarget_register\fP, uint8_t reg_len)"
+.br
+.RI "\fI.PP
+ \fP"
+.ti -1c
+.RI "int8_t \fBspi_write\fP (uint8_t chip_select, uint8_t chip_address, uint16_t \fBtarget_register\fP, int32_t \fBvalue\fP, uint8_t reg_len)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBaddress_byte_ut\fP \fBaddress_byte\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBrc_arg\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBtarget_register\fP"
+.br
+.ti -1c
+.RI "union {"
+.br
+.ti -1c
+.RI "   uint8_t \fBreg8\fP"
+.br
+.ti -1c
+.RI "} \fBvalue\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBreg16\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBreg32\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fIFile:\fP \fBspi_ade7880_protocol\&.h\fP 
+.br
+ 
+
+\fIPurpose:\fP 
+.br
+ 
+.PP
+Definition in file \fBspi_ade7880_protocol\&.h\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ADE7880_RD   1"
+
+.PP
+Definition at line 12 of file spi_ade7880_protocol\&.h\&.
+.PP
+Referenced by spi_read()\&.
+.SS "#define ADE7880_WR   0"
+
+.PP
+Definition at line 13 of file spi_ade7880_protocol\&.h\&.
+.PP
+Referenced by spi_ram_protection(), and spi_write()\&.
+.SS "#define DUMMY_MSG   0x00000000"
+
+.PP
+Definition at line 14 of file spi_ade7880_protocol\&.h\&.
+.PP
+Referenced by save_to_file(), and spi_read()\&.
+.SS "#define RAM_LOCK_MSG_LENGTH   4"
+
+.PP
+Definition at line 17 of file spi_ade7880_protocol\&.h\&.
+.PP
+Referenced by spi_ram_protection()\&.
+.SS "#define RD_MSG_LENGTH   3"
+
+.PP
+Definition at line 15 of file spi_ade7880_protocol\&.h\&.
+.PP
+Referenced by spi_read()\&.
+.SS "#define REG_LENGTH(_x)   (sizeof(_x))"
+
+.PP
+Definition at line 18 of file spi_ade7880_protocol\&.h\&.
+.SS "#define WR_MSG_LENGTH   3"
+
+.PP
+Definition at line 16 of file spi_ade7880_protocol\&.h\&.
+.PP
+Referenced by spi_write()\&.
+.SH "Function Documentation"
+.PP 
+.SS "uint16_t \fBtarget_register\fP __attribute__ ((packed))"
+
+.SH "Variable Documentation"
+.PP 
+.SS "\fBaddress_byte_ut\fP address_byte"
+
+.PP
+Definition at line 49 of file spi_ade7880_protocol\&.h\&.
+.SS "uint8_t rc_arg"
+
+.PP
+Definition at line 81 of file spi_ade7880_protocol\&.h\&.
+.SS "uint16_t reg16"
+
+.PP
+Definition at line 154 of file spi_ade7880_protocol\&.h\&.
+.SS "uint32_t reg32"
+
+.PP
+Definition at line 155 of file spi_ade7880_protocol\&.h\&.
+.SS "uint8_t reg8"
+
+.PP
+Definition at line 136 of file spi_ade7880_protocol\&.h\&.
+.SS "uint16_t target_register"
+
+.PP
+Definition at line 134 of file spi_ade7880_protocol\&.h\&.
+.SS "uint8_t value"
+
+.PP
+Definition at line 195 of file spi_ade7880_protocol\&.h\&.
+.PP
+Referenced by spi_ram_protection(), and spi_write()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for EMS from the source code\&.

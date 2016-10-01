@@ -1,0 +1,244 @@
+\hypertarget{a00041}{\section{spi\-\_\-ade7880\-\_\-protocol.\-h File Reference}
+\label{dd/d32/a00041}\index{spi\-\_\-ade7880\-\_\-protocol.\-h@{spi\-\_\-ade7880\-\_\-protocol.\-h}}
+}
+
+
+{\itshape File\-:} \hyperlink{a00041}{spi\-\_\-ade7880\-\_\-protocol.\-h} \par
+  
+
+
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d84/a00052}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+union \hyperlink{a00011}{address\-\_\-byte\-\_\-ut}
+\begin{DoxyCompactList}\small\item\em address byte of msg structure R\-Pi to A\-D\-E7880 \end{DoxyCompactList}\item 
+union \hyperlink{a00034}{value\-\_\-ut}
+\item 
+union \hyperlink{a00014}{ade7880\-\_\-read32\-\_\-tx\-\_\-buff\-\_\-ut}
+\begin{DoxyCompactList}\small\item\em A\-D\-E7880 read cmd msg structure. \end{DoxyCompactList}\item 
+union \hyperlink{a00013}{ade7880\-\_\-read16\-\_\-tx\-\_\-buff\-\_\-ut}
+\begin{DoxyCompactList}\small\item\em A\-D\-E7880 read cmd msg structure. \end{DoxyCompactList}\item 
+union \hyperlink{a00015}{ade7880\-\_\-read8\-\_\-tx\-\_\-buff\-\_\-ut}
+\begin{DoxyCompactList}\small\item\em A\-D\-E7880 read cmd msg structure. \end{DoxyCompactList}\item 
+union \hyperlink{a00018}{ade7880\-\_\-write32\-\_\-tx\-\_\-buff\-\_\-ut}
+\begin{DoxyCompactList}\small\item\em A\-D\-E7880 write cmd msg structure. \end{DoxyCompactList}\item 
+union \hyperlink{a00017}{ade7880\-\_\-write16\-\_\-tx\-\_\-buff\-\_\-ut}
+\begin{DoxyCompactList}\small\item\em A\-D\-E7880 write cmd msg structure. \end{DoxyCompactList}\item 
+union \hyperlink{a00019}{ade7880\-\_\-write8\-\_\-tx\-\_\-buff\-\_\-ut}
+\begin{DoxyCompactList}\small\item\em A\-D\-E7880 write cmd msg structure. \end{DoxyCompactList}\item 
+union \hyperlink{a00016}{ade7880\-\_\-read\-\_\-tx\-\_\-buff\-\_\-ut}
+\begin{DoxyCompactList}\small\item\em A\-D\-E7880 write cmd msg structure. \end{DoxyCompactList}\item 
+union \hyperlink{a00020}{ade7880\-\_\-write\-\_\-tx\-\_\-buff\-\_\-ut}
+\begin{DoxyCompactList}\small\item\em A\-D\-E7880 write cmd msg structure. \end{DoxyCompactList}\item 
+union \hyperlink{a00012}{ade7880\-\_\-ram\-\_\-lock\-\_\-msg\-\_\-ut}
+\begin{DoxyCompactList}\small\item\em A\-D\-E7880 write cmd msg structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00041_a30e8f63608e6153585d75dc479a03177}{A\-D\-E7880\-\_\-\-R\-D}~1
+\item 
+\#define \hyperlink{a00041_a36352e0d88dc7c5ede031013c75a678f}{A\-D\-E7880\-\_\-\-W\-R}~0
+\item 
+\#define \hyperlink{a00041_af87bc226c5bc1e648d8ceac69ccf2bcb}{D\-U\-M\-M\-Y\-\_\-\-M\-S\-G}~0x00000000
+\item 
+\#define \hyperlink{a00041_a0f0795755fb9e8e47c78c1289e091282}{R\-D\-\_\-\-M\-S\-G\-\_\-\-L\-E\-N\-G\-T\-H}~3
+\item 
+\#define \hyperlink{a00041_ac85ecf34a5cbd85d6dbd51b4c9a5469e}{W\-R\-\_\-\-M\-S\-G\-\_\-\-L\-E\-N\-G\-T\-H}~3
+\item 
+\#define \hyperlink{a00041_ab38a2f23d72262bab020eb973958f37b}{R\-A\-M\-\_\-\-L\-O\-C\-K\-\_\-\-M\-S\-G\-\_\-\-L\-E\-N\-G\-T\-H}~4
+\item 
+\#define \hyperlink{a00041_a4dc3b9b3e720309f9ebbb2d93768ed4f}{R\-E\-G\-\_\-\-L\-E\-N\-G\-T\-H}(\-\_\-x)~(sizeof(\-\_\-x))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint16\-\_\-t \hyperlink{a00041_ac02048009fa6718e40f028b6bae63f3d}{target\-\_\-register} \hyperlink{a00041_a93c867902b57f5986f7dc397bd28f600}{\-\_\-\-\_\-attribute\-\_\-\-\_\-} ((packed))
+\item 
+uint32\-\_\-t \hyperlink{a00007_ga7ad9f65ee46aca507374096506a0b1c4}{spi\-\_\-read} (uint8\-\_\-t chip\-\_\-select, uint8\-\_\-t chip\-\_\-address, uint16\-\_\-t \hyperlink{a00041_ac02048009fa6718e40f028b6bae63f3d}{target\-\_\-register}, uint8\-\_\-t reg\-\_\-len)
+\begin{DoxyCompactList}\small\item\em 
+
+ \end{DoxyCompactList}\item 
+int8\-\_\-t \hyperlink{a00007_ga2770219ad8ad1eda1817c0df934b47d0}{spi\-\_\-write} (uint8\-\_\-t chip\-\_\-select, uint8\-\_\-t chip\-\_\-address, uint16\-\_\-t \hyperlink{a00041_ac02048009fa6718e40f028b6bae63f3d}{target\-\_\-register}, int32\-\_\-t \hyperlink{a00041_a638e4503e0ae6ce655b7ad2e17e8f0ad}{value}, uint8\-\_\-t reg\-\_\-len)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00011}{address\-\_\-byte\-\_\-ut} \hyperlink{a00041_af6a65bac733ea3e9b1d24b065163d49a}{address\-\_\-byte}
+\item 
+uint8\-\_\-t \hyperlink{a00041_aa11432305021ed2018866e1f8e990c34}{rc\-\_\-arg}
+\item 
+uint16\-\_\-t \hyperlink{a00041_ac02048009fa6718e40f028b6bae63f3d}{target\-\_\-register}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>uint8\_t \hyperlink{a00041_a90b3f782e917edca7101e7803a3773b7}{reg8}\\
+\} \hyperlink{a00041_a638e4503e0ae6ce655b7ad2e17e8f0ad}{value}\\
+
+\end{tabbing}\item 
+uint16\-\_\-t \hyperlink{a00041_a0c22d234d52e616d449a8c264bf2030b}{reg16}
+\item 
+uint32\-\_\-t \hyperlink{a00041_a83e2be8d3feb1bcbc286bfaae10ac552}{reg32}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+{\itshape File\-:} \hyperlink{a00041}{spi\-\_\-ade7880\-\_\-protocol.\-h} \par
+ {\itshape Purpose\-:} \par
+ 
+
+Definition in file \hyperlink{a00041_source}{spi\-\_\-ade7880\-\_\-protocol.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{a00041_a30e8f63608e6153585d75dc479a03177}{\index{spi\-\_\-ade7880\-\_\-protocol.\-h@{spi\-\_\-ade7880\-\_\-protocol.\-h}!A\-D\-E7880\-\_\-\-R\-D@{A\-D\-E7880\-\_\-\-R\-D}}
+\index{A\-D\-E7880\-\_\-\-R\-D@{A\-D\-E7880\-\_\-\-R\-D}!spi_ade7880_protocol.h@{spi\-\_\-ade7880\-\_\-protocol.\-h}}
+\subsubsection[{A\-D\-E7880\-\_\-\-R\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-D\-E7880\-\_\-\-R\-D~1}}\label{dd/d32/a00041_a30e8f63608e6153585d75dc479a03177}
+
+
+Definition at line \hyperlink{a00041_source_l00012}{12} of file \hyperlink{a00041_source}{spi\-\_\-ade7880\-\_\-protocol.\-h}.
+
+
+
+Referenced by \hyperlink{a00040_source_l00147}{spi\-\_\-read()}.
+
+\hypertarget{a00041_a36352e0d88dc7c5ede031013c75a678f}{\index{spi\-\_\-ade7880\-\_\-protocol.\-h@{spi\-\_\-ade7880\-\_\-protocol.\-h}!A\-D\-E7880\-\_\-\-W\-R@{A\-D\-E7880\-\_\-\-W\-R}}
+\index{A\-D\-E7880\-\_\-\-W\-R@{A\-D\-E7880\-\_\-\-W\-R}!spi_ade7880_protocol.h@{spi\-\_\-ade7880\-\_\-protocol.\-h}}
+\subsubsection[{A\-D\-E7880\-\_\-\-W\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-D\-E7880\-\_\-\-W\-R~0}}\label{dd/d32/a00041_a36352e0d88dc7c5ede031013c75a678f}
+
+
+Definition at line \hyperlink{a00041_source_l00013}{13} of file \hyperlink{a00041_source}{spi\-\_\-ade7880\-\_\-protocol.\-h}.
+
+
+
+Referenced by \hyperlink{a00040_source_l00343}{spi\-\_\-ram\-\_\-protection()}, and \hyperlink{a00040_source_l00221}{spi\-\_\-write()}.
+
+\hypertarget{a00041_af87bc226c5bc1e648d8ceac69ccf2bcb}{\index{spi\-\_\-ade7880\-\_\-protocol.\-h@{spi\-\_\-ade7880\-\_\-protocol.\-h}!D\-U\-M\-M\-Y\-\_\-\-M\-S\-G@{D\-U\-M\-M\-Y\-\_\-\-M\-S\-G}}
+\index{D\-U\-M\-M\-Y\-\_\-\-M\-S\-G@{D\-U\-M\-M\-Y\-\_\-\-M\-S\-G}!spi_ade7880_protocol.h@{spi\-\_\-ade7880\-\_\-protocol.\-h}}
+\subsubsection[{D\-U\-M\-M\-Y\-\_\-\-M\-S\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-U\-M\-M\-Y\-\_\-\-M\-S\-G~0x00000000}}\label{dd/d32/a00041_af87bc226c5bc1e648d8ceac69ccf2bcb}
+
+
+Definition at line \hyperlink{a00041_source_l00014}{14} of file \hyperlink{a00041_source}{spi\-\_\-ade7880\-\_\-protocol.\-h}.
+
+
+
+Referenced by \hyperlink{a00035_source_l00421}{save\-\_\-to\-\_\-file()}, and \hyperlink{a00040_source_l00147}{spi\-\_\-read()}.
+
+\hypertarget{a00041_ab38a2f23d72262bab020eb973958f37b}{\index{spi\-\_\-ade7880\-\_\-protocol.\-h@{spi\-\_\-ade7880\-\_\-protocol.\-h}!R\-A\-M\-\_\-\-L\-O\-C\-K\-\_\-\-M\-S\-G\-\_\-\-L\-E\-N\-G\-T\-H@{R\-A\-M\-\_\-\-L\-O\-C\-K\-\_\-\-M\-S\-G\-\_\-\-L\-E\-N\-G\-T\-H}}
+\index{R\-A\-M\-\_\-\-L\-O\-C\-K\-\_\-\-M\-S\-G\-\_\-\-L\-E\-N\-G\-T\-H@{R\-A\-M\-\_\-\-L\-O\-C\-K\-\_\-\-M\-S\-G\-\_\-\-L\-E\-N\-G\-T\-H}!spi_ade7880_protocol.h@{spi\-\_\-ade7880\-\_\-protocol.\-h}}
+\subsubsection[{R\-A\-M\-\_\-\-L\-O\-C\-K\-\_\-\-M\-S\-G\-\_\-\-L\-E\-N\-G\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-A\-M\-\_\-\-L\-O\-C\-K\-\_\-\-M\-S\-G\-\_\-\-L\-E\-N\-G\-T\-H~4}}\label{dd/d32/a00041_ab38a2f23d72262bab020eb973958f37b}
+
+
+Definition at line \hyperlink{a00041_source_l00017}{17} of file \hyperlink{a00041_source}{spi\-\_\-ade7880\-\_\-protocol.\-h}.
+
+
+
+Referenced by \hyperlink{a00040_source_l00343}{spi\-\_\-ram\-\_\-protection()}.
+
+\hypertarget{a00041_a0f0795755fb9e8e47c78c1289e091282}{\index{spi\-\_\-ade7880\-\_\-protocol.\-h@{spi\-\_\-ade7880\-\_\-protocol.\-h}!R\-D\-\_\-\-M\-S\-G\-\_\-\-L\-E\-N\-G\-T\-H@{R\-D\-\_\-\-M\-S\-G\-\_\-\-L\-E\-N\-G\-T\-H}}
+\index{R\-D\-\_\-\-M\-S\-G\-\_\-\-L\-E\-N\-G\-T\-H@{R\-D\-\_\-\-M\-S\-G\-\_\-\-L\-E\-N\-G\-T\-H}!spi_ade7880_protocol.h@{spi\-\_\-ade7880\-\_\-protocol.\-h}}
+\subsubsection[{R\-D\-\_\-\-M\-S\-G\-\_\-\-L\-E\-N\-G\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-D\-\_\-\-M\-S\-G\-\_\-\-L\-E\-N\-G\-T\-H~3}}\label{dd/d32/a00041_a0f0795755fb9e8e47c78c1289e091282}
+
+
+Definition at line \hyperlink{a00041_source_l00015}{15} of file \hyperlink{a00041_source}{spi\-\_\-ade7880\-\_\-protocol.\-h}.
+
+
+
+Referenced by \hyperlink{a00040_source_l00147}{spi\-\_\-read()}.
+
+\hypertarget{a00041_a4dc3b9b3e720309f9ebbb2d93768ed4f}{\index{spi\-\_\-ade7880\-\_\-protocol.\-h@{spi\-\_\-ade7880\-\_\-protocol.\-h}!R\-E\-G\-\_\-\-L\-E\-N\-G\-T\-H@{R\-E\-G\-\_\-\-L\-E\-N\-G\-T\-H}}
+\index{R\-E\-G\-\_\-\-L\-E\-N\-G\-T\-H@{R\-E\-G\-\_\-\-L\-E\-N\-G\-T\-H}!spi_ade7880_protocol.h@{spi\-\_\-ade7880\-\_\-protocol.\-h}}
+\subsubsection[{R\-E\-G\-\_\-\-L\-E\-N\-G\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-G\-\_\-\-L\-E\-N\-G\-T\-H(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-x}
+\end{DoxyParamCaption}
+)~(sizeof(\-\_\-x))}}\label{dd/d32/a00041_a4dc3b9b3e720309f9ebbb2d93768ed4f}
+
+
+Definition at line \hyperlink{a00041_source_l00018}{18} of file \hyperlink{a00041_source}{spi\-\_\-ade7880\-\_\-protocol.\-h}.
+
+\hypertarget{a00041_ac85ecf34a5cbd85d6dbd51b4c9a5469e}{\index{spi\-\_\-ade7880\-\_\-protocol.\-h@{spi\-\_\-ade7880\-\_\-protocol.\-h}!W\-R\-\_\-\-M\-S\-G\-\_\-\-L\-E\-N\-G\-T\-H@{W\-R\-\_\-\-M\-S\-G\-\_\-\-L\-E\-N\-G\-T\-H}}
+\index{W\-R\-\_\-\-M\-S\-G\-\_\-\-L\-E\-N\-G\-T\-H@{W\-R\-\_\-\-M\-S\-G\-\_\-\-L\-E\-N\-G\-T\-H}!spi_ade7880_protocol.h@{spi\-\_\-ade7880\-\_\-protocol.\-h}}
+\subsubsection[{W\-R\-\_\-\-M\-S\-G\-\_\-\-L\-E\-N\-G\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-R\-\_\-\-M\-S\-G\-\_\-\-L\-E\-N\-G\-T\-H~3}}\label{dd/d32/a00041_ac85ecf34a5cbd85d6dbd51b4c9a5469e}
+
+
+Definition at line \hyperlink{a00041_source_l00016}{16} of file \hyperlink{a00041_source}{spi\-\_\-ade7880\-\_\-protocol.\-h}.
+
+
+
+Referenced by \hyperlink{a00040_source_l00221}{spi\-\_\-write()}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{a00041_a93c867902b57f5986f7dc397bd28f600}{\index{spi\-\_\-ade7880\-\_\-protocol.\-h@{spi\-\_\-ade7880\-\_\-protocol.\-h}!\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}!spi_ade7880_protocol.h@{spi\-\_\-ade7880\-\_\-protocol.\-h}}
+\subsubsection[{\-\_\-\-\_\-attribute\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t {\bf target\-\_\-register} \-\_\-\-\_\-attribute\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{(packed)}]{}
+\end{DoxyParamCaption}
+)}}\label{dd/d32/a00041_a93c867902b57f5986f7dc397bd28f600}
+
+
+\subsection{Variable Documentation}
+\hypertarget{a00041_af6a65bac733ea3e9b1d24b065163d49a}{\index{spi\-\_\-ade7880\-\_\-protocol.\-h@{spi\-\_\-ade7880\-\_\-protocol.\-h}!address\-\_\-byte@{address\-\_\-byte}}
+\index{address\-\_\-byte@{address\-\_\-byte}!spi_ade7880_protocol.h@{spi\-\_\-ade7880\-\_\-protocol.\-h}}
+\subsubsection[{address\-\_\-byte}]{\setlength{\rightskip}{0pt plus 5cm}{\bf address\-\_\-byte\-\_\-ut} address\-\_\-byte}}\label{dd/d32/a00041_af6a65bac733ea3e9b1d24b065163d49a}
+
+
+Definition at line \hyperlink{a00041_source_l00049}{49} of file \hyperlink{a00041_source}{spi\-\_\-ade7880\-\_\-protocol.\-h}.
+
+\hypertarget{a00041_aa11432305021ed2018866e1f8e990c34}{\index{spi\-\_\-ade7880\-\_\-protocol.\-h@{spi\-\_\-ade7880\-\_\-protocol.\-h}!rc\-\_\-arg@{rc\-\_\-arg}}
+\index{rc\-\_\-arg@{rc\-\_\-arg}!spi_ade7880_protocol.h@{spi\-\_\-ade7880\-\_\-protocol.\-h}}
+\subsubsection[{rc\-\_\-arg}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t rc\-\_\-arg}}\label{dd/d32/a00041_aa11432305021ed2018866e1f8e990c34}
+
+
+Definition at line \hyperlink{a00041_source_l00081}{81} of file \hyperlink{a00041_source}{spi\-\_\-ade7880\-\_\-protocol.\-h}.
+
+\hypertarget{a00041_a0c22d234d52e616d449a8c264bf2030b}{\index{spi\-\_\-ade7880\-\_\-protocol.\-h@{spi\-\_\-ade7880\-\_\-protocol.\-h}!reg16@{reg16}}
+\index{reg16@{reg16}!spi_ade7880_protocol.h@{spi\-\_\-ade7880\-\_\-protocol.\-h}}
+\subsubsection[{reg16}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t reg16}}\label{dd/d32/a00041_a0c22d234d52e616d449a8c264bf2030b}
+
+
+Definition at line \hyperlink{a00041_source_l00154}{154} of file \hyperlink{a00041_source}{spi\-\_\-ade7880\-\_\-protocol.\-h}.
+
+\hypertarget{a00041_a83e2be8d3feb1bcbc286bfaae10ac552}{\index{spi\-\_\-ade7880\-\_\-protocol.\-h@{spi\-\_\-ade7880\-\_\-protocol.\-h}!reg32@{reg32}}
+\index{reg32@{reg32}!spi_ade7880_protocol.h@{spi\-\_\-ade7880\-\_\-protocol.\-h}}
+\subsubsection[{reg32}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t reg32}}\label{dd/d32/a00041_a83e2be8d3feb1bcbc286bfaae10ac552}
+
+
+Definition at line \hyperlink{a00041_source_l00155}{155} of file \hyperlink{a00041_source}{spi\-\_\-ade7880\-\_\-protocol.\-h}.
+
+\hypertarget{a00041_a90b3f782e917edca7101e7803a3773b7}{\index{spi\-\_\-ade7880\-\_\-protocol.\-h@{spi\-\_\-ade7880\-\_\-protocol.\-h}!reg8@{reg8}}
+\index{reg8@{reg8}!spi_ade7880_protocol.h@{spi\-\_\-ade7880\-\_\-protocol.\-h}}
+\subsubsection[{reg8}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t reg8}}\label{dd/d32/a00041_a90b3f782e917edca7101e7803a3773b7}
+
+
+Definition at line \hyperlink{a00041_source_l00136}{136} of file \hyperlink{a00041_source}{spi\-\_\-ade7880\-\_\-protocol.\-h}.
+
+\hypertarget{a00041_ac02048009fa6718e40f028b6bae63f3d}{\index{spi\-\_\-ade7880\-\_\-protocol.\-h@{spi\-\_\-ade7880\-\_\-protocol.\-h}!target\-\_\-register@{target\-\_\-register}}
+\index{target\-\_\-register@{target\-\_\-register}!spi_ade7880_protocol.h@{spi\-\_\-ade7880\-\_\-protocol.\-h}}
+\subsubsection[{target\-\_\-register}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t target\-\_\-register}}\label{dd/d32/a00041_ac02048009fa6718e40f028b6bae63f3d}
+
+
+Definition at line \hyperlink{a00041_source_l00134}{134} of file \hyperlink{a00041_source}{spi\-\_\-ade7880\-\_\-protocol.\-h}.
+
+\hypertarget{a00041_a638e4503e0ae6ce655b7ad2e17e8f0ad}{\index{spi\-\_\-ade7880\-\_\-protocol.\-h@{spi\-\_\-ade7880\-\_\-protocol.\-h}!value@{value}}
+\index{value@{value}!spi_ade7880_protocol.h@{spi\-\_\-ade7880\-\_\-protocol.\-h}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t value}}\label{dd/d32/a00041_a638e4503e0ae6ce655b7ad2e17e8f0ad}
+
+
+Definition at line \hyperlink{a00041_source_l00195}{195} of file \hyperlink{a00041_source}{spi\-\_\-ade7880\-\_\-protocol.\-h}.
+
+
+
+Referenced by \hyperlink{a00040_source_l00343}{spi\-\_\-ram\-\_\-protection()}, and \hyperlink{a00040_source_l00221}{spi\-\_\-write()}.
+

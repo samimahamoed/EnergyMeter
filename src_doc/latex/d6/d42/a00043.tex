@@ -1,0 +1,262 @@
+\hypertarget{a00043}{\section{srv\-\_\-cmd\-\_\-handler.\-h File Reference}
+\label{d6/d42/a00043}\index{srv\-\_\-cmd\-\_\-handler.\-h@{srv\-\_\-cmd\-\_\-handler.\-h}}
+}
+
+
+{\itshape File\-:} rpi\-\_\-gpio.\-h \par
+  
+
+
+{\ttfamily \#include $<$stdarg.\-h$>$}\\*
+Include dependency graph for srv\-\_\-cmd\-\_\-handler.\-h\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{d4/d6d/a00055}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d2e/a00056}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00043_a430d76623597b550145ee76e95e84c48}{A\-D\-E7880\-\_\-\-S\-P\-I\-\_\-\-P\-O\-R\-T\-\_\-\-A\-C\-T\-I\-V\-A\-T\-E}~0x01
+\begin{DoxyCompactList}\small\item\em internal use config cmd macros, make sure the values will not \end{DoxyCompactList}\item 
+\#define \hyperlink{a00043_af6e27751df5653af1abdb5c1c505b7e1}{A\-D\-E7880\-\_\-\-R\-E\-S\-E\-T}~0x02
+\item 
+\#define \hyperlink{a00043_a4e7bf0c205872c6db180b06792a62118}{P\-O\-W\-E\-R\-\_\-\-M\-O\-D\-E}~0x03
+\item 
+\#define \hyperlink{a00043_a4679d8ea8690999a6c6c7c0cb245c879}{T\-H\-R\-E\-S\-H\-O\-L\-D}~0x04
+\item 
+\#define \hyperlink{a00043_a5b534b9caab512045a6e762f3930a501}{S\-E\-T\-\_\-\-R\-A\-M\-\_\-\-W\-R\-\_\-\-P\-R\-O\-T\-E\-C\-T\-I\-O\-N}~0x05
+\item 
+\#define \hyperlink{a00043_a1805e103988f08b8fac817624918cf47}{D\-S\-P\-\_\-\-R\-U\-N}~0x06
+\item 
+\#define \hyperlink{a00043_ad214039f52b011ce2bd6c85ff98a981b}{P\-H\-A\-S\-E\-\_\-\-A}~0x0\-A
+\begin{DoxyCompactList}\small\item\em internal use measurment read cmd macros \end{DoxyCompactList}\item 
+\#define \hyperlink{a00043_ad7b96feed1e1c12515dad5e926b2c62e}{P\-H\-A\-S\-E\-\_\-\-B}~0x0\-B
+\item 
+\#define \hyperlink{a00043_a3ceb83fb10c2af19b468d508448f24e2}{P\-H\-A\-S\-E\-\_\-\-C}~0x0\-C
+\item 
+\#define \hyperlink{a00043_af94cfb03461685fead1fe045d5c96f01}{L\-I\-N\-E}~0x00
+\item 
+\#define \hyperlink{a00043_af0c09c5a455410e6fbd35fd55221338f}{P\-H\-A\-S\-E\-\_\-\-V\-R\-M\-S}~0x01
+\item 
+\#define \hyperlink{a00043_a15c9ccf287820001431c33c4bb25a23b}{P\-H\-A\-S\-E\-\_\-\-I\-R\-M\-S}~0x02
+\item 
+\#define \hyperlink{a00043_a4ee773ad07fa969b9990f9bb3a1a2093}{P\-H\-A\-S\-E\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-W\-H}~0x03
+\item 
+\#define \hyperlink{a00043_ad8d2fc353ef124a8144e6d8264e43d1a}{T\-O\-T\-A\-L\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-W\-H}~0x04
+\item 
+\#define \hyperlink{a00043_abd3f95c7cd63d0627552d293bf49e026}{P\-H\-A\-S\-E\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-P\-O\-W\-E\-R}~0x05
+\item 
+\#define \hyperlink{a00043_a7d0d4057be5aaf168a22ee4379e6ff30}{T\-O\-T\-A\-L\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-P\-O\-W\-E\-R}~0x06
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{a00009_gac914ebaa64afce03ee852af09659cf69}{measure} (uint8\-\_\-t cmd, uint8\-\_\-t channel, float samples)
+\begin{DoxyCompactList}\small\item\em 
+
+ \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{a00009_gab120dc4bec6b4097a5cd3ebb91131c57}{hex2val} (uint8\-\_\-t cc)
+\begin{DoxyCompactList}\small\item\em 
+
+ \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{a00009_ga1e74920f34a07a82cca58eab71ed12b3}{make16} (uint8\-\_\-t $\ast$buf, uint16\-\_\-t idx)
+\begin{DoxyCompactList}\small\item\em 
+
+ \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{a00009_gaefa26c3e5b22ccbe5de1c33305f20e1b}{make8} (uint8\-\_\-t $\ast$buf, uint16\-\_\-t idx)
+\begin{DoxyCompactList}\small\item\em 
+
+ \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{a00043_a983d38050e934f77d4eb3fc73658d985}{mask24} (uint32\-\_\-t val)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+{\itshape File\-:} rpi\-\_\-gpio.\-h \par
+ {\itshape Purpose\-:} \par
+ 
+
+Definition in file \hyperlink{a00043_source}{srv\-\_\-cmd\-\_\-handler.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{a00043_af6e27751df5653af1abdb5c1c505b7e1}{\index{srv\-\_\-cmd\-\_\-handler.\-h@{srv\-\_\-cmd\-\_\-handler.\-h}!A\-D\-E7880\-\_\-\-R\-E\-S\-E\-T@{A\-D\-E7880\-\_\-\-R\-E\-S\-E\-T}}
+\index{A\-D\-E7880\-\_\-\-R\-E\-S\-E\-T@{A\-D\-E7880\-\_\-\-R\-E\-S\-E\-T}!srv_cmd_handler.h@{srv\-\_\-cmd\-\_\-handler.\-h}}
+\subsubsection[{A\-D\-E7880\-\_\-\-R\-E\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-D\-E7880\-\_\-\-R\-E\-S\-E\-T~0x02}}\label{d6/d42/a00043_af6e27751df5653af1abdb5c1c505b7e1}
+
+
+Definition at line \hyperlink{a00043_source_l00013}{13} of file \hyperlink{a00043_source}{srv\-\_\-cmd\-\_\-handler.\-h}.
+
+\hypertarget{a00043_a430d76623597b550145ee76e95e84c48}{\index{srv\-\_\-cmd\-\_\-handler.\-h@{srv\-\_\-cmd\-\_\-handler.\-h}!A\-D\-E7880\-\_\-\-S\-P\-I\-\_\-\-P\-O\-R\-T\-\_\-\-A\-C\-T\-I\-V\-A\-T\-E@{A\-D\-E7880\-\_\-\-S\-P\-I\-\_\-\-P\-O\-R\-T\-\_\-\-A\-C\-T\-I\-V\-A\-T\-E}}
+\index{A\-D\-E7880\-\_\-\-S\-P\-I\-\_\-\-P\-O\-R\-T\-\_\-\-A\-C\-T\-I\-V\-A\-T\-E@{A\-D\-E7880\-\_\-\-S\-P\-I\-\_\-\-P\-O\-R\-T\-\_\-\-A\-C\-T\-I\-V\-A\-T\-E}!srv_cmd_handler.h@{srv\-\_\-cmd\-\_\-handler.\-h}}
+\subsubsection[{A\-D\-E7880\-\_\-\-S\-P\-I\-\_\-\-P\-O\-R\-T\-\_\-\-A\-C\-T\-I\-V\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-D\-E7880\-\_\-\-S\-P\-I\-\_\-\-P\-O\-R\-T\-\_\-\-A\-C\-T\-I\-V\-A\-T\-E~0x01}}\label{d6/d42/a00043_a430d76623597b550145ee76e95e84c48}
+
+
+internal use config cmd macros, make sure the values will not 
+
+
+
+Definition at line \hyperlink{a00043_source_l00012}{12} of file \hyperlink{a00043_source}{srv\-\_\-cmd\-\_\-handler.\-h}.
+
+\hypertarget{a00043_a1805e103988f08b8fac817624918cf47}{\index{srv\-\_\-cmd\-\_\-handler.\-h@{srv\-\_\-cmd\-\_\-handler.\-h}!D\-S\-P\-\_\-\-R\-U\-N@{D\-S\-P\-\_\-\-R\-U\-N}}
+\index{D\-S\-P\-\_\-\-R\-U\-N@{D\-S\-P\-\_\-\-R\-U\-N}!srv_cmd_handler.h@{srv\-\_\-cmd\-\_\-handler.\-h}}
+\subsubsection[{D\-S\-P\-\_\-\-R\-U\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-S\-P\-\_\-\-R\-U\-N~0x06}}\label{d6/d42/a00043_a1805e103988f08b8fac817624918cf47}
+
+
+Definition at line \hyperlink{a00043_source_l00017}{17} of file \hyperlink{a00043_source}{srv\-\_\-cmd\-\_\-handler.\-h}.
+
+\hypertarget{a00043_af94cfb03461685fead1fe045d5c96f01}{\index{srv\-\_\-cmd\-\_\-handler.\-h@{srv\-\_\-cmd\-\_\-handler.\-h}!L\-I\-N\-E@{L\-I\-N\-E}}
+\index{L\-I\-N\-E@{L\-I\-N\-E}!srv_cmd_handler.h@{srv\-\_\-cmd\-\_\-handler.\-h}}
+\subsubsection[{L\-I\-N\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-I\-N\-E~0x00}}\label{d6/d42/a00043_af94cfb03461685fead1fe045d5c96f01}
+
+
+Definition at line \hyperlink{a00043_source_l00024}{24} of file \hyperlink{a00043_source}{srv\-\_\-cmd\-\_\-handler.\-h}.
+
+\hypertarget{a00043_ad214039f52b011ce2bd6c85ff98a981b}{\index{srv\-\_\-cmd\-\_\-handler.\-h@{srv\-\_\-cmd\-\_\-handler.\-h}!P\-H\-A\-S\-E\-\_\-\-A@{P\-H\-A\-S\-E\-\_\-\-A}}
+\index{P\-H\-A\-S\-E\-\_\-\-A@{P\-H\-A\-S\-E\-\_\-\-A}!srv_cmd_handler.h@{srv\-\_\-cmd\-\_\-handler.\-h}}
+\subsubsection[{P\-H\-A\-S\-E\-\_\-\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-H\-A\-S\-E\-\_\-\-A~0x0\-A}}\label{d6/d42/a00043_ad214039f52b011ce2bd6c85ff98a981b}
+
+
+internal use measurment read cmd macros 
+
+
+
+Definition at line \hyperlink{a00043_source_l00021}{21} of file \hyperlink{a00043_source}{srv\-\_\-cmd\-\_\-handler.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}, and \hyperlink{a00035_source_l00302}{reading\-\_\-loop()}.
+
+\hypertarget{a00043_abd3f95c7cd63d0627552d293bf49e026}{\index{srv\-\_\-cmd\-\_\-handler.\-h@{srv\-\_\-cmd\-\_\-handler.\-h}!P\-H\-A\-S\-E\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-P\-O\-W\-E\-R@{P\-H\-A\-S\-E\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-P\-O\-W\-E\-R}}
+\index{P\-H\-A\-S\-E\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-P\-O\-W\-E\-R@{P\-H\-A\-S\-E\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-P\-O\-W\-E\-R}!srv_cmd_handler.h@{srv\-\_\-cmd\-\_\-handler.\-h}}
+\subsubsection[{P\-H\-A\-S\-E\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-P\-O\-W\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-H\-A\-S\-E\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-P\-O\-W\-E\-R~0x05}}\label{d6/d42/a00043_abd3f95c7cd63d0627552d293bf49e026}
+
+
+Definition at line \hyperlink{a00043_source_l00030}{30} of file \hyperlink{a00043_source}{srv\-\_\-cmd\-\_\-handler.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}, and \hyperlink{a00035_source_l00302}{reading\-\_\-loop()}.
+
+\hypertarget{a00043_a4ee773ad07fa969b9990f9bb3a1a2093}{\index{srv\-\_\-cmd\-\_\-handler.\-h@{srv\-\_\-cmd\-\_\-handler.\-h}!P\-H\-A\-S\-E\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-W\-H@{P\-H\-A\-S\-E\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-W\-H}}
+\index{P\-H\-A\-S\-E\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-W\-H@{P\-H\-A\-S\-E\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-W\-H}!srv_cmd_handler.h@{srv\-\_\-cmd\-\_\-handler.\-h}}
+\subsubsection[{P\-H\-A\-S\-E\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-W\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-H\-A\-S\-E\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-W\-H~0x03}}\label{d6/d42/a00043_a4ee773ad07fa969b9990f9bb3a1a2093}
+
+
+Definition at line \hyperlink{a00043_source_l00028}{28} of file \hyperlink{a00043_source}{srv\-\_\-cmd\-\_\-handler.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}, and \hyperlink{a00035_source_l00302}{reading\-\_\-loop()}.
+
+\hypertarget{a00043_ad7b96feed1e1c12515dad5e926b2c62e}{\index{srv\-\_\-cmd\-\_\-handler.\-h@{srv\-\_\-cmd\-\_\-handler.\-h}!P\-H\-A\-S\-E\-\_\-\-B@{P\-H\-A\-S\-E\-\_\-\-B}}
+\index{P\-H\-A\-S\-E\-\_\-\-B@{P\-H\-A\-S\-E\-\_\-\-B}!srv_cmd_handler.h@{srv\-\_\-cmd\-\_\-handler.\-h}}
+\subsubsection[{P\-H\-A\-S\-E\-\_\-\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-H\-A\-S\-E\-\_\-\-B~0x0\-B}}\label{d6/d42/a00043_ad7b96feed1e1c12515dad5e926b2c62e}
+
+
+Definition at line \hyperlink{a00043_source_l00022}{22} of file \hyperlink{a00043_source}{srv\-\_\-cmd\-\_\-handler.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}, and \hyperlink{a00035_source_l00302}{reading\-\_\-loop()}.
+
+\hypertarget{a00043_a3ceb83fb10c2af19b468d508448f24e2}{\index{srv\-\_\-cmd\-\_\-handler.\-h@{srv\-\_\-cmd\-\_\-handler.\-h}!P\-H\-A\-S\-E\-\_\-\-C@{P\-H\-A\-S\-E\-\_\-\-C}}
+\index{P\-H\-A\-S\-E\-\_\-\-C@{P\-H\-A\-S\-E\-\_\-\-C}!srv_cmd_handler.h@{srv\-\_\-cmd\-\_\-handler.\-h}}
+\subsubsection[{P\-H\-A\-S\-E\-\_\-\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-H\-A\-S\-E\-\_\-\-C~0x0\-C}}\label{d6/d42/a00043_a3ceb83fb10c2af19b468d508448f24e2}
+
+
+Definition at line \hyperlink{a00043_source_l00023}{23} of file \hyperlink{a00043_source}{srv\-\_\-cmd\-\_\-handler.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}, and \hyperlink{a00035_source_l00302}{reading\-\_\-loop()}.
+
+\hypertarget{a00043_a15c9ccf287820001431c33c4bb25a23b}{\index{srv\-\_\-cmd\-\_\-handler.\-h@{srv\-\_\-cmd\-\_\-handler.\-h}!P\-H\-A\-S\-E\-\_\-\-I\-R\-M\-S@{P\-H\-A\-S\-E\-\_\-\-I\-R\-M\-S}}
+\index{P\-H\-A\-S\-E\-\_\-\-I\-R\-M\-S@{P\-H\-A\-S\-E\-\_\-\-I\-R\-M\-S}!srv_cmd_handler.h@{srv\-\_\-cmd\-\_\-handler.\-h}}
+\subsubsection[{P\-H\-A\-S\-E\-\_\-\-I\-R\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-H\-A\-S\-E\-\_\-\-I\-R\-M\-S~0x02}}\label{d6/d42/a00043_a15c9ccf287820001431c33c4bb25a23b}
+
+
+Definition at line \hyperlink{a00043_source_l00027}{27} of file \hyperlink{a00043_source}{srv\-\_\-cmd\-\_\-handler.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}, and \hyperlink{a00035_source_l00302}{reading\-\_\-loop()}.
+
+\hypertarget{a00043_af0c09c5a455410e6fbd35fd55221338f}{\index{srv\-\_\-cmd\-\_\-handler.\-h@{srv\-\_\-cmd\-\_\-handler.\-h}!P\-H\-A\-S\-E\-\_\-\-V\-R\-M\-S@{P\-H\-A\-S\-E\-\_\-\-V\-R\-M\-S}}
+\index{P\-H\-A\-S\-E\-\_\-\-V\-R\-M\-S@{P\-H\-A\-S\-E\-\_\-\-V\-R\-M\-S}!srv_cmd_handler.h@{srv\-\_\-cmd\-\_\-handler.\-h}}
+\subsubsection[{P\-H\-A\-S\-E\-\_\-\-V\-R\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-H\-A\-S\-E\-\_\-\-V\-R\-M\-S~0x01}}\label{d6/d42/a00043_af0c09c5a455410e6fbd35fd55221338f}
+
+
+Definition at line \hyperlink{a00043_source_l00026}{26} of file \hyperlink{a00043_source}{srv\-\_\-cmd\-\_\-handler.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}, and \hyperlink{a00035_source_l00302}{reading\-\_\-loop()}.
+
+\hypertarget{a00043_a4e7bf0c205872c6db180b06792a62118}{\index{srv\-\_\-cmd\-\_\-handler.\-h@{srv\-\_\-cmd\-\_\-handler.\-h}!P\-O\-W\-E\-R\-\_\-\-M\-O\-D\-E@{P\-O\-W\-E\-R\-\_\-\-M\-O\-D\-E}}
+\index{P\-O\-W\-E\-R\-\_\-\-M\-O\-D\-E@{P\-O\-W\-E\-R\-\_\-\-M\-O\-D\-E}!srv_cmd_handler.h@{srv\-\_\-cmd\-\_\-handler.\-h}}
+\subsubsection[{P\-O\-W\-E\-R\-\_\-\-M\-O\-D\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-O\-W\-E\-R\-\_\-\-M\-O\-D\-E~0x03}}\label{d6/d42/a00043_a4e7bf0c205872c6db180b06792a62118}
+
+
+Definition at line \hyperlink{a00043_source_l00014}{14} of file \hyperlink{a00043_source}{srv\-\_\-cmd\-\_\-handler.\-h}.
+
+\hypertarget{a00043_a5b534b9caab512045a6e762f3930a501}{\index{srv\-\_\-cmd\-\_\-handler.\-h@{srv\-\_\-cmd\-\_\-handler.\-h}!S\-E\-T\-\_\-\-R\-A\-M\-\_\-\-W\-R\-\_\-\-P\-R\-O\-T\-E\-C\-T\-I\-O\-N@{S\-E\-T\-\_\-\-R\-A\-M\-\_\-\-W\-R\-\_\-\-P\-R\-O\-T\-E\-C\-T\-I\-O\-N}}
+\index{S\-E\-T\-\_\-\-R\-A\-M\-\_\-\-W\-R\-\_\-\-P\-R\-O\-T\-E\-C\-T\-I\-O\-N@{S\-E\-T\-\_\-\-R\-A\-M\-\_\-\-W\-R\-\_\-\-P\-R\-O\-T\-E\-C\-T\-I\-O\-N}!srv_cmd_handler.h@{srv\-\_\-cmd\-\_\-handler.\-h}}
+\subsubsection[{S\-E\-T\-\_\-\-R\-A\-M\-\_\-\-W\-R\-\_\-\-P\-R\-O\-T\-E\-C\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-E\-T\-\_\-\-R\-A\-M\-\_\-\-W\-R\-\_\-\-P\-R\-O\-T\-E\-C\-T\-I\-O\-N~0x05}}\label{d6/d42/a00043_a5b534b9caab512045a6e762f3930a501}
+
+
+Definition at line \hyperlink{a00043_source_l00016}{16} of file \hyperlink{a00043_source}{srv\-\_\-cmd\-\_\-handler.\-h}.
+
+
+
+Referenced by \hyperlink{a00035_source_l00198}{main()}, and \hyperlink{a00035_source_l00122}{wait\-\_\-new\-\_\-conversion()}.
+
+\hypertarget{a00043_a4679d8ea8690999a6c6c7c0cb245c879}{\index{srv\-\_\-cmd\-\_\-handler.\-h@{srv\-\_\-cmd\-\_\-handler.\-h}!T\-H\-R\-E\-S\-H\-O\-L\-D@{T\-H\-R\-E\-S\-H\-O\-L\-D}}
+\index{T\-H\-R\-E\-S\-H\-O\-L\-D@{T\-H\-R\-E\-S\-H\-O\-L\-D}!srv_cmd_handler.h@{srv\-\_\-cmd\-\_\-handler.\-h}}
+\subsubsection[{T\-H\-R\-E\-S\-H\-O\-L\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-H\-R\-E\-S\-H\-O\-L\-D~0x04}}\label{d6/d42/a00043_a4679d8ea8690999a6c6c7c0cb245c879}
+
+
+Definition at line \hyperlink{a00043_source_l00015}{15} of file \hyperlink{a00043_source}{srv\-\_\-cmd\-\_\-handler.\-h}.
+
+\hypertarget{a00043_a7d0d4057be5aaf168a22ee4379e6ff30}{\index{srv\-\_\-cmd\-\_\-handler.\-h@{srv\-\_\-cmd\-\_\-handler.\-h}!T\-O\-T\-A\-L\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-P\-O\-W\-E\-R@{T\-O\-T\-A\-L\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-P\-O\-W\-E\-R}}
+\index{T\-O\-T\-A\-L\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-P\-O\-W\-E\-R@{T\-O\-T\-A\-L\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-P\-O\-W\-E\-R}!srv_cmd_handler.h@{srv\-\_\-cmd\-\_\-handler.\-h}}
+\subsubsection[{T\-O\-T\-A\-L\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-P\-O\-W\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-O\-T\-A\-L\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-P\-O\-W\-E\-R~0x06}}\label{d6/d42/a00043_a7d0d4057be5aaf168a22ee4379e6ff30}
+
+
+Definition at line \hyperlink{a00043_source_l00031}{31} of file \hyperlink{a00043_source}{srv\-\_\-cmd\-\_\-handler.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}.
+
+\hypertarget{a00043_ad8d2fc353ef124a8144e6d8264e43d1a}{\index{srv\-\_\-cmd\-\_\-handler.\-h@{srv\-\_\-cmd\-\_\-handler.\-h}!T\-O\-T\-A\-L\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-W\-H@{T\-O\-T\-A\-L\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-W\-H}}
+\index{T\-O\-T\-A\-L\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-W\-H@{T\-O\-T\-A\-L\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-W\-H}!srv_cmd_handler.h@{srv\-\_\-cmd\-\_\-handler.\-h}}
+\subsubsection[{T\-O\-T\-A\-L\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-W\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-O\-T\-A\-L\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-W\-H~0x04}}\label{d6/d42/a00043_ad8d2fc353ef124a8144e6d8264e43d1a}
+
+
+Definition at line \hyperlink{a00043_source_l00029}{29} of file \hyperlink{a00043_source}{srv\-\_\-cmd\-\_\-handler.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{a00043_a983d38050e934f77d4eb3fc73658d985}{\index{srv\-\_\-cmd\-\_\-handler.\-h@{srv\-\_\-cmd\-\_\-handler.\-h}!mask24@{mask24}}
+\index{mask24@{mask24}!srv_cmd_handler.h@{srv\-\_\-cmd\-\_\-handler.\-h}}
+\subsubsection[{mask24}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t mask24 (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{val}
+\end{DoxyParamCaption}
+)}}\label{d6/d42/a00043_a983d38050e934f77d4eb3fc73658d985}

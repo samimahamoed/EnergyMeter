@@ -1,0 +1,380 @@
+\hypertarget{a00034}{\section{ade7880\-\_\-driver.\-c}
+\label{db/df3/a00034}\index{ade7880\-\_\-driver.\-c@{ade7880\-\_\-driver.\-c}}
+}
+
+\begin{DoxyCode}
+00001 
+00006 \textcolor{preprocessor}{#include "../includes/includes.h"}
+00007 \textcolor{preprocessor}{#include <errno.h>}
+00008 \textcolor{preprocessor}{#include <stdlib.h>}
+00009 \textcolor{preprocessor}{#include <time.h>} 
+00010 \textcolor{preprocessor}{#include <stdio.h>}    
+00011 
+00012 
+00054 
+00055 
+00121 
+\hypertarget{a00034_source_l00122}{}\hyperlink{a00002_ga7b6d584350762c53419945480d6958d3}{00122} int8\_t \hyperlink{a00002_ga7b6d584350762c53419945480d6958d3}{wait\_new\_conversion}(\textcolor{keywordtype}{void})\{
+00123 
+00124            int8\_t cc =0;
+00125            int16\_t result =-1;
+00126     
+00127            \textcolor{keyword}{struct }timeval tv;
+00128            \hyperlink{a00031}{status0\_reg\_u} status0;
+00129            status0.\hyperlink{a00031_ae44a0232a79ff51b5ef7aa80e4b35470}{reg\_all} = \hyperlink{a00006_ga7ad9f65ee46aca507374096506a0b1c4}{spi\_read}(BCM2835\_SPI\_CS0,
+      \hyperlink{a00036_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},\hyperlink{a00035_aaf584f70289e5fd799fef97c85bb97ee}{STATUS0},\textcolor{keyword}{sizeof}(uint32\_t));
+00130           
+00131            
+00132         
+00133            \textcolor{keywordflow}{if}(status0.bits.DREADY==1)\{
+00134     
+00135            result=0;cc = 0;\textcolor{keywordflow}{while}(((result = \hyperlink{a00004_ga369ee0e8379941cbc2c79b90ec3292da}{config\_cmd}(
+      \hyperlink{a00042_a5b534b9caab512045a6e762f3930a501}{SET\_RAM\_WR\_PROTECTION},1,\hyperlink{a00036_a99496f7308834e8b220f7894efa0b6ab}{DISABLE}))== -1)&& (cc++ < 3));  
+00136            \textcolor{comment}{//put back the value to clears status flags         }
+00137            \textcolor{keywordflow}{if}(\hyperlink{a00006_ga2770219ad8ad1eda1817c0df934b47d0}{spi\_write}(BCM2835\_SPI\_CS0,\hyperlink{a00036_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},
+      \hyperlink{a00035_aaf584f70289e5fd799fef97c85bb97ee}{STATUS0},status0.reg\_all,\textcolor{keyword}{sizeof}(uint32\_t))!=0)result =-1; 
+00138            status0.reg\_all = \hyperlink{a00006_ga7ad9f65ee46aca507374096506a0b1c4}{spi\_read}(BCM2835\_SPI\_CS0,\hyperlink{a00036_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},
+      \hyperlink{a00035_aaf584f70289e5fd799fef97c85bb97ee}{STATUS0},\textcolor{keyword}{sizeof}(uint32\_t));
+00139            result=0;cc = 0;\textcolor{keywordflow}{while}(((result = \hyperlink{a00004_ga369ee0e8379941cbc2c79b90ec3292da}{config\_cmd}(
+      \hyperlink{a00042_a5b534b9caab512045a6e762f3930a501}{SET\_RAM\_WR\_PROTECTION},1,\hyperlink{a00036_a514ad415fb6125ba296793df7d1a468a}{ENABLE}))== -1)&& (cc++ < 3)); 
+00140          
+00141            
+00142            \textcolor{keywordflow}{if}(result == -1)\{
+00143                     printf(\textcolor{stringliteral}{"\(\backslash\)nERROR: Couldn't write\(\backslash\)n"});  
+00144                     \textcolor{keywordflow}{return} -1;
+00145            \}
+00146            
+00147             
+00148            \}
+00149            
+00150            
+00151            
+00152         
+00153            gettimeofday(&tv,NULL);
+00154            uint32\_t t1,t2;
+00155            t1=t2 = tv.tv\_usec;  
+00156 \textcolor{preprocessor}{           #ifdef DEBUG            }
+00157 \textcolor{preprocessor}{}           printf(\textcolor{stringliteral}{"\(\backslash\)nSTATUS REG VALUE %08X,-------------------------------------------- us time %lu\(\backslash\)n"},
+      status0.reg\_all,t1);
+00158 \textcolor{preprocessor}{           #endif}
+00159 \textcolor{preprocessor}{}           \textcolor{keywordflow}{while}(status0.bits.DREADY==0)\{ \textcolor{comment}{//wait till conversion is done}
+00160          
+00161              status0.reg\_all = \hyperlink{a00006_ga7ad9f65ee46aca507374096506a0b1c4}{spi\_read}(BCM2835\_SPI\_CS0,\hyperlink{a00036_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},
+      \hyperlink{a00035_aaf584f70289e5fd799fef97c85bb97ee}{STATUS0},\textcolor{keyword}{sizeof}(uint32\_t));
+00162              gettimeofday(&tv,NULL);
+00163              
+00164              t2 = tv.tv\_usec;   
+00165 \textcolor{preprocessor}{             #ifdef DEBUG }
+00166 \textcolor{preprocessor}{}             printf(\textcolor{stringliteral}{"\(\backslash\)nSTATUS REG VALUE %08X,-------------------------------------------- us time %lu\(\backslash\)n"},
+      status0.reg\_all,t2);  
+00167 \textcolor{preprocessor}{             #endif}
+00168 \textcolor{preprocessor}{}             \textcolor{keywordflow}{if}((t2-t1)>20000)
+00169              \textcolor{keywordflow}{return} -1;
+00170              
+00171            \}
+00172            
+00173            
+00174 
+00175   \textcolor{keywordflow}{return} 0;
+00176 \}
+00177 
+00179  
+00180 
+00196 
+00197 
+\hypertarget{a00034_source_l00198}{}\hyperlink{a00002_ga3ba649a584853038d5fd50ad1751379d}{00198} int16\_t \hyperlink{a00002_ga3ba649a584853038d5fd50ad1751379d}{main}(\textcolor{keywordtype}{int} argc, \textcolor{keyword}{const} \textcolor{keywordtype}{char} **argv)\{
+00199     
+00200      
+00201      
+00202     int8\_t cc =0;
+00203     int16\_t result =-1;
+00204     
+00205     \textcolor{keyword}{struct }timeval tv;
+00206 
+00207      \textcolor{keywordflow}{if}((argc < 1)|| !bcm2835\_init()\textcolor{comment}{/*library has to be initialized*/})   
+00208            \textcolor{keywordflow}{return} -1;    
+00209      
+00210     \hyperlink{a00004_ga156b48448f55534a2f9c805a1f760efa}{rpi\_gpio\_init}();
+00211     \hyperlink{a00004_gae9a5abd4e5054e7ea3f149b1764f2cd0}{ade7880\_power\_mode}(\hyperlink{a00036_ad03c0079a6239f78368cb14cc4578101}{PSM0});
+00212     usleep(50);
+00213     
+00214     \textcolor{keywordflow}{if}(\hyperlink{a00004_ga96ddfd5c89b80852982ba50dd18256f6}{spi\_init}(BCM2835\_SPI\_CS0)!= 0)
+00215     \textcolor{keywordflow}{return} -1;
+00216 \textcolor{preprocessor}{        #ifdef DEBUG }
+00217 \textcolor{preprocessor}{}        uint16\_t cp=0;
+00218         printf(\textcolor{stringliteral}{"\(\backslash\)n
+      #######################################%d###################################################\(\backslash\)n"},cp++);
+00219 \textcolor{preprocessor}{        #endif}
+00220 \textcolor{preprocessor}{}     
+00221     
+00222      \textcolor{keywordflow}{if}(strcmp (argv[1],\textcolor{stringliteral}{"config"})==0)
+00223      \{
+00224         \textcolor{keywordflow}{if}(\hyperlink{a00004_ga7782772c18e6ea515dcd28dcaedd0f06}{ade7880\_config\_reg\_default}()!=-1)
+00225               printf(\textcolor{stringliteral}{"\(\backslash\)nDevice Ready to use\(\backslash\)n"});
+00226      \} 
+00227      \textcolor{keywordflow}{else} 
+00228      \textcolor{keywordflow}{if}(strcmp(argv[1],\textcolor{stringliteral}{"read"})==0)   
+00229      \{
+00230         \textcolor{keywordflow}{if}(argc<4)\{printf(\textcolor{stringliteral}{"\(\backslash\)nCMD ERROR: RD\(\backslash\)n"});\textcolor{keywordflow}{return}-1;\}
+00231           
+00232         \textcolor{keywordflow}{for}(cc = 0;cc<((argc>=5)?atoi(argv[4]):1);cc++)\{
+00233          \hyperlink{a00006_ga7ad9f65ee46aca507374096506a0b1c4}{spi\_read}(BCM2835\_SPI\_CS0,\hyperlink{a00036_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},\hyperlink{a00008_ga1e74920f34a07a82cca58eab71ed12b3}{make16}((uint8\_t *)argv[2],2),
+      atoi(argv[3]));
+00234          gettimeofday(&tv,NULL);
+00235          printf(\textcolor{stringliteral}{"<----------------------------------------------------------- %d timesamp: %lf\(\backslash\)n"},
+00236          cc+1,(\textcolor{keywordtype}{double})(tv.tv\_sec + tv.tv\_usec/(\textcolor{keywordtype}{double})10E6));
+00237         \}
+00238      \textcolor{keywordflow}{return} 0;
+00239      \}
+00240      \textcolor{keywordflow}{else} 
+00241      \textcolor{keywordflow}{if}(strcmp(argv[1],\textcolor{stringliteral}{"write"})==0 )
+00242      \{
+00243         \textcolor{keywordflow}{if}(argc<4)\{printf(\textcolor{stringliteral}{"\(\backslash\)nCMD ERROR: WR\(\backslash\)n"});\textcolor{keywordflow}{return}-1;\}
+00244     \textcolor{keywordtype}{int} ii;
+00245        \textcolor{keywordflow}{for}(ii=0;ii<argc;ii++)
+00246             printf(\textcolor{stringliteral}{" argval %d, = %s"},ii,argv[ii]);
+00247         
+00248         result=0;cc = 0;\textcolor{keywordflow}{while}(((result = \hyperlink{a00004_ga369ee0e8379941cbc2c79b90ec3292da}{config\_cmd}(
+      \hyperlink{a00042_a5b534b9caab512045a6e762f3930a501}{SET\_RAM\_WR\_PROTECTION},1,\hyperlink{a00036_a99496f7308834e8b220f7894efa0b6ab}{DISABLE}))== -1)&& (cc++ < 3)); 
+00249         \textcolor{keywordflow}{if}(\hyperlink{a00006_ga2770219ad8ad1eda1817c0df934b47d0}{spi\_write}(BCM2835\_SPI\_CS0,\hyperlink{a00036_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},\hyperlink{a00008_ga1e74920f34a07a82cca58eab71ed12b3}{make16}((uint8\_t *)argv[2],2)
+00250         ,\hyperlink{a00008_gaefa26c3e5b22ccbe5de1c33305f20e1b}{make8}((uint8\_t *)argv[3],2),atoi(argv[4]))!=0)
+00251           result =-1;
+00252          result=0;cc = 0;\textcolor{keywordflow}{while}(((result = \hyperlink{a00004_ga369ee0e8379941cbc2c79b90ec3292da}{config\_cmd}(
+      \hyperlink{a00042_a5b534b9caab512045a6e762f3930a501}{SET\_RAM\_WR\_PROTECTION},1,\hyperlink{a00036_a514ad415fb6125ba296793df7d1a468a}{ENABLE}))== -1)&& (cc++ < 3)); 
+00253          \textcolor{keywordflow}{if}(result == -1)\{
+00254                     printf(\textcolor{stringliteral}{"ERROR: Couldn't write"});  
+00255                       \textcolor{keywordflow}{return} -1;
+00256          \}
+00257          
+00258      \textcolor{keywordflow}{return} 0;
+00259      \}
+00260      \textcolor{keywordflow}{else}
+00261      \textcolor{keywordflow}{if}(strcmp(argv[1],\textcolor{stringliteral}{"run"})==0) 
+00262      \{
+00263 \textcolor{preprocessor}{        #ifdef DEBUG}
+00264 \textcolor{preprocessor}{}        \textcolor{keywordflow}{if}(argc >=3)\{
+00265            \textcolor{keywordflow}{if}((strcmp(argv[2],\textcolor{stringliteral}{"dprint=off"})==0))
+00266                spi\_enable\_msg\_debug\_print(\hyperlink{a00036_a99496f7308834e8b220f7894efa0b6ab}{DISABLE});
+00267             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((strcmp(argv[2],\textcolor{stringliteral}{"dprint=on"})==0))
+00268                 spi\_enable\_msg\_debug\_print(\hyperlink{a00036_a514ad415fb6125ba296793df7d1a468a}{ENABLE});
+00269         \}   
+00270         printf(\textcolor{stringliteral}{"\(\backslash\)n
+      #######################################%d###################################################\(\backslash\)n"},cp++);
+00271 \textcolor{preprocessor}{        #endif}
+00272 \textcolor{preprocessor}{}        
+00273         \textcolor{keywordflow}{if}(argc<2)\{printf(\textcolor{stringliteral}{"\(\backslash\)nCMD ERROR: measure\(\backslash\)n"});\textcolor{keywordflow}{return}-1;\} 
+00274            
+00275            \hyperlink{a00002_gaeb3af492d3421787fcbb2cd1bbbaf62c}{reading\_loop}();
+00276      \}
+00277 
+00278      
+00279      bcm2835\_spi\_end();
+00280        
+00281      bcm2835\_gpio\_write(\hyperlink{a00038_ab4b553591a495409d4f7cec4b6c3e754}{PIN\_SS}, HIGH);
+00282        
+00283      bcm2835\_close();
+00284      
+00285 \textcolor{keywordflow}{return} 0;
+00286 \}
+00288 
+00300 
+00301 
+\hypertarget{a00034_source_l00302}{}\hyperlink{a00002_gaeb3af492d3421787fcbb2cd1bbbaf62c}{00302} \textcolor{keywordtype}{void} \hyperlink{a00002_gaeb3af492d3421787fcbb2cd1bbbaf62c}{reading\_loop}(\textcolor{keywordtype}{void})\{
+00303 
+00304   int16\_t   rpi\_address; 
+00305   \textcolor{keywordtype}{char} *    filename;
+00306   uint32\_t  cyc\_time;
+00307   uint8\_t   loop\_ctrl;
+00308   uint8\_t   pause;
+00309   int8\_t    result=0;
+00310   int8\_t startup = 1;
+00311   
+00312     \hyperlink{a00028}{measured\_data\_t} data;
+00313     
+00314 \textcolor{preprocessor}{        #ifdef DEBUG }
+00315 \textcolor{preprocessor}{}        printf(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n"});
+00316 \textcolor{preprocessor}{        #endif  }
+00317 \textcolor{preprocessor}{}         printf(\textcolor{stringliteral}{"\(\backslash\)nEntering Main loop ...\(\backslash\)n"});
+00318          \textcolor{keywordflow}{while}(1)\{  
+00319          printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+00320          
+00321          printf(\textcolor{stringliteral}{"\(\backslash\)nReading Phase A values ...\(\backslash\)n"});   
+00322          \textcolor{keywordflow}{if}((data.\hyperlink{a00028_ad7205e9853a503d2fab0697f5a301f6c}{phase\_a}.\hyperlink{a00029_a4f87f30b543e89e2e5dfa1b8f3f58eff}{IRMS}           = \hyperlink{a00008_gac914ebaa64afce03ee852af09659cf69}{measure}(\hyperlink{a00042_a15c9ccf287820001431c33c4bb25a23b}{PHASE\_IRMS},
+      \hyperlink{a00042_ad214039f52b011ce2bd6c85ff98a981b}{PHASE\_A},100))==-1)result = -1;
+00323          \textcolor{keywordflow}{if}((data.\hyperlink{a00028_ad7205e9853a503d2fab0697f5a301f6c}{phase\_a}.\hyperlink{a00029_a08415029e214174a01bc6487ff98ee9b}{VRMS}           = \hyperlink{a00008_gac914ebaa64afce03ee852af09659cf69}{measure}(\hyperlink{a00042_af0c09c5a455410e6fbd35fd55221338f}{PHASE\_VRMS},
+      \hyperlink{a00042_ad214039f52b011ce2bd6c85ff98a981b}{PHASE\_A},100))==-1)result = -1;
+00324          \textcolor{keywordflow}{if}((data.\hyperlink{a00028_ad7205e9853a503d2fab0697f5a301f6c}{phase\_a}.\hyperlink{a00029_a8dd6d8406db4e214238b3eff481e4ea0}{WH}           = \hyperlink{a00008_gac914ebaa64afce03ee852af09659cf69}{measure}(\hyperlink{a00042_a4ee773ad07fa969b9990f9bb3a1a2093}{PHASE\_ACTIVE\_WH},
+      \hyperlink{a00042_ad214039f52b011ce2bd6c85ff98a981b}{PHASE\_A},1))==-1)result = -1;
+00325          \textcolor{keywordflow}{if}((data.\hyperlink{a00028_ad7205e9853a503d2fab0697f5a301f6c}{phase\_a}.\hyperlink{a00029_a8a9794fa4c6a69b457d1eb04b017ef1e}{POWER}         = \hyperlink{a00008_gac914ebaa64afce03ee852af09659cf69}{measure}(
+      \hyperlink{a00042_abd3f95c7cd63d0627552d293bf49e026}{PHASE\_ACTIVE\_POWER},\hyperlink{a00042_ad214039f52b011ce2bd6c85ff98a981b}{PHASE\_A},1))==-1)result = -1;
+00326          
+00327          printf(\textcolor{stringliteral}{"\(\backslash\)nReading Phase B values ...\(\backslash\)n"});  
+00328          \textcolor{keywordflow}{if}((data.\hyperlink{a00028_a48734adeb4d59d056b6e39c6e08fe21e}{phase\_b}.\hyperlink{a00029_a4f87f30b543e89e2e5dfa1b8f3f58eff}{IRMS}           = \hyperlink{a00008_gac914ebaa64afce03ee852af09659cf69}{measure}(\hyperlink{a00042_a15c9ccf287820001431c33c4bb25a23b}{PHASE\_IRMS},
+      \hyperlink{a00042_ad7b96feed1e1c12515dad5e926b2c62e}{PHASE\_B},100))==-1)result = -1;
+00329          \textcolor{keywordflow}{if}((data.\hyperlink{a00028_a48734adeb4d59d056b6e39c6e08fe21e}{phase\_b}.\hyperlink{a00029_a08415029e214174a01bc6487ff98ee9b}{VRMS}           = \hyperlink{a00008_gac914ebaa64afce03ee852af09659cf69}{measure}(\hyperlink{a00042_af0c09c5a455410e6fbd35fd55221338f}{PHASE\_VRMS},
+      \hyperlink{a00042_ad7b96feed1e1c12515dad5e926b2c62e}{PHASE\_B},100))==-1)result = -1;
+00330          \textcolor{keywordflow}{if}((data.\hyperlink{a00028_a48734adeb4d59d056b6e39c6e08fe21e}{phase\_b}.\hyperlink{a00029_a8dd6d8406db4e214238b3eff481e4ea0}{WH}           = \hyperlink{a00008_gac914ebaa64afce03ee852af09659cf69}{measure}(\hyperlink{a00042_a4ee773ad07fa969b9990f9bb3a1a2093}{PHASE\_ACTIVE\_WH},
+      \hyperlink{a00042_ad7b96feed1e1c12515dad5e926b2c62e}{PHASE\_B},1))==-1)result = -1;
+00331          \textcolor{keywordflow}{if}((data.\hyperlink{a00028_a48734adeb4d59d056b6e39c6e08fe21e}{phase\_b}.\hyperlink{a00029_a8a9794fa4c6a69b457d1eb04b017ef1e}{POWER}         = \hyperlink{a00008_gac914ebaa64afce03ee852af09659cf69}{measure}(
+      \hyperlink{a00042_abd3f95c7cd63d0627552d293bf49e026}{PHASE\_ACTIVE\_POWER},\hyperlink{a00042_ad7b96feed1e1c12515dad5e926b2c62e}{PHASE\_B},1))==-1)result = -1;
+00332          
+00333          printf(\textcolor{stringliteral}{"\(\backslash\)nReading Phase C values ...\(\backslash\)n"});  
+00334          \textcolor{keywordflow}{if}((data.\hyperlink{a00028_ad8892f27909cf51f7603adfc00d224df}{phase\_c}.\hyperlink{a00029_a4f87f30b543e89e2e5dfa1b8f3f58eff}{IRMS}           = \hyperlink{a00008_gac914ebaa64afce03ee852af09659cf69}{measure}(\hyperlink{a00042_a15c9ccf287820001431c33c4bb25a23b}{PHASE\_IRMS},
+      \hyperlink{a00042_a3ceb83fb10c2af19b468d508448f24e2}{PHASE\_C},100))==-1)result = -1;
+00335          \textcolor{keywordflow}{if}((data.\hyperlink{a00028_ad8892f27909cf51f7603adfc00d224df}{phase\_c}.\hyperlink{a00029_a08415029e214174a01bc6487ff98ee9b}{VRMS}           = \hyperlink{a00008_gac914ebaa64afce03ee852af09659cf69}{measure}(\hyperlink{a00042_af0c09c5a455410e6fbd35fd55221338f}{PHASE\_VRMS},
+      \hyperlink{a00042_a3ceb83fb10c2af19b468d508448f24e2}{PHASE\_C},100))==-1)result = -1;
+00336          \textcolor{keywordflow}{if}((data.\hyperlink{a00028_ad8892f27909cf51f7603adfc00d224df}{phase\_c}.\hyperlink{a00029_a8dd6d8406db4e214238b3eff481e4ea0}{WH}           = \hyperlink{a00008_gac914ebaa64afce03ee852af09659cf69}{measure}(\hyperlink{a00042_a4ee773ad07fa969b9990f9bb3a1a2093}{PHASE\_ACTIVE\_WH},
+      \hyperlink{a00042_a3ceb83fb10c2af19b468d508448f24e2}{PHASE\_C},1))==-1)result = -1;
+00337          \textcolor{keywordflow}{if}((data.\hyperlink{a00028_ad8892f27909cf51f7603adfc00d224df}{phase\_c}.\hyperlink{a00029_a8a9794fa4c6a69b457d1eb04b017ef1e}{POWER}         = \hyperlink{a00008_gac914ebaa64afce03ee852af09659cf69}{measure}(
+      \hyperlink{a00042_abd3f95c7cd63d0627552d293bf49e026}{PHASE\_ACTIVE\_POWER},\hyperlink{a00042_a3ceb83fb10c2af19b468d508448f24e2}{PHASE\_C},1))==-1)result = -1;
+00338          
+00339         printf(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n\(\backslash\)nREADINGS:\(\backslash\)n"});
+00340         printf(\textcolor{stringliteral}{"\(\backslash\)n"});       
+00341         printf(\textcolor{stringliteral}{"\(\backslash\)n---------------------------------------------------------------------PHASE A KWH  : %f\(\backslash\)n"}
+      ,data.\hyperlink{a00028_ad7205e9853a503d2fab0697f5a301f6c}{phase\_a}.\hyperlink{a00029_a8dd6d8406db4e214238b3eff481e4ea0}{WH});
+00342         printf(\textcolor{stringliteral}{"\(\backslash\)n---------------------------------------------------------------------PHASE A POWER: %f\(\backslash\)n"}
+      ,data.\hyperlink{a00028_ad7205e9853a503d2fab0697f5a301f6c}{phase\_a}.\hyperlink{a00029_a8a9794fa4c6a69b457d1eb04b017ef1e}{POWER});
+00343         printf(\textcolor{stringliteral}{"\(\backslash\)n---------------------------------------------------------------------PHASE A VRMS : %f\(\backslash\)n"}
+      ,data.\hyperlink{a00028_ad7205e9853a503d2fab0697f5a301f6c}{phase\_a}.\hyperlink{a00029_a08415029e214174a01bc6487ff98ee9b}{VRMS});
+00344         printf(\textcolor{stringliteral}{"\(\backslash\)n---------------------------------------------------------------------PHASE A IRMS : %f\(\backslash\)n"}
+      ,data.\hyperlink{a00028_ad7205e9853a503d2fab0697f5a301f6c}{phase\_a}.\hyperlink{a00029_a4f87f30b543e89e2e5dfa1b8f3f58eff}{IRMS});
+00345         printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+00346         printf(\textcolor{stringliteral}{"\(\backslash\)n---------------------------------------------------------------------PHASE B KWH  : %f\(\backslash\)n"}
+      ,data.\hyperlink{a00028_a48734adeb4d59d056b6e39c6e08fe21e}{phase\_b}.\hyperlink{a00029_a8dd6d8406db4e214238b3eff481e4ea0}{WH});
+00347         printf(\textcolor{stringliteral}{"\(\backslash\)n---------------------------------------------------------------------PHASE B POWER: %f\(\backslash\)n"}
+      ,data.\hyperlink{a00028_a48734adeb4d59d056b6e39c6e08fe21e}{phase\_b}.\hyperlink{a00029_a8a9794fa4c6a69b457d1eb04b017ef1e}{POWER});
+00348         printf(\textcolor{stringliteral}{"\(\backslash\)n---------------------------------------------------------------------PHASE B VRMS : %f\(\backslash\)n"}
+      ,data.\hyperlink{a00028_a48734adeb4d59d056b6e39c6e08fe21e}{phase\_b}.\hyperlink{a00029_a08415029e214174a01bc6487ff98ee9b}{VRMS});
+00349         printf(\textcolor{stringliteral}{"\(\backslash\)n---------------------------------------------------------------------PHASE B IRMS : %f\(\backslash\)n"}
+      ,data.\hyperlink{a00028_a48734adeb4d59d056b6e39c6e08fe21e}{phase\_b}.\hyperlink{a00029_a4f87f30b543e89e2e5dfa1b8f3f58eff}{IRMS});
+00350         printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+00351         printf(\textcolor{stringliteral}{"\(\backslash\)n---------------------------------------------------------------------PHASE C KWH  : %f\(\backslash\)n"}
+      ,data.\hyperlink{a00028_ad8892f27909cf51f7603adfc00d224df}{phase\_c}.\hyperlink{a00029_a8dd6d8406db4e214238b3eff481e4ea0}{WH});
+00352         printf(\textcolor{stringliteral}{"\(\backslash\)n---------------------------------------------------------------------PHASE C POWER: %f\(\backslash\)n"}
+      ,data.\hyperlink{a00028_ad8892f27909cf51f7603adfc00d224df}{phase\_c}.\hyperlink{a00029_a8a9794fa4c6a69b457d1eb04b017ef1e}{POWER});
+00353         printf(\textcolor{stringliteral}{"\(\backslash\)n---------------------------------------------------------------------PHASE C VRMS : %f\(\backslash\)n"}
+      ,data.\hyperlink{a00028_ad8892f27909cf51f7603adfc00d224df}{phase\_c}.\hyperlink{a00029_a08415029e214174a01bc6487ff98ee9b}{VRMS});
+00354         printf(\textcolor{stringliteral}{"\(\backslash\)n---------------------------------------------------------------------PHASE C IRMS : %f\(\backslash\)n"}
+      ,data.\hyperlink{a00028_ad8892f27909cf51f7603adfc00d224df}{phase\_c}.\hyperlink{a00029_a4f87f30b543e89e2e5dfa1b8f3f58eff}{IRMS});
+00355                      
+00356         \textcolor{keywordflow}{if}(result == -1)\{            
+00357             \hyperlink{a00004_ga7782772c18e6ea515dcd28dcaedd0f06}{ade7880\_config\_reg\_default}(); \textcolor{comment}{//this is the only thing we do for now}
+00358         \textcolor{comment}{//  continue;}
+00359         \}
+00360         
+00361         \textcolor{keywordflow}{do}\{
+00362         \textcolor{keywordflow}{if}(\hyperlink{a00002_gac93e16d1e9d6a04b52373bf3428cc79c}{config\_recheck} (CONFIG\_FILE\_NAME,CONFIG\_CMD\_FORMAT,&rpi\_address ,filename, &
+      cyc\_time,&loop\_ctrl,&pause)==0)\{
+00363         
+00364         \textcolor{keywordflow}{if}(pause==0)\{
+00365         
+00366           \textcolor{keywordflow}{while}(\hyperlink{a00002_ga9e259879c5d746107c4a70fe08aba924}{save\_to\_file}(rpi\_address,data, filename,
+00367           startup 
+00376           )!=0)
+00377         
+00378           startup = 0; 
+00379           
+00380          \}
+00381          
+00382          \}
+00383          
+00384          usleep(cyc\_time);
+00385         \}\textcolor{keywordflow}{while}(pause==1);
+00386          
+00387         \textcolor{keywordflow}{if}(loop\_ctrl == 1)
+00388         \textcolor{keywordflow}{break};
+00389         
+00390         
+00391         
+00392                 
+00393 \textcolor{preprocessor}{        #ifdef DEBUG}
+00394 \textcolor{preprocessor}{}        \textcolor{keywordflow}{if}(result!=-1)
+00395         printf(\textcolor{stringliteral}{"\(\backslash\)nREADING SUCESS\(\backslash\)n"});
+00396         spi\_enable\_msg\_debug\_print(\hyperlink{a00036_a514ad415fb6125ba296793df7d1a468a}{ENABLE});
+00397 \textcolor{preprocessor}{        #endif}
+00398 \textcolor{preprocessor}{}        
+00399         
+00400      \}
+00401 
+00402 \}
+00404 
+00419 
+00420 
+\hypertarget{a00034_source_l00421}{}\hyperlink{a00002_ga9e259879c5d746107c4a70fe08aba924}{00421} int8\_t \hyperlink{a00002_ga9e259879c5d746107c4a70fe08aba924}{save\_to\_file}(uint16\_t rpi\_address,\hyperlink{a00028}{measured\_data\_t} data, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *
+      fileName,uint8\_t clean) 
+00422 \{ 
+00423 uint32\_t dummy=0;
+00424   FILE *f = fopen(fileName, (clean == 1)?\textcolor{stringliteral}{"w"}:\textcolor{stringliteral}{"a"});  
+00425   errno = 0;
+00426   \textcolor{keywordflow}{if} (f == NULL)\{ 
+00427    warn(\textcolor{stringliteral}{"%s: Couldn't open file %s; %s\(\backslash\)n"},fileName, strerror (errno));
+00428   
+00429   \textcolor{keywordflow}{return} -1;
+00430   \}
+00431   
+00432   
+00433   fprintf(f, \textcolor{stringliteral}{"%d;%lu;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%f;%d;%d;%d;%d;%d;%d\(\backslash\)n"}, 
+00434           rpi\_address,
+00435           (\textcolor{keywordtype}{unsigned})time(NULL),
+00436     
+00437                data.\hyperlink{a00028_ad7205e9853a503d2fab0697f5a301f6c}{phase\_a}.\hyperlink{a00029_a4f87f30b543e89e2e5dfa1b8f3f58eff}{IRMS},    
+00438                data.\hyperlink{a00028_ad7205e9853a503d2fab0697f5a301f6c}{phase\_a}.\hyperlink{a00029_a08415029e214174a01bc6487ff98ee9b}{VRMS},    
+00439                data.\hyperlink{a00028_ad7205e9853a503d2fab0697f5a301f6c}{phase\_a}.\hyperlink{a00029_a8dd6d8406db4e214238b3eff481e4ea0}{WH},            
+00440                data.\hyperlink{a00028_ad7205e9853a503d2fab0697f5a301f6c}{phase\_a}.\hyperlink{a00029_a8a9794fa4c6a69b457d1eb04b017ef1e}{POWER},      
+00441                 
+00442                data.\hyperlink{a00028_a48734adeb4d59d056b6e39c6e08fe21e}{phase\_b}.\hyperlink{a00029_a4f87f30b543e89e2e5dfa1b8f3f58eff}{IRMS},    
+00443                data.\hyperlink{a00028_a48734adeb4d59d056b6e39c6e08fe21e}{phase\_b}.\hyperlink{a00029_a08415029e214174a01bc6487ff98ee9b}{VRMS},    
+00444                data.\hyperlink{a00028_a48734adeb4d59d056b6e39c6e08fe21e}{phase\_b}.\hyperlink{a00029_a8dd6d8406db4e214238b3eff481e4ea0}{WH},            
+00445                data.\hyperlink{a00028_a48734adeb4d59d056b6e39c6e08fe21e}{phase\_b}.\hyperlink{a00029_a8a9794fa4c6a69b457d1eb04b017ef1e}{POWER},
+00446 
+00447                data.\hyperlink{a00028_ad8892f27909cf51f7603adfc00d224df}{phase\_c}.\hyperlink{a00029_a4f87f30b543e89e2e5dfa1b8f3f58eff}{IRMS},    
+00448                data.\hyperlink{a00028_ad8892f27909cf51f7603adfc00d224df}{phase\_c}.\hyperlink{a00029_a08415029e214174a01bc6487ff98ee9b}{VRMS},    
+00449                data.\hyperlink{a00028_ad8892f27909cf51f7603adfc00d224df}{phase\_c}.\hyperlink{a00029_a8dd6d8406db4e214238b3eff481e4ea0}{WH},            
+00450                data.\hyperlink{a00028_ad8892f27909cf51f7603adfc00d224df}{phase\_c}.\hyperlink{a00029_a8a9794fa4c6a69b457d1eb04b017ef1e}{POWER},                  
+00451                \hyperlink{a00040_af87bc226c5bc1e648d8ceac69ccf2bcb}{DUMMY\_MSG},
+00452                \hyperlink{a00040_af87bc226c5bc1e648d8ceac69ccf2bcb}{DUMMY\_MSG},       
+00453                \hyperlink{a00040_af87bc226c5bc1e648d8ceac69ccf2bcb}{DUMMY\_MSG},      
+00454                \hyperlink{a00040_af87bc226c5bc1e648d8ceac69ccf2bcb}{DUMMY\_MSG},
+00455                \hyperlink{a00040_af87bc226c5bc1e648d8ceac69ccf2bcb}{DUMMY\_MSG},             
+00456                \hyperlink{a00040_af87bc226c5bc1e648d8ceac69ccf2bcb}{DUMMY\_MSG}               
+00457   ); 
+00458  
+00459   
+00460   fclose(f); 
+00461   \textcolor{keywordflow}{return} 0; 
+00462 \} 
+00464 
+00480 
+00481 
+\hypertarget{a00034_source_l00482}{}\hyperlink{a00002_gac93e16d1e9d6a04b52373bf3428cc79c}{00482} int16\_t \hyperlink{a00002_gac93e16d1e9d6a04b52373bf3428cc79c}{config\_recheck}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} * config\_file, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * format, ...)
+00483 \{
+00484     
+00485    int16\_t result;
+00486    int16\_t ii,cc;
+00487    FILE *f =fopen(config\_file,\textcolor{stringliteral}{"r"});
+00488    \textcolor{keywordflow}{if} (f == NULL) \textcolor{keywordflow}{return} -1; 
+00489    
+00490   \textcolor{keywordtype}{char} cmd\_line[100];
+00491   va\_list args;
+00492   va\_start (args, format);
+00493    
+00494   \textcolor{keywordflow}{if}(fgets(cmd\_line,100,f)!=NULL)\{
+00495       \textcolor{keywordflow}{for}(ii=0,cc=0;*(cmd\_line+ii)!=\textcolor{charliteral}{'\(\backslash\)0'};ii++)
+00496         \textcolor{keywordflow}{if}(*(cmd\_line+ii)==\textcolor{charliteral}{';'})\{*(cmd\_line+ii)= \textcolor{charliteral}{' '}; ++cc;\}
+00497     
+00498     result=vsscanf (cmd\_line, format, args);
+00499     result = (result == cc)?0:-1;
+00500   \}
+00501   
+00502   va\_end (args);
+00503   fclose(f); 
+00504   \textcolor{keywordflow}{return} result;
+00505 \}
+00508 
+00509 
+00510 
+00511 
+00512 
+00513 
+00514 
+\end{DoxyCode}

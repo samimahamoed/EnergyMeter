@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['peakcyc',['PEAKCYC',['../de/d8c/a00036.html#aab38f75e935804d90a60ddee3bb96962',1,'ade7880_registers.h']]],
+  ['phase_5fa',['PHASE_A',['../d6/d42/a00043.html#ad214039f52b011ce2bd6c85ff98a981b',1,'srv_cmd_handler.h']]],
+  ['phase_5factive_5fpower',['PHASE_ACTIVE_POWER',['../d6/d42/a00043.html#abd3f95c7cd63d0627552d293bf49e026',1,'srv_cmd_handler.h']]],
+  ['phase_5factive_5fwh',['PHASE_ACTIVE_WH',['../d6/d42/a00043.html#a4ee773ad07fa969b9990f9bb3a1a2093',1,'srv_cmd_handler.h']]],
+  ['phase_5fb',['PHASE_B',['../d6/d42/a00043.html#ad7b96feed1e1c12515dad5e926b2c62e',1,'srv_cmd_handler.h']]],
+  ['phase_5fc',['PHASE_C',['../d6/d42/a00043.html#a3ceb83fb10c2af19b468d508448f24e2',1,'srv_cmd_handler.h']]],
+  ['phase_5firms',['PHASE_IRMS',['../d6/d42/a00043.html#a15c9ccf287820001431c33c4bb25a23b',1,'srv_cmd_handler.h']]],
+  ['phase_5fvrms',['PHASE_VRMS',['../d6/d42/a00043.html#af0c09c5a455410e6fbd35fd55221338f',1,'srv_cmd_handler.h']]],
+  ['phnoload',['PHNOLOAD',['../de/d8c/a00036.html#a603a075882edcbaa63c480c44f436947',1,'ade7880_registers.h']]],
+  ['phsign',['PHSIGN',['../de/d8c/a00036.html#a0d8bb1933bd9e9967444329b9f43d89c',1,'ade7880_registers.h']]],
+  ['phstatus',['PHSTATUS',['../de/d8c/a00036.html#a3f530aec5cb9754e76ffadfa165ca107',1,'ade7880_registers.h']]],
+  ['pin_5firq0',['PIN_IRQ0',['../d3/de7/a00039.html#a99ed780c4dd8d2e01c5ff66064306abf',1,'rpi_hwio.h']]],
+  ['pin_5firq1',['PIN_IRQ1',['../d3/de7/a00039.html#a14204df3192ece77fc1b651c6625bc30',1,'rpi_hwio.h']]],
+  ['pin_5fpm0',['PIN_PM0',['../d3/de7/a00039.html#aef7884a448449013ba1f8b46b8df5c05',1,'rpi_hwio.h']]],
+  ['pin_5fpm1',['PIN_PM1',['../d3/de7/a00039.html#a93e6f13f663a3ca8bcf6efe2022c9b78',1,'rpi_hwio.h']]],
+  ['pin_5fss',['PIN_SS',['../d3/de7/a00039.html#ab4b553591a495409d4f7cec4b6c3e754',1,'rpi_hwio.h']]],
+  ['pin_5fss2',['PIN_SS2',['../d3/de7/a00039.html#a8aa8d44cb9d876a244263493e0a2a7c5',1,'rpi_hwio.h']]],
+  ['power_5fmode',['POWER_MODE',['../d6/d42/a00043.html#a4e7bf0c205872c6db180b06792a62118',1,'srv_cmd_handler.h']]],
+  ['psm0',['PSM0',['../d1/dc6/a00037.html#ad03c0079a6239f78368cb14cc4578101',1,'includes.h']]],
+  ['psm1',['PSM1',['../d1/dc6/a00037.html#aecb578b36faffafc55d7e5bfbe26df6a',1,'includes.h']]],
+  ['psm2',['PSM2',['../d1/dc6/a00037.html#a954ec88a13030fa5878310aa79f92b59',1,'includes.h']]],
+  ['psm3',['PSM3',['../d1/dc6/a00037.html#aaaecd8504625316f84bd76accbcc42f0',1,'includes.h']]]
+];

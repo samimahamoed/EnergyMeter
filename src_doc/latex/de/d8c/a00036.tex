@@ -1,0 +1,2090 @@
+\hypertarget{a00036}{\section{ade7880\-\_\-registers.\-h File Reference}
+\label{de/d8c/a00036}\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}}
+}
+
+
+{\itshape File\-:} srv\-\_\-ade7880\-\_\-registers.\-h \par
+  
+
+
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dea/a00046}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+union \hyperlink{a00025}{gain\-\_\-reg\-\_\-u}
+\item 
+union \hyperlink{a00024}{config\-\_\-reg\-\_\-u}
+\item 
+union \hyperlink{a00022}{config2\-\_\-reg\-\_\-u}
+\item 
+union \hyperlink{a00010}{accmode\-\_\-reg\-\_\-u}
+\item 
+union \hyperlink{a00031}{phsign\-\_\-reg\-\_\-u}
+\item 
+union \hyperlink{a00023}{config3\-\_\-reg\-\_\-u}
+\item 
+union \hyperlink{a00026}{lcycmode\-\_\-reg\-\_\-u}
+\item 
+union \hyperlink{a00032}{status0\-\_\-reg\-\_\-u}
+\item 
+union \hyperlink{a00021}{compmode\-\_\-reg\-\_\-u}
+\item 
+union \hyperlink{a00033}{status1\-\_\-reg\-\_\-u}
+\item 
+union \hyperlink{a00027}{mask0\-\_\-reg\-\_\-u}
+\item 
+union \hyperlink{a00028}{mask1\-\_\-reg\-\_\-u}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00036_a3c686a06cc9d837e73b259bcc054217e}{G\-A\-I\-N\-\_\-1}~0b000
+\begin{DoxyCompactList}\small\item\em see the datasheet about this const A\-D\-E7880 \href{http://www.analog.com/static/imported-files/data_sheets/ADE7880.pdf}{\tt http\-://www.\-analog.\-com/static/imported-\/files/data\-\_\-sheets/\-A\-D\-E7880.\-pdf} . \end{DoxyCompactList}\item 
+\#define \hyperlink{a00036_a7ce9d36acd86736019606c4d928b7aad}{G\-A\-I\-N\-\_\-2}~0b001
+\item 
+\#define \hyperlink{a00036_a8720f417f5b56154123f813b2a011c46}{G\-A\-I\-N\-\_\-4}~0b010
+\item 
+\#define \hyperlink{a00036_a9b90b27f7ed8ebac69dd8b82df741872}{G\-A\-I\-N\-\_\-8}~0b011
+\item 
+\#define \hyperlink{a00036_a849e708719d768ea90ada6f58eea52a8}{G\-A\-I\-N\-\_\-16}~0b100
+\item 
+\#define \hyperlink{a00036_ab25bd124940aca39914f363b92cabb95}{M\-O\-D\-E\-\_\-0\-\_\-0}~0b00
+\item 
+\#define \hyperlink{a00036_aa4b4d2ec825ed4a85181717901110ff7}{M\-O\-D\-E\-\_\-0\-\_\-1}~0b01
+\item 
+\#define \hyperlink{a00036_a2f363ec07f38ba94cc1d74172233d801}{M\-O\-D\-E\-\_\-1\-\_\-0}~0b10
+\item 
+\#define \hyperlink{a00036_abfccf6bbc27bb259fc6233bc9ee591e2}{M\-O\-D\-E\-\_\-1\-\_\-1}~0b11
+\item 
+\#define \hyperlink{a00036_aa2594962ecec33d43f5b8dea993068ca}{D\-U\-M\-M\-I\-Y}~0x\-E\-B\-F\-F
+\item 
+\#define \hyperlink{a00036_a9886586c91a412164c69eb0270d2875e}{C\-H\-E\-C\-K\-S\-U\-M}~0x\-E51\-F
+\item 
+\#define \hyperlink{a00036_a54a78cc890aa0300e82a9de239ebc5a5}{W\-T\-H\-R\-\_\-\-D\-E\-F\-U\-L\-T}~0x03
+\begin{DoxyCompactList}\small\item\em Threshold registers. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00036_a105c1723ae41d790579de1a93641abea}{V\-A\-R\-T\-H\-R\-\_\-\-D\-E\-F\-U\-L\-T}~0x03
+\begin{DoxyCompactList}\small\item\em Threshold used in phase total /fundamental reactive power data path. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00036_a3ca4a19859a50d3b85939e9b0c145637}{V\-A\-T\-H\-R\-\_\-\-D\-E\-F\-U\-L\-T}~0x03
+\begin{DoxyCompactList}\small\item\em Threshold used in phase apparent power data path. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00036_a489507ec5a9fe148bbc1b61afc07f27a}{V\-L\-E\-V\-E\-L\-\_\-\-D\-E\-F\-U\-L\-T}~0x38000
+\begin{DoxyCompactList}\small\item\em use Equation 26, Equation 37, Equation 44, Equation 22, and Equation 42 in the datasheet to determine this values \end{DoxyCompactList}\item 
+\#define \hyperlink{a00036_a60f6494fba59e1f242240d12202f4746}{W\-T\-H\-R}~0x\-E\-A02
+\begin{DoxyCompactList}\small\item\em Physical Address. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00036_a37f9d81c6baec7ee49887b6f19ac1996}{V\-A\-R\-T\-H\-R}~0x\-E\-A03
+\item 
+\#define \hyperlink{a00036_af97b8b6a3a2c63818edbc7f6cdceae23}{V\-A\-T\-H\-R}~0x\-E\-A04
+\item 
+\#define \hyperlink{a00036_a601225f0680bfe13cf5fc0c2c52f37c5}{V\-L\-E\-V\-E\-L}~0x439\-F
+\item 
+\#define \hyperlink{a00036_ac23cb2354e07d7403fca849805a8e278}{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A8}~0x\-E7\-F\-D
+\item 
+\#define \hyperlink{a00036_afcefca411effe86930341732382fb5e5}{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A16}~0x\-E9\-F\-F
+\item 
+\#define \hyperlink{a00036_a0d09934e23666ce21357121f281f2f2a}{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A32}~0x\-E5\-F\-F
+\item 
+\#define \hyperlink{a00036_a35f69a612b07bbf1de53bbbd8d877c09}{R\-U\-N}~0x\-E228
+\begin{DoxyCompactList}\small\item\em D\-S\-P run control register. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00036_a8c8f27b35dfa40ccf31c1ee31479a31c}{G\-A\-I\-N}~0x\-E60\-F
+\item 
+\#define \hyperlink{a00036_a76ea3cf49247a07c54b3db005a3c7f57}{C\-O\-N\-F\-I\-G}~0x\-E618
+\begin{DoxyCompactList}\small\item\em A\-D\-E7880 P\-H\-S\-I\-G\-N Register Physical address and structure. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00036_a9989dac1034e36497f2f4f81613cab88}{C\-O\-N\-F\-I\-G2}~0x\-E\-C01
+\begin{DoxyCompactList}\small\item\em A\-D\-E7880 C\-O\-N\-F\-I\-G2 Register Physical address and structure. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00036_a4d776321852a1cf7238c55e708e07459}{A\-C\-C\-M\-O\-D\-E}~0x\-E701
+\item 
+\#define \hyperlink{a00036_a0d8bb1933bd9e9967444329b9f43d89c}{P\-H\-S\-I\-G\-N}~0x\-E617
+\begin{DoxyCompactList}\small\item\em A\-D\-E7880 P\-H\-S\-I\-G\-N Register Physical address and structure. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00036_a8d128687074c874210b0c9dada3d8ca7}{C\-O\-N\-F\-I\-G3}~0x\-E\-A00
+\begin{DoxyCompactList}\small\item\em A\-D\-E7880 C\-O\-N\-F\-I\-G3 Register Physical address and structure. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00036_a6d4592c2f28292b11885fa8ec3ed0941}{C\-O\-N\-F\-I\-G3\-\_\-\-D\-E\-F\-U\-L\-T}~0x01
+\item 
+\#define \hyperlink{a00036_ad9e1efd6f7feec870444af831015a682}{L\-C\-Y\-C\-M\-O\-D\-E}~0x\-E702
+\begin{DoxyCompactList}\small\item\em A\-D\-E7880 L\-C\-Y\-C\-M\-O\-D\-E Register Physical address and structure. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00036_aaf584f70289e5fd799fef97c85bb97ee}{S\-T\-A\-T\-U\-S0}~0x\-E502
+\item 
+\#define \hyperlink{a00036_a31c8d51fdc4d8181e8a66b9d4be2dd8c}{C\-O\-M\-P\-M\-O\-D\-E}~0x\-E60\-E
+\item 
+\#define \hyperlink{a00036_aa6aa3353326411951938073499579582}{S\-T\-A\-T\-U\-S1}~0x\-E503
+\item 
+\#define \hyperlink{a00036_ac1d7c440cf3cf403bbc1879f86bba211}{M\-A\-S\-K0}~0x\-E50\-A
+\item 
+\#define \hyperlink{a00036_a84bd6e5737d6e76532842829faeb2b07}{M\-A\-S\-K1}~0x\-E50\-B
+\item 
+\#define \hyperlink{a00036_adab6c053c389db762442c88b7e32e543}{L\-A\-S\-T\-\_\-\-A\-D\-D}~0x\-E9\-F\-E
+\begin{DoxyCompactList}\small\item\em Registers. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00036_aed1301248abf6c26045727a190f6550a}{L\-A\-S\-T\-\_\-\-O\-P}~0x\-E\-A01
+\item 
+\#define \hyperlink{a00036_aaa92568580634eb4d7142a90ffc296ad}{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A\-\_\-8bit}~0x\-E7\-F\-D
+\item 
+\#define \hyperlink{a00036_a99f0c5464504ec1c928ef08f8089436b}{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A\-\_\-16bit}~0x\-E9\-F\-F
+\item 
+\#define \hyperlink{a00036_a1a1766ab426d88553f65298497d636fc}{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A\-\_\-24bit}~0x\-E5\-F\-F
+\item 
+\#define \hyperlink{a00036_ae7cdec48ca69414825f989d1e54ac75e}{A\-V\-A}~0x\-E519
+\begin{DoxyCompactList}\small\item\em Energy Registers. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00036_a19e30da5f33e53c72352f8d8bf7f820a}{B\-V\-A}~0x\-E51\-A
+\item 
+\#define \hyperlink{a00036_ac1b321e92c8fb61be50f9cc733df7aaf}{C\-V\-A}~0x\-E51\-B
+\item 
+\#define \hyperlink{a00036_a8a19559f0146d0aa49b05556cde296e4}{A\-I\-G\-A\-I\-N}~0x4380
+\item 
+\#define \hyperlink{a00036_a71e3b41bc58cad314fbc2d9739265921}{A\-V\-G\-A\-I\-N}~0x4381
+\item 
+\#define \hyperlink{a00036_aa4b9cf5a0254b722e1d78f7b6fb357b9}{B\-I\-G\-A\-I\-N}~0x4382
+\item 
+\#define \hyperlink{a00036_a9a9d28eb690ced7dfa1e126448b167e3}{B\-V\-G\-A\-I\-N}~0x4383
+\item 
+\#define \hyperlink{a00036_aba22a31e9d3b49ddd019cf6b3e819251}{C\-I\-G\-A\-I\-N}~0x4384
+\item 
+\#define \hyperlink{a00036_a0920d5a91a9a5a8339d894c00cfecec7}{C\-V\-G\-A\-I\-N}~0x4385
+\item 
+\#define \hyperlink{a00036_af07e2afa008b4d5feb6f637e13865b77}{N\-I\-G\-A\-I\-N}~0x4386
+\item 
+\#define \hyperlink{a00036_a368be558deaf920bc0805191b5fc737e}{D\-I\-C\-O\-E\-F\-F}~0x4388
+\item 
+\#define \hyperlink{a00036_aec3a4133dfcfd773f10ad6d693e593f6}{A\-P\-G\-A\-I\-N}~0x4389
+\item 
+\#define \hyperlink{a00036_a473d84b2550fdf5e0c68a8f27e1a3c53}{A\-W\-A\-T\-T\-O\-S}~0x438\-A
+\item 
+\#define \hyperlink{a00036_a5d52d416295c400f6eb84bdbcc834560}{B\-P\-G\-A\-I\-N}~0x438\-B
+\item 
+\#define \hyperlink{a00036_a9c20ee65c3ba9c0fc123fc2a262d02e7}{B\-W\-A\-T\-T\-O\-S}~0x438\-C
+\item 
+\#define \hyperlink{a00036_aa3cfe8257b2ce2609bc10431cf461e2c}{C\-P\-G\-A\-I\-N}~0x438\-D
+\item 
+\#define \hyperlink{a00036_adefc91120b39bde4d31d7f685c834d1c}{C\-W\-A\-T\-T\-O\-S}~0x438\-E
+\item 
+\#define \hyperlink{a00036_a41b8ebb861316f604138d43b9e9fd306}{A\-I\-R\-M\-S\-O\-S}~0x438\-F
+\item 
+\#define \hyperlink{a00036_ac77c2a7c4fa3473fb51e9f62a9df39e1}{A\-V\-R\-M\-S\-O\-S}~0x4390
+\item 
+\#define \hyperlink{a00036_a12ec7e610dfabea2ef50a9078a6f48eb}{B\-I\-R\-M\-S\-O\-S}~0x4391
+\item 
+\#define \hyperlink{a00036_a82b0238744da6064813d1974735bc64c}{B\-V\-R\-M\-S\-O\-S}~0x4392
+\item 
+\#define \hyperlink{a00036_aff79e00cb47bdd946aaf31c86bfb337c}{C\-I\-R\-M\-S\-O\-S}~0x4393
+\item 
+\#define \hyperlink{a00036_a6e1bda3d471c0ed3ef337b2f5f1ee9d5}{C\-V\-R\-M\-S\-O\-S}~0x4394
+\item 
+\#define \hyperlink{a00036_a044389a99da8b8ab9f1e67b05ba0c5ef}{N\-I\-R\-M\-S\-O\-S}~0x4395
+\item 
+\#define \hyperlink{a00036_a8ccbfb7b68b73c3cc9aef1886209df0f}{H\-P\-G\-A\-I\-N}~0x4398
+\item 
+\#define \hyperlink{a00036_a0215d6d8187642f8789c19422210c3eb}{I\-S\-U\-M\-L\-V\-L}~0x4399
+\item 
+\#define \hyperlink{a00036_a2037a4c64099cc2241d21cb82d8a3c89}{A\-F\-W\-A\-T\-T\-O\-S}~0x43\-A2
+\item 
+\#define \hyperlink{a00036_a218375e9d021ab6585ad6e1e4a30a36c}{B\-F\-W\-A\-T\-T\-O\-S}~0x43\-A3
+\item 
+\#define \hyperlink{a00036_a2e17341650906e832aa4b3e73423d3ee}{C\-F\-W\-A\-T\-T\-O\-S}~0x43\-A4
+\item 
+\#define \hyperlink{a00036_a73d6e254c31686af8ffba2b502b6ed0a}{A\-F\-V\-A\-R\-O\-S}~0x43\-A5
+\item 
+\#define \hyperlink{a00036_a1d3e2d035570dc37f6eacc4a9b736686}{B\-F\-V\-A\-R\-O\-S}~0x43\-A6
+\item 
+\#define \hyperlink{a00036_a130c34acd70f4dcf342291a77864e59d}{C\-F\-V\-A\-R\-O\-S}~0x43\-A7
+\item 
+\#define \hyperlink{a00036_a1b7700161e7c26f6642ab08eaf8ecaf3}{A\-F\-I\-R\-M\-S\-O\-S}~0x43\-A8
+\item 
+\#define \hyperlink{a00036_a44d186698763ef80f9ab2049a025c5db}{B\-F\-I\-R\-M\-S\-O\-S}~0x43\-A9
+\item 
+\#define \hyperlink{a00036_a8212d81bb40259e1b8af1cee1280ae2d}{C\-F\-I\-R\-M\-S\-O\-S}~0x43\-A\-A
+\item 
+\#define \hyperlink{a00036_a59402ecb8de151eeafcf2f50920c5565}{A\-F\-V\-R\-M\-S\-O\-S}~0x43\-A\-B
+\item 
+\#define \hyperlink{a00036_a73bf4eb0eff30f6b614b90f993b8b1a9}{B\-F\-V\-R\-M\-S\-O\-S}~0x43\-A\-C
+\item 
+\#define \hyperlink{a00036_a0fff4fa26b5131f743f5e67766c126ba}{C\-F\-V\-R\-M\-S\-O\-S}~0x43\-A\-D
+\item 
+\#define \hyperlink{a00036_a648ebd2ef4dfa6ffc1aac4bf47ddf991}{H\-X\-W\-A\-T\-T\-O\-S}~0x43\-A\-E
+\item 
+\#define \hyperlink{a00036_af780a31635408814bba50784eeb1f462}{H\-Y\-W\-A\-T\-T\-O\-S}~0x43\-A\-F
+\item 
+\#define \hyperlink{a00036_a1a18f83dbc089696501ce563808b95e3}{H\-Z\-W\-A\-T\-T\-O\-S}~0x43\-B0
+\item 
+\#define \hyperlink{a00036_a9ab1152e35c6f57bd448b69dd504871c}{H\-X\-V\-A\-R\-O\-S}~0x43\-B1
+\item 
+\#define \hyperlink{a00036_ad951210faadd462b49a760597c96ddcf}{H\-Y\-V\-A\-R\-O\-S}~0x43\-B2
+\item 
+\#define \hyperlink{a00036_a4769834a92cbd1fe75e81ad8082bf8c2}{H\-Z\-V\-A\-R\-O\-S}~0x43\-B3
+\item 
+\#define \hyperlink{a00036_a0393132c56cc12af538a79b7ad01f4f3}{H\-X\-I\-R\-M\-S\-O\-S}~0x43\-B4
+\item 
+\#define \hyperlink{a00036_aac521643712ebedb26c099dd281c7d73}{H\-Y\-I\-R\-M\-S\-O\-S}~0x43\-B5
+\item 
+\#define \hyperlink{a00036_a1deadee161ae214be5ccc72f76eade2d}{H\-Z\-I\-R\-M\-S\-O\-S}~0x43\-B6
+\item 
+\#define \hyperlink{a00036_a88614989eb05e4e7fb74c61d77e33abf}{H\-X\-V\-R\-M\-S\-O\-S}~0x43\-B7
+\item 
+\#define \hyperlink{a00036_a0c59a0da73c75a4cd6ef298a5e866763}{H\-Y\-V\-R\-M\-S\-O\-S}~0x43\-B8
+\item 
+\#define \hyperlink{a00036_afc76ca3b28d691349fc61030311acc53}{H\-Z\-V\-R\-M\-S\-O\-S}~0x43\-B9
+\item 
+\#define \hyperlink{a00036_afae37e821d8947e31a63759e4bb57355}{A\-I\-R\-M\-S}~0x43\-C0
+\item 
+\#define \hyperlink{a00036_ae4c7fedd5702010e6907a686a35c1fa8}{A\-V\-R\-M\-S}~0x43\-C1
+\item 
+\#define \hyperlink{a00036_ae1cff66a3f5c466b4344a5c2781224df}{B\-I\-R\-M\-S}~0x43\-C2
+\item 
+\#define \hyperlink{a00036_a09f7027a92ccae6bb9b5738d5bc185f3}{B\-V\-R\-M\-S}~0x43\-C3
+\item 
+\#define \hyperlink{a00036_a3ccd0ef2a55b24f358292694724d37a3}{C\-I\-R\-M\-S}~0x43\-C4
+\item 
+\#define \hyperlink{a00036_a61e9291ce0829a45cee1ee9a5f3ea4f7}{C\-V\-R\-M\-S}~0x43\-C5
+\item 
+\#define \hyperlink{a00036_a38f6f388b7b5c65b2d453384a25f6773}{N\-I\-R\-M\-S}~0x43\-C6
+\item 
+\#define \hyperlink{a00036_ac84c4287f80dc29bdec129d9058180a8}{I\-S\-U\-M}~0x43\-C7
+\item 
+\#define \hyperlink{a00036_ae66c97ed86f47fd938f143a30a8b2f7e}{A\-W\-A\-T\-T\-H\-R}~0x\-E400
+\item 
+\#define \hyperlink{a00036_a185c6910fa47f7e973f0f8743ef0e8ad}{B\-W\-A\-T\-T\-H\-R}~0x\-E401
+\item 
+\#define \hyperlink{a00036_ad685baf76950c0387bedffa9bb3272a9}{C\-W\-A\-T\-T\-H\-R}~0x\-E402
+\item 
+\#define \hyperlink{a00036_a1d6ab78cdf0064670a1c70be56d5938c}{A\-F\-W\-A\-T\-T\-H\-R}~0x\-E403
+\item 
+\#define \hyperlink{a00036_a0d1650b78efb7f2dfd865537e925990a}{B\-F\-W\-A\-T\-T\-H\-R}~0x\-E404
+\item 
+\#define \hyperlink{a00036_a5289da5a579be5a0f44dfd8863ca67e8}{C\-F\-W\-A\-T\-T\-H\-R}~0x\-E405
+\item 
+\#define \hyperlink{a00036_a6689e366df3767252eee7ab18532dcee}{A\-F\-V\-A\-R\-H\-R}~0x\-E409
+\item 
+\#define \hyperlink{a00036_a5de5028fa73ea84e5ee0c14945334a7a}{B\-F\-V\-A\-R\-H\-R}~0x\-E40\-A
+\item 
+\#define \hyperlink{a00036_ab8f3a80e1dce52d884b5a075014b9b8e}{C\-F\-V\-A\-R\-H\-R}~0x\-E40\-B
+\item 
+\#define \hyperlink{a00036_abf7b2fd4affddefe36eeb6297578aae7}{A\-V\-A\-H\-R}~0x\-E40\-C
+\item 
+\#define \hyperlink{a00036_a8b6c08ac39feb0337565bccaca6ecdbb}{B\-V\-A\-H\-R}~0x\-E40\-D
+\item 
+\#define \hyperlink{a00036_aa1b4960c4d08f67d76caa27f6dc7414f}{C\-V\-A\-H\-R}~0x\-E40\-E
+\item 
+\#define \hyperlink{a00036_a5ddcbc71d03e9945b4f454d59bb76140}{I\-P\-E\-A\-K}~0x\-E500
+\item 
+\#define \hyperlink{a00036_a90d5d59f51c3ee67d2578e9f1799b5ea}{V\-P\-E\-A\-K}~0x\-E501
+\item 
+\#define \hyperlink{a00036_a1216d73466d1d804f373b8cc7aa77bd7}{A\-I\-M\-A\-V}~0x\-E504
+\item 
+\#define \hyperlink{a00036_a5f9cd7017c3ef1233944970c850aaa00}{B\-I\-M\-A\-V}~0x\-E505
+\item 
+\#define \hyperlink{a00036_a279075dbebc70897157abb9cf29f488b}{C\-I\-M\-A\-V}~0x\-E506
+\item 
+\#define \hyperlink{a00036_a16c43f1bda572d5a810da2af81dfd3ff}{O\-I\-L\-V\-L}~0x\-E507
+\item 
+\#define \hyperlink{a00036_acceeea16d6256d808598f6191aae5601}{O\-V\-L\-V\-L}~0x\-E508
+\item 
+\#define \hyperlink{a00036_a12b4dc829ba25d75338dc85882a8b47d}{S\-A\-G\-L\-V\-L}~0x\-E509
+\item 
+\#define \hyperlink{a00036_a525259e0ba4c1cfa00935ee908bd8925}{I\-A\-W\-V}~0x\-E50\-C
+\item 
+\#define \hyperlink{a00036_af68641d9d0f3ee5d4ab9b220ecac7e08}{I\-B\-W\-V}~0x\-E50\-D
+\item 
+\#define \hyperlink{a00036_aada6da221fdbd1a9756b11959e2dd13f}{I\-C\-W\-V}~0x\-E50\-E
+\item 
+\#define \hyperlink{a00036_a55555ccc816198768fe973de5ca2b185}{I\-N\-W\-V}~0x\-E50\-F
+\item 
+\#define \hyperlink{a00036_acfb04c2e25dcd5d27eac1dbe952b076c}{V\-A\-W\-V}~0x\-E510
+\item 
+\#define \hyperlink{a00036_aede3d3efd022c6b37c33919e398feedc}{V\-B\-W\-V}~0x\-E511
+\item 
+\#define \hyperlink{a00036_aba35b37f2923547e4ef6ef81ef23c179}{V\-C\-W\-V}~0x\-E512
+\item 
+\#define \hyperlink{a00036_a70d4c8c1577490f1b69cfab591458142}{A\-W\-A\-T\-T}~0x\-E513
+\item 
+\#define \hyperlink{a00036_a3a60995ae993fd06892df7023a9f496c}{B\-W\-A\-T\-T}~0x\-E514
+\item 
+\#define \hyperlink{a00036_aeb58aae2f3e0c16a12cf4b6b03d6c5d9}{C\-W\-A\-T\-T}~0x\-E515
+\item 
+\#define \hyperlink{a00036_af0dabbc7f7119acf7bc4b359430b9087}{A\-F\-V\-A\-R}~0x\-E516
+\item 
+\#define \hyperlink{a00036_a2172be4f07d67f1ffea0218f5425b1ad}{B\-F\-V\-A\-R}~0x\-E517
+\item 
+\#define \hyperlink{a00036_a8edc01effbd3c82649af3c8ad858f1e8}{C\-F\-V\-A\-R}~0x\-E518
+\item 
+\#define \hyperlink{a00036_a7f5107f4dbb40b5aa9f3e6de81d5b1e9}{V\-N\-O\-M}~0x\-E520
+\item 
+\#define \hyperlink{a00036_a3f530aec5cb9754e76ffadfa165ca107}{P\-H\-S\-T\-A\-T\-U\-S}~0x\-E600
+\item 
+\#define \hyperlink{a00036_a641f685f54defa54499b05d06ac2c3ef}{A\-N\-G\-L\-E0}~0x\-E601
+\item 
+\#define \hyperlink{a00036_a9b16c8daa98acc491d5f11fe4dd0a3f0}{A\-N\-G\-L\-E1}~0x\-E602
+\item 
+\#define \hyperlink{a00036_a7b4d4bc753e350f0a9111d8ae37cf6cc}{A\-N\-G\-L\-E2}~0x\-E603
+\item 
+\#define \hyperlink{a00036_a603a075882edcbaa63c480c44f436947}{P\-H\-N\-O\-L\-O\-A\-D}~0x\-E608
+\item 
+\#define \hyperlink{a00036_a9d2caa865052cffb4b8850e55ee18c8d}{L\-I\-N\-E\-C\-Y\-C}~0x\-E60\-C
+\item 
+\#define \hyperlink{a00036_a29659e274070aaec5da2ad7752f60a51}{Z\-X\-T\-O\-U\-T}~0x\-E60\-D
+\item 
+\#define \hyperlink{a00036_ad45c59a4f01f3e4f96f2c481077b6912}{C\-F\-M\-O\-D\-E}~0x\-E610
+\item 
+\#define \hyperlink{a00036_ab5d23f853f029333e3b4e734325c810b}{C\-F1\-D\-E\-N}~0x\-E611
+\item 
+\#define \hyperlink{a00036_ae1659576b77ff128469caf7fa1cc62ff}{C\-F2\-D\-E\-N}~0x\-E612
+\item 
+\#define \hyperlink{a00036_a6a852ae480e66cc3de3504e2e5dda070}{C\-F3\-D\-E\-N}~0x\-E613
+\item 
+\#define \hyperlink{a00036_af7bcab75b737ab6d6d02cea33593a062}{A\-P\-H\-C\-A\-L}~0x\-E614
+\item 
+\#define \hyperlink{a00036_a06542705c13e1acd769b69a990e95594}{B\-P\-H\-C\-A\-L}~0x\-E615
+\item 
+\#define \hyperlink{a00036_a5da995ba3336521304ed284d12177ca9}{C\-P\-H\-C\-A\-L}~0x\-E616
+\item 
+\#define \hyperlink{a00036_a0f139512fb7be680a27b2bbc3333efe8}{M\-M\-O\-D\-E}~0x\-E700
+\item 
+\#define \hyperlink{a00036_aab38f75e935804d90a60ddee3bb96962}{P\-E\-A\-K\-C\-Y\-C}~0x\-E703
+\item 
+\#define \hyperlink{a00036_aa315ec13f75dbeb156b2222f99cea0f0}{S\-A\-G\-C\-Y\-C}~0x\-E704
+\item 
+\#define \hyperlink{a00036_a60015970f15346193913f4b20e78ab83}{C\-F\-C\-Y\-C}~0x\-E705
+\item 
+\#define \hyperlink{a00036_a1ef9153bd21f7ed65a6471842212e435}{H\-S\-D\-C\-\_\-\-C\-F\-G}~0x\-E706
+\item 
+\#define \hyperlink{a00036_a00c9dad6cd91a4abb6062ea1efc82bd9}{Version}~0x\-E707
+\item 
+\#define \hyperlink{a00036_ae580fd9f9739589e08315bff869b16cf}{F\-V\-R\-M\-S}~0x\-E880
+\item 
+\#define \hyperlink{a00036_a58ba8cc4291577f8ba6c6fec4408242a}{F\-I\-R\-M\-S}~0x\-E881
+\item 
+\#define \hyperlink{a00036_a002eccf714bbac8b4e8953f4be2efef4}{F\-W\-A\-T\-T}~0x\-E882
+\item 
+\#define \hyperlink{a00036_a57335a9934a3428994476326141589ed}{F\-V\-A\-R}~0x\-E883
+\item 
+\#define \hyperlink{a00036_a2c02e499fcc895be334b284c7d928a0c}{F\-V\-A}~0x\-E884
+\item 
+\#define \hyperlink{a00036_a703b4f81abadf5e673e21656cedb1bdc}{F\-P\-F}~0x\-E885
+\item 
+\#define \hyperlink{a00036_af4bad23826b54772e2de561c5cff3fa6}{V\-T\-H\-D\-N}~0x\-E886
+\item 
+\#define \hyperlink{a00036_af451e4358c635504ffb96127fb87b003}{I\-T\-H\-D\-N}~0x\-E887
+\item 
+\#define \hyperlink{a00036_a0fc103a0748d8aa916c859108574913a}{H\-X\-V\-R\-M\-S}~0x\-E888
+\item 
+\#define \hyperlink{a00036_a46e6200d5a1ec07a23be9dfce8ac7f60}{H\-X\-I\-R\-M\-S}~0x\-E889
+\item 
+\#define \hyperlink{a00036_a41b00ce2b5d9729f5783c2bf4ad50b35}{H\-X\-W\-A\-T\-T}~0x\-E88\-A
+\item 
+\#define \hyperlink{a00036_ab41bd850709b7c4ffd94d5933e850df7}{H\-X\-V\-A\-R}~0x\-E88\-B
+\item 
+\#define \hyperlink{a00036_acfd250a61a5d7421cdbc541f94ce5ae4}{H\-X\-V\-A}~0x\-E88\-C
+\item 
+\#define \hyperlink{a00036_a3059705ef55e2b519c1872600621b9f8}{H\-X\-P\-F}~0x\-E88\-D
+\item 
+\#define \hyperlink{a00036_a7019352fa8966727d6306b8a2bf81829}{H\-X\-V\-H\-D}~0x\-E88\-E
+\item 
+\#define \hyperlink{a00036_ac22e2f229bd4f7de9a5c26f6fc824b92}{H\-X\-I\-H\-D}~0x\-E88\-F
+\item 
+\#define \hyperlink{a00036_afbd4e3b51312feb540b5675a44d6abf5}{H\-Y\-V\-R\-M\-S}~0x\-E890
+\item 
+\#define \hyperlink{a00036_a106c8c6a9eecb98d5120f148a5996b3b}{H\-Y\-I\-R\-M\-S}~0x\-E891
+\item 
+\#define \hyperlink{a00036_a34edc40ea8bcbfdb7d03fd94f225d184}{H\-Y\-W\-A\-T\-T}~0x\-E892
+\item 
+\#define \hyperlink{a00036_a847595b2ffa3361f8ae0d4613fbf7e37}{H\-Y\-V\-A\-R}~0x\-E893
+\item 
+\#define \hyperlink{a00036_a8a225ce68dcc59466a3b22d1b788f311}{H\-Y\-V\-A}~0x\-E894
+\item 
+\#define \hyperlink{a00036_a568414006677cee317dbecd162a95858}{H\-Y\-P\-F}~0x\-E895
+\item 
+\#define \hyperlink{a00036_a2f6ec1439fe130170ec30efb36850100}{H\-Y\-V\-H\-D}~0x\-E896
+\item 
+\#define \hyperlink{a00036_ab72d02266f5b5d71c904dad3a46d11f2}{H\-Y\-I\-H\-D}~0x\-E897
+\item 
+\#define \hyperlink{a00036_a128b260b91bf7bf1970f9e26c4866958}{H\-Z\-V\-R\-M\-S}~0x\-E898
+\item 
+\#define \hyperlink{a00036_a422744a9f0c3a47ad3818902a10a4f73}{H\-Z\-I\-R\-M\-S}~0x\-E899
+\item 
+\#define \hyperlink{a00036_a62b2bcc794747ca4c5755a58a2b48a60}{H\-Z\-W\-A\-T\-T}~0x\-E89\-A
+\item 
+\#define \hyperlink{a00036_acc4d6765ba1ad97bd9055403813255f0}{H\-Z\-V\-A\-R}~0x\-E89\-B
+\item 
+\#define \hyperlink{a00036_aa7c156f6b0fe00c1c83008c3469a006b}{H\-Z\-V\-A}~0x\-E89\-C
+\item 
+\#define \hyperlink{a00036_a79d893d611b3b5c28395f81a070844b5}{H\-Z\-P\-F}~0x\-E89\-D
+\item 
+\#define \hyperlink{a00036_a040a97dd095f5e8991d153c16e4ed4ff}{H\-Z\-V\-H\-D}~0x\-E89\-E
+\item 
+\#define \hyperlink{a00036_a56de93637570af225bf16eeb5dc75b53}{H\-Z\-I\-H\-D}~0x\-E89\-F
+\item 
+\#define \hyperlink{a00036_a785b8c7df7ac430278aa1e89c0db69d9}{H\-C\-O\-N\-F\-I\-G}~0x\-E900
+\item 
+\#define \hyperlink{a00036_a046922a73acdd40d28809894a32f66de}{A\-P\-F}~0x\-E902
+\item 
+\#define \hyperlink{a00036_ae7ae297d8b0013c4e3dc550dc3e840cc}{B\-P\-F}~0x\-E903
+\item 
+\#define \hyperlink{a00036_ac872290e70cb6bf2b018d9e6b441216b}{C\-P\-F}~0x\-E904
+\item 
+\#define \hyperlink{a00036_a6a1f5b0cbc6fa43b08b3e0837a848e5b}{A\-P\-E\-R\-I\-O\-D}~0x\-E905
+\item 
+\#define \hyperlink{a00036_a213e16d4dd273764e3812a8c55242f99}{B\-P\-E\-R\-I\-O\-D}~0x\-E906
+\item 
+\#define \hyperlink{a00036_ad089734d1b0b03f6256cd3004b6127ce}{C\-P\-E\-R\-I\-O\-D}~0x\-E907
+\item 
+\#define \hyperlink{a00036_af3cf7b8f5e0068d118ba353733b37057}{A\-P\-N\-O\-L\-O\-A\-D}~0x\-E908
+\item 
+\#define \hyperlink{a00036_add44e087f0f18c22c64adefc3cd8e7c6}{V\-A\-R\-N\-O\-L\-O\-A\-D}~0x\-E909
+\item 
+\#define \hyperlink{a00036_a1d6674e575747b429aa04d0ad94b7290}{V\-A\-N\-O\-L\-O\-A\-D}~0x\-E90\-A
+\item 
+\#define \hyperlink{a00036_a206f6fe198ba53389de628f12ac30886}{H\-X\-\_\-reg}~0x\-E\-A08
+\item 
+\#define \hyperlink{a00036_a9ede8f30bf9b21236bcc1d43fac0d18b}{H\-Y\-\_\-reg}~0x\-E\-A09
+\item 
+\#define \hyperlink{a00036_ac2c2eb2bf06da994f80b7c84a98fbbff}{H\-Z\-\_\-reg}~0x\-E\-A0\-A
+\item 
+\#define \hyperlink{a00036_a7ad463156ea585050f4f3516081208c8}{L\-P\-O\-I\-L\-V\-L}~0x\-E\-C00
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \hyperlink{a00036_ad9e71b7c5a4b7598dfea38b40734d96f}{pga\-\_\-et} \hyperlink{a00036_a07511a3a5ff578314792d6df1c7cc5e4}{pga\-\_\-et}
+\begin{DoxyCompactList}\small\item\em A\-D\-E7880 Gain Register Physical address and structure. \end{DoxyCompactList}\item 
+typedef union \hyperlink{a00010}{accmode\-\_\-reg\-\_\-u} \hyperlink{a00036_ac9ade8535a4f8c8b65b447e7aaac2700}{accmode\-\_\-reg\-\_\-u}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{a00036_ad9e71b7c5a4b7598dfea38b40734d96f}{pga\-\_\-et} \{ \\*
+\hyperlink{a00036_ad9e71b7c5a4b7598dfea38b40734d96faf1e9db7d59697c4bc5aaf0d676ca7082}{gain\-\_\-1} = G\-A\-I\-N\-\_\-1, 
+\hyperlink{a00036_ad9e71b7c5a4b7598dfea38b40734d96fa89a8362915be3315ce14b4d312cc057c}{gain\-\_\-2} = G\-A\-I\-N\-\_\-2, 
+\hyperlink{a00036_ad9e71b7c5a4b7598dfea38b40734d96fa123644a6f475acf380a483a7698909eb}{gain\-\_\-4} = G\-A\-I\-N\-\_\-4, 
+\hyperlink{a00036_ad9e71b7c5a4b7598dfea38b40734d96fa3d11d3d6aa9f04465f98def5062b3468}{gain\-\_\-8} = G\-A\-I\-N\-\_\-8, 
+\\*
+\hyperlink{a00036_ad9e71b7c5a4b7598dfea38b40734d96fabf8c0d5ad660e9a517072fa8d62baa10}{gain\-\_\-16} = G\-A\-I\-N\-\_\-16
+ \}
+\begin{DoxyCompactList}\small\item\em A\-D\-E7880 Gain Register Physical address and structure. \end{DoxyCompactList}\item 
+enum \hyperlink{a00036_a2f9fad1776ad62bb8d7627582ecf8fd5}{mode\-\_\-et} \{ \hyperlink{a00036_a2f9fad1776ad62bb8d7627582ecf8fd5a1dee68c44c7100156916a6f1924dfe1d}{mode\-\_\-0\-\_\-0} = M\-O\-D\-E\-\_\-0\-\_\-0, 
+\hyperlink{a00036_a2f9fad1776ad62bb8d7627582ecf8fd5a6902084e9f2215f3ad655232a365fa94}{mode\-\_\-0\-\_\-1} = M\-O\-D\-E\-\_\-0\-\_\-1, 
+\hyperlink{a00036_a2f9fad1776ad62bb8d7627582ecf8fd5a94d8576ca2db3e13b94dfaf4ff333c86}{mode\-\_\-1\-\_\-0} = M\-O\-D\-E\-\_\-1\-\_\-0, 
+\hyperlink{a00036_a2f9fad1776ad62bb8d7627582ecf8fd5ac640d7e945220b2b6b82511956da6e37}{mode\-\_\-1\-\_\-1} = M\-O\-D\-E\-\_\-1\-\_\-1
+ \}
+\begin{DoxyCompactList}\small\item\em A\-D\-E7880 Register Physical address and structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+{\itshape File\-:} srv\-\_\-ade7880\-\_\-registers.\-h \par
+ {\itshape Purpose\-:} \par
+ 
+
+Definition in file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{a00036_a4d776321852a1cf7238c55e708e07459}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-C\-C\-M\-O\-D\-E@{A\-C\-C\-M\-O\-D\-E}}
+\index{A\-C\-C\-M\-O\-D\-E@{A\-C\-C\-M\-O\-D\-E}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-C\-C\-M\-O\-D\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-C\-C\-M\-O\-D\-E~0x\-E701}}\label{de/d8c/a00036_a4d776321852a1cf7238c55e708e07459}
+
+
+Definition at line \hyperlink{a00036_source_l00133}{133} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a1b7700161e7c26f6642ab08eaf8ecaf3}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-F\-I\-R\-M\-S\-O\-S@{A\-F\-I\-R\-M\-S\-O\-S}}
+\index{A\-F\-I\-R\-M\-S\-O\-S@{A\-F\-I\-R\-M\-S\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-F\-I\-R\-M\-S\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-F\-I\-R\-M\-S\-O\-S~0x43\-A8}}\label{de/d8c/a00036_a1b7700161e7c26f6642ab08eaf8ecaf3}
+
+
+Definition at line \hyperlink{a00036_source_l00364}{364} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_af0dabbc7f7119acf7bc4b359430b9087}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-F\-V\-A\-R@{A\-F\-V\-A\-R}}
+\index{A\-F\-V\-A\-R@{A\-F\-V\-A\-R}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-F\-V\-A\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-F\-V\-A\-R~0x\-E516}}\label{de/d8c/a00036_af0dabbc7f7119acf7bc4b359430b9087}
+
+
+Definition at line \hyperlink{a00036_source_l00423}{423} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a6689e366df3767252eee7ab18532dcee}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-F\-V\-A\-R\-H\-R@{A\-F\-V\-A\-R\-H\-R}}
+\index{A\-F\-V\-A\-R\-H\-R@{A\-F\-V\-A\-R\-H\-R}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-F\-V\-A\-R\-H\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-F\-V\-A\-R\-H\-R~0x\-E409}}\label{de/d8c/a00036_a6689e366df3767252eee7ab18532dcee}
+
+
+Definition at line \hyperlink{a00036_source_l00397}{397} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a73d6e254c31686af8ffba2b502b6ed0a}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-F\-V\-A\-R\-O\-S@{A\-F\-V\-A\-R\-O\-S}}
+\index{A\-F\-V\-A\-R\-O\-S@{A\-F\-V\-A\-R\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-F\-V\-A\-R\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-F\-V\-A\-R\-O\-S~0x43\-A5}}\label{de/d8c/a00036_a73d6e254c31686af8ffba2b502b6ed0a}
+
+
+Definition at line \hyperlink{a00036_source_l00361}{361} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a59402ecb8de151eeafcf2f50920c5565}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-F\-V\-R\-M\-S\-O\-S@{A\-F\-V\-R\-M\-S\-O\-S}}
+\index{A\-F\-V\-R\-M\-S\-O\-S@{A\-F\-V\-R\-M\-S\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-F\-V\-R\-M\-S\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-F\-V\-R\-M\-S\-O\-S~0x43\-A\-B}}\label{de/d8c/a00036_a59402ecb8de151eeafcf2f50920c5565}
+
+
+Definition at line \hyperlink{a00036_source_l00367}{367} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a1d6ab78cdf0064670a1c70be56d5938c}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-F\-W\-A\-T\-T\-H\-R@{A\-F\-W\-A\-T\-T\-H\-R}}
+\index{A\-F\-W\-A\-T\-T\-H\-R@{A\-F\-W\-A\-T\-T\-H\-R}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-F\-W\-A\-T\-T\-H\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-F\-W\-A\-T\-T\-H\-R~0x\-E403}}\label{de/d8c/a00036_a1d6ab78cdf0064670a1c70be56d5938c}
+
+
+Definition at line \hyperlink{a00036_source_l00394}{394} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a2037a4c64099cc2241d21cb82d8a3c89}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-F\-W\-A\-T\-T\-O\-S@{A\-F\-W\-A\-T\-T\-O\-S}}
+\index{A\-F\-W\-A\-T\-T\-O\-S@{A\-F\-W\-A\-T\-T\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-F\-W\-A\-T\-T\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-F\-W\-A\-T\-T\-O\-S~0x43\-A2}}\label{de/d8c/a00036_a2037a4c64099cc2241d21cb82d8a3c89}
+
+
+Definition at line \hyperlink{a00036_source_l00358}{358} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a8a19559f0146d0aa49b05556cde296e4}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-I\-G\-A\-I\-N@{A\-I\-G\-A\-I\-N}}
+\index{A\-I\-G\-A\-I\-N@{A\-I\-G\-A\-I\-N}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-I\-G\-A\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-I\-G\-A\-I\-N~0x4380}}\label{de/d8c/a00036_a8a19559f0146d0aa49b05556cde296e4}
+
+
+Definition at line \hyperlink{a00036_source_l00334}{334} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a1216d73466d1d804f373b8cc7aa77bd7}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-I\-M\-A\-V@{A\-I\-M\-A\-V}}
+\index{A\-I\-M\-A\-V@{A\-I\-M\-A\-V}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-I\-M\-A\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-I\-M\-A\-V~0x\-E504}}\label{de/d8c/a00036_a1216d73466d1d804f373b8cc7aa77bd7}
+
+
+Definition at line \hyperlink{a00036_source_l00406}{406} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_afae37e821d8947e31a63759e4bb57355}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-I\-R\-M\-S@{A\-I\-R\-M\-S}}
+\index{A\-I\-R\-M\-S@{A\-I\-R\-M\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-I\-R\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-I\-R\-M\-S~0x43\-C0}}\label{de/d8c/a00036_afae37e821d8947e31a63759e4bb57355}
+
+
+Definition at line \hyperlink{a00036_source_l00382}{382} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}.
+
+\hypertarget{a00036_a41b8ebb861316f604138d43b9e9fd306}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-I\-R\-M\-S\-O\-S@{A\-I\-R\-M\-S\-O\-S}}
+\index{A\-I\-R\-M\-S\-O\-S@{A\-I\-R\-M\-S\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-I\-R\-M\-S\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-I\-R\-M\-S\-O\-S~0x438\-F}}\label{de/d8c/a00036_a41b8ebb861316f604138d43b9e9fd306}
+
+
+Definition at line \hyperlink{a00036_source_l00348}{348} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a641f685f54defa54499b05d06ac2c3ef}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-N\-G\-L\-E0@{A\-N\-G\-L\-E0}}
+\index{A\-N\-G\-L\-E0@{A\-N\-G\-L\-E0}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-N\-G\-L\-E0}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-N\-G\-L\-E0~0x\-E601}}\label{de/d8c/a00036_a641f685f54defa54499b05d06ac2c3ef}
+
+
+Definition at line \hyperlink{a00036_source_l00430}{430} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a9b16c8daa98acc491d5f11fe4dd0a3f0}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-N\-G\-L\-E1@{A\-N\-G\-L\-E1}}
+\index{A\-N\-G\-L\-E1@{A\-N\-G\-L\-E1}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-N\-G\-L\-E1}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-N\-G\-L\-E1~0x\-E602}}\label{de/d8c/a00036_a9b16c8daa98acc491d5f11fe4dd0a3f0}
+
+
+Definition at line \hyperlink{a00036_source_l00431}{431} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a7b4d4bc753e350f0a9111d8ae37cf6cc}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-N\-G\-L\-E2@{A\-N\-G\-L\-E2}}
+\index{A\-N\-G\-L\-E2@{A\-N\-G\-L\-E2}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-N\-G\-L\-E2}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-N\-G\-L\-E2~0x\-E603}}\label{de/d8c/a00036_a7b4d4bc753e350f0a9111d8ae37cf6cc}
+
+
+Definition at line \hyperlink{a00036_source_l00432}{432} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a6a1f5b0cbc6fa43b08b3e0837a848e5b}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-P\-E\-R\-I\-O\-D@{A\-P\-E\-R\-I\-O\-D}}
+\index{A\-P\-E\-R\-I\-O\-D@{A\-P\-E\-R\-I\-O\-D}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-P\-E\-R\-I\-O\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-P\-E\-R\-I\-O\-D~0x\-E905}}\label{de/d8c/a00036_a6a1f5b0cbc6fa43b08b3e0837a848e5b}
+
+
+Definition at line \hyperlink{a00036_source_l00492}{492} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a046922a73acdd40d28809894a32f66de}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-P\-F@{A\-P\-F}}
+\index{A\-P\-F@{A\-P\-F}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-P\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-P\-F~0x\-E902}}\label{de/d8c/a00036_a046922a73acdd40d28809894a32f66de}
+
+
+Definition at line \hyperlink{a00036_source_l00489}{489} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_aec3a4133dfcfd773f10ad6d693e593f6}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-P\-G\-A\-I\-N@{A\-P\-G\-A\-I\-N}}
+\index{A\-P\-G\-A\-I\-N@{A\-P\-G\-A\-I\-N}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-P\-G\-A\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-P\-G\-A\-I\-N~0x4389}}\label{de/d8c/a00036_aec3a4133dfcfd773f10ad6d693e593f6}
+
+
+Definition at line \hyperlink{a00036_source_l00342}{342} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_af7bcab75b737ab6d6d02cea33593a062}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-P\-H\-C\-A\-L@{A\-P\-H\-C\-A\-L}}
+\index{A\-P\-H\-C\-A\-L@{A\-P\-H\-C\-A\-L}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-P\-H\-C\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-P\-H\-C\-A\-L~0x\-E614}}\label{de/d8c/a00036_af7bcab75b737ab6d6d02cea33593a062}
+
+
+Definition at line \hyperlink{a00036_source_l00442}{442} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_af3cf7b8f5e0068d118ba353733b37057}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-P\-N\-O\-L\-O\-A\-D@{A\-P\-N\-O\-L\-O\-A\-D}}
+\index{A\-P\-N\-O\-L\-O\-A\-D@{A\-P\-N\-O\-L\-O\-A\-D}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-P\-N\-O\-L\-O\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-P\-N\-O\-L\-O\-A\-D~0x\-E908}}\label{de/d8c/a00036_af3cf7b8f5e0068d118ba353733b37057}
+
+
+Definition at line \hyperlink{a00036_source_l00495}{495} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_ae7cdec48ca69414825f989d1e54ac75e}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-V\-A@{A\-V\-A}}
+\index{A\-V\-A@{A\-V\-A}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-V\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-V\-A~0x\-E519}}\label{de/d8c/a00036_ae7cdec48ca69414825f989d1e54ac75e}
+
+
+Energy Registers. 
+
+phase magnitude registers 
+
+Definition at line \hyperlink{a00036_source_l00328}{328} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_abf7b2fd4affddefe36eeb6297578aae7}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-V\-A\-H\-R@{A\-V\-A\-H\-R}}
+\index{A\-V\-A\-H\-R@{A\-V\-A\-H\-R}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-V\-A\-H\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-V\-A\-H\-R~0x\-E40\-C}}\label{de/d8c/a00036_abf7b2fd4affddefe36eeb6297578aae7}
+
+
+Definition at line \hyperlink{a00036_source_l00400}{400} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a71e3b41bc58cad314fbc2d9739265921}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-V\-G\-A\-I\-N@{A\-V\-G\-A\-I\-N}}
+\index{A\-V\-G\-A\-I\-N@{A\-V\-G\-A\-I\-N}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-V\-G\-A\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-V\-G\-A\-I\-N~0x4381}}\label{de/d8c/a00036_a71e3b41bc58cad314fbc2d9739265921}
+
+
+Definition at line \hyperlink{a00036_source_l00335}{335} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_ae4c7fedd5702010e6907a686a35c1fa8}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-V\-R\-M\-S@{A\-V\-R\-M\-S}}
+\index{A\-V\-R\-M\-S@{A\-V\-R\-M\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-V\-R\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-V\-R\-M\-S~0x43\-C1}}\label{de/d8c/a00036_ae4c7fedd5702010e6907a686a35c1fa8}
+
+
+Definition at line \hyperlink{a00036_source_l00383}{383} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}.
+
+\hypertarget{a00036_ac77c2a7c4fa3473fb51e9f62a9df39e1}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-V\-R\-M\-S\-O\-S@{A\-V\-R\-M\-S\-O\-S}}
+\index{A\-V\-R\-M\-S\-O\-S@{A\-V\-R\-M\-S\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-V\-R\-M\-S\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-V\-R\-M\-S\-O\-S~0x4390}}\label{de/d8c/a00036_ac77c2a7c4fa3473fb51e9f62a9df39e1}
+
+
+Definition at line \hyperlink{a00036_source_l00349}{349} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a70d4c8c1577490f1b69cfab591458142}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-W\-A\-T\-T@{A\-W\-A\-T\-T}}
+\index{A\-W\-A\-T\-T@{A\-W\-A\-T\-T}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-W\-A\-T\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-W\-A\-T\-T~0x\-E513}}\label{de/d8c/a00036_a70d4c8c1577490f1b69cfab591458142}
+
+
+Definition at line \hyperlink{a00036_source_l00420}{420} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}.
+
+\hypertarget{a00036_ae66c97ed86f47fd938f143a30a8b2f7e}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-W\-A\-T\-T\-H\-R@{A\-W\-A\-T\-T\-H\-R}}
+\index{A\-W\-A\-T\-T\-H\-R@{A\-W\-A\-T\-T\-H\-R}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-W\-A\-T\-T\-H\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-W\-A\-T\-T\-H\-R~0x\-E400}}\label{de/d8c/a00036_ae66c97ed86f47fd938f143a30a8b2f7e}
+
+
+Definition at line \hyperlink{a00036_source_l00391}{391} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}.
+
+\hypertarget{a00036_a473d84b2550fdf5e0c68a8f27e1a3c53}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!A\-W\-A\-T\-T\-O\-S@{A\-W\-A\-T\-T\-O\-S}}
+\index{A\-W\-A\-T\-T\-O\-S@{A\-W\-A\-T\-T\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{A\-W\-A\-T\-T\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-W\-A\-T\-T\-O\-S~0x438\-A}}\label{de/d8c/a00036_a473d84b2550fdf5e0c68a8f27e1a3c53}
+
+
+Definition at line \hyperlink{a00036_source_l00343}{343} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a44d186698763ef80f9ab2049a025c5db}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!B\-F\-I\-R\-M\-S\-O\-S@{B\-F\-I\-R\-M\-S\-O\-S}}
+\index{B\-F\-I\-R\-M\-S\-O\-S@{B\-F\-I\-R\-M\-S\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{B\-F\-I\-R\-M\-S\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-F\-I\-R\-M\-S\-O\-S~0x43\-A9}}\label{de/d8c/a00036_a44d186698763ef80f9ab2049a025c5db}
+
+
+Definition at line \hyperlink{a00036_source_l00365}{365} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a2172be4f07d67f1ffea0218f5425b1ad}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!B\-F\-V\-A\-R@{B\-F\-V\-A\-R}}
+\index{B\-F\-V\-A\-R@{B\-F\-V\-A\-R}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{B\-F\-V\-A\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-F\-V\-A\-R~0x\-E517}}\label{de/d8c/a00036_a2172be4f07d67f1ffea0218f5425b1ad}
+
+
+Definition at line \hyperlink{a00036_source_l00424}{424} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a5de5028fa73ea84e5ee0c14945334a7a}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!B\-F\-V\-A\-R\-H\-R@{B\-F\-V\-A\-R\-H\-R}}
+\index{B\-F\-V\-A\-R\-H\-R@{B\-F\-V\-A\-R\-H\-R}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{B\-F\-V\-A\-R\-H\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-F\-V\-A\-R\-H\-R~0x\-E40\-A}}\label{de/d8c/a00036_a5de5028fa73ea84e5ee0c14945334a7a}
+
+
+Definition at line \hyperlink{a00036_source_l00398}{398} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a1d3e2d035570dc37f6eacc4a9b736686}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!B\-F\-V\-A\-R\-O\-S@{B\-F\-V\-A\-R\-O\-S}}
+\index{B\-F\-V\-A\-R\-O\-S@{B\-F\-V\-A\-R\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{B\-F\-V\-A\-R\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-F\-V\-A\-R\-O\-S~0x43\-A6}}\label{de/d8c/a00036_a1d3e2d035570dc37f6eacc4a9b736686}
+
+
+Definition at line \hyperlink{a00036_source_l00362}{362} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a73bf4eb0eff30f6b614b90f993b8b1a9}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!B\-F\-V\-R\-M\-S\-O\-S@{B\-F\-V\-R\-M\-S\-O\-S}}
+\index{B\-F\-V\-R\-M\-S\-O\-S@{B\-F\-V\-R\-M\-S\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{B\-F\-V\-R\-M\-S\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-F\-V\-R\-M\-S\-O\-S~0x43\-A\-C}}\label{de/d8c/a00036_a73bf4eb0eff30f6b614b90f993b8b1a9}
+
+
+Definition at line \hyperlink{a00036_source_l00368}{368} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a0d1650b78efb7f2dfd865537e925990a}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!B\-F\-W\-A\-T\-T\-H\-R@{B\-F\-W\-A\-T\-T\-H\-R}}
+\index{B\-F\-W\-A\-T\-T\-H\-R@{B\-F\-W\-A\-T\-T\-H\-R}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{B\-F\-W\-A\-T\-T\-H\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-F\-W\-A\-T\-T\-H\-R~0x\-E404}}\label{de/d8c/a00036_a0d1650b78efb7f2dfd865537e925990a}
+
+
+Definition at line \hyperlink{a00036_source_l00395}{395} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a218375e9d021ab6585ad6e1e4a30a36c}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!B\-F\-W\-A\-T\-T\-O\-S@{B\-F\-W\-A\-T\-T\-O\-S}}
+\index{B\-F\-W\-A\-T\-T\-O\-S@{B\-F\-W\-A\-T\-T\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{B\-F\-W\-A\-T\-T\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-F\-W\-A\-T\-T\-O\-S~0x43\-A3}}\label{de/d8c/a00036_a218375e9d021ab6585ad6e1e4a30a36c}
+
+
+Definition at line \hyperlink{a00036_source_l00359}{359} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_aa4b9cf5a0254b722e1d78f7b6fb357b9}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!B\-I\-G\-A\-I\-N@{B\-I\-G\-A\-I\-N}}
+\index{B\-I\-G\-A\-I\-N@{B\-I\-G\-A\-I\-N}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{B\-I\-G\-A\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-I\-G\-A\-I\-N~0x4382}}\label{de/d8c/a00036_aa4b9cf5a0254b722e1d78f7b6fb357b9}
+
+
+Definition at line \hyperlink{a00036_source_l00336}{336} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a5f9cd7017c3ef1233944970c850aaa00}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!B\-I\-M\-A\-V@{B\-I\-M\-A\-V}}
+\index{B\-I\-M\-A\-V@{B\-I\-M\-A\-V}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{B\-I\-M\-A\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-I\-M\-A\-V~0x\-E505}}\label{de/d8c/a00036_a5f9cd7017c3ef1233944970c850aaa00}
+
+
+Definition at line \hyperlink{a00036_source_l00407}{407} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_ae1cff66a3f5c466b4344a5c2781224df}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!B\-I\-R\-M\-S@{B\-I\-R\-M\-S}}
+\index{B\-I\-R\-M\-S@{B\-I\-R\-M\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{B\-I\-R\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-I\-R\-M\-S~0x43\-C2}}\label{de/d8c/a00036_ae1cff66a3f5c466b4344a5c2781224df}
+
+
+Definition at line \hyperlink{a00036_source_l00384}{384} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}.
+
+\hypertarget{a00036_a12ec7e610dfabea2ef50a9078a6f48eb}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!B\-I\-R\-M\-S\-O\-S@{B\-I\-R\-M\-S\-O\-S}}
+\index{B\-I\-R\-M\-S\-O\-S@{B\-I\-R\-M\-S\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{B\-I\-R\-M\-S\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-I\-R\-M\-S\-O\-S~0x4391}}\label{de/d8c/a00036_a12ec7e610dfabea2ef50a9078a6f48eb}
+
+
+Definition at line \hyperlink{a00036_source_l00350}{350} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a213e16d4dd273764e3812a8c55242f99}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!B\-P\-E\-R\-I\-O\-D@{B\-P\-E\-R\-I\-O\-D}}
+\index{B\-P\-E\-R\-I\-O\-D@{B\-P\-E\-R\-I\-O\-D}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{B\-P\-E\-R\-I\-O\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-P\-E\-R\-I\-O\-D~0x\-E906}}\label{de/d8c/a00036_a213e16d4dd273764e3812a8c55242f99}
+
+
+Definition at line \hyperlink{a00036_source_l00493}{493} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_ae7ae297d8b0013c4e3dc550dc3e840cc}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!B\-P\-F@{B\-P\-F}}
+\index{B\-P\-F@{B\-P\-F}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{B\-P\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-P\-F~0x\-E903}}\label{de/d8c/a00036_ae7ae297d8b0013c4e3dc550dc3e840cc}
+
+
+Definition at line \hyperlink{a00036_source_l00490}{490} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a5d52d416295c400f6eb84bdbcc834560}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!B\-P\-G\-A\-I\-N@{B\-P\-G\-A\-I\-N}}
+\index{B\-P\-G\-A\-I\-N@{B\-P\-G\-A\-I\-N}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{B\-P\-G\-A\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-P\-G\-A\-I\-N~0x438\-B}}\label{de/d8c/a00036_a5d52d416295c400f6eb84bdbcc834560}
+
+
+Definition at line \hyperlink{a00036_source_l00344}{344} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a06542705c13e1acd769b69a990e95594}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!B\-P\-H\-C\-A\-L@{B\-P\-H\-C\-A\-L}}
+\index{B\-P\-H\-C\-A\-L@{B\-P\-H\-C\-A\-L}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{B\-P\-H\-C\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-P\-H\-C\-A\-L~0x\-E615}}\label{de/d8c/a00036_a06542705c13e1acd769b69a990e95594}
+
+
+Definition at line \hyperlink{a00036_source_l00443}{443} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a19e30da5f33e53c72352f8d8bf7f820a}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!B\-V\-A@{B\-V\-A}}
+\index{B\-V\-A@{B\-V\-A}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{B\-V\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-V\-A~0x\-E51\-A}}\label{de/d8c/a00036_a19e30da5f33e53c72352f8d8bf7f820a}
+
+
+Definition at line \hyperlink{a00036_source_l00329}{329} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a8b6c08ac39feb0337565bccaca6ecdbb}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!B\-V\-A\-H\-R@{B\-V\-A\-H\-R}}
+\index{B\-V\-A\-H\-R@{B\-V\-A\-H\-R}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{B\-V\-A\-H\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-V\-A\-H\-R~0x\-E40\-D}}\label{de/d8c/a00036_a8b6c08ac39feb0337565bccaca6ecdbb}
+
+
+Definition at line \hyperlink{a00036_source_l00401}{401} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a9a9d28eb690ced7dfa1e126448b167e3}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!B\-V\-G\-A\-I\-N@{B\-V\-G\-A\-I\-N}}
+\index{B\-V\-G\-A\-I\-N@{B\-V\-G\-A\-I\-N}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{B\-V\-G\-A\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-V\-G\-A\-I\-N~0x4383}}\label{de/d8c/a00036_a9a9d28eb690ced7dfa1e126448b167e3}
+
+
+Definition at line \hyperlink{a00036_source_l00337}{337} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a09f7027a92ccae6bb9b5738d5bc185f3}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!B\-V\-R\-M\-S@{B\-V\-R\-M\-S}}
+\index{B\-V\-R\-M\-S@{B\-V\-R\-M\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{B\-V\-R\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-V\-R\-M\-S~0x43\-C3}}\label{de/d8c/a00036_a09f7027a92ccae6bb9b5738d5bc185f3}
+
+
+Definition at line \hyperlink{a00036_source_l00385}{385} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}.
+
+\hypertarget{a00036_a82b0238744da6064813d1974735bc64c}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!B\-V\-R\-M\-S\-O\-S@{B\-V\-R\-M\-S\-O\-S}}
+\index{B\-V\-R\-M\-S\-O\-S@{B\-V\-R\-M\-S\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{B\-V\-R\-M\-S\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-V\-R\-M\-S\-O\-S~0x4392}}\label{de/d8c/a00036_a82b0238744da6064813d1974735bc64c}
+
+
+Definition at line \hyperlink{a00036_source_l00351}{351} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a3a60995ae993fd06892df7023a9f496c}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!B\-W\-A\-T\-T@{B\-W\-A\-T\-T}}
+\index{B\-W\-A\-T\-T@{B\-W\-A\-T\-T}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{B\-W\-A\-T\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-W\-A\-T\-T~0x\-E514}}\label{de/d8c/a00036_a3a60995ae993fd06892df7023a9f496c}
+
+
+Definition at line \hyperlink{a00036_source_l00421}{421} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}.
+
+\hypertarget{a00036_a185c6910fa47f7e973f0f8743ef0e8ad}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!B\-W\-A\-T\-T\-H\-R@{B\-W\-A\-T\-T\-H\-R}}
+\index{B\-W\-A\-T\-T\-H\-R@{B\-W\-A\-T\-T\-H\-R}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{B\-W\-A\-T\-T\-H\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-W\-A\-T\-T\-H\-R~0x\-E401}}\label{de/d8c/a00036_a185c6910fa47f7e973f0f8743ef0e8ad}
+
+
+Definition at line \hyperlink{a00036_source_l00392}{392} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}.
+
+\hypertarget{a00036_a9c20ee65c3ba9c0fc123fc2a262d02e7}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!B\-W\-A\-T\-T\-O\-S@{B\-W\-A\-T\-T\-O\-S}}
+\index{B\-W\-A\-T\-T\-O\-S@{B\-W\-A\-T\-T\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{B\-W\-A\-T\-T\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-W\-A\-T\-T\-O\-S~0x438\-C}}\label{de/d8c/a00036_a9c20ee65c3ba9c0fc123fc2a262d02e7}
+
+
+Definition at line \hyperlink{a00036_source_l00345}{345} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_ab5d23f853f029333e3b4e734325c810b}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-F1\-D\-E\-N@{C\-F1\-D\-E\-N}}
+\index{C\-F1\-D\-E\-N@{C\-F1\-D\-E\-N}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-F1\-D\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-F1\-D\-E\-N~0x\-E611}}\label{de/d8c/a00036_ab5d23f853f029333e3b4e734325c810b}
+
+
+Definition at line \hyperlink{a00036_source_l00439}{439} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_ae1659576b77ff128469caf7fa1cc62ff}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-F2\-D\-E\-N@{C\-F2\-D\-E\-N}}
+\index{C\-F2\-D\-E\-N@{C\-F2\-D\-E\-N}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-F2\-D\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-F2\-D\-E\-N~0x\-E612}}\label{de/d8c/a00036_ae1659576b77ff128469caf7fa1cc62ff}
+
+
+Definition at line \hyperlink{a00036_source_l00440}{440} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a6a852ae480e66cc3de3504e2e5dda070}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-F3\-D\-E\-N@{C\-F3\-D\-E\-N}}
+\index{C\-F3\-D\-E\-N@{C\-F3\-D\-E\-N}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-F3\-D\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-F3\-D\-E\-N~0x\-E613}}\label{de/d8c/a00036_a6a852ae480e66cc3de3504e2e5dda070}
+
+
+Definition at line \hyperlink{a00036_source_l00441}{441} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a60015970f15346193913f4b20e78ab83}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-F\-C\-Y\-C@{C\-F\-C\-Y\-C}}
+\index{C\-F\-C\-Y\-C@{C\-F\-C\-Y\-C}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-F\-C\-Y\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-F\-C\-Y\-C~0x\-E705}}\label{de/d8c/a00036_a60015970f15346193913f4b20e78ab83}
+
+
+Definition at line \hyperlink{a00036_source_l00452}{452} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a8212d81bb40259e1b8af1cee1280ae2d}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-F\-I\-R\-M\-S\-O\-S@{C\-F\-I\-R\-M\-S\-O\-S}}
+\index{C\-F\-I\-R\-M\-S\-O\-S@{C\-F\-I\-R\-M\-S\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-F\-I\-R\-M\-S\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-F\-I\-R\-M\-S\-O\-S~0x43\-A\-A}}\label{de/d8c/a00036_a8212d81bb40259e1b8af1cee1280ae2d}
+
+
+Definition at line \hyperlink{a00036_source_l00366}{366} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_ad45c59a4f01f3e4f96f2c481077b6912}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-F\-M\-O\-D\-E@{C\-F\-M\-O\-D\-E}}
+\index{C\-F\-M\-O\-D\-E@{C\-F\-M\-O\-D\-E}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-F\-M\-O\-D\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-F\-M\-O\-D\-E~0x\-E610}}\label{de/d8c/a00036_ad45c59a4f01f3e4f96f2c481077b6912}
+
+
+Definition at line \hyperlink{a00036_source_l00438}{438} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a8edc01effbd3c82649af3c8ad858f1e8}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-F\-V\-A\-R@{C\-F\-V\-A\-R}}
+\index{C\-F\-V\-A\-R@{C\-F\-V\-A\-R}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-F\-V\-A\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-F\-V\-A\-R~0x\-E518}}\label{de/d8c/a00036_a8edc01effbd3c82649af3c8ad858f1e8}
+
+
+Definition at line \hyperlink{a00036_source_l00425}{425} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_ab8f3a80e1dce52d884b5a075014b9b8e}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-F\-V\-A\-R\-H\-R@{C\-F\-V\-A\-R\-H\-R}}
+\index{C\-F\-V\-A\-R\-H\-R@{C\-F\-V\-A\-R\-H\-R}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-F\-V\-A\-R\-H\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-F\-V\-A\-R\-H\-R~0x\-E40\-B}}\label{de/d8c/a00036_ab8f3a80e1dce52d884b5a075014b9b8e}
+
+
+Definition at line \hyperlink{a00036_source_l00399}{399} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a130c34acd70f4dcf342291a77864e59d}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-F\-V\-A\-R\-O\-S@{C\-F\-V\-A\-R\-O\-S}}
+\index{C\-F\-V\-A\-R\-O\-S@{C\-F\-V\-A\-R\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-F\-V\-A\-R\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-F\-V\-A\-R\-O\-S~0x43\-A7}}\label{de/d8c/a00036_a130c34acd70f4dcf342291a77864e59d}
+
+
+Definition at line \hyperlink{a00036_source_l00363}{363} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a0fff4fa26b5131f743f5e67766c126ba}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-F\-V\-R\-M\-S\-O\-S@{C\-F\-V\-R\-M\-S\-O\-S}}
+\index{C\-F\-V\-R\-M\-S\-O\-S@{C\-F\-V\-R\-M\-S\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-F\-V\-R\-M\-S\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-F\-V\-R\-M\-S\-O\-S~0x43\-A\-D}}\label{de/d8c/a00036_a0fff4fa26b5131f743f5e67766c126ba}
+
+
+Definition at line \hyperlink{a00036_source_l00369}{369} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a5289da5a579be5a0f44dfd8863ca67e8}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-F\-W\-A\-T\-T\-H\-R@{C\-F\-W\-A\-T\-T\-H\-R}}
+\index{C\-F\-W\-A\-T\-T\-H\-R@{C\-F\-W\-A\-T\-T\-H\-R}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-F\-W\-A\-T\-T\-H\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-F\-W\-A\-T\-T\-H\-R~0x\-E405}}\label{de/d8c/a00036_a5289da5a579be5a0f44dfd8863ca67e8}
+
+
+Definition at line \hyperlink{a00036_source_l00396}{396} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a2e17341650906e832aa4b3e73423d3ee}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-F\-W\-A\-T\-T\-O\-S@{C\-F\-W\-A\-T\-T\-O\-S}}
+\index{C\-F\-W\-A\-T\-T\-O\-S@{C\-F\-W\-A\-T\-T\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-F\-W\-A\-T\-T\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-F\-W\-A\-T\-T\-O\-S~0x43\-A4}}\label{de/d8c/a00036_a2e17341650906e832aa4b3e73423d3ee}
+
+
+Definition at line \hyperlink{a00036_source_l00360}{360} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a9886586c91a412164c69eb0270d2875e}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-H\-E\-C\-K\-S\-U\-M@{C\-H\-E\-C\-K\-S\-U\-M}}
+\index{C\-H\-E\-C\-K\-S\-U\-M@{C\-H\-E\-C\-K\-S\-U\-M}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-H\-E\-C\-K\-S\-U\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-E\-C\-K\-S\-U\-M~0x\-E51\-F}}\label{de/d8c/a00036_a9886586c91a412164c69eb0270d2875e}
+
+
+Definition at line \hyperlink{a00036_source_l00032}{32} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_aba22a31e9d3b49ddd019cf6b3e819251}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-I\-G\-A\-I\-N@{C\-I\-G\-A\-I\-N}}
+\index{C\-I\-G\-A\-I\-N@{C\-I\-G\-A\-I\-N}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-I\-G\-A\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-I\-G\-A\-I\-N~0x4384}}\label{de/d8c/a00036_aba22a31e9d3b49ddd019cf6b3e819251}
+
+
+Definition at line \hyperlink{a00036_source_l00338}{338} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a279075dbebc70897157abb9cf29f488b}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-I\-M\-A\-V@{C\-I\-M\-A\-V}}
+\index{C\-I\-M\-A\-V@{C\-I\-M\-A\-V}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-I\-M\-A\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-I\-M\-A\-V~0x\-E506}}\label{de/d8c/a00036_a279075dbebc70897157abb9cf29f488b}
+
+
+Definition at line \hyperlink{a00036_source_l00408}{408} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a3ccd0ef2a55b24f358292694724d37a3}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-I\-R\-M\-S@{C\-I\-R\-M\-S}}
+\index{C\-I\-R\-M\-S@{C\-I\-R\-M\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-I\-R\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-I\-R\-M\-S~0x43\-C4}}\label{de/d8c/a00036_a3ccd0ef2a55b24f358292694724d37a3}
+
+
+Definition at line \hyperlink{a00036_source_l00386}{386} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}.
+
+\hypertarget{a00036_aff79e00cb47bdd946aaf31c86bfb337c}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-I\-R\-M\-S\-O\-S@{C\-I\-R\-M\-S\-O\-S}}
+\index{C\-I\-R\-M\-S\-O\-S@{C\-I\-R\-M\-S\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-I\-R\-M\-S\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-I\-R\-M\-S\-O\-S~0x4393}}\label{de/d8c/a00036_aff79e00cb47bdd946aaf31c86bfb337c}
+
+
+Definition at line \hyperlink{a00036_source_l00352}{352} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a31c8d51fdc4d8181e8a66b9d4be2dd8c}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-O\-M\-P\-M\-O\-D\-E@{C\-O\-M\-P\-M\-O\-D\-E}}
+\index{C\-O\-M\-P\-M\-O\-D\-E@{C\-O\-M\-P\-M\-O\-D\-E}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-O\-M\-P\-M\-O\-D\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-M\-P\-M\-O\-D\-E~0x\-E60\-E}}\label{de/d8c/a00036_a31c8d51fdc4d8181e8a66b9d4be2dd8c}
+
+
+Definition at line \hyperlink{a00036_source_l00236}{236} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a76ea3cf49247a07c54b3db005a3c7f57}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-O\-N\-F\-I\-G@{C\-O\-N\-F\-I\-G}}
+\index{C\-O\-N\-F\-I\-G@{C\-O\-N\-F\-I\-G}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-O\-N\-F\-I\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-N\-F\-I\-G~0x\-E618}}\label{de/d8c/a00036_a76ea3cf49247a07c54b3db005a3c7f57}
+
+
+A\-D\-E7880 P\-H\-S\-I\-G\-N Register Physical address and structure. 
+
+
+
+Definition at line \hyperlink{a00036_source_l00083}{83} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a9989dac1034e36497f2f4f81613cab88}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-O\-N\-F\-I\-G2@{C\-O\-N\-F\-I\-G2}}
+\index{C\-O\-N\-F\-I\-G2@{C\-O\-N\-F\-I\-G2}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-O\-N\-F\-I\-G2}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-N\-F\-I\-G2~0x\-E\-C01}}\label{de/d8c/a00036_a9989dac1034e36497f2f4f81613cab88}
+
+
+A\-D\-E7880 C\-O\-N\-F\-I\-G2 Register Physical address and structure. 
+
+
+
+Definition at line \hyperlink{a00036_source_l00108}{108} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a8d128687074c874210b0c9dada3d8ca7}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-O\-N\-F\-I\-G3@{C\-O\-N\-F\-I\-G3}}
+\index{C\-O\-N\-F\-I\-G3@{C\-O\-N\-F\-I\-G3}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-O\-N\-F\-I\-G3}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-N\-F\-I\-G3~0x\-E\-A00}}\label{de/d8c/a00036_a8d128687074c874210b0c9dada3d8ca7}
+
+
+A\-D\-E7880 C\-O\-N\-F\-I\-G3 Register Physical address and structure. 
+
+
+
+Definition at line \hyperlink{a00036_source_l00177}{177} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a6d4592c2f28292b11885fa8ec3ed0941}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-O\-N\-F\-I\-G3\-\_\-\-D\-E\-F\-U\-L\-T@{C\-O\-N\-F\-I\-G3\-\_\-\-D\-E\-F\-U\-L\-T}}
+\index{C\-O\-N\-F\-I\-G3\-\_\-\-D\-E\-F\-U\-L\-T@{C\-O\-N\-F\-I\-G3\-\_\-\-D\-E\-F\-U\-L\-T}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-O\-N\-F\-I\-G3\-\_\-\-D\-E\-F\-U\-L\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-N\-F\-I\-G3\-\_\-\-D\-E\-F\-U\-L\-T~0x01}}\label{de/d8c/a00036_a6d4592c2f28292b11885fa8ec3ed0941}
+
+
+Definition at line \hyperlink{a00036_source_l00178}{178} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_ad089734d1b0b03f6256cd3004b6127ce}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-P\-E\-R\-I\-O\-D@{C\-P\-E\-R\-I\-O\-D}}
+\index{C\-P\-E\-R\-I\-O\-D@{C\-P\-E\-R\-I\-O\-D}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-P\-E\-R\-I\-O\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-P\-E\-R\-I\-O\-D~0x\-E907}}\label{de/d8c/a00036_ad089734d1b0b03f6256cd3004b6127ce}
+
+
+Definition at line \hyperlink{a00036_source_l00494}{494} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_ac872290e70cb6bf2b018d9e6b441216b}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-P\-F@{C\-P\-F}}
+\index{C\-P\-F@{C\-P\-F}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-P\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-P\-F~0x\-E904}}\label{de/d8c/a00036_ac872290e70cb6bf2b018d9e6b441216b}
+
+
+Definition at line \hyperlink{a00036_source_l00491}{491} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_aa3cfe8257b2ce2609bc10431cf461e2c}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-P\-G\-A\-I\-N@{C\-P\-G\-A\-I\-N}}
+\index{C\-P\-G\-A\-I\-N@{C\-P\-G\-A\-I\-N}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-P\-G\-A\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-P\-G\-A\-I\-N~0x438\-D}}\label{de/d8c/a00036_aa3cfe8257b2ce2609bc10431cf461e2c}
+
+
+Definition at line \hyperlink{a00036_source_l00346}{346} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a5da995ba3336521304ed284d12177ca9}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-P\-H\-C\-A\-L@{C\-P\-H\-C\-A\-L}}
+\index{C\-P\-H\-C\-A\-L@{C\-P\-H\-C\-A\-L}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-P\-H\-C\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-P\-H\-C\-A\-L~0x\-E616}}\label{de/d8c/a00036_a5da995ba3336521304ed284d12177ca9}
+
+
+Definition at line \hyperlink{a00036_source_l00444}{444} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_ac1b321e92c8fb61be50f9cc733df7aaf}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-V\-A@{C\-V\-A}}
+\index{C\-V\-A@{C\-V\-A}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-V\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-V\-A~0x\-E51\-B}}\label{de/d8c/a00036_ac1b321e92c8fb61be50f9cc733df7aaf}
+
+
+Definition at line \hyperlink{a00036_source_l00330}{330} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_aa1b4960c4d08f67d76caa27f6dc7414f}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-V\-A\-H\-R@{C\-V\-A\-H\-R}}
+\index{C\-V\-A\-H\-R@{C\-V\-A\-H\-R}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-V\-A\-H\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-V\-A\-H\-R~0x\-E40\-E}}\label{de/d8c/a00036_aa1b4960c4d08f67d76caa27f6dc7414f}
+
+
+Definition at line \hyperlink{a00036_source_l00402}{402} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a0920d5a91a9a5a8339d894c00cfecec7}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-V\-G\-A\-I\-N@{C\-V\-G\-A\-I\-N}}
+\index{C\-V\-G\-A\-I\-N@{C\-V\-G\-A\-I\-N}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-V\-G\-A\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-V\-G\-A\-I\-N~0x4385}}\label{de/d8c/a00036_a0920d5a91a9a5a8339d894c00cfecec7}
+
+
+Definition at line \hyperlink{a00036_source_l00339}{339} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a61e9291ce0829a45cee1ee9a5f3ea4f7}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-V\-R\-M\-S@{C\-V\-R\-M\-S}}
+\index{C\-V\-R\-M\-S@{C\-V\-R\-M\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-V\-R\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-V\-R\-M\-S~0x43\-C5}}\label{de/d8c/a00036_a61e9291ce0829a45cee1ee9a5f3ea4f7}
+
+
+Definition at line \hyperlink{a00036_source_l00387}{387} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}.
+
+\hypertarget{a00036_a6e1bda3d471c0ed3ef337b2f5f1ee9d5}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-V\-R\-M\-S\-O\-S@{C\-V\-R\-M\-S\-O\-S}}
+\index{C\-V\-R\-M\-S\-O\-S@{C\-V\-R\-M\-S\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-V\-R\-M\-S\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-V\-R\-M\-S\-O\-S~0x4394}}\label{de/d8c/a00036_a6e1bda3d471c0ed3ef337b2f5f1ee9d5}
+
+
+Definition at line \hyperlink{a00036_source_l00353}{353} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_aeb58aae2f3e0c16a12cf4b6b03d6c5d9}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-W\-A\-T\-T@{C\-W\-A\-T\-T}}
+\index{C\-W\-A\-T\-T@{C\-W\-A\-T\-T}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-W\-A\-T\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-W\-A\-T\-T~0x\-E515}}\label{de/d8c/a00036_aeb58aae2f3e0c16a12cf4b6b03d6c5d9}
+
+
+Definition at line \hyperlink{a00036_source_l00422}{422} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}.
+
+\hypertarget{a00036_ad685baf76950c0387bedffa9bb3272a9}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-W\-A\-T\-T\-H\-R@{C\-W\-A\-T\-T\-H\-R}}
+\index{C\-W\-A\-T\-T\-H\-R@{C\-W\-A\-T\-T\-H\-R}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-W\-A\-T\-T\-H\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-W\-A\-T\-T\-H\-R~0x\-E402}}\label{de/d8c/a00036_ad685baf76950c0387bedffa9bb3272a9}
+
+
+Definition at line \hyperlink{a00036_source_l00393}{393} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}.
+
+\hypertarget{a00036_adefc91120b39bde4d31d7f685c834d1c}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!C\-W\-A\-T\-T\-O\-S@{C\-W\-A\-T\-T\-O\-S}}
+\index{C\-W\-A\-T\-T\-O\-S@{C\-W\-A\-T\-T\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{C\-W\-A\-T\-T\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-W\-A\-T\-T\-O\-S~0x438\-E}}\label{de/d8c/a00036_adefc91120b39bde4d31d7f685c834d1c}
+
+
+Definition at line \hyperlink{a00036_source_l00347}{347} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a368be558deaf920bc0805191b5fc737e}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!D\-I\-C\-O\-E\-F\-F@{D\-I\-C\-O\-E\-F\-F}}
+\index{D\-I\-C\-O\-E\-F\-F@{D\-I\-C\-O\-E\-F\-F}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{D\-I\-C\-O\-E\-F\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-I\-C\-O\-E\-F\-F~0x4388}}\label{de/d8c/a00036_a368be558deaf920bc0805191b5fc737e}
+
+
+Definition at line \hyperlink{a00036_source_l00341}{341} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_aa2594962ecec33d43f5b8dea993068ca}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!D\-U\-M\-M\-I\-Y@{D\-U\-M\-M\-I\-Y}}
+\index{D\-U\-M\-M\-I\-Y@{D\-U\-M\-M\-I\-Y}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{D\-U\-M\-M\-I\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-U\-M\-M\-I\-Y~0x\-E\-B\-F\-F}}\label{de/d8c/a00036_aa2594962ecec33d43f5b8dea993068ca}
+
+
+Definition at line \hyperlink{a00036_source_l00031}{31} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a58ba8cc4291577f8ba6c6fec4408242a}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!F\-I\-R\-M\-S@{F\-I\-R\-M\-S}}
+\index{F\-I\-R\-M\-S@{F\-I\-R\-M\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{F\-I\-R\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-I\-R\-M\-S~0x\-E881}}\label{de/d8c/a00036_a58ba8cc4291577f8ba6c6fec4408242a}
+
+
+Definition at line \hyperlink{a00036_source_l00457}{457} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a703b4f81abadf5e673e21656cedb1bdc}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!F\-P\-F@{F\-P\-F}}
+\index{F\-P\-F@{F\-P\-F}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{F\-P\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-P\-F~0x\-E885}}\label{de/d8c/a00036_a703b4f81abadf5e673e21656cedb1bdc}
+
+
+Definition at line \hyperlink{a00036_source_l00461}{461} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a2c02e499fcc895be334b284c7d928a0c}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!F\-V\-A@{F\-V\-A}}
+\index{F\-V\-A@{F\-V\-A}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{F\-V\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-V\-A~0x\-E884}}\label{de/d8c/a00036_a2c02e499fcc895be334b284c7d928a0c}
+
+
+Definition at line \hyperlink{a00036_source_l00460}{460} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a57335a9934a3428994476326141589ed}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!F\-V\-A\-R@{F\-V\-A\-R}}
+\index{F\-V\-A\-R@{F\-V\-A\-R}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{F\-V\-A\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-V\-A\-R~0x\-E883}}\label{de/d8c/a00036_a57335a9934a3428994476326141589ed}
+
+
+Definition at line \hyperlink{a00036_source_l00459}{459} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_ae580fd9f9739589e08315bff869b16cf}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!F\-V\-R\-M\-S@{F\-V\-R\-M\-S}}
+\index{F\-V\-R\-M\-S@{F\-V\-R\-M\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{F\-V\-R\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-V\-R\-M\-S~0x\-E880}}\label{de/d8c/a00036_ae580fd9f9739589e08315bff869b16cf}
+
+
+Definition at line \hyperlink{a00036_source_l00456}{456} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a002eccf714bbac8b4e8953f4be2efef4}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!F\-W\-A\-T\-T@{F\-W\-A\-T\-T}}
+\index{F\-W\-A\-T\-T@{F\-W\-A\-T\-T}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{F\-W\-A\-T\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-W\-A\-T\-T~0x\-E882}}\label{de/d8c/a00036_a002eccf714bbac8b4e8953f4be2efef4}
+
+
+Definition at line \hyperlink{a00036_source_l00458}{458} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a8c8f27b35dfa40ccf31c1ee31479a31c}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!G\-A\-I\-N@{G\-A\-I\-N}}
+\index{G\-A\-I\-N@{G\-A\-I\-N}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{G\-A\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-A\-I\-N~0x\-E60\-F}}\label{de/d8c/a00036_a8c8f27b35dfa40ccf31c1ee31479a31c}
+
+
+Definition at line \hyperlink{a00036_source_l00069}{69} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a3c686a06cc9d837e73b259bcc054217e}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!G\-A\-I\-N\-\_\-1@{G\-A\-I\-N\-\_\-1}}
+\index{G\-A\-I\-N\-\_\-1@{G\-A\-I\-N\-\_\-1}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{G\-A\-I\-N\-\_\-1}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-A\-I\-N\-\_\-1~0b000}}\label{de/d8c/a00036_a3c686a06cc9d837e73b259bcc054217e}
+
+
+see the datasheet about this const A\-D\-E7880 \href{http://www.analog.com/static/imported-files/data_sheets/ADE7880.pdf}{\tt http\-://www.\-analog.\-com/static/imported-\/files/data\-\_\-sheets/\-A\-D\-E7880.\-pdf} . 
+
+
+
+Definition at line \hyperlink{a00036_source_l00017}{17} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a849e708719d768ea90ada6f58eea52a8}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!G\-A\-I\-N\-\_\-16@{G\-A\-I\-N\-\_\-16}}
+\index{G\-A\-I\-N\-\_\-16@{G\-A\-I\-N\-\_\-16}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{G\-A\-I\-N\-\_\-16}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-A\-I\-N\-\_\-16~0b100}}\label{de/d8c/a00036_a849e708719d768ea90ada6f58eea52a8}
+
+
+Definition at line \hyperlink{a00036_source_l00021}{21} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a7ce9d36acd86736019606c4d928b7aad}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!G\-A\-I\-N\-\_\-2@{G\-A\-I\-N\-\_\-2}}
+\index{G\-A\-I\-N\-\_\-2@{G\-A\-I\-N\-\_\-2}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{G\-A\-I\-N\-\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-A\-I\-N\-\_\-2~0b001}}\label{de/d8c/a00036_a7ce9d36acd86736019606c4d928b7aad}
+
+
+Definition at line \hyperlink{a00036_source_l00018}{18} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a8720f417f5b56154123f813b2a011c46}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!G\-A\-I\-N\-\_\-4@{G\-A\-I\-N\-\_\-4}}
+\index{G\-A\-I\-N\-\_\-4@{G\-A\-I\-N\-\_\-4}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{G\-A\-I\-N\-\_\-4}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-A\-I\-N\-\_\-4~0b010}}\label{de/d8c/a00036_a8720f417f5b56154123f813b2a011c46}
+
+
+Definition at line \hyperlink{a00036_source_l00019}{19} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a9b90b27f7ed8ebac69dd8b82df741872}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!G\-A\-I\-N\-\_\-8@{G\-A\-I\-N\-\_\-8}}
+\index{G\-A\-I\-N\-\_\-8@{G\-A\-I\-N\-\_\-8}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{G\-A\-I\-N\-\_\-8}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\-A\-I\-N\-\_\-8~0b011}}\label{de/d8c/a00036_a9b90b27f7ed8ebac69dd8b82df741872}
+
+
+Definition at line \hyperlink{a00036_source_l00020}{20} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a785b8c7df7ac430278aa1e89c0db69d9}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-C\-O\-N\-F\-I\-G@{H\-C\-O\-N\-F\-I\-G}}
+\index{H\-C\-O\-N\-F\-I\-G@{H\-C\-O\-N\-F\-I\-G}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-C\-O\-N\-F\-I\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-C\-O\-N\-F\-I\-G~0x\-E900}}\label{de/d8c/a00036_a785b8c7df7ac430278aa1e89c0db69d9}
+
+
+Definition at line \hyperlink{a00036_source_l00488}{488} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a8ccbfb7b68b73c3cc9aef1886209df0f}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-P\-G\-A\-I\-N@{H\-P\-G\-A\-I\-N}}
+\index{H\-P\-G\-A\-I\-N@{H\-P\-G\-A\-I\-N}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-P\-G\-A\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-P\-G\-A\-I\-N~0x4398}}\label{de/d8c/a00036_a8ccbfb7b68b73c3cc9aef1886209df0f}
+
+
+Definition at line \hyperlink{a00036_source_l00355}{355} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a1ef9153bd21f7ed65a6471842212e435}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-S\-D\-C\-\_\-\-C\-F\-G@{H\-S\-D\-C\-\_\-\-C\-F\-G}}
+\index{H\-S\-D\-C\-\_\-\-C\-F\-G@{H\-S\-D\-C\-\_\-\-C\-F\-G}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-S\-D\-C\-\_\-\-C\-F\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-S\-D\-C\-\_\-\-C\-F\-G~0x\-E706}}\label{de/d8c/a00036_a1ef9153bd21f7ed65a6471842212e435}
+
+
+Definition at line \hyperlink{a00036_source_l00453}{453} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a206f6fe198ba53389de628f12ac30886}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-X\-\_\-reg@{H\-X\-\_\-reg}}
+\index{H\-X\-\_\-reg@{H\-X\-\_\-reg}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-X\-\_\-reg}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-X\-\_\-reg~0x\-E\-A08}}\label{de/d8c/a00036_a206f6fe198ba53389de628f12ac30886}
+
+
+Definition at line \hyperlink{a00036_source_l00500}{500} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_ac22e2f229bd4f7de9a5c26f6fc824b92}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-X\-I\-H\-D@{H\-X\-I\-H\-D}}
+\index{H\-X\-I\-H\-D@{H\-X\-I\-H\-D}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-X\-I\-H\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-X\-I\-H\-D~0x\-E88\-F}}\label{de/d8c/a00036_ac22e2f229bd4f7de9a5c26f6fc824b92}
+
+
+Definition at line \hyperlink{a00036_source_l00471}{471} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a46e6200d5a1ec07a23be9dfce8ac7f60}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-X\-I\-R\-M\-S@{H\-X\-I\-R\-M\-S}}
+\index{H\-X\-I\-R\-M\-S@{H\-X\-I\-R\-M\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-X\-I\-R\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-X\-I\-R\-M\-S~0x\-E889}}\label{de/d8c/a00036_a46e6200d5a1ec07a23be9dfce8ac7f60}
+
+
+Definition at line \hyperlink{a00036_source_l00465}{465} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a0393132c56cc12af538a79b7ad01f4f3}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-X\-I\-R\-M\-S\-O\-S@{H\-X\-I\-R\-M\-S\-O\-S}}
+\index{H\-X\-I\-R\-M\-S\-O\-S@{H\-X\-I\-R\-M\-S\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-X\-I\-R\-M\-S\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-X\-I\-R\-M\-S\-O\-S~0x43\-B4}}\label{de/d8c/a00036_a0393132c56cc12af538a79b7ad01f4f3}
+
+
+Definition at line \hyperlink{a00036_source_l00376}{376} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a3059705ef55e2b519c1872600621b9f8}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-X\-P\-F@{H\-X\-P\-F}}
+\index{H\-X\-P\-F@{H\-X\-P\-F}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-X\-P\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-X\-P\-F~0x\-E88\-D}}\label{de/d8c/a00036_a3059705ef55e2b519c1872600621b9f8}
+
+
+Definition at line \hyperlink{a00036_source_l00469}{469} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_acfd250a61a5d7421cdbc541f94ce5ae4}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-X\-V\-A@{H\-X\-V\-A}}
+\index{H\-X\-V\-A@{H\-X\-V\-A}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-X\-V\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-X\-V\-A~0x\-E88\-C}}\label{de/d8c/a00036_acfd250a61a5d7421cdbc541f94ce5ae4}
+
+
+Definition at line \hyperlink{a00036_source_l00468}{468} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_ab41bd850709b7c4ffd94d5933e850df7}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-X\-V\-A\-R@{H\-X\-V\-A\-R}}
+\index{H\-X\-V\-A\-R@{H\-X\-V\-A\-R}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-X\-V\-A\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-X\-V\-A\-R~0x\-E88\-B}}\label{de/d8c/a00036_ab41bd850709b7c4ffd94d5933e850df7}
+
+
+Definition at line \hyperlink{a00036_source_l00467}{467} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a9ab1152e35c6f57bd448b69dd504871c}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-X\-V\-A\-R\-O\-S@{H\-X\-V\-A\-R\-O\-S}}
+\index{H\-X\-V\-A\-R\-O\-S@{H\-X\-V\-A\-R\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-X\-V\-A\-R\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-X\-V\-A\-R\-O\-S~0x43\-B1}}\label{de/d8c/a00036_a9ab1152e35c6f57bd448b69dd504871c}
+
+
+Definition at line \hyperlink{a00036_source_l00373}{373} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a7019352fa8966727d6306b8a2bf81829}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-X\-V\-H\-D@{H\-X\-V\-H\-D}}
+\index{H\-X\-V\-H\-D@{H\-X\-V\-H\-D}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-X\-V\-H\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-X\-V\-H\-D~0x\-E88\-E}}\label{de/d8c/a00036_a7019352fa8966727d6306b8a2bf81829}
+
+
+Definition at line \hyperlink{a00036_source_l00470}{470} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a0fc103a0748d8aa916c859108574913a}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-X\-V\-R\-M\-S@{H\-X\-V\-R\-M\-S}}
+\index{H\-X\-V\-R\-M\-S@{H\-X\-V\-R\-M\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-X\-V\-R\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-X\-V\-R\-M\-S~0x\-E888}}\label{de/d8c/a00036_a0fc103a0748d8aa916c859108574913a}
+
+
+Definition at line \hyperlink{a00036_source_l00464}{464} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a88614989eb05e4e7fb74c61d77e33abf}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-X\-V\-R\-M\-S\-O\-S@{H\-X\-V\-R\-M\-S\-O\-S}}
+\index{H\-X\-V\-R\-M\-S\-O\-S@{H\-X\-V\-R\-M\-S\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-X\-V\-R\-M\-S\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-X\-V\-R\-M\-S\-O\-S~0x43\-B7}}\label{de/d8c/a00036_a88614989eb05e4e7fb74c61d77e33abf}
+
+
+Definition at line \hyperlink{a00036_source_l00379}{379} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a41b00ce2b5d9729f5783c2bf4ad50b35}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-X\-W\-A\-T\-T@{H\-X\-W\-A\-T\-T}}
+\index{H\-X\-W\-A\-T\-T@{H\-X\-W\-A\-T\-T}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-X\-W\-A\-T\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-X\-W\-A\-T\-T~0x\-E88\-A}}\label{de/d8c/a00036_a41b00ce2b5d9729f5783c2bf4ad50b35}
+
+
+Definition at line \hyperlink{a00036_source_l00466}{466} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a648ebd2ef4dfa6ffc1aac4bf47ddf991}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-X\-W\-A\-T\-T\-O\-S@{H\-X\-W\-A\-T\-T\-O\-S}}
+\index{H\-X\-W\-A\-T\-T\-O\-S@{H\-X\-W\-A\-T\-T\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-X\-W\-A\-T\-T\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-X\-W\-A\-T\-T\-O\-S~0x43\-A\-E}}\label{de/d8c/a00036_a648ebd2ef4dfa6ffc1aac4bf47ddf991}
+
+
+Definition at line \hyperlink{a00036_source_l00370}{370} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a9ede8f30bf9b21236bcc1d43fac0d18b}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Y\-\_\-reg@{H\-Y\-\_\-reg}}
+\index{H\-Y\-\_\-reg@{H\-Y\-\_\-reg}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Y\-\_\-reg}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Y\-\_\-reg~0x\-E\-A09}}\label{de/d8c/a00036_a9ede8f30bf9b21236bcc1d43fac0d18b}
+
+
+Definition at line \hyperlink{a00036_source_l00501}{501} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_ab72d02266f5b5d71c904dad3a46d11f2}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Y\-I\-H\-D@{H\-Y\-I\-H\-D}}
+\index{H\-Y\-I\-H\-D@{H\-Y\-I\-H\-D}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Y\-I\-H\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Y\-I\-H\-D~0x\-E897}}\label{de/d8c/a00036_ab72d02266f5b5d71c904dad3a46d11f2}
+
+
+Definition at line \hyperlink{a00036_source_l00479}{479} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a106c8c6a9eecb98d5120f148a5996b3b}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Y\-I\-R\-M\-S@{H\-Y\-I\-R\-M\-S}}
+\index{H\-Y\-I\-R\-M\-S@{H\-Y\-I\-R\-M\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Y\-I\-R\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Y\-I\-R\-M\-S~0x\-E891}}\label{de/d8c/a00036_a106c8c6a9eecb98d5120f148a5996b3b}
+
+
+Definition at line \hyperlink{a00036_source_l00473}{473} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_aac521643712ebedb26c099dd281c7d73}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Y\-I\-R\-M\-S\-O\-S@{H\-Y\-I\-R\-M\-S\-O\-S}}
+\index{H\-Y\-I\-R\-M\-S\-O\-S@{H\-Y\-I\-R\-M\-S\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Y\-I\-R\-M\-S\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Y\-I\-R\-M\-S\-O\-S~0x43\-B5}}\label{de/d8c/a00036_aac521643712ebedb26c099dd281c7d73}
+
+
+Definition at line \hyperlink{a00036_source_l00377}{377} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a568414006677cee317dbecd162a95858}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Y\-P\-F@{H\-Y\-P\-F}}
+\index{H\-Y\-P\-F@{H\-Y\-P\-F}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Y\-P\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Y\-P\-F~0x\-E895}}\label{de/d8c/a00036_a568414006677cee317dbecd162a95858}
+
+
+Definition at line \hyperlink{a00036_source_l00477}{477} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a8a225ce68dcc59466a3b22d1b788f311}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Y\-V\-A@{H\-Y\-V\-A}}
+\index{H\-Y\-V\-A@{H\-Y\-V\-A}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Y\-V\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Y\-V\-A~0x\-E894}}\label{de/d8c/a00036_a8a225ce68dcc59466a3b22d1b788f311}
+
+
+Definition at line \hyperlink{a00036_source_l00476}{476} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a847595b2ffa3361f8ae0d4613fbf7e37}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Y\-V\-A\-R@{H\-Y\-V\-A\-R}}
+\index{H\-Y\-V\-A\-R@{H\-Y\-V\-A\-R}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Y\-V\-A\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Y\-V\-A\-R~0x\-E893}}\label{de/d8c/a00036_a847595b2ffa3361f8ae0d4613fbf7e37}
+
+
+Definition at line \hyperlink{a00036_source_l00475}{475} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_ad951210faadd462b49a760597c96ddcf}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Y\-V\-A\-R\-O\-S@{H\-Y\-V\-A\-R\-O\-S}}
+\index{H\-Y\-V\-A\-R\-O\-S@{H\-Y\-V\-A\-R\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Y\-V\-A\-R\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Y\-V\-A\-R\-O\-S~0x43\-B2}}\label{de/d8c/a00036_ad951210faadd462b49a760597c96ddcf}
+
+
+Definition at line \hyperlink{a00036_source_l00374}{374} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a2f6ec1439fe130170ec30efb36850100}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Y\-V\-H\-D@{H\-Y\-V\-H\-D}}
+\index{H\-Y\-V\-H\-D@{H\-Y\-V\-H\-D}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Y\-V\-H\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Y\-V\-H\-D~0x\-E896}}\label{de/d8c/a00036_a2f6ec1439fe130170ec30efb36850100}
+
+
+Definition at line \hyperlink{a00036_source_l00478}{478} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_afbd4e3b51312feb540b5675a44d6abf5}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Y\-V\-R\-M\-S@{H\-Y\-V\-R\-M\-S}}
+\index{H\-Y\-V\-R\-M\-S@{H\-Y\-V\-R\-M\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Y\-V\-R\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Y\-V\-R\-M\-S~0x\-E890}}\label{de/d8c/a00036_afbd4e3b51312feb540b5675a44d6abf5}
+
+
+Definition at line \hyperlink{a00036_source_l00472}{472} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a0c59a0da73c75a4cd6ef298a5e866763}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Y\-V\-R\-M\-S\-O\-S@{H\-Y\-V\-R\-M\-S\-O\-S}}
+\index{H\-Y\-V\-R\-M\-S\-O\-S@{H\-Y\-V\-R\-M\-S\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Y\-V\-R\-M\-S\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Y\-V\-R\-M\-S\-O\-S~0x43\-B8}}\label{de/d8c/a00036_a0c59a0da73c75a4cd6ef298a5e866763}
+
+
+Definition at line \hyperlink{a00036_source_l00380}{380} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a34edc40ea8bcbfdb7d03fd94f225d184}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Y\-W\-A\-T\-T@{H\-Y\-W\-A\-T\-T}}
+\index{H\-Y\-W\-A\-T\-T@{H\-Y\-W\-A\-T\-T}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Y\-W\-A\-T\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Y\-W\-A\-T\-T~0x\-E892}}\label{de/d8c/a00036_a34edc40ea8bcbfdb7d03fd94f225d184}
+
+
+Definition at line \hyperlink{a00036_source_l00474}{474} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_af780a31635408814bba50784eeb1f462}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Y\-W\-A\-T\-T\-O\-S@{H\-Y\-W\-A\-T\-T\-O\-S}}
+\index{H\-Y\-W\-A\-T\-T\-O\-S@{H\-Y\-W\-A\-T\-T\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Y\-W\-A\-T\-T\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Y\-W\-A\-T\-T\-O\-S~0x43\-A\-F}}\label{de/d8c/a00036_af780a31635408814bba50784eeb1f462}
+
+
+Definition at line \hyperlink{a00036_source_l00371}{371} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_ac2c2eb2bf06da994f80b7c84a98fbbff}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Z\-\_\-reg@{H\-Z\-\_\-reg}}
+\index{H\-Z\-\_\-reg@{H\-Z\-\_\-reg}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Z\-\_\-reg}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Z\-\_\-reg~0x\-E\-A0\-A}}\label{de/d8c/a00036_ac2c2eb2bf06da994f80b7c84a98fbbff}
+
+
+Definition at line \hyperlink{a00036_source_l00502}{502} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a56de93637570af225bf16eeb5dc75b53}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Z\-I\-H\-D@{H\-Z\-I\-H\-D}}
+\index{H\-Z\-I\-H\-D@{H\-Z\-I\-H\-D}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Z\-I\-H\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Z\-I\-H\-D~0x\-E89\-F}}\label{de/d8c/a00036_a56de93637570af225bf16eeb5dc75b53}
+
+
+Definition at line \hyperlink{a00036_source_l00487}{487} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a422744a9f0c3a47ad3818902a10a4f73}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Z\-I\-R\-M\-S@{H\-Z\-I\-R\-M\-S}}
+\index{H\-Z\-I\-R\-M\-S@{H\-Z\-I\-R\-M\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Z\-I\-R\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Z\-I\-R\-M\-S~0x\-E899}}\label{de/d8c/a00036_a422744a9f0c3a47ad3818902a10a4f73}
+
+
+Definition at line \hyperlink{a00036_source_l00481}{481} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a1deadee161ae214be5ccc72f76eade2d}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Z\-I\-R\-M\-S\-O\-S@{H\-Z\-I\-R\-M\-S\-O\-S}}
+\index{H\-Z\-I\-R\-M\-S\-O\-S@{H\-Z\-I\-R\-M\-S\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Z\-I\-R\-M\-S\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Z\-I\-R\-M\-S\-O\-S~0x43\-B6}}\label{de/d8c/a00036_a1deadee161ae214be5ccc72f76eade2d}
+
+
+Definition at line \hyperlink{a00036_source_l00378}{378} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a79d893d611b3b5c28395f81a070844b5}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Z\-P\-F@{H\-Z\-P\-F}}
+\index{H\-Z\-P\-F@{H\-Z\-P\-F}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Z\-P\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Z\-P\-F~0x\-E89\-D}}\label{de/d8c/a00036_a79d893d611b3b5c28395f81a070844b5}
+
+
+Definition at line \hyperlink{a00036_source_l00485}{485} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_aa7c156f6b0fe00c1c83008c3469a006b}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Z\-V\-A@{H\-Z\-V\-A}}
+\index{H\-Z\-V\-A@{H\-Z\-V\-A}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Z\-V\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Z\-V\-A~0x\-E89\-C}}\label{de/d8c/a00036_aa7c156f6b0fe00c1c83008c3469a006b}
+
+
+Definition at line \hyperlink{a00036_source_l00484}{484} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_acc4d6765ba1ad97bd9055403813255f0}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Z\-V\-A\-R@{H\-Z\-V\-A\-R}}
+\index{H\-Z\-V\-A\-R@{H\-Z\-V\-A\-R}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Z\-V\-A\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Z\-V\-A\-R~0x\-E89\-B}}\label{de/d8c/a00036_acc4d6765ba1ad97bd9055403813255f0}
+
+
+Definition at line \hyperlink{a00036_source_l00483}{483} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a4769834a92cbd1fe75e81ad8082bf8c2}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Z\-V\-A\-R\-O\-S@{H\-Z\-V\-A\-R\-O\-S}}
+\index{H\-Z\-V\-A\-R\-O\-S@{H\-Z\-V\-A\-R\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Z\-V\-A\-R\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Z\-V\-A\-R\-O\-S~0x43\-B3}}\label{de/d8c/a00036_a4769834a92cbd1fe75e81ad8082bf8c2}
+
+
+Definition at line \hyperlink{a00036_source_l00375}{375} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a040a97dd095f5e8991d153c16e4ed4ff}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Z\-V\-H\-D@{H\-Z\-V\-H\-D}}
+\index{H\-Z\-V\-H\-D@{H\-Z\-V\-H\-D}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Z\-V\-H\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Z\-V\-H\-D~0x\-E89\-E}}\label{de/d8c/a00036_a040a97dd095f5e8991d153c16e4ed4ff}
+
+
+Definition at line \hyperlink{a00036_source_l00486}{486} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a128b260b91bf7bf1970f9e26c4866958}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Z\-V\-R\-M\-S@{H\-Z\-V\-R\-M\-S}}
+\index{H\-Z\-V\-R\-M\-S@{H\-Z\-V\-R\-M\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Z\-V\-R\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Z\-V\-R\-M\-S~0x\-E898}}\label{de/d8c/a00036_a128b260b91bf7bf1970f9e26c4866958}
+
+
+Definition at line \hyperlink{a00036_source_l00480}{480} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_afc76ca3b28d691349fc61030311acc53}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Z\-V\-R\-M\-S\-O\-S@{H\-Z\-V\-R\-M\-S\-O\-S}}
+\index{H\-Z\-V\-R\-M\-S\-O\-S@{H\-Z\-V\-R\-M\-S\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Z\-V\-R\-M\-S\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Z\-V\-R\-M\-S\-O\-S~0x43\-B9}}\label{de/d8c/a00036_afc76ca3b28d691349fc61030311acc53}
+
+
+Definition at line \hyperlink{a00036_source_l00381}{381} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a62b2bcc794747ca4c5755a58a2b48a60}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Z\-W\-A\-T\-T@{H\-Z\-W\-A\-T\-T}}
+\index{H\-Z\-W\-A\-T\-T@{H\-Z\-W\-A\-T\-T}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Z\-W\-A\-T\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Z\-W\-A\-T\-T~0x\-E89\-A}}\label{de/d8c/a00036_a62b2bcc794747ca4c5755a58a2b48a60}
+
+
+Definition at line \hyperlink{a00036_source_l00482}{482} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a1a18f83dbc089696501ce563808b95e3}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!H\-Z\-W\-A\-T\-T\-O\-S@{H\-Z\-W\-A\-T\-T\-O\-S}}
+\index{H\-Z\-W\-A\-T\-T\-O\-S@{H\-Z\-W\-A\-T\-T\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{H\-Z\-W\-A\-T\-T\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\-Z\-W\-A\-T\-T\-O\-S~0x43\-B0}}\label{de/d8c/a00036_a1a18f83dbc089696501ce563808b95e3}
+
+
+Definition at line \hyperlink{a00036_source_l00372}{372} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a525259e0ba4c1cfa00935ee908bd8925}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!I\-A\-W\-V@{I\-A\-W\-V}}
+\index{I\-A\-W\-V@{I\-A\-W\-V}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{I\-A\-W\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-A\-W\-V~0x\-E50\-C}}\label{de/d8c/a00036_a525259e0ba4c1cfa00935ee908bd8925}
+
+
+Definition at line \hyperlink{a00036_source_l00413}{413} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_af68641d9d0f3ee5d4ab9b220ecac7e08}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!I\-B\-W\-V@{I\-B\-W\-V}}
+\index{I\-B\-W\-V@{I\-B\-W\-V}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{I\-B\-W\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-B\-W\-V~0x\-E50\-D}}\label{de/d8c/a00036_af68641d9d0f3ee5d4ab9b220ecac7e08}
+
+
+Definition at line \hyperlink{a00036_source_l00414}{414} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_aada6da221fdbd1a9756b11959e2dd13f}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!I\-C\-W\-V@{I\-C\-W\-V}}
+\index{I\-C\-W\-V@{I\-C\-W\-V}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{I\-C\-W\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-C\-W\-V~0x\-E50\-E}}\label{de/d8c/a00036_aada6da221fdbd1a9756b11959e2dd13f}
+
+
+Definition at line \hyperlink{a00036_source_l00415}{415} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a55555ccc816198768fe973de5ca2b185}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!I\-N\-W\-V@{I\-N\-W\-V}}
+\index{I\-N\-W\-V@{I\-N\-W\-V}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{I\-N\-W\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-W\-V~0x\-E50\-F}}\label{de/d8c/a00036_a55555ccc816198768fe973de5ca2b185}
+
+
+Definition at line \hyperlink{a00036_source_l00416}{416} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a5ddcbc71d03e9945b4f454d59bb76140}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!I\-P\-E\-A\-K@{I\-P\-E\-A\-K}}
+\index{I\-P\-E\-A\-K@{I\-P\-E\-A\-K}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{I\-P\-E\-A\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-P\-E\-A\-K~0x\-E500}}\label{de/d8c/a00036_a5ddcbc71d03e9945b4f454d59bb76140}
+
+
+Definition at line \hyperlink{a00036_source_l00403}{403} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_ac84c4287f80dc29bdec129d9058180a8}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!I\-S\-U\-M@{I\-S\-U\-M}}
+\index{I\-S\-U\-M@{I\-S\-U\-M}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{I\-S\-U\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-S\-U\-M~0x43\-C7}}\label{de/d8c/a00036_ac84c4287f80dc29bdec129d9058180a8}
+
+
+Definition at line \hyperlink{a00036_source_l00389}{389} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a0215d6d8187642f8789c19422210c3eb}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!I\-S\-U\-M\-L\-V\-L@{I\-S\-U\-M\-L\-V\-L}}
+\index{I\-S\-U\-M\-L\-V\-L@{I\-S\-U\-M\-L\-V\-L}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{I\-S\-U\-M\-L\-V\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-S\-U\-M\-L\-V\-L~0x4399}}\label{de/d8c/a00036_a0215d6d8187642f8789c19422210c3eb}
+
+
+Definition at line \hyperlink{a00036_source_l00356}{356} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_af451e4358c635504ffb96127fb87b003}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!I\-T\-H\-D\-N@{I\-T\-H\-D\-N}}
+\index{I\-T\-H\-D\-N@{I\-T\-H\-D\-N}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{I\-T\-H\-D\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-T\-H\-D\-N~0x\-E887}}\label{de/d8c/a00036_af451e4358c635504ffb96127fb87b003}
+
+
+Definition at line \hyperlink{a00036_source_l00463}{463} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_adab6c053c389db762442c88b7e32e543}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!L\-A\-S\-T\-\_\-\-A\-D\-D@{L\-A\-S\-T\-\_\-\-A\-D\-D}}
+\index{L\-A\-S\-T\-\_\-\-A\-D\-D@{L\-A\-S\-T\-\_\-\-A\-D\-D}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{L\-A\-S\-T\-\_\-\-A\-D\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-A\-S\-T\-\_\-\-A\-D\-D~0x\-E9\-F\-E}}\label{de/d8c/a00036_adab6c053c389db762442c88b7e32e543}
+
+
+Registers. 
+
+
+
+Definition at line \hyperlink{a00036_source_l00314}{314} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+
+
+Referenced by \hyperlink{a00040_source_l00343}{spi\-\_\-ram\-\_\-protection()}, and \hyperlink{a00040_source_l00221}{spi\-\_\-write()}.
+
+\hypertarget{a00036_aed1301248abf6c26045727a190f6550a}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!L\-A\-S\-T\-\_\-\-O\-P@{L\-A\-S\-T\-\_\-\-O\-P}}
+\index{L\-A\-S\-T\-\_\-\-O\-P@{L\-A\-S\-T\-\_\-\-O\-P}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{L\-A\-S\-T\-\_\-\-O\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-A\-S\-T\-\_\-\-O\-P~0x\-E\-A01}}\label{de/d8c/a00036_aed1301248abf6c26045727a190f6550a}
+
+
+Definition at line \hyperlink{a00036_source_l00316}{316} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+
+
+Referenced by \hyperlink{a00040_source_l00343}{spi\-\_\-ram\-\_\-protection()}, and \hyperlink{a00040_source_l00221}{spi\-\_\-write()}.
+
+\hypertarget{a00036_afcefca411effe86930341732382fb5e5}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A16@{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A16}}
+\index{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A16@{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A16}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A16}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A16~0x\-E9\-F\-F}}\label{de/d8c/a00036_afcefca411effe86930341732382fb5e5}
+
+
+Definition at line \hyperlink{a00036_source_l00049}{49} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+
+
+Referenced by \hyperlink{a00040_source_l00221}{spi\-\_\-write()}.
+
+\hypertarget{a00036_a0d09934e23666ce21357121f281f2f2a}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A32@{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A32}}
+\index{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A32@{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A32}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A32}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A32~0x\-E5\-F\-F}}\label{de/d8c/a00036_a0d09934e23666ce21357121f281f2f2a}
+
+
+Definition at line \hyperlink{a00036_source_l00050}{50} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+
+
+Referenced by \hyperlink{a00040_source_l00221}{spi\-\_\-write()}.
+
+\hypertarget{a00036_ac23cb2354e07d7403fca849805a8e278}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A8@{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A8}}
+\index{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A8@{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A8}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A8}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A8~0x\-E7\-F\-D}}\label{de/d8c/a00036_ac23cb2354e07d7403fca849805a8e278}
+
+
+Definition at line \hyperlink{a00036_source_l00048}{48} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+
+
+Referenced by \hyperlink{a00040_source_l00343}{spi\-\_\-ram\-\_\-protection()}, and \hyperlink{a00040_source_l00221}{spi\-\_\-write()}.
+
+\hypertarget{a00036_a99f0c5464504ec1c928ef08f8089436b}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A\-\_\-16bit@{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A\-\_\-16bit}}
+\index{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A\-\_\-16bit@{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A\-\_\-16bit}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A\-\_\-16bit}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A\-\_\-16bit~0x\-E9\-F\-F}}\label{de/d8c/a00036_a99f0c5464504ec1c928ef08f8089436b}
+
+
+Definition at line \hyperlink{a00036_source_l00320}{320} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a1a1766ab426d88553f65298497d636fc}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A\-\_\-24bit@{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A\-\_\-24bit}}
+\index{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A\-\_\-24bit@{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A\-\_\-24bit}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A\-\_\-24bit}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A\-\_\-24bit~0x\-E5\-F\-F}}\label{de/d8c/a00036_a1a1766ab426d88553f65298497d636fc}
+
+
+Definition at line \hyperlink{a00036_source_l00322}{322} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_aaa92568580634eb4d7142a90ffc296ad}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A\-\_\-8bit@{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A\-\_\-8bit}}
+\index{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A\-\_\-8bit@{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A\-\_\-8bit}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A\-\_\-8bit}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-A\-S\-T\-\_\-\-R\-W\-D\-A\-T\-A\-\_\-8bit~0x\-E7\-F\-D}}\label{de/d8c/a00036_aaa92568580634eb4d7142a90ffc296ad}
+
+
+Definition at line \hyperlink{a00036_source_l00318}{318} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_ad9e1efd6f7feec870444af831015a682}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!L\-C\-Y\-C\-M\-O\-D\-E@{L\-C\-Y\-C\-M\-O\-D\-E}}
+\index{L\-C\-Y\-C\-M\-O\-D\-E@{L\-C\-Y\-C\-M\-O\-D\-E}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{L\-C\-Y\-C\-M\-O\-D\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-C\-Y\-C\-M\-O\-D\-E~0x\-E702}}\label{de/d8c/a00036_ad9e1efd6f7feec870444af831015a682}
+
+
+A\-D\-E7880 L\-C\-Y\-C\-M\-O\-D\-E Register Physical address and structure. 
+
+
+
+Definition at line \hyperlink{a00036_source_l00197}{197} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a9d2caa865052cffb4b8850e55ee18c8d}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!L\-I\-N\-E\-C\-Y\-C@{L\-I\-N\-E\-C\-Y\-C}}
+\index{L\-I\-N\-E\-C\-Y\-C@{L\-I\-N\-E\-C\-Y\-C}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{L\-I\-N\-E\-C\-Y\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-I\-N\-E\-C\-Y\-C~0x\-E60\-C}}\label{de/d8c/a00036_a9d2caa865052cffb4b8850e55ee18c8d}
+
+
+Definition at line \hyperlink{a00036_source_l00434}{434} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a7ad463156ea585050f4f3516081208c8}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!L\-P\-O\-I\-L\-V\-L@{L\-P\-O\-I\-L\-V\-L}}
+\index{L\-P\-O\-I\-L\-V\-L@{L\-P\-O\-I\-L\-V\-L}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{L\-P\-O\-I\-L\-V\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-P\-O\-I\-L\-V\-L~0x\-E\-C00}}\label{de/d8c/a00036_a7ad463156ea585050f4f3516081208c8}
+
+
+Definition at line \hyperlink{a00036_source_l00503}{503} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_ac1d7c440cf3cf403bbc1879f86bba211}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!M\-A\-S\-K0@{M\-A\-S\-K0}}
+\index{M\-A\-S\-K0@{M\-A\-S\-K0}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{M\-A\-S\-K0}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-S\-K0~0x\-E50\-A}}\label{de/d8c/a00036_ac1d7c440cf3cf403bbc1879f86bba211}
+
+
+Definition at line \hyperlink{a00036_source_l00279}{279} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a84bd6e5737d6e76532842829faeb2b07}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!M\-A\-S\-K1@{M\-A\-S\-K1}}
+\index{M\-A\-S\-K1@{M\-A\-S\-K1}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{M\-A\-S\-K1}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-S\-K1~0x\-E50\-B}}\label{de/d8c/a00036_a84bd6e5737d6e76532842829faeb2b07}
+
+
+Definition at line \hyperlink{a00036_source_l00293}{293} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a0f139512fb7be680a27b2bbc3333efe8}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!M\-M\-O\-D\-E@{M\-M\-O\-D\-E}}
+\index{M\-M\-O\-D\-E@{M\-M\-O\-D\-E}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{M\-M\-O\-D\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-M\-O\-D\-E~0x\-E700}}\label{de/d8c/a00036_a0f139512fb7be680a27b2bbc3333efe8}
+
+
+Definition at line \hyperlink{a00036_source_l00447}{447} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_ab25bd124940aca39914f363b92cabb95}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!M\-O\-D\-E\-\_\-0\-\_\-0@{M\-O\-D\-E\-\_\-0\-\_\-0}}
+\index{M\-O\-D\-E\-\_\-0\-\_\-0@{M\-O\-D\-E\-\_\-0\-\_\-0}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{M\-O\-D\-E\-\_\-0\-\_\-0}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-O\-D\-E\-\_\-0\-\_\-0~0b00}}\label{de/d8c/a00036_ab25bd124940aca39914f363b92cabb95}
+
+
+Definition at line \hyperlink{a00036_source_l00026}{26} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_aa4b4d2ec825ed4a85181717901110ff7}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!M\-O\-D\-E\-\_\-0\-\_\-1@{M\-O\-D\-E\-\_\-0\-\_\-1}}
+\index{M\-O\-D\-E\-\_\-0\-\_\-1@{M\-O\-D\-E\-\_\-0\-\_\-1}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{M\-O\-D\-E\-\_\-0\-\_\-1}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-O\-D\-E\-\_\-0\-\_\-1~0b01}}\label{de/d8c/a00036_aa4b4d2ec825ed4a85181717901110ff7}
+
+
+Definition at line \hyperlink{a00036_source_l00027}{27} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a2f363ec07f38ba94cc1d74172233d801}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!M\-O\-D\-E\-\_\-1\-\_\-0@{M\-O\-D\-E\-\_\-1\-\_\-0}}
+\index{M\-O\-D\-E\-\_\-1\-\_\-0@{M\-O\-D\-E\-\_\-1\-\_\-0}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{M\-O\-D\-E\-\_\-1\-\_\-0}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-O\-D\-E\-\_\-1\-\_\-0~0b10}}\label{de/d8c/a00036_a2f363ec07f38ba94cc1d74172233d801}
+
+
+Definition at line \hyperlink{a00036_source_l00028}{28} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_abfccf6bbc27bb259fc6233bc9ee591e2}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!M\-O\-D\-E\-\_\-1\-\_\-1@{M\-O\-D\-E\-\_\-1\-\_\-1}}
+\index{M\-O\-D\-E\-\_\-1\-\_\-1@{M\-O\-D\-E\-\_\-1\-\_\-1}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{M\-O\-D\-E\-\_\-1\-\_\-1}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-O\-D\-E\-\_\-1\-\_\-1~0b11}}\label{de/d8c/a00036_abfccf6bbc27bb259fc6233bc9ee591e2}
+
+
+Definition at line \hyperlink{a00036_source_l00029}{29} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_af07e2afa008b4d5feb6f637e13865b77}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!N\-I\-G\-A\-I\-N@{N\-I\-G\-A\-I\-N}}
+\index{N\-I\-G\-A\-I\-N@{N\-I\-G\-A\-I\-N}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{N\-I\-G\-A\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-I\-G\-A\-I\-N~0x4386}}\label{de/d8c/a00036_af07e2afa008b4d5feb6f637e13865b77}
+
+
+Definition at line \hyperlink{a00036_source_l00340}{340} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a38f6f388b7b5c65b2d453384a25f6773}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!N\-I\-R\-M\-S@{N\-I\-R\-M\-S}}
+\index{N\-I\-R\-M\-S@{N\-I\-R\-M\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{N\-I\-R\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-I\-R\-M\-S~0x43\-C6}}\label{de/d8c/a00036_a38f6f388b7b5c65b2d453384a25f6773}
+
+
+Definition at line \hyperlink{a00036_source_l00388}{388} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a044389a99da8b8ab9f1e67b05ba0c5ef}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!N\-I\-R\-M\-S\-O\-S@{N\-I\-R\-M\-S\-O\-S}}
+\index{N\-I\-R\-M\-S\-O\-S@{N\-I\-R\-M\-S\-O\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{N\-I\-R\-M\-S\-O\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-I\-R\-M\-S\-O\-S~0x4395}}\label{de/d8c/a00036_a044389a99da8b8ab9f1e67b05ba0c5ef}
+
+
+Definition at line \hyperlink{a00036_source_l00354}{354} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a16c43f1bda572d5a810da2af81dfd3ff}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!O\-I\-L\-V\-L@{O\-I\-L\-V\-L}}
+\index{O\-I\-L\-V\-L@{O\-I\-L\-V\-L}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{O\-I\-L\-V\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-I\-L\-V\-L~0x\-E507}}\label{de/d8c/a00036_a16c43f1bda572d5a810da2af81dfd3ff}
+
+
+Definition at line \hyperlink{a00036_source_l00409}{409} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_acceeea16d6256d808598f6191aae5601}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!O\-V\-L\-V\-L@{O\-V\-L\-V\-L}}
+\index{O\-V\-L\-V\-L@{O\-V\-L\-V\-L}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{O\-V\-L\-V\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-V\-L\-V\-L~0x\-E508}}\label{de/d8c/a00036_acceeea16d6256d808598f6191aae5601}
+
+
+Definition at line \hyperlink{a00036_source_l00410}{410} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_aab38f75e935804d90a60ddee3bb96962}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!P\-E\-A\-K\-C\-Y\-C@{P\-E\-A\-K\-C\-Y\-C}}
+\index{P\-E\-A\-K\-C\-Y\-C@{P\-E\-A\-K\-C\-Y\-C}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{P\-E\-A\-K\-C\-Y\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-E\-A\-K\-C\-Y\-C~0x\-E703}}\label{de/d8c/a00036_aab38f75e935804d90a60ddee3bb96962}
+
+
+Definition at line \hyperlink{a00036_source_l00450}{450} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a603a075882edcbaa63c480c44f436947}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!P\-H\-N\-O\-L\-O\-A\-D@{P\-H\-N\-O\-L\-O\-A\-D}}
+\index{P\-H\-N\-O\-L\-O\-A\-D@{P\-H\-N\-O\-L\-O\-A\-D}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{P\-H\-N\-O\-L\-O\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-H\-N\-O\-L\-O\-A\-D~0x\-E608}}\label{de/d8c/a00036_a603a075882edcbaa63c480c44f436947}
+
+
+Definition at line \hyperlink{a00036_source_l00433}{433} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a0d8bb1933bd9e9967444329b9f43d89c}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!P\-H\-S\-I\-G\-N@{P\-H\-S\-I\-G\-N}}
+\index{P\-H\-S\-I\-G\-N@{P\-H\-S\-I\-G\-N}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{P\-H\-S\-I\-G\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-H\-S\-I\-G\-N~0x\-E617}}\label{de/d8c/a00036_a0d8bb1933bd9e9967444329b9f43d89c}
+
+
+A\-D\-E7880 P\-H\-S\-I\-G\-N Register Physical address and structure. 
+
+
+
+Definition at line \hyperlink{a00036_source_l00150}{150} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a3f530aec5cb9754e76ffadfa165ca107}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!P\-H\-S\-T\-A\-T\-U\-S@{P\-H\-S\-T\-A\-T\-U\-S}}
+\index{P\-H\-S\-T\-A\-T\-U\-S@{P\-H\-S\-T\-A\-T\-U\-S}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{P\-H\-S\-T\-A\-T\-U\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-H\-S\-T\-A\-T\-U\-S~0x\-E600}}\label{de/d8c/a00036_a3f530aec5cb9754e76ffadfa165ca107}
+
+
+Definition at line \hyperlink{a00036_source_l00429}{429} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a35f69a612b07bbf1de53bbbd8d877c09}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!R\-U\-N@{R\-U\-N}}
+\index{R\-U\-N@{R\-U\-N}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{R\-U\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-U\-N~0x\-E228}}\label{de/d8c/a00036_a35f69a612b07bbf1de53bbbd8d877c09}
+
+
+D\-S\-P run control register. 
+
+
+
+Definition at line \hyperlink{a00036_source_l00053}{53} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_aa315ec13f75dbeb156b2222f99cea0f0}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!S\-A\-G\-C\-Y\-C@{S\-A\-G\-C\-Y\-C}}
+\index{S\-A\-G\-C\-Y\-C@{S\-A\-G\-C\-Y\-C}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{S\-A\-G\-C\-Y\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-A\-G\-C\-Y\-C~0x\-E704}}\label{de/d8c/a00036_aa315ec13f75dbeb156b2222f99cea0f0}
+
+
+Definition at line \hyperlink{a00036_source_l00451}{451} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a12b4dc829ba25d75338dc85882a8b47d}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!S\-A\-G\-L\-V\-L@{S\-A\-G\-L\-V\-L}}
+\index{S\-A\-G\-L\-V\-L@{S\-A\-G\-L\-V\-L}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{S\-A\-G\-L\-V\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-A\-G\-L\-V\-L~0x\-E509}}\label{de/d8c/a00036_a12b4dc829ba25d75338dc85882a8b47d}
+
+
+Definition at line \hyperlink{a00036_source_l00411}{411} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_aaf584f70289e5fd799fef97c85bb97ee}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!S\-T\-A\-T\-U\-S0@{S\-T\-A\-T\-U\-S0}}
+\index{S\-T\-A\-T\-U\-S0@{S\-T\-A\-T\-U\-S0}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{S\-T\-A\-T\-U\-S0}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-T\-A\-T\-U\-S0~0x\-E502}}\label{de/d8c/a00036_aaf584f70289e5fd799fef97c85bb97ee}
+
+
+Definition at line \hyperlink{a00036_source_l00216}{216} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+
+
+Referenced by \hyperlink{a00035_source_l00122}{wait\-\_\-new\-\_\-conversion()}.
+
+\hypertarget{a00036_aa6aa3353326411951938073499579582}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!S\-T\-A\-T\-U\-S1@{S\-T\-A\-T\-U\-S1}}
+\index{S\-T\-A\-T\-U\-S1@{S\-T\-A\-T\-U\-S1}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{S\-T\-A\-T\-U\-S1}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-T\-A\-T\-U\-S1~0x\-E503}}\label{de/d8c/a00036_aa6aa3353326411951938073499579582}
+
+
+Definition at line \hyperlink{a00036_source_l00265}{265} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a1d6674e575747b429aa04d0ad94b7290}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!V\-A\-N\-O\-L\-O\-A\-D@{V\-A\-N\-O\-L\-O\-A\-D}}
+\index{V\-A\-N\-O\-L\-O\-A\-D@{V\-A\-N\-O\-L\-O\-A\-D}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{V\-A\-N\-O\-L\-O\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-A\-N\-O\-L\-O\-A\-D~0x\-E90\-A}}\label{de/d8c/a00036_a1d6674e575747b429aa04d0ad94b7290}
+
+
+Definition at line \hyperlink{a00036_source_l00497}{497} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_add44e087f0f18c22c64adefc3cd8e7c6}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!V\-A\-R\-N\-O\-L\-O\-A\-D@{V\-A\-R\-N\-O\-L\-O\-A\-D}}
+\index{V\-A\-R\-N\-O\-L\-O\-A\-D@{V\-A\-R\-N\-O\-L\-O\-A\-D}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{V\-A\-R\-N\-O\-L\-O\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-A\-R\-N\-O\-L\-O\-A\-D~0x\-E909}}\label{de/d8c/a00036_add44e087f0f18c22c64adefc3cd8e7c6}
+
+
+Definition at line \hyperlink{a00036_source_l00496}{496} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a37f9d81c6baec7ee49887b6f19ac1996}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!V\-A\-R\-T\-H\-R@{V\-A\-R\-T\-H\-R}}
+\index{V\-A\-R\-T\-H\-R@{V\-A\-R\-T\-H\-R}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{V\-A\-R\-T\-H\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-A\-R\-T\-H\-R~0x\-E\-A03}}\label{de/d8c/a00036_a37f9d81c6baec7ee49887b6f19ac1996}
+
+
+Definition at line \hyperlink{a00036_source_l00045}{45} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a105c1723ae41d790579de1a93641abea}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!V\-A\-R\-T\-H\-R\-\_\-\-D\-E\-F\-U\-L\-T@{V\-A\-R\-T\-H\-R\-\_\-\-D\-E\-F\-U\-L\-T}}
+\index{V\-A\-R\-T\-H\-R\-\_\-\-D\-E\-F\-U\-L\-T@{V\-A\-R\-T\-H\-R\-\_\-\-D\-E\-F\-U\-L\-T}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{V\-A\-R\-T\-H\-R\-\_\-\-D\-E\-F\-U\-L\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-A\-R\-T\-H\-R\-\_\-\-D\-E\-F\-U\-L\-T~0x03}}\label{de/d8c/a00036_a105c1723ae41d790579de1a93641abea}
+
+
+Threshold used in phase total /fundamental reactive power data path. 
+
+
+
+Definition at line \hyperlink{a00036_source_l00038}{38} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_af97b8b6a3a2c63818edbc7f6cdceae23}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!V\-A\-T\-H\-R@{V\-A\-T\-H\-R}}
+\index{V\-A\-T\-H\-R@{V\-A\-T\-H\-R}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{V\-A\-T\-H\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-A\-T\-H\-R~0x\-E\-A04}}\label{de/d8c/a00036_af97b8b6a3a2c63818edbc7f6cdceae23}
+
+
+Definition at line \hyperlink{a00036_source_l00046}{46} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a3ca4a19859a50d3b85939e9b0c145637}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!V\-A\-T\-H\-R\-\_\-\-D\-E\-F\-U\-L\-T@{V\-A\-T\-H\-R\-\_\-\-D\-E\-F\-U\-L\-T}}
+\index{V\-A\-T\-H\-R\-\_\-\-D\-E\-F\-U\-L\-T@{V\-A\-T\-H\-R\-\_\-\-D\-E\-F\-U\-L\-T}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{V\-A\-T\-H\-R\-\_\-\-D\-E\-F\-U\-L\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-A\-T\-H\-R\-\_\-\-D\-E\-F\-U\-L\-T~0x03}}\label{de/d8c/a00036_a3ca4a19859a50d3b85939e9b0c145637}
+
+
+Threshold used in phase apparent power data path. 
+
+
+
+Definition at line \hyperlink{a00036_source_l00039}{39} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_acfb04c2e25dcd5d27eac1dbe952b076c}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!V\-A\-W\-V@{V\-A\-W\-V}}
+\index{V\-A\-W\-V@{V\-A\-W\-V}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{V\-A\-W\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-A\-W\-V~0x\-E510}}\label{de/d8c/a00036_acfb04c2e25dcd5d27eac1dbe952b076c}
+
+
+Definition at line \hyperlink{a00036_source_l00417}{417} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_aede3d3efd022c6b37c33919e398feedc}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!V\-B\-W\-V@{V\-B\-W\-V}}
+\index{V\-B\-W\-V@{V\-B\-W\-V}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{V\-B\-W\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-B\-W\-V~0x\-E511}}\label{de/d8c/a00036_aede3d3efd022c6b37c33919e398feedc}
+
+
+Definition at line \hyperlink{a00036_source_l00418}{418} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_aba35b37f2923547e4ef6ef81ef23c179}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!V\-C\-W\-V@{V\-C\-W\-V}}
+\index{V\-C\-W\-V@{V\-C\-W\-V}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{V\-C\-W\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-C\-W\-V~0x\-E512}}\label{de/d8c/a00036_aba35b37f2923547e4ef6ef81ef23c179}
+
+
+Definition at line \hyperlink{a00036_source_l00419}{419} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a00c9dad6cd91a4abb6062ea1efc82bd9}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!Version@{Version}}
+\index{Version@{Version}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{Version}]{\setlength{\rightskip}{0pt plus 5cm}\#define Version~0x\-E707}}\label{de/d8c/a00036_a00c9dad6cd91a4abb6062ea1efc82bd9}
+
+
+Definition at line \hyperlink{a00036_source_l00454}{454} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a601225f0680bfe13cf5fc0c2c52f37c5}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!V\-L\-E\-V\-E\-L@{V\-L\-E\-V\-E\-L}}
+\index{V\-L\-E\-V\-E\-L@{V\-L\-E\-V\-E\-L}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{V\-L\-E\-V\-E\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-L\-E\-V\-E\-L~0x439\-F}}\label{de/d8c/a00036_a601225f0680bfe13cf5fc0c2c52f37c5}
+
+
+Definition at line \hyperlink{a00036_source_l00047}{47} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a489507ec5a9fe148bbc1b61afc07f27a}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!V\-L\-E\-V\-E\-L\-\_\-\-D\-E\-F\-U\-L\-T@{V\-L\-E\-V\-E\-L\-\_\-\-D\-E\-F\-U\-L\-T}}
+\index{V\-L\-E\-V\-E\-L\-\_\-\-D\-E\-F\-U\-L\-T@{V\-L\-E\-V\-E\-L\-\_\-\-D\-E\-F\-U\-L\-T}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{V\-L\-E\-V\-E\-L\-\_\-\-D\-E\-F\-U\-L\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-L\-E\-V\-E\-L\-\_\-\-D\-E\-F\-U\-L\-T~0x38000}}\label{de/d8c/a00036_a489507ec5a9fe148bbc1b61afc07f27a}
+
+
+use Equation 26, Equation 37, Equation 44, Equation 22, and Equation 42 in the datasheet to determine this values 
+
+
+
+Definition at line \hyperlink{a00036_source_l00040}{40} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a7f5107f4dbb40b5aa9f3e6de81d5b1e9}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!V\-N\-O\-M@{V\-N\-O\-M}}
+\index{V\-N\-O\-M@{V\-N\-O\-M}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{V\-N\-O\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-N\-O\-M~0x\-E520}}\label{de/d8c/a00036_a7f5107f4dbb40b5aa9f3e6de81d5b1e9}
+
+
+Definition at line \hyperlink{a00036_source_l00427}{427} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a90d5d59f51c3ee67d2578e9f1799b5ea}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!V\-P\-E\-A\-K@{V\-P\-E\-A\-K}}
+\index{V\-P\-E\-A\-K@{V\-P\-E\-A\-K}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{V\-P\-E\-A\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-P\-E\-A\-K~0x\-E501}}\label{de/d8c/a00036_a90d5d59f51c3ee67d2578e9f1799b5ea}
+
+
+Definition at line \hyperlink{a00036_source_l00404}{404} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_af4bad23826b54772e2de561c5cff3fa6}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!V\-T\-H\-D\-N@{V\-T\-H\-D\-N}}
+\index{V\-T\-H\-D\-N@{V\-T\-H\-D\-N}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{V\-T\-H\-D\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-T\-H\-D\-N~0x\-E886}}\label{de/d8c/a00036_af4bad23826b54772e2de561c5cff3fa6}
+
+
+Definition at line \hyperlink{a00036_source_l00462}{462} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a60f6494fba59e1f242240d12202f4746}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!W\-T\-H\-R@{W\-T\-H\-R}}
+\index{W\-T\-H\-R@{W\-T\-H\-R}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{W\-T\-H\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-T\-H\-R~0x\-E\-A02}}\label{de/d8c/a00036_a60f6494fba59e1f242240d12202f4746}
+
+
+Physical Address. 
+
+
+
+Definition at line \hyperlink{a00036_source_l00044}{44} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a54a78cc890aa0300e82a9de239ebc5a5}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!W\-T\-H\-R\-\_\-\-D\-E\-F\-U\-L\-T@{W\-T\-H\-R\-\_\-\-D\-E\-F\-U\-L\-T}}
+\index{W\-T\-H\-R\-\_\-\-D\-E\-F\-U\-L\-T@{W\-T\-H\-R\-\_\-\-D\-E\-F\-U\-L\-T}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{W\-T\-H\-R\-\_\-\-D\-E\-F\-U\-L\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-T\-H\-R\-\_\-\-D\-E\-F\-U\-L\-T~0x03}}\label{de/d8c/a00036_a54a78cc890aa0300e82a9de239ebc5a5}
+
+
+Threshold registers. 
+
+Threshold used in phase total /fundamental active power data path. 
+
+Definition at line \hyperlink{a00036_source_l00037}{37} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+\hypertarget{a00036_a29659e274070aaec5da2ad7752f60a51}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!Z\-X\-T\-O\-U\-T@{Z\-X\-T\-O\-U\-T}}
+\index{Z\-X\-T\-O\-U\-T@{Z\-X\-T\-O\-U\-T}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{Z\-X\-T\-O\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define Z\-X\-T\-O\-U\-T~0x\-E60\-D}}\label{de/d8c/a00036_a29659e274070aaec5da2ad7752f60a51}
+
+
+Definition at line \hyperlink{a00036_source_l00435}{435} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{a00036_ac9ade8535a4f8c8b65b447e7aaac2700}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!accmode\-\_\-reg\-\_\-u@{accmode\-\_\-reg\-\_\-u}}
+\index{accmode\-\_\-reg\-\_\-u@{accmode\-\_\-reg\-\_\-u}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{accmode\-\_\-reg\-\_\-u}]{\setlength{\rightskip}{0pt plus 5cm}typedef union {\bf accmode\-\_\-reg\-\_\-u} {\bf accmode\-\_\-reg\-\_\-u}}}\label{de/d8c/a00036_ac9ade8535a4f8c8b65b447e7aaac2700}
+\hypertarget{a00036_a07511a3a5ff578314792d6df1c7cc5e4}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!pga\-\_\-et@{pga\-\_\-et}}
+\index{pga\-\_\-et@{pga\-\_\-et}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{pga\-\_\-et}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf pga\-\_\-et} {\bf pga\-\_\-et}}}\label{de/d8c/a00036_a07511a3a5ff578314792d6df1c7cc5e4}
+
+
+A\-D\-E7880 Gain Register Physical address and structure. 
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{a00036_a2f9fad1776ad62bb8d7627582ecf8fd5}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!mode\-\_\-et@{mode\-\_\-et}}
+\index{mode\-\_\-et@{mode\-\_\-et}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{mode\-\_\-et}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf mode\-\_\-et}}}\label{de/d8c/a00036_a2f9fad1776ad62bb8d7627582ecf8fd5}
+
+
+A\-D\-E7880 Register Physical address and structure. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{mode\-\_\-0\-\_\-0@{mode\-\_\-0\-\_\-0}!ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}}\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!mode\-\_\-0\-\_\-0@{mode\-\_\-0\-\_\-0}}\item[{\em 
+\hypertarget{a00036_a2f9fad1776ad62bb8d7627582ecf8fd5a1dee68c44c7100156916a6f1924dfe1d}{mode\-\_\-0\-\_\-0}\label{de/d8c/a00036_a2f9fad1776ad62bb8d7627582ecf8fd5a1dee68c44c7100156916a6f1924dfe1d}
+}]\index{mode\-\_\-0\-\_\-1@{mode\-\_\-0\-\_\-1}!ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}}\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!mode\-\_\-0\-\_\-1@{mode\-\_\-0\-\_\-1}}\item[{\em 
+\hypertarget{a00036_a2f9fad1776ad62bb8d7627582ecf8fd5a6902084e9f2215f3ad655232a365fa94}{mode\-\_\-0\-\_\-1}\label{de/d8c/a00036_a2f9fad1776ad62bb8d7627582ecf8fd5a6902084e9f2215f3ad655232a365fa94}
+}]\index{mode\-\_\-1\-\_\-0@{mode\-\_\-1\-\_\-0}!ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}}\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!mode\-\_\-1\-\_\-0@{mode\-\_\-1\-\_\-0}}\item[{\em 
+\hypertarget{a00036_a2f9fad1776ad62bb8d7627582ecf8fd5a94d8576ca2db3e13b94dfaf4ff333c86}{mode\-\_\-1\-\_\-0}\label{de/d8c/a00036_a2f9fad1776ad62bb8d7627582ecf8fd5a94d8576ca2db3e13b94dfaf4ff333c86}
+}]\index{mode\-\_\-1\-\_\-1@{mode\-\_\-1\-\_\-1}!ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}}\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!mode\-\_\-1\-\_\-1@{mode\-\_\-1\-\_\-1}}\item[{\em 
+\hypertarget{a00036_a2f9fad1776ad62bb8d7627582ecf8fd5ac640d7e945220b2b6b82511956da6e37}{mode\-\_\-1\-\_\-1}\label{de/d8c/a00036_a2f9fad1776ad62bb8d7627582ecf8fd5ac640d7e945220b2b6b82511956da6e37}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line \hyperlink{a00036_source_l00124}{124} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+
+\begin{DoxyCode}
+00124 \{  \textcolor{comment}{//see the datasheet about this const}
+00125    \hyperlink{a00036_a2f9fad1776ad62bb8d7627582ecf8fd5a1dee68c44c7100156916a6f1924dfe1d}{mode\_0\_0} = \hyperlink{a00036_ab25bd124940aca39914f363b92cabb95}{MODE\_0\_0},       
+00126    \hyperlink{a00036_a2f9fad1776ad62bb8d7627582ecf8fd5a6902084e9f2215f3ad655232a365fa94}{mode\_0\_1} = \hyperlink{a00036_aa4b4d2ec825ed4a85181717901110ff7}{MODE\_0\_1},   
+00127    \hyperlink{a00036_a2f9fad1776ad62bb8d7627582ecf8fd5a94d8576ca2db3e13b94dfaf4ff333c86}{mode\_1\_0} = \hyperlink{a00036_a2f363ec07f38ba94cc1d74172233d801}{MODE\_1\_0}, 
+00128    \hyperlink{a00036_a2f9fad1776ad62bb8d7627582ecf8fd5ac640d7e945220b2b6b82511956da6e37}{mode\_1\_1} = \hyperlink{a00036_abfccf6bbc27bb259fc6233bc9ee591e2}{MODE\_1\_1}
+00129   
+00130 \}\hyperlink{a00036_a2f9fad1776ad62bb8d7627582ecf8fd5}{mode\_et};
+00131   
+\end{DoxyCode}
+\hypertarget{a00036_ad9e71b7c5a4b7598dfea38b40734d96f}{\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!pga\-\_\-et@{pga\-\_\-et}}
+\index{pga\-\_\-et@{pga\-\_\-et}!ade7880_registers.h@{ade7880\-\_\-registers.\-h}}
+\subsubsection[{pga\-\_\-et}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf pga\-\_\-et}}}\label{de/d8c/a00036_ad9e71b7c5a4b7598dfea38b40734d96f}
+
+
+A\-D\-E7880 Gain Register Physical address and structure. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{gain\-\_\-1@{gain\-\_\-1}!ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}}\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!gain\-\_\-1@{gain\-\_\-1}}\item[{\em 
+\hypertarget{a00036_ad9e71b7c5a4b7598dfea38b40734d96faf1e9db7d59697c4bc5aaf0d676ca7082}{gain\-\_\-1}\label{de/d8c/a00036_ad9e71b7c5a4b7598dfea38b40734d96faf1e9db7d59697c4bc5aaf0d676ca7082}
+}]\index{gain\-\_\-2@{gain\-\_\-2}!ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}}\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!gain\-\_\-2@{gain\-\_\-2}}\item[{\em 
+\hypertarget{a00036_ad9e71b7c5a4b7598dfea38b40734d96fa89a8362915be3315ce14b4d312cc057c}{gain\-\_\-2}\label{de/d8c/a00036_ad9e71b7c5a4b7598dfea38b40734d96fa89a8362915be3315ce14b4d312cc057c}
+}]\index{gain\-\_\-4@{gain\-\_\-4}!ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}}\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!gain\-\_\-4@{gain\-\_\-4}}\item[{\em 
+\hypertarget{a00036_ad9e71b7c5a4b7598dfea38b40734d96fa123644a6f475acf380a483a7698909eb}{gain\-\_\-4}\label{de/d8c/a00036_ad9e71b7c5a4b7598dfea38b40734d96fa123644a6f475acf380a483a7698909eb}
+}]\index{gain\-\_\-8@{gain\-\_\-8}!ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}}\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!gain\-\_\-8@{gain\-\_\-8}}\item[{\em 
+\hypertarget{a00036_ad9e71b7c5a4b7598dfea38b40734d96fa3d11d3d6aa9f04465f98def5062b3468}{gain\-\_\-8}\label{de/d8c/a00036_ad9e71b7c5a4b7598dfea38b40734d96fa3d11d3d6aa9f04465f98def5062b3468}
+}]\index{gain\-\_\-16@{gain\-\_\-16}!ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}}\index{ade7880\-\_\-registers.\-h@{ade7880\-\_\-registers.\-h}!gain\-\_\-16@{gain\-\_\-16}}\item[{\em 
+\hypertarget{a00036_ad9e71b7c5a4b7598dfea38b40734d96fabf8c0d5ad660e9a517072fa8d62baa10}{gain\-\_\-16}\label{de/d8c/a00036_ad9e71b7c5a4b7598dfea38b40734d96fabf8c0d5ad660e9a517072fa8d62baa10}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line \hyperlink{a00036_source_l00060}{60} of file \hyperlink{a00036_source}{ade7880\-\_\-registers.\-h}.
+
+
+\begin{DoxyCode}
+00060 \{ 
+00061    \hyperlink{a00036_ad9e71b7c5a4b7598dfea38b40734d96faf1e9db7d59697c4bc5aaf0d676ca7082}{gain\_1}  = \hyperlink{a00036_a3c686a06cc9d837e73b259bcc054217e}{GAIN\_1},       
+00062    \hyperlink{a00036_ad9e71b7c5a4b7598dfea38b40734d96fa89a8362915be3315ce14b4d312cc057c}{gain\_2}  = \hyperlink{a00036_a7ce9d36acd86736019606c4d928b7aad}{GAIN\_2},   
+00063    \hyperlink{a00036_ad9e71b7c5a4b7598dfea38b40734d96fa123644a6f475acf380a483a7698909eb}{gain\_4}  = \hyperlink{a00036_a8720f417f5b56154123f813b2a011c46}{GAIN\_4}, 
+00064    \hyperlink{a00036_ad9e71b7c5a4b7598dfea38b40734d96fa3d11d3d6aa9f04465f98def5062b3468}{gain\_8}  = \hyperlink{a00036_a9b90b27f7ed8ebac69dd8b82df741872}{GAIN\_8},
+00065    \hyperlink{a00036_ad9e71b7c5a4b7598dfea38b40734d96fabf8c0d5ad660e9a517072fa8d62baa10}{gain\_16} = \hyperlink{a00036_a849e708719d768ea90ada6f58eea52a8}{GAIN\_16}
+00066 \}\hyperlink{a00036_ad9e71b7c5a4b7598dfea38b40734d96f}{pga\_et};
+00067 
+\end{DoxyCode}

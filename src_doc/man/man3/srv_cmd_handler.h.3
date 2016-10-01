@@ -1,0 +1,205 @@
+.TH "srv_cmd_handler.h" 3 "Mon Feb 24 2014" "Version V1" "EMS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+srv_cmd_handler.h \- 
+.PP
+\fIFile:\fP rpi_gpio\&.h 
+.br
+  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdarg\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBADE7880_SPI_PORT_ACTIVATE\fP   0x01"
+.br
+.RI "\fIinternal use config cmd macros, make sure the values will not \fP"
+.ti -1c
+.RI "#define \fBADE7880_RESET\fP   0x02"
+.br
+.ti -1c
+.RI "#define \fBPOWER_MODE\fP   0x03"
+.br
+.ti -1c
+.RI "#define \fBTHRESHOLD\fP   0x04"
+.br
+.ti -1c
+.RI "#define \fBSET_RAM_WR_PROTECTION\fP   0x05"
+.br
+.ti -1c
+.RI "#define \fBDSP_RUN\fP   0x06"
+.br
+.ti -1c
+.RI "#define \fBPHASE_A\fP   0x0A"
+.br
+.RI "\fIinternal use measurment read cmd macros \fP"
+.ti -1c
+.RI "#define \fBPHASE_B\fP   0x0B"
+.br
+.ti -1c
+.RI "#define \fBPHASE_C\fP   0x0C"
+.br
+.ti -1c
+.RI "#define \fBLINE\fP   0x00"
+.br
+.ti -1c
+.RI "#define \fBPHASE_VRMS\fP   0x01"
+.br
+.ti -1c
+.RI "#define \fBPHASE_IRMS\fP   0x02"
+.br
+.ti -1c
+.RI "#define \fBPHASE_ACTIVE_WH\fP   0x03"
+.br
+.ti -1c
+.RI "#define \fBTOTAL_ACTIVE_WH\fP   0x04"
+.br
+.ti -1c
+.RI "#define \fBPHASE_ACTIVE_POWER\fP   0x05"
+.br
+.ti -1c
+.RI "#define \fBTOTAL_ACTIVE_POWER\fP   0x06"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "float \fBmeasure\fP (uint8_t cmd, uint8_t channel, float samples)"
+.br
+.RI "\fI.PP
+ \fP"
+.ti -1c
+.RI "uint16_t \fBhex2val\fP (uint8_t cc)"
+.br
+.RI "\fI.PP
+ \fP"
+.ti -1c
+.RI "uint16_t \fBmake16\fP (uint8_t *buf, uint16_t idx)"
+.br
+.RI "\fI.PP
+ \fP"
+.ti -1c
+.RI "uint8_t \fBmake8\fP (uint8_t *buf, uint16_t idx)"
+.br
+.RI "\fI.PP
+ \fP"
+.ti -1c
+.RI "uint32_t \fBmask24\fP (uint32_t val)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fIFile:\fP rpi_gpio\&.h 
+.br
+ 
+
+\fIPurpose:\fP 
+.br
+ 
+.PP
+Definition in file \fBsrv_cmd_handler\&.h\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ADE7880_RESET   0x02"
+
+.PP
+Definition at line 13 of file srv_cmd_handler\&.h\&.
+.SS "#define ADE7880_SPI_PORT_ACTIVATE   0x01"
+
+.PP
+internal use config cmd macros, make sure the values will not 
+.PP
+Definition at line 12 of file srv_cmd_handler\&.h\&.
+.SS "#define DSP_RUN   0x06"
+
+.PP
+Definition at line 17 of file srv_cmd_handler\&.h\&.
+.SS "#define LINE   0x00"
+
+.PP
+Definition at line 24 of file srv_cmd_handler\&.h\&.
+.SS "#define PHASE_A   0x0A"
+
+.PP
+internal use measurment read cmd macros 
+.PP
+Definition at line 21 of file srv_cmd_handler\&.h\&.
+.PP
+Referenced by measure(), and reading_loop()\&.
+.SS "#define PHASE_ACTIVE_POWER   0x05"
+
+.PP
+Definition at line 30 of file srv_cmd_handler\&.h\&.
+.PP
+Referenced by measure(), and reading_loop()\&.
+.SS "#define PHASE_ACTIVE_WH   0x03"
+
+.PP
+Definition at line 28 of file srv_cmd_handler\&.h\&.
+.PP
+Referenced by measure(), and reading_loop()\&.
+.SS "#define PHASE_B   0x0B"
+
+.PP
+Definition at line 22 of file srv_cmd_handler\&.h\&.
+.PP
+Referenced by measure(), and reading_loop()\&.
+.SS "#define PHASE_C   0x0C"
+
+.PP
+Definition at line 23 of file srv_cmd_handler\&.h\&.
+.PP
+Referenced by measure(), and reading_loop()\&.
+.SS "#define PHASE_IRMS   0x02"
+
+.PP
+Definition at line 27 of file srv_cmd_handler\&.h\&.
+.PP
+Referenced by measure(), and reading_loop()\&.
+.SS "#define PHASE_VRMS   0x01"
+
+.PP
+Definition at line 26 of file srv_cmd_handler\&.h\&.
+.PP
+Referenced by measure(), and reading_loop()\&.
+.SS "#define POWER_MODE   0x03"
+
+.PP
+Definition at line 14 of file srv_cmd_handler\&.h\&.
+.SS "#define SET_RAM_WR_PROTECTION   0x05"
+
+.PP
+Definition at line 16 of file srv_cmd_handler\&.h\&.
+.PP
+Referenced by main(), and wait_new_conversion()\&.
+.SS "#define THRESHOLD   0x04"
+
+.PP
+Definition at line 15 of file srv_cmd_handler\&.h\&.
+.SS "#define TOTAL_ACTIVE_POWER   0x06"
+
+.PP
+Definition at line 31 of file srv_cmd_handler\&.h\&.
+.PP
+Referenced by measure()\&.
+.SS "#define TOTAL_ACTIVE_WH   0x04"
+
+.PP
+Definition at line 29 of file srv_cmd_handler\&.h\&.
+.PP
+Referenced by measure()\&.
+.SH "Function Documentation"
+.PP 
+.SS "uint32_t mask24 (uint32_tval)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for EMS from the source code\&.

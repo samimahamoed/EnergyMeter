@@ -1,0 +1,336 @@
+\hypertarget{a00040}{\section{spi\-\_\-ade7880\-\_\-protocol.\-c}
+\label{db/d3a/a00040}\index{spi\-\_\-ade7880\-\_\-protocol.\-c@{spi\-\_\-ade7880\-\_\-protocol.\-c}}
+}
+
+\begin{DoxyCode}
+00001    
+00008 \textcolor{preprocessor}{#include "../includes/includes.h"}
+00009 \textcolor{preprocessor}{#include <string.h>}
+00010 \textcolor{preprocessor}{#include <netinet/in.h>} 
+00011 
+00012 
+00013 \textcolor{preprocessor}{#ifdef DEBUG}
+00014 \textcolor{preprocessor}{}uint8\_t debug\_print = \hyperlink{a00037_a514ad415fb6125ba296793df7d1a468a}{ENABLE};
+00015 \textcolor{preprocessor}{#endif}
+00016 \textcolor{preprocessor}{}
+00021 
+00022 
+00086 \textcolor{preprocessor}{#ifdef DEBUG}
+00087 \textcolor{preprocessor}{}
+00093 \textcolor{keywordtype}{void} spi\_enable\_msg\_debug\_print(uint8\_t cmd)\{
+00094     debug\_print =(cmd==\hyperlink{a00037_a99496f7308834e8b220f7894efa0b6ab}{DISABLE})?(0x08|\hyperlink{a00037_a99496f7308834e8b220f7894efa0b6ab}{DISABLE}):\hyperlink{a00037_a514ad415fb6125ba296793df7d1a468a}{ENABLE}; \textcolor{comment}{//bit 4 is set to indecate
+       external setting }
+00095 \}
+00096 \textcolor{preprocessor}{#endif}
+00097 \textcolor{preprocessor}{}
+00098 
+00112 
+00113    
+\hypertarget{a00040_source_l00114}{}\hyperlink{a00007_gadd297682b87478aed2d07f4f536353c1}{00114} int8\_t  \hyperlink{a00007_gadd297682b87478aed2d07f4f536353c1}{spi\_rd\_wr}(uint8\_t chip\_select,uint8\_t * tx\_buffer,uint16\_t len)
+00115 \{
+00116    
+00117        
+00118        \textcolor{keywordflow}{if}(!\hyperlink{a00005_ga96ddfd5c89b80852982ba50dd18256f6}{spi\_init}(chip\_select))\{
+00119     
+00120           bcm2835\_spi\_transfern(tx\_buffer,\textcolor{keyword}{sizeof}(tx\_buffer));      
+00121           \textcolor{keywordflow}{return} 0;       
+00122        \}\textcolor{keywordflow}{else}
+00123           \textcolor{keywordflow}{return} -1;
+00124     
+00125        bcm2835\_spi\_end();
+00126        
+00127        bcm2835\_gpio\_write(\hyperlink{a00039_ab4b553591a495409d4f7cec4b6c3e754}{PIN\_SS}, HIGH);     
+00128 \}
+00130 
+00146 
+\hypertarget{a00040_source_l00147}{}\hyperlink{a00007_ga7ad9f65ee46aca507374096506a0b1c4}{00147} uint32\_t \hyperlink{a00007_ga7ad9f65ee46aca507374096506a0b1c4}{spi\_read}(uint8\_t chip\_select,uint8\_t chip\_address,uint16\_t 
+      \hyperlink{a00041_ac02048009fa6718e40f028b6bae63f3d}{target\_register},uint8\_t reg\_len)\{
+00148    
+00149   uint32\_t result= 0;
+00150 
+00151     \hyperlink{a00016}{ade7880\_read\_tx\_buff\_ut} tx\_buff;
+00152     
+00153     tx\_buff.msg\_fields.\hyperlink{a00016_af6a65bac733ea3e9b1d24b065163d49a}{address\_byte}.\hyperlink{a00011_a7bf6defa0ae3fb2bca057a3a97d4f740}{address\_all} = chip\_address;
+00154     tx\_buff.msg\_fields.\hyperlink{a00016_af6a65bac733ea3e9b1d24b065163d49a}{address\_byte}.\hyperlink{a00011_ae121725fb28cc26495969d71e0e0d42e}{bits}.\hyperlink{a00011_a97e2668c8e5470fa66185f16dc2e8045}{RD\_WR} = \hyperlink{a00041_a30e8f63608e6153585d75dc479a03177}{ADE7880\_RD};
+00155     tx\_buff.msg\_fields.target\_register = htons(target\_register);
+00156     tx\_buff.msg\_fields.value.\hyperlink{a00016_a83e2be8d3feb1bcbc286bfaae10ac552}{reg32} = \hyperlink{a00041_af87bc226c5bc1e648d8ceac69ccf2bcb}{DUMMY\_MSG};
+00157 
+00158 \textcolor{preprocessor}{    #ifdef DEBUG}
+00159 \textcolor{preprocessor}{}     \textcolor{keywordflow}{if}((debug\_print&0x01))\{
+00160        printf(\textcolor{stringliteral}{"\(\backslash\)nMSG SENT  : RD\(\backslash\)n"});
+00161        
+00162        printf(\textcolor{stringliteral}{"        Chip Address %02X\(\backslash\)n"},tx\_buff.msg\_fields.\hyperlink{a00016_af6a65bac733ea3e9b1d24b065163d49a}{address\_byte}.
+      \hyperlink{a00011_a7bf6defa0ae3fb2bca057a3a97d4f740}{address\_all});
+00163        printf(\textcolor{stringliteral}{"        Target Register %04X\(\backslash\)n"},ntohs(tx\_buff.msg\_fields.target\_register));
+00164        printf(\textcolor{stringliteral}{"        DUMMY %08X \(\backslash\)n"},tx\_buff.msg\_fields.value.\hyperlink{a00016_a83e2be8d3feb1bcbc286bfaae10ac552}{reg32});
+00165        \}
+00166 \textcolor{preprocessor}{    #endif}
+00167 \textcolor{preprocessor}{}    
+00168     bcm2835\_spi\_transfern(tx\_buff.msg\_all,\hyperlink{a00041_a0f0795755fb9e8e47c78c1289e091282}{RD\_MSG\_LENGTH} + reg\_len);    
+00169     
+00170     
+00171               
+00172     
+00173     
+00174     
+00175     result =  (reg\_len == \textcolor{keyword}{sizeof}(uint32\_t))?((uint32\_t)ntohl(tx\_buff.msg\_fields.value.
+      \hyperlink{a00016_a83e2be8d3feb1bcbc286bfaae10ac552}{reg32}))
+00176              :((reg\_len == \textcolor{keyword}{sizeof}(uint16\_t))?((uint32\_t)ntohs(tx\_buff.msg\_fields.value.
+      \hyperlink{a00016_a0c22d234d52e616d449a8c264bf2030b}{reg16}))
+00177              :((reg\_len == \textcolor{keyword}{sizeof}(uint8\_t))?((uint32\_t)tx\_buff.msg\_fields.value.
+      \hyperlink{a00016_a90b3f782e917edca7101e7803a3773b7}{reg8}):0x0F000000\textcolor{comment}{/*ERROR*/}));
+00178     
+00179     
+00180 \textcolor{preprocessor}{    #ifdef DEBUG}
+00181 \textcolor{preprocessor}{}     \textcolor{keywordflow}{if}(debug\_print&0x01 || 1)\{
+00182        printf(\textcolor{stringliteral}{"\(\backslash\)nMSG REPLAY : RD\(\backslash\)n"});
+00183        printf(\textcolor{stringliteral}{"        REPLAY :%X\(\backslash\)n"},result);
+00184      \}  
+00185 \textcolor{preprocessor}{    #endif}
+00186 \textcolor{preprocessor}{}    
+00187     
+00188 
+00189 
+00190     \textcolor{keywordflow}{return} result;
+00191     
+00192 \}
+00194    
+00195 
+00196 
+00220 
+\hypertarget{a00040_source_l00221}{}\hyperlink{a00007_ga2770219ad8ad1eda1817c0df934b47d0}{00221} int8\_t \hyperlink{a00007_ga2770219ad8ad1eda1817c0df934b47d0}{spi\_write}(uint8\_t chip\_select,uint8\_t chip\_address,uint16\_t 
+      \hyperlink{a00041_ac02048009fa6718e40f028b6bae63f3d}{target\_register},int32\_t \hyperlink{a00041_a638e4503e0ae6ce655b7ad2e17e8f0ad}{value},uint8\_t reg\_len)\{
+00222       
+00223       
+00224     int8\_t result = 0;  
+00225     \hyperlink{a00020}{ade7880\_write\_tx\_buff\_ut}  tx\_buff;
+00226 
+00227      tx\_buff.msg\_fields.\hyperlink{a00020_af6a65bac733ea3e9b1d24b065163d49a}{address\_byte}.\hyperlink{a00011_a7bf6defa0ae3fb2bca057a3a97d4f740}{address\_all} = chip\_address;
+00228      tx\_buff.msg\_fields.\hyperlink{a00020_af6a65bac733ea3e9b1d24b065163d49a}{address\_byte}.\hyperlink{a00011_ae121725fb28cc26495969d71e0e0d42e}{bits}.\hyperlink{a00011_a97e2668c8e5470fa66185f16dc2e8045}{RD\_WR} = 
+      \hyperlink{a00041_a36352e0d88dc7c5ede031013c75a678f}{ADE7880\_WR};
+00229      tx\_buff.msg\_fields.target\_register = htons(target\_register);
+00230      
+00231     \textcolor{keywordflow}{if}(reg\_len == \textcolor{keyword}{sizeof}(uint8\_t))
+00232       tx\_buff.msg\_fields.value.\hyperlink{a00020_a90b3f782e917edca7101e7803a3773b7}{reg8}  = (uint8\_t)value;
+00233     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(reg\_len == \textcolor{keyword}{sizeof}(uint16\_t))
+00234       tx\_buff.msg\_fields.value.\hyperlink{a00020_a0c22d234d52e616d449a8c264bf2030b}{reg16} = htons((uint16\_t)\hyperlink{a00041_a638e4503e0ae6ce655b7ad2e17e8f0ad}{value});
+00235     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(reg\_len == \textcolor{keyword}{sizeof}(uint32\_t))
+00236       tx\_buff.msg\_fields.value.\hyperlink{a00020_a83e2be8d3feb1bcbc286bfaae10ac552}{reg32} = htonl((uint32\_t)\hyperlink{a00041_a638e4503e0ae6ce655b7ad2e17e8f0ad}{value});
+00237     
+00238 \textcolor{preprocessor}{    #ifdef DEBUG}
+00239 \textcolor{preprocessor}{}      \textcolor{keywordflow}{if}(debug\_print&0x01)\{
+00240        printf(\textcolor{stringliteral}{"\(\backslash\)nMSG SENT: WR\(\backslash\)n"});
+00241        printf(\textcolor{stringliteral}{"       Chip Address %02X\(\backslash\)n"},
+00242        tx\_buff.msg\_fields.\hyperlink{a00020_af6a65bac733ea3e9b1d24b065163d49a}{address\_byte}.\hyperlink{a00011_a7bf6defa0ae3fb2bca057a3a97d4f740}{address\_all});
+00243        printf(\textcolor{stringliteral}{"       Target Register %04X\(\backslash\)n"},
+00244        ntohs(tx\_buff.msg\_fields.target\_register));
+00245        printf(\textcolor{stringliteral}{"       Value sent  %08X\(\backslash\)n"},
+00246        ntohl(tx\_buff.msg\_fields.value.\hyperlink{a00020_a83e2be8d3feb1bcbc286bfaae10ac552}{reg32}));
+00247        \}
+00248 \textcolor{preprocessor}{    #endif}
+00249 \textcolor{preprocessor}{}
+00250     bcm2835\_spi\_transfern(tx\_buff.msg\_all,\hyperlink{a00041_ac85ecf34a5cbd85d6dbd51b4c9a5469e}{WR\_MSG\_LENGTH} + reg\_len);
+00251     
+00252 
+00253     
+00254     uint8\_t  result8  =0;
+00255     uint16\_t result16 =0;
+00256     int32\_t result32 =0;    
+00257     
+00258 \textcolor{preprocessor}{     #ifdef DEBUG }
+00259 \textcolor{preprocessor}{}     \textcolor{keywordflow}{if}(!(debug\_print&0x80))
+00260      debug\_print = \hyperlink{a00037_a99496f7308834e8b220f7894efa0b6ab}{DISABLE};
+00261        printf(\textcolor{stringliteral}{"\(\backslash\)nvarifying last operation  ...\(\backslash\)n"});
+00262 \textcolor{preprocessor}{     #endif}
+00263 \textcolor{preprocessor}{}     \textcolor{keywordflow}{if}((result8 =(uint8\_t)(\hyperlink{a00007_ga7ad9f65ee46aca507374096506a0b1c4}{spi\_read}(BCM2835\_SPI\_CS0,\hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},
+      \hyperlink{a00036_aed1301248abf6c26045727a190f6550a}{LAST\_OP},\textcolor{keyword}{sizeof}(uint16\_t))))
+00264      !=0xCA \textcolor{comment}{/*LAST\_OP!=WR*/})\{
+00265              
+00266 \textcolor{preprocessor}{     #ifdef DEBUG}
+00267 \textcolor{preprocessor}{}       printf(\textcolor{stringliteral}{"\(\backslash\)n                                               <---  WR failure : LAST\_OP \(\backslash\)n"});
+00268        printf(\textcolor{stringliteral}{"        LAST\_OP value  :%02X\(\backslash\)n"},result8);   
+00269 \textcolor{preprocessor}{     #endif}
+00270 \textcolor{preprocessor}{}     result = -1;
+00271      \}\textcolor{keywordflow}{else}\{
+00272 \textcolor{preprocessor}{      #ifdef DEBUG}
+00273 \textcolor{preprocessor}{}       printf(\textcolor{stringliteral}{"        LAST\_OP value  :%02X\(\backslash\)n"},result8);   
+00274 \textcolor{preprocessor}{     #endif}
+00275 \textcolor{preprocessor}{}     \}
+00276      
+00277 \textcolor{preprocessor}{     #ifdef DEBUG}
+00278 \textcolor{preprocessor}{}       printf(\textcolor{stringliteral}{"\(\backslash\)nvarifying last accessed register  ...\(\backslash\)n"});
+00279 \textcolor{preprocessor}{     #endif}
+00280 \textcolor{preprocessor}{}     \textcolor{keywordflow}{if}((result16 =(uint16\_t)(\hyperlink{a00007_ga7ad9f65ee46aca507374096506a0b1c4}{spi\_read}(BCM2835\_SPI\_CS0,\hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},
+      \hyperlink{a00036_adab6c053c389db762442c88b7e32e543}{LAST\_ADD},\textcolor{keyword}{sizeof}(uint16\_t))))!=target\_register)\{
+00281              
+00282 \textcolor{preprocessor}{     #ifdef DEBUG}
+00283 \textcolor{preprocessor}{}       printf(\textcolor{stringliteral}{"\(\backslash\)n                                               <---  WR failure : LAST\_ADD\(\backslash\)n"});
+00284        printf(\textcolor{stringliteral}{"        Target Register :%04X\(\backslash\)n"}, target\_register);
+00285        printf(\textcolor{stringliteral}{"        LAST\_ADD value  :%04X\(\backslash\)n"},result16);   
+00286 \textcolor{preprocessor}{     #endif}
+00287 \textcolor{preprocessor}{}     result = -1;
+00288      \}\textcolor{keywordflow}{else}\{
+00289 \textcolor{preprocessor}{      #ifdef DEBUG}
+00290 \textcolor{preprocessor}{}        printf(\textcolor{stringliteral}{"       LAST\_ADD value  :%04X\(\backslash\)n"},result16); 
+00291 \textcolor{preprocessor}{      #endif}
+00292 \textcolor{preprocessor}{}     \}
+00293      
+00294     
+00295 \textcolor{preprocessor}{     #ifdef DEBUG}
+00296 \textcolor{preprocessor}{}       printf(\textcolor{stringliteral}{"\(\backslash\)nvarifying last accessed register  value:\(\backslash\)n"});
+00297 \textcolor{preprocessor}{     #endif}
+00298 \textcolor{preprocessor}{}    \textcolor{keywordflow}{if}(reg\_len == \textcolor{keyword}{sizeof}(uint8\_t))\{
+00299         result32 = (int32\_t)(\hyperlink{a00007_ga7ad9f65ee46aca507374096506a0b1c4}{spi\_read}(BCM2835\_SPI\_CS0,\hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},
+      \hyperlink{a00036_ac23cb2354e07d7403fca849805a8e278}{LAST\_RWDATA8},\textcolor{keyword}{sizeof}(uint8\_t))&0x000000FF);
+00300     \}\textcolor{keywordflow}{else}   
+00301     \textcolor{keywordflow}{if}(reg\_len == \textcolor{keyword}{sizeof}(uint16\_t))\{
+00302         result32 = (int32\_t)(\hyperlink{a00007_ga7ad9f65ee46aca507374096506a0b1c4}{spi\_read}(BCM2835\_SPI\_CS0,\hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},
+      \hyperlink{a00036_afcefca411effe86930341732382fb5e5}{LAST\_RWDATA16},\textcolor{keyword}{sizeof}(uint16\_t))&0x0000FFFF);
+00303     \}\textcolor{keywordflow}{else}
+00304     \textcolor{keywordflow}{if}(reg\_len == \textcolor{keyword}{sizeof}(uint32\_t))\{
+00305         result32 = (int32\_t)(\hyperlink{a00007_ga7ad9f65ee46aca507374096506a0b1c4}{spi\_read}(BCM2835\_SPI\_CS0,\hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},
+      \hyperlink{a00036_a0d09934e23666ce21357121f281f2f2a}{LAST\_RWDATA32},\textcolor{keyword}{sizeof}(uint32\_t)));      
+00306     \}   
+00307     \textcolor{comment}{//if }
+00308 
+00309      \textcolor{keywordflow}{if}(result32!=value)
+00310          result = -1;   
+00311 \textcolor{preprocessor}{     #ifdef DEBUG}
+00312 \textcolor{preprocessor}{}       \textcolor{keywordflow}{if}(result32!=value)
+00313        printf(\textcolor{stringliteral}{"\(\backslash\)n                                               <---  WR failure : LAST\_RWDATA\(\backslash\)n"});
+00314        printf(\textcolor{stringliteral}{"       Sent Value        :%08X\(\backslash\)n"}, value);
+00315        printf(\textcolor{stringliteral}{"       LAST\_RWDATA value :%08X\(\backslash\)n"},result32);   
+00316       \textcolor{keywordflow}{if}(!(debug\_print&0x80))
+00317        debug\_print = \hyperlink{a00037_a514ad415fb6125ba296793df7d1a468a}{ENABLE};
+00318 \textcolor{preprocessor}{     #endif}
+00319 \textcolor{preprocessor}{}     
+00320      
+00321     \textcolor{keywordflow}{return} result;
+00322 \}   
+00323  
+00325  
+00326  
+00327 
+00342 
+\hypertarget{a00040_source_l00343}{}\hyperlink{a00007_gae51aa618efe7af5f3a68ac324f2a7840}{00343} int8\_t \hyperlink{a00007_gae51aa618efe7af5f3a68ac324f2a7840}{spi\_ram\_protection}(uint8\_t cmd,uint8\_t chip\_address)\{
+00344       
+00345       
+00346     int8\_t result = 0;  
+00347     
+00348     uint8\_t \hyperlink{a00041_a638e4503e0ae6ce655b7ad2e17e8f0ad}{value} = (cmd==\hyperlink{a00037_a514ad415fb6125ba296793df7d1a468a}{ENABLE})?0x80:0x00;
+00349     
+00350      \hyperlink{a00012}{ade7880\_ram\_lock\_msg\_ut} tx\_buff\_1st\_msg,tx\_buff\_2nd\_msg;
+00351 
+00352      tx\_buff\_1st\_msg.msg\_fields.\hyperlink{a00012_af6a65bac733ea3e9b1d24b065163d49a}{address\_byte}.\hyperlink{a00011_a7bf6defa0ae3fb2bca057a3a97d4f740}{address\_all} = chip\_address;
+00353      tx\_buff\_1st\_msg.msg\_fields.\hyperlink{a00012_af6a65bac733ea3e9b1d24b065163d49a}{address\_byte}.\hyperlink{a00011_ae121725fb28cc26495969d71e0e0d42e}{bits}.\hyperlink{a00011_a97e2668c8e5470fa66185f16dc2e8045}{RD\_WR} = 
+      \hyperlink{a00041_a36352e0d88dc7c5ede031013c75a678f}{ADE7880\_WR};
+00354      tx\_buff\_1st\_msg.msg\_fields.target\_register = htons(0xE7FE);
+00355      tx\_buff\_1st\_msg.msg\_fields.\hyperlink{a00012_a638e4503e0ae6ce655b7ad2e17e8f0ad}{value} = 0xAD;
+00356      
+00357      
+00358      tx\_buff\_2nd\_msg.msg\_fields.\hyperlink{a00012_af6a65bac733ea3e9b1d24b065163d49a}{address\_byte}.\hyperlink{a00011_a7bf6defa0ae3fb2bca057a3a97d4f740}{address\_all} = chip\_address;
+00359      tx\_buff\_2nd\_msg.msg\_fields.\hyperlink{a00012_af6a65bac733ea3e9b1d24b065163d49a}{address\_byte}.\hyperlink{a00011_ae121725fb28cc26495969d71e0e0d42e}{bits}.\hyperlink{a00011_a97e2668c8e5470fa66185f16dc2e8045}{RD\_WR} = 
+      \hyperlink{a00041_a36352e0d88dc7c5ede031013c75a678f}{ADE7880\_WR};
+00360      tx\_buff\_2nd\_msg.msg\_fields.target\_register = htons(0xE7E3);
+00361      tx\_buff\_2nd\_msg.msg\_fields.\hyperlink{a00012_a638e4503e0ae6ce655b7ad2e17e8f0ad}{value} = \hyperlink{a00041_a638e4503e0ae6ce655b7ad2e17e8f0ad}{value};
+00362      
+00363 
+00364 \textcolor{preprocessor}{    #ifdef DEBUG}
+00365 \textcolor{preprocessor}{}       \textcolor{keywordflow}{if}(debug\_print&0x01)\{
+00366        printf(\textcolor{stringliteral}{"\(\backslash\)nMSG SENT: WR\(\backslash\)n"});
+00367        printf(\textcolor{stringliteral}{"       Chip Address %02X\(\backslash\)n"},
+00368        tx\_buff\_1st\_msg.msg\_fields.\hyperlink{a00012_af6a65bac733ea3e9b1d24b065163d49a}{address\_byte}.\hyperlink{a00011_a7bf6defa0ae3fb2bca057a3a97d4f740}{address\_all});
+00369        printf(\textcolor{stringliteral}{"       1st Target Register %04X\(\backslash\)n"},
+00370        ntohs(tx\_buff\_1st\_msg.msg\_fields.target\_register)
+00371        );
+00372        printf(\textcolor{stringliteral}{"       Value sent 1st  %1X\(\backslash\)n"},
+00373        ntohl(tx\_buff\_1st\_msg.msg\_fields.\hyperlink{a00012_a638e4503e0ae6ce655b7ad2e17e8f0ad}{value}));
+00374        
+00375        printf(\textcolor{stringliteral}{"       2nd Target Register %04X\(\backslash\)n"},
+00376        ntohs(tx\_buff\_2nd\_msg.msg\_fields.target\_register)
+00377        );
+00378        printf(\textcolor{stringliteral}{"       Value sent  %01X\(\backslash\)n"},
+00379        ntohl(tx\_buff\_2nd\_msg.msg\_fields.\hyperlink{a00012_a638e4503e0ae6ce655b7ad2e17e8f0ad}{value}));
+00380        \}
+00381 \textcolor{preprocessor}{    #endif}
+00382 \textcolor{preprocessor}{}
+00383     
+00384     bcm2835\_spi\_transfern(tx\_buff\_1st\_msg.msg\_all,\hyperlink{a00041_ab38a2f23d72262bab020eb973958f37b}{RAM\_LOCK\_MSG\_LENGTH});
+00385     bcm2835\_spi\_transfern(tx\_buff\_2nd\_msg.msg\_all,\hyperlink{a00041_ab38a2f23d72262bab020eb973958f37b}{RAM\_LOCK\_MSG\_LENGTH});
+00386 
+00387     
+00388     uint8\_t  result8  =0;
+00389     uint16\_t result16 =0;
+00390     
+00391 \textcolor{preprocessor}{     #ifdef DEBUG }
+00392 \textcolor{preprocessor}{}     \textcolor{keywordflow}{if}(!(debug\_print&0x80))
+00393      debug\_print = \hyperlink{a00037_a99496f7308834e8b220f7894efa0b6ab}{DISABLE};
+00394        printf(\textcolor{stringliteral}{"\(\backslash\)nvarifying last operation  ...\(\backslash\)n"});
+00395 \textcolor{preprocessor}{     #endif}
+00396 \textcolor{preprocessor}{}     \textcolor{keywordflow}{if}((result8 =(uint8\_t)(\hyperlink{a00007_ga7ad9f65ee46aca507374096506a0b1c4}{spi\_read}(BCM2835\_SPI\_CS0,\hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},
+      \hyperlink{a00036_aed1301248abf6c26045727a190f6550a}{LAST\_OP},\textcolor{keyword}{sizeof}(uint16\_t))))
+00397      !=0xCA \textcolor{comment}{/*LAST\_OP!=WR*/})\{
+00398              
+00399 \textcolor{preprocessor}{     #ifdef DEBUG}
+00400 \textcolor{preprocessor}{}       printf(\textcolor{stringliteral}{"\(\backslash\)n                                               <---  WR failure : LAST\_OP \(\backslash\)n"});
+00401        printf(\textcolor{stringliteral}{"        LAST\_OP value  :%02X\(\backslash\)n"},result8);   
+00402 \textcolor{preprocessor}{     #endif}
+00403 \textcolor{preprocessor}{}     result = -1;
+00404      \}\textcolor{keywordflow}{else}\{
+00405 \textcolor{preprocessor}{      #ifdef DEBUG}
+00406 \textcolor{preprocessor}{}       printf(\textcolor{stringliteral}{"        LAST\_OP value  :%02X\(\backslash\)n"},result8);   
+00407 \textcolor{preprocessor}{     #endif}
+00408 \textcolor{preprocessor}{}     \}
+00409      
+00410 \textcolor{preprocessor}{     #ifdef DEBUG}
+00411 \textcolor{preprocessor}{}       printf(\textcolor{stringliteral}{"\(\backslash\)nvarifying last accessed register  ...\(\backslash\)n"});
+00412 \textcolor{preprocessor}{     #endif}
+00413 \textcolor{preprocessor}{}     \textcolor{keywordflow}{if}((result16 =(uint16\_t)(\hyperlink{a00007_ga7ad9f65ee46aca507374096506a0b1c4}{spi\_read}(BCM2835\_SPI\_CS0,\hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},
+      \hyperlink{a00036_adab6c053c389db762442c88b7e32e543}{LAST\_ADD},\textcolor{keyword}{sizeof}(uint16\_t))))!=0xE7E3)\{
+00414              
+00415 \textcolor{preprocessor}{     #ifdef DEBUG}
+00416 \textcolor{preprocessor}{}       printf(\textcolor{stringliteral}{"\(\backslash\)n                                               <---  WR failure : LAST\_ADD\(\backslash\)n"});
+00417        printf(\textcolor{stringliteral}{"        Target Register :%04X\(\backslash\)n"}, 0xE7E3);
+00418        printf(\textcolor{stringliteral}{"        LAST\_ADD value  :%04X\(\backslash\)n"},result16);   
+00419 \textcolor{preprocessor}{     #endif}
+00420 \textcolor{preprocessor}{}     result = -1;
+00421      \}\textcolor{keywordflow}{else}\{
+00422 \textcolor{preprocessor}{      #ifdef DEBUG}
+00423 \textcolor{preprocessor}{}        printf(\textcolor{stringliteral}{"       LAST\_ADD value  :%04X\(\backslash\)n"},result16); 
+00424 \textcolor{preprocessor}{      #endif}
+00425 \textcolor{preprocessor}{}     \}
+00426      
+00427     
+00428 \textcolor{preprocessor}{     #ifdef DEBUG}
+00429 \textcolor{preprocessor}{}       printf(\textcolor{stringliteral}{"\(\backslash\)nvarifying last accessed register  value:\(\backslash\)n"});
+00430 \textcolor{preprocessor}{     #endif}
+00431 \textcolor{preprocessor}{}
+00432      result8 = (uint8\_t)(\hyperlink{a00007_ga7ad9f65ee46aca507374096506a0b1c4}{spi\_read}(BCM2835\_SPI\_CS0,\hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},
+      \hyperlink{a00036_ac23cb2354e07d7403fca849805a8e278}{LAST\_RWDATA8},\textcolor{keyword}{sizeof}(uint8\_t))&0x000000FF);
+00433     
+00434 
+00435      \textcolor{keywordflow}{if}(result8!=value)
+00436          result = -1;   
+00437 \textcolor{preprocessor}{     #ifdef DEBUG}
+00438 \textcolor{preprocessor}{}       \textcolor{keywordflow}{if}(result8!=value)
+00439        printf(\textcolor{stringliteral}{"\(\backslash\)n                                               <---  WR failure : LAST\_RWDATA\(\backslash\)n"});
+00440        printf(\textcolor{stringliteral}{"       Sent Value        :%01X\(\backslash\)n"}, value);
+00441        printf(\textcolor{stringliteral}{"       LAST\_RWDATA value :%01X\(\backslash\)n"},result8);   
+00442        
+00443        \textcolor{keywordflow}{if}(!(debug\_print&0x80))
+00444            debug\_print = \hyperlink{a00037_a514ad415fb6125ba296793df7d1a468a}{ENABLE};
+00445 \textcolor{preprocessor}{     #endif}
+00446 \textcolor{preprocessor}{}
+00447      
+00448      
+00449     \textcolor{keywordflow}{return} result;
+00450 \}   
+00451 
+00454 
+00455  
+00456 
+00457  
+00458  
+00459  
+00460    
+\end{DoxyCode}

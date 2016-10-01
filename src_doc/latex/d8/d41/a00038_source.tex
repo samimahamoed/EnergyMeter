@@ -1,0 +1,353 @@
+\hypertarget{a00038}{\section{rpi\-\_\-hwio.\-c}
+\label{d8/d41/a00038}\index{rpi\-\_\-hwio.\-c@{rpi\-\_\-hwio.\-c}}
+}
+
+\begin{DoxyCode}
+00001 
+00002    
+00009 \textcolor{preprocessor}{#include "../includes/includes.h"}
+00010 
+00015 
+00016 
+00037 
+\hypertarget{a00038_source_l00038}{}\hyperlink{a00005_ga96ddfd5c89b80852982ba50dd18256f6}{00038} int8\_t \hyperlink{a00005_ga96ddfd5c89b80852982ba50dd18256f6}{spi\_init}(uint8\_t chip\_select)\{
+00039     
+00040     bcm2835\_spi\_begin();
+00041     bcm2835\_spi\_setBitOrder(BCM2835\_SPI\_BIT\_ORDER\_MSBFIRST);    
+00042     bcm2835\_spi\_setDataMode(BCM2835\_SPI\_MODE0);                     \textcolor{comment}{// Data are propagated on a falling
+       edge }
+00043                                                                 
+00044     bcm2835\_spi\_setClockDivider(BCM2835\_SPI\_CLOCK\_DIVIDER\_256);     \textcolor{comment}{// 65536 = 262.144us = 3.814697260kHz }
+00045     bcm2835\_spi\_chipSelect(chip\_select);                                            
+00046     bcm2835\_spi\_setChipSelectPolarity(chip\_select, LOW);            \textcolor{comment}{// SS/HSA chip pin of ade7880 should be
+       low for comminication      }
+00047 
+00048 \textcolor{keywordflow}{return} 0;   
+00049 \}
+00051 
+00061 
+00062 
+\hypertarget{a00038_source_l00063}{}\hyperlink{a00005_ga156b48448f55534a2f9c805a1f760efa}{00063} int8\_t \hyperlink{a00005_ga156b48448f55534a2f9c805a1f760efa}{rpi\_gpio\_init}(\textcolor{keywordtype}{void})\{
+00064     
+00065         bcm2835\_gpio\_fsel(\hyperlink{a00039_ab4b553591a495409d4f7cec4b6c3e754}{PIN\_SS},  BCM2835\_GPIO\_FSEL\_OUTP);
+00066         bcm2835\_gpio\_fsel(\hyperlink{a00039_aef7884a448449013ba1f8b46b8df5c05}{PIN\_PM0},  BCM2835\_GPIO\_FSEL\_OUTP);
+00067         bcm2835\_gpio\_fsel(\hyperlink{a00039_a93e6f13f663a3ca8bcf6efe2022c9b78}{PIN\_PM1},  BCM2835\_GPIO\_FSEL\_OUTP);
+00068         bcm2835\_gpio\_fsel(\hyperlink{a00039_a99ed780c4dd8d2e01c5ff66064306abf}{PIN\_IRQ0}, BCM2835\_GPIO\_FSEL\_INPT);
+00069         bcm2835\_gpio\_fsel(\hyperlink{a00039_a14204df3192ece77fc1b651c6625bc30}{PIN\_IRQ1}, BCM2835\_GPIO\_FSEL\_INPT);
+00070             
+00071 \textcolor{keywordflow}{return} 0;   
+00072 \}
+00073 
+00075 
+00076 
+00077 
+00091 
+00092 int8\_t \hyperlink{a00005_ga369ee0e8379941cbc2c79b90ec3292da}{config\_cmd}(uint32\_t cmd,uint8\_t arg,...)\{
+00093     
+00094            va\_list va;
+00095            va\_start(va,arg);
+00096            uint8\_t cc = 0;
+00097            int8\_t result = -1;
+00098         \textcolor{keywordflow}{switch}(cmd)
+00099         \{
+00100            
+00101                 \textcolor{keywordflow}{case}  \hyperlink{a00043_a430d76623597b550145ee76e95e84c48}{ADE7880\_SPI\_PORT\_ACTIVATE}:
+00102                 \{
+00110                     uint8\_t ii;
+00111                     \textcolor{keywordtype}{bool} PIN\_SET = 0;
+00112                     \hyperlink{a00022}{config2\_reg\_u} config2\_reg;
+00113                     
+00114                     
+00115                     \textcolor{keywordflow}{for}(ii=0;ii<3\textcolor{comment}{/*TOGEL SS PIN 3 TIMES*/};ii++)\{
+00116      
+00117                         \textcolor{keywordflow}{if}(\hyperlink{a00007_ga2770219ad8ad1eda1817c0df934b47d0}{spi\_write}(BCM2835\_SPI\_CS0,\hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},
+      \hyperlink{a00036_aa2594962ecec33d43f5b8dea993068ca}{DUMMIY},0xFF,\textcolor{keyword}{sizeof}(uint8\_t))!=0)
+00118                             \textcolor{keywordflow}{return} -1; 
+00119                             
+00120                         usleep(1);
+00121                     \}
+00122                       
+00123                     
+00124                      uint8\_t cc = 0;\textcolor{keywordflow}{while}(((result = \hyperlink{a00005_ga369ee0e8379941cbc2c79b90ec3292da}{config\_cmd}(
+      \hyperlink{a00043_a5b534b9caab512045a6e762f3930a501}{SET\_RAM\_WR\_PROTECTION},1,\hyperlink{a00037_a99496f7308834e8b220f7894efa0b6ab}{DISABLE}))== -1)&& (cc++ < 3));\textcolor{keywordflow}{if}(result==-1)\textcolor{keywordflow}{return} -1; 
+00125                      
+00126                       config2\_reg.\hyperlink{a00022_ab2957613fa7f241407cc98e80676dccf}{reg\_all}=0;
+00127             
+00128                      config2\_reg.\hyperlink{a00022_ab2957613fa7f241407cc98e80676dccf}{reg\_all} = (uint8\_t)\hyperlink{a00007_ga7ad9f65ee46aca507374096506a0b1c4}{spi\_read}(BCM2835\_SPI\_CS0,
+      \hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},\hyperlink{a00036_a9989dac1034e36497f2f4f81613cab88}{CONFIG2},\textcolor{keyword}{sizeof}(config2\_reg.\hyperlink{a00022_ab2957613fa7f241407cc98e80676dccf}{reg\_all}));
+00129                     
+00130              
+00131                    \textcolor{comment}{//put it back, this will lock the spi port antill the next device reset  }
+00132                      \textcolor{keywordflow}{if}(\hyperlink{a00007_ga2770219ad8ad1eda1817c0df934b47d0}{spi\_write}(BCM2835\_SPI\_CS0,\hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},
+      \hyperlink{a00036_a9989dac1034e36497f2f4f81613cab88}{CONFIG2},config2\_reg.\hyperlink{a00022_ab2957613fa7f241407cc98e80676dccf}{reg\_all},\textcolor{keyword}{sizeof}(config2\_reg.\hyperlink{a00022_ab2957613fa7f241407cc98e80676dccf}{reg\_all}))!=0)
+00133                             \textcolor{keywordflow}{return} -1; 
+00134                             
+00135                 
+00136                 \}\textcolor{keywordflow}{break};
+00137                 
+00138                 
+00139                   
+00140                 \textcolor{keywordflow}{case} \hyperlink{a00043_a1805e103988f08b8fac817624918cf47}{DSP\_RUN}:
+00141                 \{
+00142                 
+00143                     \textcolor{keywordflow}{if}(arg != 1)
+00144                      \textcolor{keywordflow}{return} -1;
+00145                                                                             
+00146                     uint8\_t prt\_arg = va\_arg(va,\textcolor{keywordtype}{int});
+00147                     uint16\_t ii;
+00148                     \textcolor{keywordflow}{for}(ii=0;ii<3;ii++)\{
+00149                     \textcolor{keywordflow}{if}(prt\_arg == \hyperlink{a00037_a514ad415fb6125ba296793df7d1a468a}{ENABLE})\{
+00150                     \textcolor{keywordflow}{if}(\hyperlink{a00007_ga2770219ad8ad1eda1817c0df934b47d0}{spi\_write}(BCM2835\_SPI\_CS0,\hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},
+      \hyperlink{a00036_a35f69a612b07bbf1de53bbbd8d877c09}{RUN},0x0001,\textcolor{keyword}{sizeof}(uint16\_t))!=0)
+00151                     \textcolor{keywordflow}{return} -1;
+00152                     \}\textcolor{keywordflow}{else}\{
+00153                     \textcolor{keywordflow}{if}(\hyperlink{a00007_ga2770219ad8ad1eda1817c0df934b47d0}{spi\_write}(BCM2835\_SPI\_CS0,\hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},
+      \hyperlink{a00036_a35f69a612b07bbf1de53bbbd8d877c09}{RUN},0x0000,\textcolor{keyword}{sizeof}(uint16\_t))!=0)
+00154                     \textcolor{keywordflow}{return} -1;
+00155                     \}
+00156                     \}
+00157                  
+00158         
+00159                 \}\textcolor{keywordflow}{break};
+00160                 
+00161                 \textcolor{keywordflow}{case}  \hyperlink{a00043_af6e27751df5653af1abdb5c1c505b7e1}{ADE7880\_RESET}:
+00162                 \{
+00163                 
+00164                     
+00165                     
+00166                 \}\textcolor{keywordflow}{break};
+00167                 
+00168                 
+00169                 
+00170                 \textcolor{keywordflow}{case}  \hyperlink{a00036_a8c8f27b35dfa40ccf31c1ee31479a31c}{GAIN}:
+00171                 \{          
+00172                     \textcolor{keywordflow}{if}(arg != 3)
+00173                         \textcolor{keywordflow}{return} -1;
+00174                     
+00175                     \hyperlink{a00025}{gain\_reg\_u} gain;
+00176                     gain.\hyperlink{a00025_a74e4d0cc3da3b66723322f38bfb7f371}{reg\_all} = 0;
+00177           
+00178                     gain.\hyperlink{a00025_a8cca68b956b956a298c740d89ece0840}{bits}.PGA1 = (\hyperlink{a00036_ad9e71b7c5a4b7598dfea38b40734d96f}{pga\_et})va\_arg(va,\textcolor{keywordtype}{int});
+00179                     gain.\hyperlink{a00025_a8cca68b956b956a298c740d89ece0840}{bits}.PGA2 = (\hyperlink{a00036_ad9e71b7c5a4b7598dfea38b40734d96f}{pga\_et})va\_arg(va,\textcolor{keywordtype}{int});
+00180                     gain.\hyperlink{a00025_a8cca68b956b956a298c740d89ece0840}{bits}.PGA3 = (\hyperlink{a00036_ad9e71b7c5a4b7598dfea38b40734d96f}{pga\_et})va\_arg(va,\textcolor{keywordtype}{int});
+00181                        
+00182                     \textcolor{keywordflow}{if}(\hyperlink{a00007_ga2770219ad8ad1eda1817c0df934b47d0}{spi\_write}(BCM2835\_SPI\_CS0,\hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},
+      \hyperlink{a00036_a8c8f27b35dfa40ccf31c1ee31479a31c}{GAIN},gain.\hyperlink{a00025_a74e4d0cc3da3b66723322f38bfb7f371}{reg\_all},\textcolor{keyword}{sizeof}(gain.\hyperlink{a00025_a74e4d0cc3da3b66723322f38bfb7f371}{reg\_all}))!=0)
+00183                     \textcolor{keywordflow}{return} -1;
+00184                     
+00185                 \}\textcolor{keywordflow}{break};
+00186                 
+00187                 
+00188                 \textcolor{keywordflow}{case}  \hyperlink{a00043_a4e7bf0c205872c6db180b06792a62118}{POWER\_MODE}:
+00189                 \{ 
+00190                     \textcolor{keywordflow}{if}(arg != 1)
+00191                       \textcolor{keywordflow}{return} -1;
+00192                     
+00193                     uint8\_t mode = va\_arg(va,\textcolor{keywordtype}{int});
+00194                                         
+00195                    \textcolor{keywordflow}{if}(\hyperlink{a00005_gae9a5abd4e5054e7ea3f149b1764f2cd0}{ade7880\_power\_mode}(mode)!=0)
+00196                         \textcolor{keywordflow}{return} -1;  
+00197                         
+00198                 \}\textcolor{keywordflow}{break};
+00199                 
+00200                 \textcolor{keywordflow}{case} \hyperlink{a00036_a601225f0680bfe13cf5fc0c2c52f37c5}{VLEVEL}:
+00201                 \{
+00202                     \textcolor{keywordflow}{if}(arg !=1)
+00203                       \textcolor{keywordflow}{return} -1;
+00204                                         
+00205                     uint32\_t vlevel\_arg = va\_arg(va,\textcolor{keywordtype}{int});
+00206                                         
+00207                     \textcolor{keywordflow}{if}(\hyperlink{a00007_ga2770219ad8ad1eda1817c0df934b47d0}{spi\_write}(BCM2835\_SPI\_CS0,\hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},
+      \hyperlink{a00036_a601225f0680bfe13cf5fc0c2c52f37c5}{VLEVEL},vlevel\_arg,\textcolor{keyword}{sizeof}(uint32\_t))!=0)
+00208                         \textcolor{keywordflow}{return} -1; 
+00209                 \}\textcolor{keywordflow}{break};
+00210                 
+00211                 
+00212                 \textcolor{keywordflow}{case} \hyperlink{a00036_a31c8d51fdc4d8181e8a66b9d4be2dd8c}{COMPMODE}:
+00213                 \{
+00214                         \textcolor{keywordflow}{if}(arg != 1)
+00215                           \textcolor{keywordflow}{return} -1;
+00216                                             
+00217                         uint16\_t compmode\_arg = va\_arg(va,\textcolor{keywordtype}{int});
+00218                                             
+00219                         \textcolor{keywordflow}{if}(\hyperlink{a00007_ga2770219ad8ad1eda1817c0df934b47d0}{spi\_write}(BCM2835\_SPI\_CS0,\hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},
+      \hyperlink{a00036_a31c8d51fdc4d8181e8a66b9d4be2dd8c}{COMPMODE},compmode\_arg,\textcolor{keyword}{sizeof}(uint16\_t))!=0)
+00220                             \textcolor{keywordflow}{return} -1; 
+00221                 \}\textcolor{keywordflow}{break};
+00222                 
+00223                 
+00224                 \textcolor{keywordflow}{case} \hyperlink{a00036_a7f5107f4dbb40b5aa9f3e6de81d5b1e9}{VNOM}:
+00225                 \{
+00226                         \textcolor{keywordflow}{if}(arg != 1)
+00227                           \textcolor{keywordflow}{return} -1;
+00228                                             
+00229                         uint32\_t vnom\_arg = va\_arg(va,\textcolor{keywordtype}{int});
+00230                                   
+00231                         \textcolor{keywordflow}{if}(\hyperlink{a00007_ga2770219ad8ad1eda1817c0df934b47d0}{spi\_write}(BCM2835\_SPI\_CS0,\hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},
+      \hyperlink{a00036_a7f5107f4dbb40b5aa9f3e6de81d5b1e9}{VNOM},vnom\_arg,\textcolor{keyword}{sizeof}(uint32\_t))!=0)
+00232                             \textcolor{keywordflow}{return} -1; 
+00233                 \}\textcolor{keywordflow}{break};
+00234                         
+00235                 
+00236                 
+00237                 
+00238                 \textcolor{keywordflow}{case}  \hyperlink{a00043_a4679d8ea8690999a6c6c7c0cb245c879}{THRESHOLD}:
+00239                 \{
+00240                     \textcolor{keywordflow}{if}(arg != 3)
+00241                       \textcolor{keywordflow}{return} -1;
+00242                                                         
+00243                      uint8\_t wthr\_arg = va\_arg(va,\textcolor{keywordtype}{int});
+00244                      uint8\_t varthr\_arg = va\_arg(va,\textcolor{keywordtype}{int});
+00245                      uint8\_t vathr\_arg = va\_arg(va,\textcolor{keywordtype}{int});
+00246                      
+00247                      
+00248                     \textcolor{keywordflow}{if}(\hyperlink{a00007_ga2770219ad8ad1eda1817c0df934b47d0}{spi\_write}(BCM2835\_SPI\_CS0,\hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},
+      \hyperlink{a00036_a60f6494fba59e1f242240d12202f4746}{WTHR},\hyperlink{a00036_a54a78cc890aa0300e82a9de239ebc5a5}{WTHR\_DEFULT},\textcolor{keyword}{sizeof}(uint8\_t))!=0)
+00249                       \textcolor{keywordflow}{return} -1;
+00250                     
+00251                     
+00252                     
+00253                     \textcolor{keywordflow}{if}(\hyperlink{a00007_ga2770219ad8ad1eda1817c0df934b47d0}{spi\_write}(BCM2835\_SPI\_CS0,\hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},
+      \hyperlink{a00036_a37f9d81c6baec7ee49887b6f19ac1996}{VARTHR},\hyperlink{a00036_a105c1723ae41d790579de1a93641abea}{VARTHR\_DEFULT},\textcolor{keyword}{sizeof}(uint8\_t))!=0)
+00254                       \textcolor{keywordflow}{return} -1;
+00255                     
+00256                     
+00257                     \textcolor{keywordflow}{if}(\hyperlink{a00007_ga2770219ad8ad1eda1817c0df934b47d0}{spi\_write}(BCM2835\_SPI\_CS0,\hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},
+      \hyperlink{a00036_af97b8b6a3a2c63818edbc7f6cdceae23}{VATHR},\hyperlink{a00036_a3ca4a19859a50d3b85939e9b0c145637}{VATHR\_DEFULT},\textcolor{keyword}{sizeof}(uint8\_t))!=0)
+00258                        \textcolor{keywordflow}{return} -1;
+00259                 
+00260                 
+00261                 \}\textcolor{keywordflow}{break};
+00262                 
+00263                 
+00264                 
+00265                
+00266                 \textcolor{comment}{//Enables/Disable data memory protection}
+00267                 \textcolor{keywordflow}{case} \hyperlink{a00043_a5b534b9caab512045a6e762f3930a501}{SET\_RAM\_WR\_PROTECTION}:
+00268                 \{
+00269                 
+00270                     \textcolor{keywordflow}{if}(arg != 1)
+00271                      \textcolor{keywordflow}{return} -1;
+00272                                                                             
+00273                     uint8\_t prt\_arg = va\_arg(va,\textcolor{keywordtype}{int});
+00274                      
+00275                        \textcolor{comment}{// spi\_ram\_protection(prt\_arg,CHIP\_ADDRESS1);  }
+00276             
+00277                 \}\textcolor{keywordflow}{break};
+00278                 
+00279                 
+00280                 
+00281               
+00282 
+00283                 
+00284                 
+00285                 \textcolor{keywordflow}{default}:
+00286                 \{    
+00287                   \textcolor{comment}{// return -1;}
+00288                 \}\textcolor{keywordflow}{break};
+00289      
+00290         \}
+00291      
+00292         va\_end(va);
+00293             
+00294 \textcolor{keywordflow}{return} 0;   
+00295 \}
+00296 
+00298 
+00308 
+00309 int8\_t \hyperlink{a00005_gae9a5abd4e5054e7ea3f149b1764f2cd0}{ade7880\_power\_mode}(uint8\_t mode)\{
+00319          \textcolor{keywordflow}{if}(!bcm2835\_init())
+00320            \textcolor{keywordflow}{return} -1;
+00321            
+00322         \textcolor{keywordflow}{switch}(mode)
+00323         \{
+00324                         
+00325                 \textcolor{keywordflow}{case}  \hyperlink{a00037_ad03c0079a6239f78368cb14cc4578101}{PSM0}:
+00326                 \{    
+00328                      bcm2835\_gpio\_write(\hyperlink{a00039_aef7884a448449013ba1f8b46b8df5c05}{PIN\_PM0}, HIGH);     
+00329                      bcm2835\_gpio\_write(\hyperlink{a00039_a93e6f13f663a3ca8bcf6efe2022c9b78}{PIN\_PM1}, LOW);
+00330                       
+00331                 \}\textcolor{keywordflow}{break};
+00332                 
+00333                  \textcolor{keywordflow}{case}  \hyperlink{a00037_aecb578b36faffafc55d7e5bfbe26df6a}{PSM1}:
+00334                 \{
+00336                      bcm2835\_gpio\_write(\hyperlink{a00039_aef7884a448449013ba1f8b46b8df5c05}{PIN\_PM0}, LOW);     
+00337                      bcm2835\_gpio\_write(\hyperlink{a00039_a93e6f13f663a3ca8bcf6efe2022c9b78}{PIN\_PM1}, LOW);
+00338                 \}\textcolor{keywordflow}{break};
+00339                 
+00340                  \textcolor{keywordflow}{case}  \hyperlink{a00037_a954ec88a13030fa5878310aa79f92b59}{PSM2}:
+00341                 \{
+00343                      bcm2835\_gpio\_write(\hyperlink{a00039_aef7884a448449013ba1f8b46b8df5c05}{PIN\_PM0}, LOW);     
+00344                      bcm2835\_gpio\_write(\hyperlink{a00039_a93e6f13f663a3ca8bcf6efe2022c9b78}{PIN\_PM1}, HIGH);
+00345                  
+00346                 \}\textcolor{keywordflow}{break};
+00347                 
+00348 
+00349                  \textcolor{keywordflow}{case}  \hyperlink{a00037_aaaecd8504625316f84bd76accbcc42f0}{PSM3}:
+00350                 \{
+00352                      bcm2835\_gpio\_write(\hyperlink{a00039_aef7884a448449013ba1f8b46b8df5c05}{PIN\_PM0}, HIGH);     
+00353                      bcm2835\_gpio\_write(\hyperlink{a00039_a93e6f13f663a3ca8bcf6efe2022c9b78}{PIN\_PM1}, HIGH);
+00354                       
+00355                 \}\textcolor{keywordflow}{break};
+00356                 
+00357                 \textcolor{keywordflow}{default}:
+00358                 \{    
+00359                    \textcolor{keywordflow}{return} -1;
+00360                 \}\textcolor{keywordflow}{break};
+00361      
+00362         \}
+00363      
+00364      \textcolor{comment}{//we may need to check the state of the pin's here to verify }
+00365             
+00366 \textcolor{keywordflow}{return} 0;   
+00367 \}
+00369 
+00378 
+00379 
+00380 int8\_t \hyperlink{a00005_ga7782772c18e6ea515dcd28dcaedd0f06}{ade7880\_config\_reg\_default}(\textcolor{keywordtype}{void})\{ 
+00381  
+00398     uint16\_t cc=0;
+00399     int8\_t result=0;
+00400     \hyperlink{a00021}{compmode\_reg\_u} compmode\_reg;
+00401 
+00402     
+00403             \textcolor{comment}{//SET gain registers }
+00404             \textcolor{keywordflow}{if}(\hyperlink{a00005_ga369ee0e8379941cbc2c79b90ec3292da}{config\_cmd}(\hyperlink{a00036_a8c8f27b35dfa40ccf31c1ee31479a31c}{GAIN},3,\hyperlink{a00036_a3c686a06cc9d837e73b259bcc054217e}{GAIN\_1},\hyperlink{a00036_a3c686a06cc9d837e73b259bcc054217e}{GAIN\_1},\hyperlink{a00036_a3c686a06cc9d837e73b259bcc054217e}{GAIN\_1}) != 0)\textcolor{keywordflow}{return} -1;
+00405             
+00406             \textcolor{keywordflow}{if}(\hyperlink{a00005_ga369ee0e8379941cbc2c79b90ec3292da}{config\_cmd}(\hyperlink{a00043_a4679d8ea8690999a6c6c7c0cb245c879}{THRESHOLD},3,\hyperlink{a00036_a54a78cc890aa0300e82a9de239ebc5a5}{WTHR\_DEFULT},
+      \hyperlink{a00036_a105c1723ae41d790579de1a93641abea}{VARTHR\_DEFULT},\hyperlink{a00036_a3ca4a19859a50d3b85939e9b0c145637}{VATHR\_DEFULT}) != 0)\textcolor{keywordflow}{return} -1;
+00407             
+00408             \textcolor{keywordflow}{if}(\hyperlink{a00007_ga2770219ad8ad1eda1817c0df934b47d0}{spi\_write}(BCM2835\_SPI\_CS0,\hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},
+      \hyperlink{a00036_a8d128687074c874210b0c9dada3d8ca7}{CONFIG3},\hyperlink{a00036_a6d4592c2f28292b11885fa8ec3ed0941}{CONFIG3\_DEFULT},\textcolor{keyword}{sizeof}(uint8\_t))!=0)\textcolor{keywordflow}{return} -1; 
+00409                 
+00410 \textcolor{preprocessor}{            #if \_VNOMAEN}
+00411 \textcolor{preprocessor}{}            compmode\_reg.\hyperlink{a00021_a74e4d0cc3da3b66723322f38bfb7f371}{reg\_all} = 0x0001;   
+00412             compmode\_reg.\hyperlink{a00021_adcc1b05e99ccb27a811df890d7f3f420}{bits}.\hyperlink{a00021_ad345cee8b6a6c1c0d928ba456681dbf2}{VNOMAEN}    = 0;
+00413             compmode\_reg.\hyperlink{a00021_adcc1b05e99ccb27a811df890d7f3f420}{bits}.\hyperlink{a00021_aecd6c7afe1755d7eeb19009fd79ae48e}{VNOMBEN}    = 0;
+00414             compmode\_reg.\hyperlink{a00021_adcc1b05e99ccb27a811df890d7f3f420}{bits}.\hyperlink{a00021_a20177bdcd0f50acba5d42927ac28e5f1}{VNOMCEN}    = 0;
+00415          
+00416            
+00417             \textcolor{keywordflow}{if}(\hyperlink{a00005_ga369ee0e8379941cbc2c79b90ec3292da}{config\_cmd}(\hyperlink{a00036_a31c8d51fdc4d8181e8a66b9d4be2dd8c}{COMPMODE},1,compmode\_reg.\hyperlink{a00021_a74e4d0cc3da3b66723322f38bfb7f371}{reg\_all}) != 0)
+00418             \textcolor{keywordflow}{return} -1;
+00419 \textcolor{preprocessor}{            #endif}
+00420 \textcolor{preprocessor}{}        
+00421             
+00422             \textcolor{keywordflow}{while}(++cc<3)
+00423             \textcolor{keywordflow}{if}(\hyperlink{a00005_ga369ee0e8379941cbc2c79b90ec3292da}{config\_cmd}(\hyperlink{a00036_a601225f0680bfe13cf5fc0c2c52f37c5}{VLEVEL},1,\hyperlink{a00036_a489507ec5a9fe148bbc1b61afc07f27a}{VLEVEL\_DEFULT}) != 0)
+00424             \textcolor{keywordflow}{return} -1;
+00425       
+00426             
+00427              result=0;cc = 0;\textcolor{keywordflow}{while}(((result = \hyperlink{a00005_ga369ee0e8379941cbc2c79b90ec3292da}{config\_cmd}(
+      \hyperlink{a00043_a5b534b9caab512045a6e762f3930a501}{SET\_RAM\_WR\_PROTECTION},1,\hyperlink{a00037_a514ad415fb6125ba296793df7d1a468a}{ENABLE}))== -1)&& (cc++ < 3));\textcolor{keywordflow}{if}(result==-1)\textcolor{keywordflow}{return} -1;
+00428              result=0;cc = 0;\textcolor{keywordflow}{while}(((result = \hyperlink{a00005_ga369ee0e8379941cbc2c79b90ec3292da}{config\_cmd}(\hyperlink{a00043_a1805e103988f08b8fac817624918cf47}{DSP\_RUN},1,
+      \hyperlink{a00037_a514ad415fb6125ba296793df7d1a468a}{ENABLE}))== -1)&& (cc++ < 3));\textcolor{keywordflow}{if}(result==-1)\textcolor{keywordflow}{return} -1;
+00429             
+00430             
+00431                    
+00432                 
+00433         \textcolor{keywordflow}{return} 0;   
+00434  \}
+00437 
+00438 
+00439 
+\end{DoxyCode}

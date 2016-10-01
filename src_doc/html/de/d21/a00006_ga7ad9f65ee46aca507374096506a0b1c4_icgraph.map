@@ -1,0 +1,8 @@
+<map id="spi_read" name="spi_read">
+<area shape="rect" id="node2" href="$d7/d46/a00002.html#ga3ba649a584853038d5fd50ad1751379d" title="main" alt="" coords="763,105,813,132"/>
+<area shape="rect" id="node3" href="$d4/dee/a00008.html#gac914ebaa64afce03ee852af09659cf69" title="measure" alt="" coords="499,105,571,132"/>
+<area shape="rect" id="node5" href="$de/d21/a00006.html#gae51aa618efe7af5f3a68ac324f2a7840" title="spi_ram_protection" alt="" coords="126,93,258,120"/>
+<area shape="rect" id="node6" href="$de/d21/a00006.html#ga2770219ad8ad1eda1817c0df934b47d0" title="spi_write" alt="" coords="155,195,229,221"/>
+<area shape="rect" id="node7" href="$d7/d46/a00002.html#ga7b6d584350762c53419945480d6958d3" title="wait_new_conversion" alt="" coords="307,144,450,171"/>
+<area shape="rect" id="node4" href="$d7/d46/a00002.html#gaeb3af492d3421787fcbb2cd1bbbaf62c" title="reading_loop" alt="" coords="619,105,714,132"/>
+</map>

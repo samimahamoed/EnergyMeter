@@ -1,0 +1,28 @@
+var annotated =
+[
+    [ "accmode_reg_u", "d7/dec/a00010.html", "d7/dec/a00010" ],
+    [ "address_byte_ut", "da/d45/a00011.html", "da/d45/a00011" ],
+    [ "ade7880_ram_lock_msg_ut", "df/d86/a00012.html", "df/d86/a00012" ],
+    [ "ade7880_read16_tx_buff_ut", "d7/dd4/a00013.html", "d7/dd4/a00013" ],
+    [ "ade7880_read32_tx_buff_ut", "d2/de7/a00014.html", "d2/de7/a00014" ],
+    [ "ade7880_read8_tx_buff_ut", "dd/d1b/a00015.html", "dd/d1b/a00015" ],
+    [ "ade7880_read_tx_buff_ut", "d7/d7a/a00016.html", "d7/d7a/a00016" ],
+    [ "ade7880_write16_tx_buff_ut", "d4/d51/a00017.html", "d4/d51/a00017" ],
+    [ "ade7880_write32_tx_buff_ut", "d1/d2b/a00018.html", "d1/d2b/a00018" ],
+    [ "ade7880_write8_tx_buff_ut", "dd/da2/a00019.html", "dd/da2/a00019" ],
+    [ "ade7880_write_tx_buff_ut", "db/db2/a00020.html", "db/db2/a00020" ],
+    [ "compmode_reg_u", "de/d11/a00021.html", "de/d11/a00021" ],
+    [ "config2_reg_u", "d7/de0/a00022.html", "d7/de0/a00022" ],
+    [ "config3_reg_u", "d3/d52/a00023.html", "d3/d52/a00023" ],
+    [ "config_reg_u", "dc/de2/a00024.html", "dc/de2/a00024" ],
+    [ "gain_reg_u", "d3/dfe/a00025.html", "d3/dfe/a00025" ],
+    [ "lcycmode_reg_u", "d6/d5b/a00026.html", "d6/d5b/a00026" ],
+    [ "mask0_reg_u", "d0/d33/a00027.html", "d0/d33/a00027" ],
+    [ "mask1_reg_u", "dc/d3c/a00028.html", "dc/d3c/a00028" ],
+    [ "measured_data_t", "d5/d16/a00029.html", "d5/d16/a00029" ],
+    [ "phase_data_t", "d5/d79/a00030.html", "d5/d79/a00030" ],
+    [ "phsign_reg_u", "df/d61/a00031.html", "df/d61/a00031" ],
+    [ "status0_reg_u", "dc/d87/a00032.html", "dc/d87/a00032" ],
+    [ "status1_reg_u", "d0/dc0/a00033.html", "d0/dc0/a00033" ],
+    [ "value_ut", "db/df3/a00034.html", "db/df3/a00034" ]
+];

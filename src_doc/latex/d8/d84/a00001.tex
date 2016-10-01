@@ -1,0 +1,29 @@
+\begin{DoxyItemize}
+\item {\itshape C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N} C\-O\-N\-S\-T\-A\-N\-T\-S\-: This constants calculated so that readings fetched from target registers \par
+ can be converted into meaningful values such as amps , volts, kwh, watt. \par
+ The constants should be adjusted if there is any change to Hardware design \par
+ The calibration steps can be found from this calibration document \par
+ \href{http://www.analog.com/static/imported-files/application_notes/AN-1171.pdf}{\tt http\-://www.\-analog.\-com/static/imported-\/files/application\-\_\-notes/\-A\-N-\/1171.\-pdf} . \par
+ \begin{DoxyNote}{Note}
+Since all phases on the meter are matched, the same constant can be used \par
+ for all energy, power,current rms and voltage rms readings on any Rpi
+\end{DoxyNote}
+\begin{DoxyVerb}VLSB_CONST              211184.71337579617834394904458599        LSB constant for voltage reading 24 volt max is assumed
+ILSB_CONST              353022.88732394                          LSB constant for current reading 30 Amp max is assumed
+WHLSB_CONST             (67.28)*2.275                            LSB constant for energy reading
+WATTLSB_CONST           8505                                     LSB constant for power reading  \end{DoxyVerb}
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item {\itshape T\-R\-A\-N\-S\-F\-O\-R\-M\-E\-R\-\_\-\-R\-A\-T\-I\-O} \par
+ This value is the ratio of the voltage transformer \par
+ used to step down the line voltage to lower level. the value should be adjusted if different transformer is used. \begin{DoxyVerb}  TRANSFORMER_RATIO         20.56621005\end{DoxyVerb}
+\end{DoxyItemize}
+\begin{DoxyItemize}
+\item {\itshape C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N} C\-O\-M\-M\-A\-N\-D\-S This macros determine the common configuration file \par
+ between the phyton script and this software. And the \par
+ configuration command structure. \par
+ You only need to adjust this values, to obtain the \par
+ corresponding changes on the program execution. \begin{DoxyVerb} CONFIG_FILE_NAME       "config.csv"            defines configuration           
+ CONFIG_CMD_FORMAT      "%hd %s %lu %hhu %hhu"  configuration command format specifier
+\end{DoxyVerb}
+ \end{DoxyItemize}

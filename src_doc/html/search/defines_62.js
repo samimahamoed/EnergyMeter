@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['bfirmsos',['BFIRMSOS',['../de/d8c/a00036.html#a44d186698763ef80f9ab2049a025c5db',1,'ade7880_registers.h']]],
+  ['bfvar',['BFVAR',['../de/d8c/a00036.html#a2172be4f07d67f1ffea0218f5425b1ad',1,'ade7880_registers.h']]],
+  ['bfvarhr',['BFVARHR',['../de/d8c/a00036.html#a5de5028fa73ea84e5ee0c14945334a7a',1,'ade7880_registers.h']]],
+  ['bfvaros',['BFVAROS',['../de/d8c/a00036.html#a1d3e2d035570dc37f6eacc4a9b736686',1,'ade7880_registers.h']]],
+  ['bfvrmsos',['BFVRMSOS',['../de/d8c/a00036.html#a73bf4eb0eff30f6b614b90f993b8b1a9',1,'ade7880_registers.h']]],
+  ['bfwatthr',['BFWATTHR',['../de/d8c/a00036.html#a0d1650b78efb7f2dfd865537e925990a',1,'ade7880_registers.h']]],
+  ['bfwattos',['BFWATTOS',['../de/d8c/a00036.html#a218375e9d021ab6585ad6e1e4a30a36c',1,'ade7880_registers.h']]],
+  ['bigain',['BIGAIN',['../de/d8c/a00036.html#aa4b9cf5a0254b722e1d78f7b6fb357b9',1,'ade7880_registers.h']]],
+  ['bimav',['BIMAV',['../de/d8c/a00036.html#a5f9cd7017c3ef1233944970c850aaa00',1,'ade7880_registers.h']]],
+  ['birms',['BIRMS',['../de/d8c/a00036.html#ae1cff66a3f5c466b4344a5c2781224df',1,'ade7880_registers.h']]],
+  ['birmsos',['BIRMSOS',['../de/d8c/a00036.html#a12ec7e610dfabea2ef50a9078a6f48eb',1,'ade7880_registers.h']]],
+  ['bperiod',['BPERIOD',['../de/d8c/a00036.html#a213e16d4dd273764e3812a8c55242f99',1,'ade7880_registers.h']]],
+  ['bpf',['BPF',['../de/d8c/a00036.html#ae7ae297d8b0013c4e3dc550dc3e840cc',1,'ade7880_registers.h']]],
+  ['bpgain',['BPGAIN',['../de/d8c/a00036.html#a5d52d416295c400f6eb84bdbcc834560',1,'ade7880_registers.h']]],
+  ['bphcal',['BPHCAL',['../de/d8c/a00036.html#a06542705c13e1acd769b69a990e95594',1,'ade7880_registers.h']]],
+  ['bva',['BVA',['../de/d8c/a00036.html#a19e30da5f33e53c72352f8d8bf7f820a',1,'ade7880_registers.h']]],
+  ['bvahr',['BVAHR',['../de/d8c/a00036.html#a8b6c08ac39feb0337565bccaca6ecdbb',1,'ade7880_registers.h']]],
+  ['bvgain',['BVGAIN',['../de/d8c/a00036.html#a9a9d28eb690ced7dfa1e126448b167e3',1,'ade7880_registers.h']]],
+  ['bvrms',['BVRMS',['../de/d8c/a00036.html#a09f7027a92ccae6bb9b5738d5bc185f3',1,'ade7880_registers.h']]],
+  ['bvrmsos',['BVRMSOS',['../de/d8c/a00036.html#a82b0238744da6064813d1974735bc64c',1,'ade7880_registers.h']]],
+  ['bwatt',['BWATT',['../de/d8c/a00036.html#a3a60995ae993fd06892df7023a9f496c',1,'ade7880_registers.h']]],
+  ['bwatthr',['BWATTHR',['../de/d8c/a00036.html#a185c6910fa47f7e973f0f8743ef0e8ad',1,'ade7880_registers.h']]],
+  ['bwattos',['BWATTOS',['../de/d8c/a00036.html#a9c20ee65c3ba9c0fc123fc2a262d02e7',1,'ade7880_registers.h']]]
+];

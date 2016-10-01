@@ -1,0 +1,86 @@
+.TH "spi_ade7880_protocol.c" 3 "Mon Feb 24 2014" "Version V1" "EMS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+spi_ade7880_protocol.c \- 
+.PP
+\fIFile:\fP \fBspi_ade7880_protocol\&.c\fP 
+.br
+  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./includes/includes\&.h'\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <netinet/in\&.h>\fP
+.br
+
+.SS "Functions"
+
+.PP
+.RI "\fB\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "int8_t \fBspi_rd_wr\fP (uint8_t chip_select, uint8_t *tx_buffer, uint16_t len)"
+.br
+.RI "\fI.PP
+ \fP"
+.in -1c
+.in -1c
+.PP
+.RI "\fB\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "uint32_t \fBspi_read\fP (uint8_t chip_select, uint8_t chip_address, uint16_t \fBtarget_register\fP, uint8_t reg_len)"
+.br
+.RI "\fI.PP
+ \fP"
+.in -1c
+.in -1c
+.PP
+.RI "\fB\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "int8_t \fBspi_write\fP (uint8_t chip_select, uint8_t chip_address, uint16_t \fBtarget_register\fP, int32_t \fBvalue\fP, uint8_t reg_len)"
+.br
+.in -1c
+.in -1c
+.PP
+.RI "\fB\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "int8_t \fBspi_ram_protection\fP (uint8_t cmd, uint8_t chip_address)"
+.br
+.RI "\fI.PP
+ \fP"
+.in -1c
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fIFile:\fP \fBspi_ade7880_protocol\&.c\fP 
+.br
+ 
+
+\fIPurpose:\fP 
+.br
+ 
+.PP
+Definition in file \fBspi_ade7880_protocol\&.c\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for EMS from the source code\&.

@@ -1,0 +1,1932 @@
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 40
+       Target Register EA03
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 40
+       Target Register EA04
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 40
+       Target Register EA02
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 40
+       Target Register EA03
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 40
+       Target Register EA04
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 40
+       Target Register 439F
+       Value sent  0000, 0
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0000, 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 40
+       Target Register 439F
+       Value sent  0000, 0
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0000, 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 40
+       Target Register E7FE
+       Value sent  43AD, 17325
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  43AD, 17325
+
+MSG SENT ORIGINAL: WR
+       Chip Address 40
+       Target Register E7E3
+       Value sent  4380, 17280
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  4380, 17280
+
+MSG SENT ORIGINAL: WR
+       Chip Address 40
+       Target Register E228
+       Value sent  0001, 1
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0000, 0
+
+LAST ADDRESS
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 41
+     Target RegisterX E9FE
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 41
+     Target RegisterX E400
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 41
+     Target RegisterX E403
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 41
+     Target RegisterX E902
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 41
+     Target RegisterX 43C1
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 41
+     Target RegisterX 43C0
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00800300 8389376
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 41
+     Target RegisterX E401
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 41
+     Target RegisterX E404
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 41
+     Target RegisterX E903
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 41
+     Target RegisterX 43C3
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 41
+     Target RegisterX 43C2
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 41
+     Target RegisterX E402
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 41
+     Target RegisterX E405
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 41
+     Target RegisterX E904
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 41
+     Target RegisterX 43C5
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 41
+     Target RegisterX 43C4
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+pi@raspberrypi /home/ems-ftp/driver/ade7880_driver_sw/src $ sudo ./spi
+Read from SPI: 00  00  00  00
+pi@raspberrypi /home/ems-ftp/driver/ade7880_driver_sw/src $ gcc -o ade7880_driver ade7880_driver.c rpi_hwio.c spi_ade7880_protocol.c srv_cmd_handler.c ../includes/includes.h -l bcm2835 -DDEBUG
+pi@raspberrypi /home/ems-ftp/driver/ade7880_driver_sw/src $ sudo ./ade7880_driver "file2.csv" 1
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EBFF
+       Value sent  00FF, 255
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  00FF, 255
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EBFF
+       Value sent  03FF, 1023
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  03FF, 1023
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EBFF
+       Value sent  03FF, 1023
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  03FF, 1023
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX EC01
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EC01
+       Value sent  0000, 0
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0000, 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register E60F
+       Value sent  0000, 0
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0000, 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA02
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA03
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA04
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA02
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA03
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA04
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register 439F
+       Value sent  0000, 0
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0000, 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register 439F
+       Value sent  0000, 0
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0000, 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register E7FE
+       Value sent  43AD, 17325
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  43AD, 17325
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register E7E3
+       Value sent  4380, 17280
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  4380, 17280
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register E228
+       Value sent  0001, 1
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0000, 0
+
+LAST ADDRESS
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E9FE
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E400
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E403
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E902
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C1
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C0
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00800300 8389376
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E401
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E404
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E903
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C3
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C2
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E402
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E405
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E904
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C5
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C4
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+pi@raspberrypi /home/ems-ftp/driver/ade7880_driver_sw/src $ sudo ./ade7880_driver "file2.csv" 1
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EBFF
+       Value sent  00FF, 255
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  00FF, 255
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EBFF
+       Value sent  03FF, 1023
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  03FF, 1023
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EBFF
+       Value sent  03FF, 1023
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 8080
+       Value sent  03FF, 1023
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX EC01
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EC01
+       Value sent  0000, 0
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 8000
+       Value sent  0000, 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register E60F
+       Value sent  0000, 0
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0000, 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA02
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 8000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA03
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 8000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA04
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA02
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA03
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 8000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA04
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 8000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register 439F
+       Value sent  0000, 0
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 4000
+       Value sent  0000, 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register 439F
+       Value sent  0000, 0
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0010
+       Value sent  0000, 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register E7FE
+       Value sent  43AD, 17325
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 8080
+       Value sent  43AD, 17325
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register E7E3
+       Value sent  4380, 17280
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 8080
+       Value sent  4380, 17280
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register E228
+       Value sent  0001, 1
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0020
+       Value sent  0000, 0
+
+LAST ADDRESS
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E9FE
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E400
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E403
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E902
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C1
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C0
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00800300 8389376
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E401
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E404
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E903
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C3
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0080
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C2
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E402
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E405
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E904
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C5
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C4
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+pi@raspberrypi /home/ems-ftp/driver/ade7880_driver_sw/src $ gcc -o ade7880_driver ade7880_driver.c rpi_hwio.c spi_ade7880_protocol.c srv_cmd_handler.c ../includes/includes.h -l bcm2835 -DDEBUG
+pi@raspberrypi /home/ems-ftp/driver/ade7880_driver_sw/src $ sudo ./ade7880_driver "file2.csv" 1                              
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EBFF
+       Value sent  00FF, 255
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  00FF, 255
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EBFF
+       Value sent  03FF, 1023
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  03FF, 1023
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EBFF
+       Value sent  03FF, 1023
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  03FF, 1023
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX EC01
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EC01
+       Value sent  0000, 0
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0000, 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register E60F
+       Value sent  0000, 0
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0000, 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA02
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA03
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA04
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA02
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA03
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA04
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register 439F
+       Value sent  0000, 0
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0000, 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register 439F
+       Value sent  0000, 0
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0000, 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register E7FE
+       Value sent  43AD, 17325
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  43AD, 17325
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register E7E3
+       Value sent  4380, 17280
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  4380, 17280
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register E228
+       Value sent  0001, 1
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0000, 0
+
+LAST ADDRESS
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E9FE
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E400
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E403
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E902
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C1
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C0
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E401
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E404
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E903
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C3
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C2
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E402
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E405
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E904
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C5
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C4
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+pi@raspberrypi /home/ems-ftp/driver/ade7880_driver_sw/src $ gcc -o ade7880_driver ade7880_driver.c rpi_hwio.c spi_ade7880_protocol.c srv_cmd_handler.c ../includes/includes.h -l bcm2835 -DDEBUG
+pi@raspberrypi /home/ems-ftp/driver/ade7880_driver_sw/src $ sudo ./ade7880_driver "file2.csv" 1                              
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EBFF
+       Value sent  00FF, 255
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  00FF, 255
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EBFF
+       Value sent  03FF, 1023
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  03FF, 1023
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EBFF
+       Value sent  03FF, 1023
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  03FF, 1023
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX EC01
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EC01
+       Value sent  0000, 0
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0000, 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register E60F
+       Value sent  0000, 0
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0000, 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA02
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA03
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA04
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA02
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA03
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA04
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register 439F
+       Value sent  0000, 0
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0000, 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register 439F
+       Value sent  0000, 0
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0000, 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register E7FE
+       Value sent  43AD, 17325
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  43AD, 17325
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register E7E3
+       Value sent  4380, 17280
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  4380, 17280
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register E228
+       Value sent  0001, 1
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0000, 0
+
+LAST ADDRESS
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E9FE
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E400
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E403
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E902
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C1
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C0
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E401
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E404
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E903
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C3
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C2
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E402
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E405
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+pi@raspberrypi /home/ems-ftp/driver/ade7880_driver_sw/src $ sudo ./ade7880_driver "file2.csv" 1
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EBFF
+       Value sent  00FF, 255
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  00FF, 255
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EBFF
+       Value sent  03FF, 1023
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  03FF, 1023
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EBFF
+       Value sent  03FF, 1023
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  03FF, 1023
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX EC01
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EC01
+       Value sent  0000, 0
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0000, 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register E60F
+       Value sent  0000, 0
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0000, 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA02
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA03
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA04
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA02
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA03
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register EA04
+       Value sent  0003, 3
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0003, 3
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register 439F
+       Value sent  0000, 0
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0000, 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register 439F
+       Value sent  0000, 0
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0000, 0
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register E7FE
+       Value sent  43AD, 17325
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  43AD, 17325
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register E7E3
+       Value sent  4380, 17280
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  4380, 17280
+
+MSG SENT ORIGINAL: WR
+       Chip Address 00
+       Target Register E228
+       Value sent  0001, 1
+
+MSG SENT : WR
+       Chip Address 00
+       Target Register 0000
+       Value sent  0000, 0
+
+LAST ADDRESS
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E9FE
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E400
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E403
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E902
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C1
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C0
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E401
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E404
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E903
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C3
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C2
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E402
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E405
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E904
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C5
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX 43C4
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+pi@raspberrypi /home/ems-ftp/driver/ade7880_driver_sw/src $ MSG SENT : RD
+     Target Register 0000
+     REPLAY 00000000 0
+
+MSG SENT ORIGINAL : RD
+     Chip AddressX 01
+     Target RegisterX E904
+-bash: MSG: command not found     REPLAYX FFFFFFFF -1
+
+
+MSG SENT : RD
+     Chip Address 00
+pi@raspberrypi /home/ems-ftp/driver/ade7880_driver_sw/src $      Chip Address 00
+     Target RegisterX 43C5
+-bash: Chip: command not found
+     REPLAYX FFFFFFFF -1
+
+MSG SENT : RD
+     Chip Address 00
+     Target Register 0000
+     REPLAY 00000000 0
+
+pi@raspberrypi /home/ems-ftp/driver/ade7880_driver_sw/src $      Target Register 0000
+     Chip Address 00
+-bash: Target: command not found     Target Register 0000
+     REPLAY 00000000 0

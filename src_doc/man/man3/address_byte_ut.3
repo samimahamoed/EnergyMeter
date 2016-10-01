@@ -1,0 +1,63 @@
+.TH "address_byte_ut" 3 "Mon Feb 24 2014" "Version V1" "EMS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+address_byte_ut \- 
+.PP
+address byte of msg structure RPi to ADE7880  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <spi_ade7880_protocol\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "uint8_t \fBaddress_all\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   uint8_t \fBRD_WR\fP:1"
+.br
+.ti -1c
+.RI "   uint8_t \fBchip_address\fP:7"
+.br
+.ti -1c
+.RI "} \fBbits\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+address byte of msg structure RPi to ADE7880 
+.PP
+Definition at line 21 of file spi_ade7880_protocol\&.h\&.
+.SH "Field Documentation"
+.PP 
+.SS "uint8_t address_all"
+
+.PP
+Definition at line 23 of file spi_ade7880_protocol\&.h\&.
+.PP
+Referenced by spi_ram_protection(), spi_read(), and spi_write()\&.
+.SS "struct { \&.\&.\&. }  bits"
+
+.PP
+Referenced by spi_ram_protection(), spi_read(), and spi_write()\&.
+.SS "uint8_t chip_address"
+
+.PP
+Definition at line 27 of file spi_ade7880_protocol\&.h\&.
+.SS "uint8_t RD_WR"
+
+.PP
+Definition at line 26 of file spi_ade7880_protocol\&.h\&.
+.PP
+Referenced by spi_ram_protection(), spi_read(), and spi_write()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for EMS from the source code\&.

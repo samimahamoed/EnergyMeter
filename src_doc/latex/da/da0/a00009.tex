@@ -1,0 +1,435 @@
+\hypertarget{a00009}{\section{S\-E\-R\-V\-I\-C\-E}
+\label{da/da0/a00009}\index{S\-E\-R\-V\-I\-C\-E@{S\-E\-R\-V\-I\-C\-E}}
+}
+
+
+
+
+
+
+
+
+  
+
+
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{a00009_gac914ebaa64afce03ee852af09659cf69}{measure} (uint8\-\_\-t cmd, uint8\-\_\-t channel, float samples)
+\begin{DoxyCompactList}\small\item\em 
+
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+uint16\-\_\-t \hyperlink{a00009_gab120dc4bec6b4097a5cd3ebb91131c57}{hex2val} (uint8\-\_\-t cc)
+\begin{DoxyCompactList}\small\item\em 
+
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+uint16\-\_\-t \hyperlink{a00009_ga1e74920f34a07a82cca58eab71ed12b3}{make16} (uint8\-\_\-t $\ast$buf, uint16\-\_\-t idx)
+\begin{DoxyCompactList}\small\item\em 
+
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+uint8\-\_\-t \hyperlink{a00009_gaefa26c3e5b22ccbe5de1c33305f20e1b}{make8} (uint8\-\_\-t $\ast$buf, uint16\-\_\-t idx)
+\begin{DoxyCompactList}\small\item\em 
+
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+
+
+
+
+ \hypertarget{file4}{}\subsubsection{S\-E\-R\-V\-I\-C\-E}\label{file4}
+This is service module containing recommended measurement reading \par
+ procedures used when fetching measured data form A\-D\-E7880.\-And also, \par
+ additional service functions used throught the program are included here 
+
+\subsection{Function Documentation}
+\hypertarget{a00009_gab120dc4bec6b4097a5cd3ebb91131c57}{\index{S\-E\-R\-V\-I\-C\-E@{S\-E\-R\-V\-I\-C\-E}!hex2val@{hex2val}}
+\index{hex2val@{hex2val}!SERVICE@{S\-E\-R\-V\-I\-C\-E}}
+\subsubsection[{hex2val}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t hex2val (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{cc}
+\end{DoxyParamCaption}
+)}}\label{da/da0/a00009_gab120dc4bec6b4097a5cd3ebb91131c57}
+
+
+
+
+ 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cc} & Hexadecimal character value to be converted to integer\\
+\hline
+\end{DoxyParams}
+Function converts hex character to the corresponding integer value.
+
+\begin{DoxyReturn}{Returns}
+on success returns the resulting 16 bit unsigned integer value. 
+
+ 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{a00042_source_l00165}{165} of file \hyperlink{a00042_source}{srv\-\_\-cmd\-\_\-handler.\-c}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00185}{make16()}, and \hyperlink{a00042_source_l00207}{make8()}.
+
+
+\begin{DoxyCode}
+00166 \{
+00167     \textcolor{keywordflow}{return}  (uint16\_t)(((cc >= \textcolor{charliteral}{'0'} ) && (cc <= \textcolor{charliteral}{'9'} )) ? (cc - \textcolor{charliteral}{'0'}) : (cc - \textcolor{charliteral}{'A'} + 10) );
+00168      
+00169 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{da/da0/a00009_gab120dc4bec6b4097a5cd3ebb91131c57_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00009_ga1e74920f34a07a82cca58eab71ed12b3}{\index{S\-E\-R\-V\-I\-C\-E@{S\-E\-R\-V\-I\-C\-E}!make16@{make16}}
+\index{make16@{make16}!SERVICE@{S\-E\-R\-V\-I\-C\-E}}
+\subsubsection[{make16}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t make16 (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{buf, }
+\item[{uint16\-\_\-t}]{idx}
+\end{DoxyParamCaption}
+)}}\label{da/da0/a00009_ga1e74920f34a07a82cca58eab71ed12b3}
+
+
+
+
+ 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em buf} & pointer to Hexadecimal character buffer \\
+\hline
+\mbox{\tt in}  & {\em idx} & index to first character of 16 bit hex number string \par
+ (four charaters used).\\
+\hline
+\end{DoxyParams}
+Function converts string of hex character to the corresponding 16 bit unsigned integer value.
+
+\begin{DoxyReturn}{Returns}
+on success returns the resulting 16 bit unsigned integer value. 
+
+ 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{a00042_source_l00185}{185} of file \hyperlink{a00042_source}{srv\-\_\-cmd\-\_\-handler.\-c}.
+
+
+
+References \hyperlink{a00042_source_l00165}{hex2val()}.
+
+
+
+Referenced by \hyperlink{a00035_source_l00198}{main()}.
+
+
+\begin{DoxyCode}
+00186 \{
+00187     \textcolor{keywordflow}{return} ((\hyperlink{a00009_gab120dc4bec6b4097a5cd3ebb91131c57}{hex2val}(buf[idx+0])<<12)|(\hyperlink{a00009_gab120dc4bec6b4097a5cd3ebb91131c57}{hex2val}(buf[idx+1])<<8)|(
+      \hyperlink{a00009_gab120dc4bec6b4097a5cd3ebb91131c57}{hex2val}(buf[idx+2])<<4)|(\hyperlink{a00009_gab120dc4bec6b4097a5cd3ebb91131c57}{hex2val}(buf[idx+3])<<0));    
+00188 
+00189 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{da/da0/a00009_ga1e74920f34a07a82cca58eab71ed12b3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{da/da0/a00009_ga1e74920f34a07a82cca58eab71ed12b3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00009_gaefa26c3e5b22ccbe5de1c33305f20e1b}{\index{S\-E\-R\-V\-I\-C\-E@{S\-E\-R\-V\-I\-C\-E}!make8@{make8}}
+\index{make8@{make8}!SERVICE@{S\-E\-R\-V\-I\-C\-E}}
+\subsubsection[{make8}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t make8 (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{buf, }
+\item[{uint16\-\_\-t}]{idx}
+\end{DoxyParamCaption}
+)}}\label{da/da0/a00009_gaefa26c3e5b22ccbe5de1c33305f20e1b}
+
+
+
+
+ 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em buf} & pointer to Hexadecimal character buffer \\
+\hline
+\mbox{\tt in}  & {\em idx} & index to first character of 16 bit hex number string \par
+ (two charaters used)\\
+\hline
+\end{DoxyParams}
+Function converts string of hex character to the corresponding 8 bit unsigned integer value.
+
+\begin{DoxyReturn}{Returns}
+on success returns the resulting 8 bit unsigned integer value. 
+
+ 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{a00042_source_l00207}{207} of file \hyperlink{a00042_source}{srv\-\_\-cmd\-\_\-handler.\-c}.
+
+
+
+References \hyperlink{a00042_source_l00165}{hex2val()}.
+
+
+
+Referenced by \hyperlink{a00035_source_l00198}{main()}.
+
+
+\begin{DoxyCode}
+00208 \{
+00209     \textcolor{keywordflow}{return} (uint8\_t)((\hyperlink{a00009_gab120dc4bec6b4097a5cd3ebb91131c57}{hex2val}(buf[idx+0])<<4)|(\hyperlink{a00009_gab120dc4bec6b4097a5cd3ebb91131c57}{hex2val}(buf[idx+1]))<<0);    
+00210 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{da/da0/a00009_gaefa26c3e5b22ccbe5de1c33305f20e1b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{da/da0/a00009_gaefa26c3e5b22ccbe5de1c33305f20e1b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00009_gac914ebaa64afce03ee852af09659cf69}{\index{S\-E\-R\-V\-I\-C\-E@{S\-E\-R\-V\-I\-C\-E}!measure@{measure}}
+\index{measure@{measure}!SERVICE@{S\-E\-R\-V\-I\-C\-E}}
+\subsubsection[{measure}]{\setlength{\rightskip}{0pt plus 5cm}float measure (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{cmd, }
+\item[{uint8\-\_\-t}]{channel, }
+\item[{float}]{samples}
+\end{DoxyParamCaption}
+)}}\label{da/da0/a00009_gac914ebaa64afce03ee852af09659cf69}
+
+
+
+
+ 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cmd} & Indicates the target register value to read \\
+\hline
+\mbox{\tt in}  & {\em channel} & Indicates the target channel \\
+\hline
+\mbox{\tt in}  & {\em samples} & Indicates the number of samples read by the function\\
+\hline
+\end{DoxyParams}
+The Function runs recommended reading procedures designed, to enhance the accuracy of measurements by taking the average of readings taken at different instance.
+
+\begin{DoxyReturn}{Returns}
+on success returns the avarge of the measured value, on failure return -\/1 . 
+
+ 
+\end{DoxyReturn}
+
+
+Definition at line \hyperlink{a00042_source_l00040}{40} of file \hyperlink{a00042_source}{srv\-\_\-cmd\-\_\-handler.\-c}.
+
+
+
+References \hyperlink{a00036_source_l00382}{A\-I\-R\-M\-S}, \hyperlink{a00036_source_l00383}{A\-V\-R\-M\-S}, \hyperlink{a00036_source_l00420}{A\-W\-A\-T\-T}, \hyperlink{a00036_source_l00391}{A\-W\-A\-T\-T\-H\-R}, \hyperlink{a00036_source_l00384}{B\-I\-R\-M\-S}, \hyperlink{a00036_source_l00385}{B\-V\-R\-M\-S}, \hyperlink{a00036_source_l00421}{B\-W\-A\-T\-T}, \hyperlink{a00036_source_l00392}{B\-W\-A\-T\-T\-H\-R}, \hyperlink{a00037_source_l00039}{C\-H\-I\-P\-\_\-\-A\-D\-D\-R\-E\-S\-S1}, \hyperlink{a00036_source_l00386}{C\-I\-R\-M\-S}, \hyperlink{a00036_source_l00387}{C\-V\-R\-M\-S}, \hyperlink{a00036_source_l00422}{C\-W\-A\-T\-T}, \hyperlink{a00036_source_l00393}{C\-W\-A\-T\-T\-H\-R}, \hyperlink{a00037_source_l00079}{I\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T}, \hyperlink{a00042_source_l00040}{measure()}, \hyperlink{a00043_source_l00021}{P\-H\-A\-S\-E\-\_\-\-A}, \hyperlink{a00043_source_l00030}{P\-H\-A\-S\-E\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-P\-O\-W\-E\-R}, \hyperlink{a00043_source_l00028}{P\-H\-A\-S\-E\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-W\-H}, \hyperlink{a00043_source_l00022}{P\-H\-A\-S\-E\-\_\-\-B}, \hyperlink{a00043_source_l00023}{P\-H\-A\-S\-E\-\_\-\-C}, \hyperlink{a00043_source_l00027}{P\-H\-A\-S\-E\-\_\-\-I\-R\-M\-S}, \hyperlink{a00043_source_l00026}{P\-H\-A\-S\-E\-\_\-\-V\-R\-M\-S}, \hyperlink{a00040_source_l00147}{spi\-\_\-read()}, \hyperlink{a00043_source_l00031}{T\-O\-T\-A\-L\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-P\-O\-W\-E\-R}, \hyperlink{a00043_source_l00029}{T\-O\-T\-A\-L\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-W\-H}, \hyperlink{a00037_source_l00095}{T\-R\-A\-N\-S\-F\-O\-R\-M\-E\-R\-\_\-\-R\-A\-T\-I\-O}, \hyperlink{a00037_source_l00078}{V\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T}, \hyperlink{a00035_source_l00122}{wait\-\_\-new\-\_\-conversion()}, \hyperlink{a00037_source_l00081}{W\-A\-T\-T\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T}, and \hyperlink{a00037_source_l00080}{W\-H\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}, and \hyperlink{a00035_source_l00302}{reading\-\_\-loop()}.
+
+
+\begin{DoxyCode}
+00040                                                         \{
+00041 
+00042 
+00043     \textcolor{keywordtype}{float} measured\_val=0;
+00044 
+00045 
+00046          \textcolor{keywordflow}{switch}(cmd)
+00047         \{
+00048            
+00049                 \textcolor{keywordflow}{case}  \hyperlink{a00043_af0c09c5a455410e6fbd35fd55221338f}{PHASE\_VRMS}:
+00050                 \{
+00051                                 
+00052                     uint16\_t ii;
+00053                     uint16\_t target\_reg =  (channel==\hyperlink{a00043_ad214039f52b011ce2bd6c85ff98a981b}{PHASE\_A} )?\hyperlink{a00036_ae4c7fedd5702010e6907a686a35c1fa8}{AVRMS}
+00054                                           :(channel==\hyperlink{a00043_ad7b96feed1e1c12515dad5e926b2c62e}{PHASE\_B} )?\hyperlink{a00036_a09f7027a92ccae6bb9b5738d5bc185f3}{BVRMS}
+00055                                           :(channel==\hyperlink{a00043_a3ceb83fb10c2af19b468d508448f24e2}{PHASE\_C} )?\hyperlink{a00036_a61e9291ce0829a45cee1ee9a5f3ea4f7}{CVRMS}
+00056                                           :0;                               
+00057                     
+00058                     \textcolor{keywordflow}{if}(target\_reg==0)\textcolor{keywordflow}{return} -1;                         
+00059                     \textcolor{keywordflow}{for}(ii=0;ii<samples;ii++)\{
+00060                     \textcolor{keywordflow}{if}(\hyperlink{a00003_ga7b6d584350762c53419945480d6958d3}{wait\_new\_conversion}()==-1)\textcolor{keywordflow}{return} -1;
+00061                     measured\_val += (uint32\_t)(\hyperlink{a00007_ga7ad9f65ee46aca507374096506a0b1c4}{spi\_read}(BCM2835\_SPI\_CS0,
+      \hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},target\_reg,\textcolor{keyword}{sizeof}(uint32\_t))&0xFFFFFF)*
+      \hyperlink{a00037_abcedc82a86b3c2ac9850cb7c6f5e7a9b}{TRANSFORMER\_RATIO}; 
+00062                     \textcolor{keywordflow}{if}(ii%50 == 0)printf(\textcolor{stringliteral}{"#\(\backslash\)n"});\textcolor{keywordflow}{else} printf(\textcolor{stringliteral}{"#"});
+00063                     \}
+00064                     measured\_val /=samples;
+00065                     
+00066             
+00067                     \textcolor{keywordflow}{return} measured\_val/\hyperlink{a00037_aef67453964ff5f4b43fa56b18cee9925}{VLSB\_CONST};
+00068                 
+00069                 \}\textcolor{keywordflow}{break};
+00070 
+00071                 \textcolor{keywordflow}{case}  \hyperlink{a00043_a15c9ccf287820001431c33c4bb25a23b}{PHASE\_IRMS}:
+00072                 \{
+00073                     uint16\_t ii;
+00074                     uint16\_t target\_reg =  (channel==\hyperlink{a00043_ad214039f52b011ce2bd6c85ff98a981b}{PHASE\_A} )?\hyperlink{a00036_afae37e821d8947e31a63759e4bb57355}{AIRMS}
+00075                                           :(channel==\hyperlink{a00043_ad7b96feed1e1c12515dad5e926b2c62e}{PHASE\_B} )?\hyperlink{a00036_ae1cff66a3f5c466b4344a5c2781224df}{BIRMS}
+00076                                           :(channel==\hyperlink{a00043_a3ceb83fb10c2af19b468d508448f24e2}{PHASE\_C} )?\hyperlink{a00036_a3ccd0ef2a55b24f358292694724d37a3}{CIRMS}
+00077                                           :0;
+00078                     \textcolor{keywordflow}{if}(target\_reg==0)\textcolor{keywordflow}{return} -1;     
+00079                     \textcolor{keywordflow}{for}(ii=0;ii<samples;ii++)\{
+00080                     \textcolor{keywordflow}{if}(\hyperlink{a00003_ga7b6d584350762c53419945480d6958d3}{wait\_new\_conversion}()==-1)\textcolor{keywordflow}{return} -1;
+00081                     measured\_val += \hyperlink{a00007_ga7ad9f65ee46aca507374096506a0b1c4}{spi\_read}(BCM2835\_SPI\_CS0,
+      \hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},target\_reg,\textcolor{keyword}{sizeof}(uint32\_t)); 
+00082                     \textcolor{keywordflow}{if}(ii%50 == 0)printf(\textcolor{stringliteral}{"#\(\backslash\)n"});\textcolor{keywordflow}{else} printf(\textcolor{stringliteral}{"#"});
+00083                     
+00084                     \}
+00085                     measured\_val /=samples;
+00086                     
+00087                     \textcolor{keywordflow}{return} measured\_val/\hyperlink{a00037_a88b595bff6a462c91ddc1cafbd6e4140}{ILSB\_CONST};
+00088                 
+00089                 \}\textcolor{keywordflow}{break};
+00090                 
+00091                 
+00092                 \textcolor{keywordflow}{case}  \hyperlink{a00043_a4ee773ad07fa969b9990f9bb3a1a2093}{PHASE\_ACTIVE\_WH}:\textcolor{comment}{/*considers also harmoics , trouble? then we change it
+       to fundamental*/}
+00093                 \{
+00094             
+00095                     uint16\_t target\_reg =  (channel==\hyperlink{a00043_ad214039f52b011ce2bd6c85ff98a981b}{PHASE\_A} )?\hyperlink{a00036_ae66c97ed86f47fd938f143a30a8b2f7e}{AWATTHR}
+00096                                           :(channel==\hyperlink{a00043_ad7b96feed1e1c12515dad5e926b2c62e}{PHASE\_B} )?\hyperlink{a00036_a185c6910fa47f7e973f0f8743ef0e8ad}{BWATTHR}
+00097                                           :(channel==\hyperlink{a00043_a3ceb83fb10c2af19b468d508448f24e2}{PHASE\_C} )?\hyperlink{a00036_ad685baf76950c0387bedffa9bb3272a9}{CWATTHR}
+00098                                           :0;           
+00099                                           
+00100                     measured\_val = \hyperlink{a00007_ga7ad9f65ee46aca507374096506a0b1c4}{spi\_read}(BCM2835\_SPI\_CS0,
+      \hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},target\_reg,\textcolor{keyword}{sizeof}(uint32\_t));
+00101                     printf(\textcolor{stringliteral}{"#"});
+00102                     \textcolor{keywordflow}{return} measured\_val/\hyperlink{a00037_a75a052821a52067f93124e0c7ddcfdc3}{WHLSB\_CONST};
+00103                 
+00104                 \}\textcolor{keywordflow}{break};
+00105                 
+00106                 \textcolor{keywordflow}{case}  \hyperlink{a00043_ad8d2fc353ef124a8144e6d8264e43d1a}{TOTAL\_ACTIVE\_WH}:\textcolor{comment}{/*considers also harmoics */}
+00107                 \{
+00108                     
+00109                     uint16\_t target\_reg =  (channel==\hyperlink{a00043_ad214039f52b011ce2bd6c85ff98a981b}{PHASE\_A} )?\hyperlink{a00036_ae66c97ed86f47fd938f143a30a8b2f7e}{AWATTHR}
+00110                                           :(channel==\hyperlink{a00043_ad7b96feed1e1c12515dad5e926b2c62e}{PHASE\_B} )?\hyperlink{a00036_a185c6910fa47f7e973f0f8743ef0e8ad}{BWATTHR}
+00111                                           :(channel==\hyperlink{a00043_a3ceb83fb10c2af19b468d508448f24e2}{PHASE\_C} )?\hyperlink{a00036_ad685baf76950c0387bedffa9bb3272a9}{CWATTHR}
+00112                                           :0;           
+00113                     
+00114                      \textcolor{keywordflow}{return}  \hyperlink{a00009_gac914ebaa64afce03ee852af09659cf69}{measure}(\hyperlink{a00043_a4ee773ad07fa969b9990f9bb3a1a2093}{PHASE\_ACTIVE\_WH},
+      \hyperlink{a00043_ad214039f52b011ce2bd6c85ff98a981b}{PHASE\_A},1)
+00115                             +\hyperlink{a00009_gac914ebaa64afce03ee852af09659cf69}{measure}(\hyperlink{a00043_a4ee773ad07fa969b9990f9bb3a1a2093}{PHASE\_ACTIVE\_WH},
+      \hyperlink{a00043_ad7b96feed1e1c12515dad5e926b2c62e}{PHASE\_B},1)
+00116                             +\hyperlink{a00009_gac914ebaa64afce03ee852af09659cf69}{measure}(\hyperlink{a00043_a4ee773ad07fa969b9990f9bb3a1a2093}{PHASE\_ACTIVE\_WH},
+      \hyperlink{a00043_a3ceb83fb10c2af19b468d508448f24e2}{PHASE\_C},1);
+00117                      
+00118                 
+00119                 \}\textcolor{keywordflow}{break};
+00120                 
+00121                 \textcolor{keywordflow}{case}  \hyperlink{a00043_abd3f95c7cd63d0627552d293bf49e026}{PHASE\_ACTIVE\_POWER}:
+00122                 \{
+00123                     uint16\_t target\_reg =    (channel==\hyperlink{a00043_ad214039f52b011ce2bd6c85ff98a981b}{PHASE\_A} )?\hyperlink{a00036_a70d4c8c1577490f1b69cfab591458142}{AWATT}
+00124                                             :(channel==\hyperlink{a00043_ad7b96feed1e1c12515dad5e926b2c62e}{PHASE\_B} )?\hyperlink{a00036_a3a60995ae993fd06892df7023a9f496c}{BWATT}
+00125                                             :(channel==\hyperlink{a00043_a3ceb83fb10c2af19b468d508448f24e2}{PHASE\_C} )?\hyperlink{a00036_aeb58aae2f3e0c16a12cf4b6b03d6c5d9}{CWATT}
+00126                                             :0;         
+00127                                           
+00128                     measured\_val = \hyperlink{a00007_ga7ad9f65ee46aca507374096506a0b1c4}{spi\_read}(BCM2835\_SPI\_CS0,
+      \hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{CHIP\_ADDRESS1},target\_reg,\textcolor{keyword}{sizeof}(uint32\_t));
+00129                     printf(\textcolor{stringliteral}{"#"});
+00130                     \textcolor{keywordflow}{return} measured\_val/\hyperlink{a00037_a218dca2818f6fa6923467998b967a084}{WATTLSB\_CONST};
+00131                     
+00132                 \}\textcolor{keywordflow}{break};
+00133                 
+00134                 \textcolor{keywordflow}{case}  \hyperlink{a00043_a7d0d4057be5aaf168a22ee4379e6ff30}{TOTAL\_ACTIVE\_POWER}:
+00135                 \{
+00136                 
+00137                             
+00138                      \textcolor{keywordflow}{return} \hyperlink{a00009_gac914ebaa64afce03ee852af09659cf69}{measure}(\hyperlink{a00043_abd3f95c7cd63d0627552d293bf49e026}{PHASE\_ACTIVE\_POWER},
+      \hyperlink{a00043_ad214039f52b011ce2bd6c85ff98a981b}{PHASE\_A},1)
+00139                             +\hyperlink{a00009_gac914ebaa64afce03ee852af09659cf69}{measure}(\hyperlink{a00043_abd3f95c7cd63d0627552d293bf49e026}{PHASE\_ACTIVE\_POWER},
+      \hyperlink{a00043_ad7b96feed1e1c12515dad5e926b2c62e}{PHASE\_B},1);
+00140                             +\hyperlink{a00009_gac914ebaa64afce03ee852af09659cf69}{measure}(\hyperlink{a00043_abd3f95c7cd63d0627552d293bf49e026}{PHASE\_ACTIVE\_POWER},
+      \hyperlink{a00043_a3ceb83fb10c2af19b468d508448f24e2}{PHASE\_C},1);
+00141                     
+00142                 \}\textcolor{keywordflow}{break};
+00143                 
+00144                 \textcolor{keywordflow}{default}:
+00145                 \{    
+00146                   \textcolor{comment}{// return -1;}
+00147                 \}\textcolor{keywordflow}{break};
+00148      
+00149         \}
+00150 \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/da0/a00009_gac914ebaa64afce03ee852af09659cf69_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{da/da0/a00009_gac914ebaa64afce03ee852af09659cf69_icgraph}
+\end{center}
+\end{figure}
+
+

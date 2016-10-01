@@ -1,0 +1,306 @@
+\hypertarget{a00037}{\section{includes.\-h File Reference}
+\label{d1/dc6/a00037}\index{includes.\-h@{includes.\-h}}
+}
+
+
+{\itshape File\-:} \hyperlink{a00037}{Includes.\-h} \par
+  
+
+
+{\ttfamily \#include $<$inttypes.\-h$>$}\\*
+{\ttfamily \#include $<$stdbool.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$bcm2835.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}ade7880\-\_\-registers.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}rpi\-\_\-hwio.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}spi\-\_\-ade7880\-\_\-protocol.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}srv\-\_\-cmd\-\_\-handler.\-h\char`\"{}}\\*
+Include dependency graph for includes.\-h\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d2d/a00047}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dca/a00048}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{a00030}{phase\-\_\-data\-\_\-t}
+\item 
+struct \hyperlink{a00029}{measured\-\_\-data\-\_\-t}
+\begin{DoxyCompactList}\small\item\em Internal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00037_ac8f6b0114f40d7bc2177f638088ae0ab}{T\-Y\-P\-E}(cc)~(((cc $>$= '1' )) ? ((uint8\-\_\-t)) \-: ((uint16\-\_\-t)))
+\item 
+\#define \hyperlink{a00037_a94de2b046db6e10257ef4481c0a15eaa}{C\-H\-I\-P\-\_\-\-A\-D\-D\-R\-E\-S\-S1}~0x70
+\item 
+\#define \hyperlink{a00037_a514ad415fb6125ba296793df7d1a468a}{E\-N\-A\-B\-L\-E}~1
+\item 
+\#define \hyperlink{a00037_a99496f7308834e8b220f7894efa0b6ab}{D\-I\-S\-A\-B\-L\-E}~0
+\item 
+\#define \hyperlink{a00037_ae7c7d554ff023db5a11623df910b93af}{D\-S\-P\-\_\-\-S\-T\-A\-R\-T}~0x\-F\-F
+\item 
+\#define \hyperlink{a00037_ae22ff0891c8b944bf1b99b2332f16d15}{\-\_\-\-V\-N\-O\-M\-A\-E\-N}~0
+\begin{DoxyCompactList}\small\item\em enable disable Apparent Power Calculation Using V\-N\-O\-M register value \end{DoxyCompactList}\item 
+\#define \hyperlink{a00037_ad03c0079a6239f78368cb14cc4578101}{P\-S\-M0}~0
+\begin{DoxyCompactList}\small\item\em internal use power mode select macros \end{DoxyCompactList}\item 
+\#define \hyperlink{a00037_aecb578b36faffafc55d7e5bfbe26df6a}{P\-S\-M1}~1
+\item 
+\#define \hyperlink{a00037_a954ec88a13030fa5878310aa79f92b59}{P\-S\-M2}~2
+\item 
+\#define \hyperlink{a00037_aaaecd8504625316f84bd76accbcc42f0}{P\-S\-M3}~3
+\item 
+\#define \hyperlink{a00037_aef67453964ff5f4b43fa56b18cee9925}{V\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T}~211184.\-71337579617834394904458599
+\begin{DoxyCompactList}\small\item\em L\-S\-B constant for voltage reading 24 volt max is assumed. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00037_a88b595bff6a462c91ddc1cafbd6e4140}{I\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T}~353022.\-88732394
+\begin{DoxyCompactList}\small\item\em L\-S\-B constant for current reading 30 Amp max is assumed. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00037_a75a052821a52067f93124e0c7ddcfdc3}{W\-H\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T}~(67.\-28)$\ast$2.\-275
+\begin{DoxyCompactList}\small\item\em L\-S\-B constant for energy reading. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00037_a218dca2818f6fa6923467998b967a084}{W\-A\-T\-T\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T}~8505
+\begin{DoxyCompactList}\small\item\em L\-S\-B constant for power reading. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00037_abcedc82a86b3c2ac9850cb7c6f5e7a9b}{T\-R\-A\-N\-S\-F\-O\-R\-M\-E\-R\-\_\-\-R\-A\-T\-I\-O}~20.\-56621005
+\item 
+\#define \hyperlink{a00037_a62921b92fa4fb37f1e3a5d4c644fc1d8}{C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E\-\_\-\-N\-A\-M\-E}~\char`\"{}config.\-csv\char`\"{}
+\begin{DoxyCompactList}\small\item\em defines configuration file \end{DoxyCompactList}\item 
+\#define \hyperlink{a00037_a4891d4b97842b3419b2252198ace033f}{C\-O\-N\-F\-I\-G\-\_\-\-C\-M\-D\-\_\-\-F\-O\-R\-M\-A\-T}~\char`\"{}\%hd \%s \%lu \%hhu \%hhu\char`\"{}
+\begin{DoxyCompactList}\small\item\em configuration command format specifier \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int8\-\_\-t \hyperlink{a00003_ga9e259879c5d746107c4a70fe08aba924}{save\-\_\-to\-\_\-file} (uint16\-\_\-t rpi\-\_\-address, \hyperlink{a00029}{measured\-\_\-data\-\_\-t} data, const char $\ast$file\-Name, uint8\-\_\-t clean)
+\begin{DoxyCompactList}\small\item\em 
+
+ \end{DoxyCompactList}\item 
+int8\-\_\-t \hyperlink{a00003_ga7b6d584350762c53419945480d6958d3}{wait\-\_\-new\-\_\-conversion} (void)
+\begin{DoxyCompactList}\small\item\em 
+
+ \end{DoxyCompactList}\item 
+int16\-\_\-t \hyperlink{a00003_gac93e16d1e9d6a04b52373bf3428cc79c}{config\-\_\-recheck} (const char $\ast$config\-\_\-file, const char $\ast$format,...)
+\begin{DoxyCompactList}\small\item\em 
+
+ \end{DoxyCompactList}\item 
+void \hyperlink{a00003_gaeb3af492d3421787fcbb2cd1bbbaf62c}{reading\-\_\-loop} ()
+\begin{DoxyCompactList}\small\item\em 
+
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+{\itshape File\-:} \hyperlink{a00037}{Includes.\-h} \par
+ {\itshape Purpose\-:} \par
+ contains all header files 
+
+Definition in file \hyperlink{a00037_source}{includes.\-h}.
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{a00037_ae22ff0891c8b944bf1b99b2332f16d15}{\index{includes.\-h@{includes.\-h}!\-\_\-\-V\-N\-O\-M\-A\-E\-N@{\-\_\-\-V\-N\-O\-M\-A\-E\-N}}
+\index{\-\_\-\-V\-N\-O\-M\-A\-E\-N@{\-\_\-\-V\-N\-O\-M\-A\-E\-N}!includes.h@{includes.\-h}}
+\subsubsection[{\-\_\-\-V\-N\-O\-M\-A\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-V\-N\-O\-M\-A\-E\-N~0}}\label{d1/dc6/a00037_ae22ff0891c8b944bf1b99b2332f16d15}
+
+
+enable disable Apparent Power Calculation Using V\-N\-O\-M register value 
+
+
+
+Definition at line \hyperlink{a00037_source_l00046}{46} of file \hyperlink{a00037_source}{includes.\-h}.
+
+\hypertarget{a00037_a94de2b046db6e10257ef4481c0a15eaa}{\index{includes.\-h@{includes.\-h}!C\-H\-I\-P\-\_\-\-A\-D\-D\-R\-E\-S\-S1@{C\-H\-I\-P\-\_\-\-A\-D\-D\-R\-E\-S\-S1}}
+\index{C\-H\-I\-P\-\_\-\-A\-D\-D\-R\-E\-S\-S1@{C\-H\-I\-P\-\_\-\-A\-D\-D\-R\-E\-S\-S1}!includes.h@{includes.\-h}}
+\subsubsection[{C\-H\-I\-P\-\_\-\-A\-D\-D\-R\-E\-S\-S1}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-H\-I\-P\-\_\-\-A\-D\-D\-R\-E\-S\-S1~0x70}}\label{d1/dc6/a00037_a94de2b046db6e10257ef4481c0a15eaa}
+
+
+Definition at line \hyperlink{a00037_source_l00039}{39} of file \hyperlink{a00037_source}{includes.\-h}.
+
+
+
+Referenced by \hyperlink{a00035_source_l00198}{main()}, \hyperlink{a00042_source_l00040}{measure()}, \hyperlink{a00040_source_l00343}{spi\-\_\-ram\-\_\-protection()}, \hyperlink{a00040_source_l00221}{spi\-\_\-write()}, and \hyperlink{a00035_source_l00122}{wait\-\_\-new\-\_\-conversion()}.
+
+\hypertarget{a00037_a4891d4b97842b3419b2252198ace033f}{\index{includes.\-h@{includes.\-h}!C\-O\-N\-F\-I\-G\-\_\-\-C\-M\-D\-\_\-\-F\-O\-R\-M\-A\-T@{C\-O\-N\-F\-I\-G\-\_\-\-C\-M\-D\-\_\-\-F\-O\-R\-M\-A\-T}}
+\index{C\-O\-N\-F\-I\-G\-\_\-\-C\-M\-D\-\_\-\-F\-O\-R\-M\-A\-T@{C\-O\-N\-F\-I\-G\-\_\-\-C\-M\-D\-\_\-\-F\-O\-R\-M\-A\-T}!includes.h@{includes.\-h}}
+\subsubsection[{C\-O\-N\-F\-I\-G\-\_\-\-C\-M\-D\-\_\-\-F\-O\-R\-M\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-N\-F\-I\-G\-\_\-\-C\-M\-D\-\_\-\-F\-O\-R\-M\-A\-T~\char`\"{}\%hd \%s \%lu \%hhu \%hhu\char`\"{}}}\label{d1/dc6/a00037_a4891d4b97842b3419b2252198ace033f}
+
+
+configuration command format specifier 
+
+
+
+Definition at line \hyperlink{a00037_source_l00115}{115} of file \hyperlink{a00037_source}{includes.\-h}.
+
+
+
+Referenced by \hyperlink{a00035_source_l00302}{reading\-\_\-loop()}.
+
+\hypertarget{a00037_a62921b92fa4fb37f1e3a5d4c644fc1d8}{\index{includes.\-h@{includes.\-h}!C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E\-\_\-\-N\-A\-M\-E@{C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E\-\_\-\-N\-A\-M\-E}}
+\index{C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E\-\_\-\-N\-A\-M\-E@{C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E\-\_\-\-N\-A\-M\-E}!includes.h@{includes.\-h}}
+\subsubsection[{C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E\-\_\-\-N\-A\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E\-\_\-\-N\-A\-M\-E~\char`\"{}config.\-csv\char`\"{}}}\label{d1/dc6/a00037_a62921b92fa4fb37f1e3a5d4c644fc1d8}
+
+
+defines configuration file 
+
+
+
+Definition at line \hyperlink{a00037_source_l00114}{114} of file \hyperlink{a00037_source}{includes.\-h}.
+
+
+
+Referenced by \hyperlink{a00035_source_l00302}{reading\-\_\-loop()}.
+
+\hypertarget{a00037_a99496f7308834e8b220f7894efa0b6ab}{\index{includes.\-h@{includes.\-h}!D\-I\-S\-A\-B\-L\-E@{D\-I\-S\-A\-B\-L\-E}}
+\index{D\-I\-S\-A\-B\-L\-E@{D\-I\-S\-A\-B\-L\-E}!includes.h@{includes.\-h}}
+\subsubsection[{D\-I\-S\-A\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-I\-S\-A\-B\-L\-E~0}}\label{d1/dc6/a00037_a99496f7308834e8b220f7894efa0b6ab}
+
+
+Definition at line \hyperlink{a00037_source_l00041}{41} of file \hyperlink{a00037_source}{includes.\-h}.
+
+
+
+Referenced by \hyperlink{a00035_source_l00198}{main()}, \hyperlink{a00040_source_l00343}{spi\-\_\-ram\-\_\-protection()}, \hyperlink{a00040_source_l00221}{spi\-\_\-write()}, and \hyperlink{a00035_source_l00122}{wait\-\_\-new\-\_\-conversion()}.
+
+\hypertarget{a00037_ae7c7d554ff023db5a11623df910b93af}{\index{includes.\-h@{includes.\-h}!D\-S\-P\-\_\-\-S\-T\-A\-R\-T@{D\-S\-P\-\_\-\-S\-T\-A\-R\-T}}
+\index{D\-S\-P\-\_\-\-S\-T\-A\-R\-T@{D\-S\-P\-\_\-\-S\-T\-A\-R\-T}!includes.h@{includes.\-h}}
+\subsubsection[{D\-S\-P\-\_\-\-S\-T\-A\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-S\-P\-\_\-\-S\-T\-A\-R\-T~0x\-F\-F}}\label{d1/dc6/a00037_ae7c7d554ff023db5a11623df910b93af}
+
+
+Definition at line \hyperlink{a00037_source_l00045}{45} of file \hyperlink{a00037_source}{includes.\-h}.
+
+\hypertarget{a00037_a514ad415fb6125ba296793df7d1a468a}{\index{includes.\-h@{includes.\-h}!E\-N\-A\-B\-L\-E@{E\-N\-A\-B\-L\-E}}
+\index{E\-N\-A\-B\-L\-E@{E\-N\-A\-B\-L\-E}!includes.h@{includes.\-h}}
+\subsubsection[{E\-N\-A\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-N\-A\-B\-L\-E~1}}\label{d1/dc6/a00037_a514ad415fb6125ba296793df7d1a468a}
+
+
+Definition at line \hyperlink{a00037_source_l00040}{40} of file \hyperlink{a00037_source}{includes.\-h}.
+
+
+
+Referenced by \hyperlink{a00035_source_l00198}{main()}, \hyperlink{a00035_source_l00302}{reading\-\_\-loop()}, \hyperlink{a00040_source_l00343}{spi\-\_\-ram\-\_\-protection()}, \hyperlink{a00040_source_l00221}{spi\-\_\-write()}, and \hyperlink{a00035_source_l00122}{wait\-\_\-new\-\_\-conversion()}.
+
+\hypertarget{a00037_a88b595bff6a462c91ddc1cafbd6e4140}{\index{includes.\-h@{includes.\-h}!I\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T@{I\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T}}
+\index{I\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T@{I\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T}!includes.h@{includes.\-h}}
+\subsubsection[{I\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T~353022.\-88732394}}\label{d1/dc6/a00037_a88b595bff6a462c91ddc1cafbd6e4140}
+
+
+L\-S\-B constant for current reading 30 Amp max is assumed. 
+
+
+
+Definition at line \hyperlink{a00037_source_l00079}{79} of file \hyperlink{a00037_source}{includes.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}.
+
+\hypertarget{a00037_ad03c0079a6239f78368cb14cc4578101}{\index{includes.\-h@{includes.\-h}!P\-S\-M0@{P\-S\-M0}}
+\index{P\-S\-M0@{P\-S\-M0}!includes.h@{includes.\-h}}
+\subsubsection[{P\-S\-M0}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-S\-M0~0}}\label{d1/dc6/a00037_ad03c0079a6239f78368cb14cc4578101}
+
+
+internal use power mode select macros 
+
+
+
+Definition at line \hyperlink{a00037_source_l00050}{50} of file \hyperlink{a00037_source}{includes.\-h}.
+
+
+
+Referenced by \hyperlink{a00035_source_l00198}{main()}.
+
+\hypertarget{a00037_aecb578b36faffafc55d7e5bfbe26df6a}{\index{includes.\-h@{includes.\-h}!P\-S\-M1@{P\-S\-M1}}
+\index{P\-S\-M1@{P\-S\-M1}!includes.h@{includes.\-h}}
+\subsubsection[{P\-S\-M1}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-S\-M1~1}}\label{d1/dc6/a00037_aecb578b36faffafc55d7e5bfbe26df6a}
+
+
+Definition at line \hyperlink{a00037_source_l00051}{51} of file \hyperlink{a00037_source}{includes.\-h}.
+
+\hypertarget{a00037_a954ec88a13030fa5878310aa79f92b59}{\index{includes.\-h@{includes.\-h}!P\-S\-M2@{P\-S\-M2}}
+\index{P\-S\-M2@{P\-S\-M2}!includes.h@{includes.\-h}}
+\subsubsection[{P\-S\-M2}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-S\-M2~2}}\label{d1/dc6/a00037_a954ec88a13030fa5878310aa79f92b59}
+
+
+Definition at line \hyperlink{a00037_source_l00052}{52} of file \hyperlink{a00037_source}{includes.\-h}.
+
+\hypertarget{a00037_aaaecd8504625316f84bd76accbcc42f0}{\index{includes.\-h@{includes.\-h}!P\-S\-M3@{P\-S\-M3}}
+\index{P\-S\-M3@{P\-S\-M3}!includes.h@{includes.\-h}}
+\subsubsection[{P\-S\-M3}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-S\-M3~3}}\label{d1/dc6/a00037_aaaecd8504625316f84bd76accbcc42f0}
+
+
+Definition at line \hyperlink{a00037_source_l00053}{53} of file \hyperlink{a00037_source}{includes.\-h}.
+
+\hypertarget{a00037_abcedc82a86b3c2ac9850cb7c6f5e7a9b}{\index{includes.\-h@{includes.\-h}!T\-R\-A\-N\-S\-F\-O\-R\-M\-E\-R\-\_\-\-R\-A\-T\-I\-O@{T\-R\-A\-N\-S\-F\-O\-R\-M\-E\-R\-\_\-\-R\-A\-T\-I\-O}}
+\index{T\-R\-A\-N\-S\-F\-O\-R\-M\-E\-R\-\_\-\-R\-A\-T\-I\-O@{T\-R\-A\-N\-S\-F\-O\-R\-M\-E\-R\-\_\-\-R\-A\-T\-I\-O}!includes.h@{includes.\-h}}
+\subsubsection[{T\-R\-A\-N\-S\-F\-O\-R\-M\-E\-R\-\_\-\-R\-A\-T\-I\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-R\-A\-N\-S\-F\-O\-R\-M\-E\-R\-\_\-\-R\-A\-T\-I\-O~20.\-56621005}}\label{d1/dc6/a00037_abcedc82a86b3c2ac9850cb7c6f5e7a9b}
+
+
+Definition at line \hyperlink{a00037_source_l00095}{95} of file \hyperlink{a00037_source}{includes.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}.
+
+\hypertarget{a00037_ac8f6b0114f40d7bc2177f638088ae0ab}{\index{includes.\-h@{includes.\-h}!T\-Y\-P\-E@{T\-Y\-P\-E}}
+\index{T\-Y\-P\-E@{T\-Y\-P\-E}!includes.h@{includes.\-h}}
+\subsubsection[{T\-Y\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-Y\-P\-E(
+\begin{DoxyParamCaption}
+\item[{}]{cc}
+\end{DoxyParamCaption}
+)~(((cc $>$= '1' )) ? ((uint8\-\_\-t)) \-: ((uint16\-\_\-t)))}}\label{d1/dc6/a00037_ac8f6b0114f40d7bc2177f638088ae0ab}
+
+
+Definition at line \hyperlink{a00037_source_l00013}{13} of file \hyperlink{a00037_source}{includes.\-h}.
+
+\hypertarget{a00037_aef67453964ff5f4b43fa56b18cee9925}{\index{includes.\-h@{includes.\-h}!V\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T@{V\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T}}
+\index{V\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T@{V\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T}!includes.h@{includes.\-h}}
+\subsubsection[{V\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T~211184.\-71337579617834394904458599}}\label{d1/dc6/a00037_aef67453964ff5f4b43fa56b18cee9925}
+
+
+L\-S\-B constant for voltage reading 24 volt max is assumed. 
+
+
+
+Definition at line \hyperlink{a00037_source_l00078}{78} of file \hyperlink{a00037_source}{includes.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}.
+
+\hypertarget{a00037_a218dca2818f6fa6923467998b967a084}{\index{includes.\-h@{includes.\-h}!W\-A\-T\-T\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T@{W\-A\-T\-T\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T}}
+\index{W\-A\-T\-T\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T@{W\-A\-T\-T\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T}!includes.h@{includes.\-h}}
+\subsubsection[{W\-A\-T\-T\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-A\-T\-T\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T~8505}}\label{d1/dc6/a00037_a218dca2818f6fa6923467998b967a084}
+
+
+L\-S\-B constant for power reading. 
+
+
+
+Definition at line \hyperlink{a00037_source_l00081}{81} of file \hyperlink{a00037_source}{includes.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}.
+
+\hypertarget{a00037_a75a052821a52067f93124e0c7ddcfdc3}{\index{includes.\-h@{includes.\-h}!W\-H\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T@{W\-H\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T}}
+\index{W\-H\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T@{W\-H\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T}!includes.h@{includes.\-h}}
+\subsubsection[{W\-H\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-H\-L\-S\-B\-\_\-\-C\-O\-N\-S\-T~(67.\-28)$\ast$2.\-275}}\label{d1/dc6/a00037_a75a052821a52067f93124e0c7ddcfdc3}
+
+
+L\-S\-B constant for energy reading. 
+
+
+
+Definition at line \hyperlink{a00037_source_l00080}{80} of file \hyperlink{a00037_source}{includes.\-h}.
+
+
+
+Referenced by \hyperlink{a00042_source_l00040}{measure()}.
+

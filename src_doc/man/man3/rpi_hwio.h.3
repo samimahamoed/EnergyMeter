@@ -1,0 +1,127 @@
+.TH "rpi_hwio.h" 3 "Mon Feb 24 2014" "Version V1" "EMS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rpi_hwio.h \- 
+.PP
+\fIFile:\fP \fBrpi_hwio\&.h\fP 
+.br
+  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBPIN_SS\fP   RPI_GPIO_P1_24"
+.br
+.RI "\fIRpi chip select pin\&. \fP"
+.ti -1c
+.RI "#define \fBPIN_SS2\fP   RPI_GPIO_P1_26"
+.br
+.RI "\fIRpi second chip select pin\&. \fP"
+.ti -1c
+.RI "#define \fBPIN_PM0\fP   RPI_GPIO_P1_11"
+.br
+.RI "\fIADE7880 PM0 connection pin\&. \fP"
+.ti -1c
+.RI "#define \fBPIN_PM1\fP   RPI_GPIO_P1_13"
+.br
+.RI "\fIADE7880 PM1 connection pin\&. \fP"
+.ti -1c
+.RI "#define \fBPIN_IRQ0\fP   RPI_GPIO_P1_16"
+.br
+.RI "\fIADE7880 IRQ0 connection pin\&. \fP"
+.ti -1c
+.RI "#define \fBPIN_IRQ1\fP   RPI_GPIO_P1_18"
+.br
+.RI "\fIADE7880 IRQ1 connection pin\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int8_t \fBrpi_gpio_init\fP ()"
+.br
+.RI "\fI.PP
+ \fP"
+.ti -1c
+.RI "int8_t \fBade7880_power_mode\fP (uint8_t mode)"
+.br
+.RI "\fI.PP
+ \fP"
+.ti -1c
+.RI "int8_t \fBade7880_config_reg_default\fP ()"
+.br
+.RI "\fI.PP
+ \fP"
+.ti -1c
+.RI "int8_t \fBconfig_cmd\fP (uint32_t cmd, uint8_t arg,\&.\&.\&.)"
+.br
+.RI "\fI.PP
+ \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fIFile:\fP \fBrpi_hwio\&.h\fP 
+.br
+ 
+
+\fIPurpose:\fP 
+.br
+ 
+.PP
+Definition in file \fBrpi_hwio\&.h\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define PIN_IRQ0   RPI_GPIO_P1_16"
+
+.PP
+ADE7880 IRQ0 connection pin\&. 
+.PP
+Definition at line 15 of file rpi_hwio\&.h\&.
+.PP
+Referenced by rpi_gpio_init()\&.
+.SS "#define PIN_IRQ1   RPI_GPIO_P1_18"
+
+.PP
+ADE7880 IRQ1 connection pin\&. 
+.PP
+Definition at line 16 of file rpi_hwio\&.h\&.
+.PP
+Referenced by rpi_gpio_init()\&.
+.SS "#define PIN_PM0   RPI_GPIO_P1_11"
+
+.PP
+ADE7880 PM0 connection pin\&. 
+.PP
+Definition at line 13 of file rpi_hwio\&.h\&.
+.PP
+Referenced by rpi_gpio_init()\&.
+.SS "#define PIN_PM1   RPI_GPIO_P1_13"
+
+.PP
+ADE7880 PM1 connection pin\&. 
+.PP
+Definition at line 14 of file rpi_hwio\&.h\&.
+.PP
+Referenced by rpi_gpio_init()\&.
+.SS "#define PIN_SS   RPI_GPIO_P1_24"
+
+.PP
+Rpi chip select pin\&. 
+.PP
+Definition at line 10 of file rpi_hwio\&.h\&.
+.PP
+Referenced by main(), rpi_gpio_init(), and spi_rd_wr()\&.
+.SS "#define PIN_SS2   RPI_GPIO_P1_26"
+
+.PP
+Rpi second chip select pin\&. 
+.PP
+Definition at line 11 of file rpi_hwio\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for EMS from the source code\&.

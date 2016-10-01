@@ -1,0 +1,1635 @@
+.TH "ade7880_registers.h" 3 "Mon Feb 24 2014" "Version V1" "EMS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ade7880_registers.h \- 
+.PP
+\fIFile:\fP srv_ade7880_registers\&.h 
+.br
+  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "union \fBgain_reg_u\fP"
+.br
+.ti -1c
+.RI "union \fBconfig_reg_u\fP"
+.br
+.ti -1c
+.RI "union \fBconfig2_reg_u\fP"
+.br
+.ti -1c
+.RI "union \fBaccmode_reg_u\fP"
+.br
+.ti -1c
+.RI "union \fBphsign_reg_u\fP"
+.br
+.ti -1c
+.RI "union \fBconfig3_reg_u\fP"
+.br
+.ti -1c
+.RI "union \fBlcycmode_reg_u\fP"
+.br
+.ti -1c
+.RI "union \fBstatus0_reg_u\fP"
+.br
+.ti -1c
+.RI "union \fBcompmode_reg_u\fP"
+.br
+.ti -1c
+.RI "union \fBstatus1_reg_u\fP"
+.br
+.ti -1c
+.RI "union \fBmask0_reg_u\fP"
+.br
+.ti -1c
+.RI "union \fBmask1_reg_u\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBGAIN_1\fP   0b000"
+.br
+.RI "\fIsee the datasheet about this const \fBADE7880\fP http://www.analog.com/static/imported-files/data_sheets/ADE7880.pdf \&. \fP"
+.ti -1c
+.RI "#define \fBGAIN_2\fP   0b001"
+.br
+.ti -1c
+.RI "#define \fBGAIN_4\fP   0b010"
+.br
+.ti -1c
+.RI "#define \fBGAIN_8\fP   0b011"
+.br
+.ti -1c
+.RI "#define \fBGAIN_16\fP   0b100"
+.br
+.ti -1c
+.RI "#define \fBMODE_0_0\fP   0b00"
+.br
+.ti -1c
+.RI "#define \fBMODE_0_1\fP   0b01"
+.br
+.ti -1c
+.RI "#define \fBMODE_1_0\fP   0b10"
+.br
+.ti -1c
+.RI "#define \fBMODE_1_1\fP   0b11"
+.br
+.ti -1c
+.RI "#define \fBDUMMIY\fP   0xEBFF"
+.br
+.ti -1c
+.RI "#define \fBCHECKSUM\fP   0xE51F"
+.br
+.ti -1c
+.RI "#define \fBWTHR_DEFULT\fP   0x03"
+.br
+.RI "\fIThreshold registers\&. \fP"
+.ti -1c
+.RI "#define \fBVARTHR_DEFULT\fP   0x03"
+.br
+.RI "\fIThreshold used in phase total /fundamental reactive power data path\&. \fP"
+.ti -1c
+.RI "#define \fBVATHR_DEFULT\fP   0x03"
+.br
+.RI "\fIThreshold used in phase apparent power data path\&. \fP"
+.ti -1c
+.RI "#define \fBVLEVEL_DEFULT\fP   0x38000"
+.br
+.RI "\fIuse Equation 26, Equation 37, Equation 44, Equation 22, and Equation 42 in the datasheet to determine this values \fP"
+.ti -1c
+.RI "#define \fBWTHR\fP   0xEA02"
+.br
+.RI "\fIPhysical Address\&. \fP"
+.ti -1c
+.RI "#define \fBVARTHR\fP   0xEA03"
+.br
+.ti -1c
+.RI "#define \fBVATHR\fP   0xEA04"
+.br
+.ti -1c
+.RI "#define \fBVLEVEL\fP   0x439F"
+.br
+.ti -1c
+.RI "#define \fBLAST_RWDATA8\fP   0xE7FD"
+.br
+.ti -1c
+.RI "#define \fBLAST_RWDATA16\fP   0xE9FF"
+.br
+.ti -1c
+.RI "#define \fBLAST_RWDATA32\fP   0xE5FF"
+.br
+.ti -1c
+.RI "#define \fBRUN\fP   0xE228"
+.br
+.RI "\fIDSP run control register\&. \fP"
+.ti -1c
+.RI "#define \fBGAIN\fP   0xE60F"
+.br
+.ti -1c
+.RI "#define \fBCONFIG\fP   0xE618"
+.br
+.RI "\fIADE7880 PHSIGN Register Physical address and structure\&. \fP"
+.ti -1c
+.RI "#define \fBCONFIG2\fP   0xEC01"
+.br
+.RI "\fIADE7880 CONFIG2 Register Physical address and structure\&. \fP"
+.ti -1c
+.RI "#define \fBACCMODE\fP   0xE701"
+.br
+.ti -1c
+.RI "#define \fBPHSIGN\fP   0xE617"
+.br
+.RI "\fIADE7880 PHSIGN Register Physical address and structure\&. \fP"
+.ti -1c
+.RI "#define \fBCONFIG3\fP   0xEA00"
+.br
+.RI "\fIADE7880 CONFIG3 Register Physical address and structure\&. \fP"
+.ti -1c
+.RI "#define \fBCONFIG3_DEFULT\fP   0x01"
+.br
+.ti -1c
+.RI "#define \fBLCYCMODE\fP   0xE702"
+.br
+.RI "\fIADE7880 LCYCMODE Register Physical address and structure\&. \fP"
+.ti -1c
+.RI "#define \fBSTATUS0\fP   0xE502"
+.br
+.ti -1c
+.RI "#define \fBCOMPMODE\fP   0xE60E"
+.br
+.ti -1c
+.RI "#define \fBSTATUS1\fP   0xE503"
+.br
+.ti -1c
+.RI "#define \fBMASK0\fP   0xE50A"
+.br
+.ti -1c
+.RI "#define \fBMASK1\fP   0xE50B"
+.br
+.ti -1c
+.RI "#define \fBLAST_ADD\fP   0xE9FE"
+.br
+.RI "\fIRegisters\&. \fP"
+.ti -1c
+.RI "#define \fBLAST_OP\fP   0xEA01"
+.br
+.ti -1c
+.RI "#define \fBLAST_RWDATA_8bit\fP   0xE7FD"
+.br
+.ti -1c
+.RI "#define \fBLAST_RWDATA_16bit\fP   0xE9FF"
+.br
+.ti -1c
+.RI "#define \fBLAST_RWDATA_24bit\fP   0xE5FF"
+.br
+.ti -1c
+.RI "#define \fBAVA\fP   0xE519"
+.br
+.RI "\fIEnergy Registers\&. \fP"
+.ti -1c
+.RI "#define \fBBVA\fP   0xE51A"
+.br
+.ti -1c
+.RI "#define \fBCVA\fP   0xE51B"
+.br
+.ti -1c
+.RI "#define \fBAIGAIN\fP   0x4380"
+.br
+.ti -1c
+.RI "#define \fBAVGAIN\fP   0x4381"
+.br
+.ti -1c
+.RI "#define \fBBIGAIN\fP   0x4382"
+.br
+.ti -1c
+.RI "#define \fBBVGAIN\fP   0x4383"
+.br
+.ti -1c
+.RI "#define \fBCIGAIN\fP   0x4384"
+.br
+.ti -1c
+.RI "#define \fBCVGAIN\fP   0x4385"
+.br
+.ti -1c
+.RI "#define \fBNIGAIN\fP   0x4386"
+.br
+.ti -1c
+.RI "#define \fBDICOEFF\fP   0x4388"
+.br
+.ti -1c
+.RI "#define \fBAPGAIN\fP   0x4389"
+.br
+.ti -1c
+.RI "#define \fBAWATTOS\fP   0x438A"
+.br
+.ti -1c
+.RI "#define \fBBPGAIN\fP   0x438B"
+.br
+.ti -1c
+.RI "#define \fBBWATTOS\fP   0x438C"
+.br
+.ti -1c
+.RI "#define \fBCPGAIN\fP   0x438D"
+.br
+.ti -1c
+.RI "#define \fBCWATTOS\fP   0x438E"
+.br
+.ti -1c
+.RI "#define \fBAIRMSOS\fP   0x438F"
+.br
+.ti -1c
+.RI "#define \fBAVRMSOS\fP   0x4390"
+.br
+.ti -1c
+.RI "#define \fBBIRMSOS\fP   0x4391"
+.br
+.ti -1c
+.RI "#define \fBBVRMSOS\fP   0x4392"
+.br
+.ti -1c
+.RI "#define \fBCIRMSOS\fP   0x4393"
+.br
+.ti -1c
+.RI "#define \fBCVRMSOS\fP   0x4394"
+.br
+.ti -1c
+.RI "#define \fBNIRMSOS\fP   0x4395"
+.br
+.ti -1c
+.RI "#define \fBHPGAIN\fP   0x4398"
+.br
+.ti -1c
+.RI "#define \fBISUMLVL\fP   0x4399"
+.br
+.ti -1c
+.RI "#define \fBAFWATTOS\fP   0x43A2"
+.br
+.ti -1c
+.RI "#define \fBBFWATTOS\fP   0x43A3"
+.br
+.ti -1c
+.RI "#define \fBCFWATTOS\fP   0x43A4"
+.br
+.ti -1c
+.RI "#define \fBAFVAROS\fP   0x43A5"
+.br
+.ti -1c
+.RI "#define \fBBFVAROS\fP   0x43A6"
+.br
+.ti -1c
+.RI "#define \fBCFVAROS\fP   0x43A7"
+.br
+.ti -1c
+.RI "#define \fBAFIRMSOS\fP   0x43A8"
+.br
+.ti -1c
+.RI "#define \fBBFIRMSOS\fP   0x43A9"
+.br
+.ti -1c
+.RI "#define \fBCFIRMSOS\fP   0x43AA"
+.br
+.ti -1c
+.RI "#define \fBAFVRMSOS\fP   0x43AB"
+.br
+.ti -1c
+.RI "#define \fBBFVRMSOS\fP   0x43AC"
+.br
+.ti -1c
+.RI "#define \fBCFVRMSOS\fP   0x43AD"
+.br
+.ti -1c
+.RI "#define \fBHXWATTOS\fP   0x43AE"
+.br
+.ti -1c
+.RI "#define \fBHYWATTOS\fP   0x43AF"
+.br
+.ti -1c
+.RI "#define \fBHZWATTOS\fP   0x43B0"
+.br
+.ti -1c
+.RI "#define \fBHXVAROS\fP   0x43B1"
+.br
+.ti -1c
+.RI "#define \fBHYVAROS\fP   0x43B2"
+.br
+.ti -1c
+.RI "#define \fBHZVAROS\fP   0x43B3"
+.br
+.ti -1c
+.RI "#define \fBHXIRMSOS\fP   0x43B4"
+.br
+.ti -1c
+.RI "#define \fBHYIRMSOS\fP   0x43B5"
+.br
+.ti -1c
+.RI "#define \fBHZIRMSOS\fP   0x43B6"
+.br
+.ti -1c
+.RI "#define \fBHXVRMSOS\fP   0x43B7"
+.br
+.ti -1c
+.RI "#define \fBHYVRMSOS\fP   0x43B8"
+.br
+.ti -1c
+.RI "#define \fBHZVRMSOS\fP   0x43B9"
+.br
+.ti -1c
+.RI "#define \fBAIRMS\fP   0x43C0"
+.br
+.ti -1c
+.RI "#define \fBAVRMS\fP   0x43C1"
+.br
+.ti -1c
+.RI "#define \fBBIRMS\fP   0x43C2"
+.br
+.ti -1c
+.RI "#define \fBBVRMS\fP   0x43C3"
+.br
+.ti -1c
+.RI "#define \fBCIRMS\fP   0x43C4"
+.br
+.ti -1c
+.RI "#define \fBCVRMS\fP   0x43C5"
+.br
+.ti -1c
+.RI "#define \fBNIRMS\fP   0x43C6"
+.br
+.ti -1c
+.RI "#define \fBISUM\fP   0x43C7"
+.br
+.ti -1c
+.RI "#define \fBAWATTHR\fP   0xE400"
+.br
+.ti -1c
+.RI "#define \fBBWATTHR\fP   0xE401"
+.br
+.ti -1c
+.RI "#define \fBCWATTHR\fP   0xE402"
+.br
+.ti -1c
+.RI "#define \fBAFWATTHR\fP   0xE403"
+.br
+.ti -1c
+.RI "#define \fBBFWATTHR\fP   0xE404"
+.br
+.ti -1c
+.RI "#define \fBCFWATTHR\fP   0xE405"
+.br
+.ti -1c
+.RI "#define \fBAFVARHR\fP   0xE409"
+.br
+.ti -1c
+.RI "#define \fBBFVARHR\fP   0xE40A"
+.br
+.ti -1c
+.RI "#define \fBCFVARHR\fP   0xE40B"
+.br
+.ti -1c
+.RI "#define \fBAVAHR\fP   0xE40C"
+.br
+.ti -1c
+.RI "#define \fBBVAHR\fP   0xE40D"
+.br
+.ti -1c
+.RI "#define \fBCVAHR\fP   0xE40E"
+.br
+.ti -1c
+.RI "#define \fBIPEAK\fP   0xE500"
+.br
+.ti -1c
+.RI "#define \fBVPEAK\fP   0xE501"
+.br
+.ti -1c
+.RI "#define \fBAIMAV\fP   0xE504"
+.br
+.ti -1c
+.RI "#define \fBBIMAV\fP   0xE505"
+.br
+.ti -1c
+.RI "#define \fBCIMAV\fP   0xE506"
+.br
+.ti -1c
+.RI "#define \fBOILVL\fP   0xE507"
+.br
+.ti -1c
+.RI "#define \fBOVLVL\fP   0xE508"
+.br
+.ti -1c
+.RI "#define \fBSAGLVL\fP   0xE509"
+.br
+.ti -1c
+.RI "#define \fBIAWV\fP   0xE50C"
+.br
+.ti -1c
+.RI "#define \fBIBWV\fP   0xE50D"
+.br
+.ti -1c
+.RI "#define \fBICWV\fP   0xE50E"
+.br
+.ti -1c
+.RI "#define \fBINWV\fP   0xE50F"
+.br
+.ti -1c
+.RI "#define \fBVAWV\fP   0xE510"
+.br
+.ti -1c
+.RI "#define \fBVBWV\fP   0xE511"
+.br
+.ti -1c
+.RI "#define \fBVCWV\fP   0xE512"
+.br
+.ti -1c
+.RI "#define \fBAWATT\fP   0xE513"
+.br
+.ti -1c
+.RI "#define \fBBWATT\fP   0xE514"
+.br
+.ti -1c
+.RI "#define \fBCWATT\fP   0xE515"
+.br
+.ti -1c
+.RI "#define \fBAFVAR\fP   0xE516"
+.br
+.ti -1c
+.RI "#define \fBBFVAR\fP   0xE517"
+.br
+.ti -1c
+.RI "#define \fBCFVAR\fP   0xE518"
+.br
+.ti -1c
+.RI "#define \fBVNOM\fP   0xE520"
+.br
+.ti -1c
+.RI "#define \fBPHSTATUS\fP   0xE600"
+.br
+.ti -1c
+.RI "#define \fBANGLE0\fP   0xE601"
+.br
+.ti -1c
+.RI "#define \fBANGLE1\fP   0xE602"
+.br
+.ti -1c
+.RI "#define \fBANGLE2\fP   0xE603"
+.br
+.ti -1c
+.RI "#define \fBPHNOLOAD\fP   0xE608"
+.br
+.ti -1c
+.RI "#define \fBLINECYC\fP   0xE60C"
+.br
+.ti -1c
+.RI "#define \fBZXTOUT\fP   0xE60D"
+.br
+.ti -1c
+.RI "#define \fBCFMODE\fP   0xE610"
+.br
+.ti -1c
+.RI "#define \fBCF1DEN\fP   0xE611"
+.br
+.ti -1c
+.RI "#define \fBCF2DEN\fP   0xE612"
+.br
+.ti -1c
+.RI "#define \fBCF3DEN\fP   0xE613"
+.br
+.ti -1c
+.RI "#define \fBAPHCAL\fP   0xE614"
+.br
+.ti -1c
+.RI "#define \fBBPHCAL\fP   0xE615"
+.br
+.ti -1c
+.RI "#define \fBCPHCAL\fP   0xE616"
+.br
+.ti -1c
+.RI "#define \fBMMODE\fP   0xE700"
+.br
+.ti -1c
+.RI "#define \fBPEAKCYC\fP   0xE703"
+.br
+.ti -1c
+.RI "#define \fBSAGCYC\fP   0xE704"
+.br
+.ti -1c
+.RI "#define \fBCFCYC\fP   0xE705"
+.br
+.ti -1c
+.RI "#define \fBHSDC_CFG\fP   0xE706"
+.br
+.ti -1c
+.RI "#define \fBVersion\fP   0xE707"
+.br
+.ti -1c
+.RI "#define \fBFVRMS\fP   0xE880"
+.br
+.ti -1c
+.RI "#define \fBFIRMS\fP   0xE881"
+.br
+.ti -1c
+.RI "#define \fBFWATT\fP   0xE882"
+.br
+.ti -1c
+.RI "#define \fBFVAR\fP   0xE883"
+.br
+.ti -1c
+.RI "#define \fBFVA\fP   0xE884"
+.br
+.ti -1c
+.RI "#define \fBFPF\fP   0xE885"
+.br
+.ti -1c
+.RI "#define \fBVTHDN\fP   0xE886"
+.br
+.ti -1c
+.RI "#define \fBITHDN\fP   0xE887"
+.br
+.ti -1c
+.RI "#define \fBHXVRMS\fP   0xE888"
+.br
+.ti -1c
+.RI "#define \fBHXIRMS\fP   0xE889"
+.br
+.ti -1c
+.RI "#define \fBHXWATT\fP   0xE88A"
+.br
+.ti -1c
+.RI "#define \fBHXVAR\fP   0xE88B"
+.br
+.ti -1c
+.RI "#define \fBHXVA\fP   0xE88C"
+.br
+.ti -1c
+.RI "#define \fBHXPF\fP   0xE88D"
+.br
+.ti -1c
+.RI "#define \fBHXVHD\fP   0xE88E"
+.br
+.ti -1c
+.RI "#define \fBHXIHD\fP   0xE88F"
+.br
+.ti -1c
+.RI "#define \fBHYVRMS\fP   0xE890"
+.br
+.ti -1c
+.RI "#define \fBHYIRMS\fP   0xE891"
+.br
+.ti -1c
+.RI "#define \fBHYWATT\fP   0xE892"
+.br
+.ti -1c
+.RI "#define \fBHYVAR\fP   0xE893"
+.br
+.ti -1c
+.RI "#define \fBHYVA\fP   0xE894"
+.br
+.ti -1c
+.RI "#define \fBHYPF\fP   0xE895"
+.br
+.ti -1c
+.RI "#define \fBHYVHD\fP   0xE896"
+.br
+.ti -1c
+.RI "#define \fBHYIHD\fP   0xE897"
+.br
+.ti -1c
+.RI "#define \fBHZVRMS\fP   0xE898"
+.br
+.ti -1c
+.RI "#define \fBHZIRMS\fP   0xE899"
+.br
+.ti -1c
+.RI "#define \fBHZWATT\fP   0xE89A"
+.br
+.ti -1c
+.RI "#define \fBHZVAR\fP   0xE89B"
+.br
+.ti -1c
+.RI "#define \fBHZVA\fP   0xE89C"
+.br
+.ti -1c
+.RI "#define \fBHZPF\fP   0xE89D"
+.br
+.ti -1c
+.RI "#define \fBHZVHD\fP   0xE89E"
+.br
+.ti -1c
+.RI "#define \fBHZIHD\fP   0xE89F"
+.br
+.ti -1c
+.RI "#define \fBHCONFIG\fP   0xE900"
+.br
+.ti -1c
+.RI "#define \fBAPF\fP   0xE902"
+.br
+.ti -1c
+.RI "#define \fBBPF\fP   0xE903"
+.br
+.ti -1c
+.RI "#define \fBCPF\fP   0xE904"
+.br
+.ti -1c
+.RI "#define \fBAPERIOD\fP   0xE905"
+.br
+.ti -1c
+.RI "#define \fBBPERIOD\fP   0xE906"
+.br
+.ti -1c
+.RI "#define \fBCPERIOD\fP   0xE907"
+.br
+.ti -1c
+.RI "#define \fBAPNOLOAD\fP   0xE908"
+.br
+.ti -1c
+.RI "#define \fBVARNOLOAD\fP   0xE909"
+.br
+.ti -1c
+.RI "#define \fBVANOLOAD\fP   0xE90A"
+.br
+.ti -1c
+.RI "#define \fBHX_reg\fP   0xEA08"
+.br
+.ti -1c
+.RI "#define \fBHY_reg\fP   0xEA09"
+.br
+.ti -1c
+.RI "#define \fBHZ_reg\fP   0xEA0A"
+.br
+.ti -1c
+.RI "#define \fBLPOILVL\fP   0xEC00"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef enum \fBpga_et\fP \fBpga_et\fP"
+.br
+.RI "\fIADE7880 Gain Register Physical address and structure\&. \fP"
+.ti -1c
+.RI "typedef union \fBaccmode_reg_u\fP \fBaccmode_reg_u\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBpga_et\fP { \fBgain_1\fP = GAIN_1, \fBgain_2\fP = GAIN_2, \fBgain_4\fP = GAIN_4, \fBgain_8\fP = GAIN_8, \fBgain_16\fP = GAIN_16 }"
+.br
+.RI "\fIADE7880 Gain Register Physical address and structure\&. \fP"
+.ti -1c
+.RI "enum \fBmode_et\fP { \fBmode_0_0\fP = MODE_0_0, \fBmode_0_1\fP = MODE_0_1, \fBmode_1_0\fP = MODE_1_0, \fBmode_1_1\fP = MODE_1_1 }"
+.br
+.RI "\fIADE7880 Register Physical address and structure\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fIFile:\fP srv_ade7880_registers\&.h 
+.br
+ 
+
+\fIPurpose:\fP 
+.br
+ 
+.PP
+Definition in file \fBade7880_registers\&.h\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ACCMODE   0xE701"
+
+.PP
+Definition at line 133 of file ade7880_registers\&.h\&.
+.SS "#define AFIRMSOS   0x43A8"
+
+.PP
+Definition at line 364 of file ade7880_registers\&.h\&.
+.SS "#define AFVAR   0xE516"
+
+.PP
+Definition at line 423 of file ade7880_registers\&.h\&.
+.SS "#define AFVARHR   0xE409"
+
+.PP
+Definition at line 397 of file ade7880_registers\&.h\&.
+.SS "#define AFVAROS   0x43A5"
+
+.PP
+Definition at line 361 of file ade7880_registers\&.h\&.
+.SS "#define AFVRMSOS   0x43AB"
+
+.PP
+Definition at line 367 of file ade7880_registers\&.h\&.
+.SS "#define AFWATTHR   0xE403"
+
+.PP
+Definition at line 394 of file ade7880_registers\&.h\&.
+.SS "#define AFWATTOS   0x43A2"
+
+.PP
+Definition at line 358 of file ade7880_registers\&.h\&.
+.SS "#define AIGAIN   0x4380"
+
+.PP
+Definition at line 334 of file ade7880_registers\&.h\&.
+.SS "#define AIMAV   0xE504"
+
+.PP
+Definition at line 406 of file ade7880_registers\&.h\&.
+.SS "#define AIRMS   0x43C0"
+
+.PP
+Definition at line 382 of file ade7880_registers\&.h\&.
+.PP
+Referenced by measure()\&.
+.SS "#define AIRMSOS   0x438F"
+
+.PP
+Definition at line 348 of file ade7880_registers\&.h\&.
+.SS "#define ANGLE0   0xE601"
+
+.PP
+Definition at line 430 of file ade7880_registers\&.h\&.
+.SS "#define ANGLE1   0xE602"
+
+.PP
+Definition at line 431 of file ade7880_registers\&.h\&.
+.SS "#define ANGLE2   0xE603"
+
+.PP
+Definition at line 432 of file ade7880_registers\&.h\&.
+.SS "#define APERIOD   0xE905"
+
+.PP
+Definition at line 492 of file ade7880_registers\&.h\&.
+.SS "#define APF   0xE902"
+
+.PP
+Definition at line 489 of file ade7880_registers\&.h\&.
+.SS "#define APGAIN   0x4389"
+
+.PP
+Definition at line 342 of file ade7880_registers\&.h\&.
+.SS "#define APHCAL   0xE614"
+
+.PP
+Definition at line 442 of file ade7880_registers\&.h\&.
+.SS "#define APNOLOAD   0xE908"
+
+.PP
+Definition at line 495 of file ade7880_registers\&.h\&.
+.SS "#define AVA   0xE519"
+
+.PP
+Energy Registers\&. phase magnitude registers 
+.PP
+Definition at line 328 of file ade7880_registers\&.h\&.
+.SS "#define AVAHR   0xE40C"
+
+.PP
+Definition at line 400 of file ade7880_registers\&.h\&.
+.SS "#define AVGAIN   0x4381"
+
+.PP
+Definition at line 335 of file ade7880_registers\&.h\&.
+.SS "#define AVRMS   0x43C1"
+
+.PP
+Definition at line 383 of file ade7880_registers\&.h\&.
+.PP
+Referenced by measure()\&.
+.SS "#define AVRMSOS   0x4390"
+
+.PP
+Definition at line 349 of file ade7880_registers\&.h\&.
+.SS "#define AWATT   0xE513"
+
+.PP
+Definition at line 420 of file ade7880_registers\&.h\&.
+.PP
+Referenced by measure()\&.
+.SS "#define AWATTHR   0xE400"
+
+.PP
+Definition at line 391 of file ade7880_registers\&.h\&.
+.PP
+Referenced by measure()\&.
+.SS "#define AWATTOS   0x438A"
+
+.PP
+Definition at line 343 of file ade7880_registers\&.h\&.
+.SS "#define BFIRMSOS   0x43A9"
+
+.PP
+Definition at line 365 of file ade7880_registers\&.h\&.
+.SS "#define BFVAR   0xE517"
+
+.PP
+Definition at line 424 of file ade7880_registers\&.h\&.
+.SS "#define BFVARHR   0xE40A"
+
+.PP
+Definition at line 398 of file ade7880_registers\&.h\&.
+.SS "#define BFVAROS   0x43A6"
+
+.PP
+Definition at line 362 of file ade7880_registers\&.h\&.
+.SS "#define BFVRMSOS   0x43AC"
+
+.PP
+Definition at line 368 of file ade7880_registers\&.h\&.
+.SS "#define BFWATTHR   0xE404"
+
+.PP
+Definition at line 395 of file ade7880_registers\&.h\&.
+.SS "#define BFWATTOS   0x43A3"
+
+.PP
+Definition at line 359 of file ade7880_registers\&.h\&.
+.SS "#define BIGAIN   0x4382"
+
+.PP
+Definition at line 336 of file ade7880_registers\&.h\&.
+.SS "#define BIMAV   0xE505"
+
+.PP
+Definition at line 407 of file ade7880_registers\&.h\&.
+.SS "#define BIRMS   0x43C2"
+
+.PP
+Definition at line 384 of file ade7880_registers\&.h\&.
+.PP
+Referenced by measure()\&.
+.SS "#define BIRMSOS   0x4391"
+
+.PP
+Definition at line 350 of file ade7880_registers\&.h\&.
+.SS "#define BPERIOD   0xE906"
+
+.PP
+Definition at line 493 of file ade7880_registers\&.h\&.
+.SS "#define BPF   0xE903"
+
+.PP
+Definition at line 490 of file ade7880_registers\&.h\&.
+.SS "#define BPGAIN   0x438B"
+
+.PP
+Definition at line 344 of file ade7880_registers\&.h\&.
+.SS "#define BPHCAL   0xE615"
+
+.PP
+Definition at line 443 of file ade7880_registers\&.h\&.
+.SS "#define BVA   0xE51A"
+
+.PP
+Definition at line 329 of file ade7880_registers\&.h\&.
+.SS "#define BVAHR   0xE40D"
+
+.PP
+Definition at line 401 of file ade7880_registers\&.h\&.
+.SS "#define BVGAIN   0x4383"
+
+.PP
+Definition at line 337 of file ade7880_registers\&.h\&.
+.SS "#define BVRMS   0x43C3"
+
+.PP
+Definition at line 385 of file ade7880_registers\&.h\&.
+.PP
+Referenced by measure()\&.
+.SS "#define BVRMSOS   0x4392"
+
+.PP
+Definition at line 351 of file ade7880_registers\&.h\&.
+.SS "#define BWATT   0xE514"
+
+.PP
+Definition at line 421 of file ade7880_registers\&.h\&.
+.PP
+Referenced by measure()\&.
+.SS "#define BWATTHR   0xE401"
+
+.PP
+Definition at line 392 of file ade7880_registers\&.h\&.
+.PP
+Referenced by measure()\&.
+.SS "#define BWATTOS   0x438C"
+
+.PP
+Definition at line 345 of file ade7880_registers\&.h\&.
+.SS "#define CF1DEN   0xE611"
+
+.PP
+Definition at line 439 of file ade7880_registers\&.h\&.
+.SS "#define CF2DEN   0xE612"
+
+.PP
+Definition at line 440 of file ade7880_registers\&.h\&.
+.SS "#define CF3DEN   0xE613"
+
+.PP
+Definition at line 441 of file ade7880_registers\&.h\&.
+.SS "#define CFCYC   0xE705"
+
+.PP
+Definition at line 452 of file ade7880_registers\&.h\&.
+.SS "#define CFIRMSOS   0x43AA"
+
+.PP
+Definition at line 366 of file ade7880_registers\&.h\&.
+.SS "#define CFMODE   0xE610"
+
+.PP
+Definition at line 438 of file ade7880_registers\&.h\&.
+.SS "#define CFVAR   0xE518"
+
+.PP
+Definition at line 425 of file ade7880_registers\&.h\&.
+.SS "#define CFVARHR   0xE40B"
+
+.PP
+Definition at line 399 of file ade7880_registers\&.h\&.
+.SS "#define CFVAROS   0x43A7"
+
+.PP
+Definition at line 363 of file ade7880_registers\&.h\&.
+.SS "#define CFVRMSOS   0x43AD"
+
+.PP
+Definition at line 369 of file ade7880_registers\&.h\&.
+.SS "#define CFWATTHR   0xE405"
+
+.PP
+Definition at line 396 of file ade7880_registers\&.h\&.
+.SS "#define CFWATTOS   0x43A4"
+
+.PP
+Definition at line 360 of file ade7880_registers\&.h\&.
+.SS "#define CHECKSUM   0xE51F"
+
+.PP
+Definition at line 32 of file ade7880_registers\&.h\&.
+.SS "#define CIGAIN   0x4384"
+
+.PP
+Definition at line 338 of file ade7880_registers\&.h\&.
+.SS "#define CIMAV   0xE506"
+
+.PP
+Definition at line 408 of file ade7880_registers\&.h\&.
+.SS "#define CIRMS   0x43C4"
+
+.PP
+Definition at line 386 of file ade7880_registers\&.h\&.
+.PP
+Referenced by measure()\&.
+.SS "#define CIRMSOS   0x4393"
+
+.PP
+Definition at line 352 of file ade7880_registers\&.h\&.
+.SS "#define COMPMODE   0xE60E"
+
+.PP
+Definition at line 236 of file ade7880_registers\&.h\&.
+.SS "#define CONFIG   0xE618"
+
+.PP
+ADE7880 PHSIGN Register Physical address and structure\&. 
+.PP
+Definition at line 83 of file ade7880_registers\&.h\&.
+.SS "#define CONFIG2   0xEC01"
+
+.PP
+ADE7880 CONFIG2 Register Physical address and structure\&. 
+.PP
+Definition at line 108 of file ade7880_registers\&.h\&.
+.SS "#define CONFIG3   0xEA00"
+
+.PP
+ADE7880 CONFIG3 Register Physical address and structure\&. 
+.PP
+Definition at line 177 of file ade7880_registers\&.h\&.
+.SS "#define CONFIG3_DEFULT   0x01"
+
+.PP
+Definition at line 178 of file ade7880_registers\&.h\&.
+.SS "#define CPERIOD   0xE907"
+
+.PP
+Definition at line 494 of file ade7880_registers\&.h\&.
+.SS "#define CPF   0xE904"
+
+.PP
+Definition at line 491 of file ade7880_registers\&.h\&.
+.SS "#define CPGAIN   0x438D"
+
+.PP
+Definition at line 346 of file ade7880_registers\&.h\&.
+.SS "#define CPHCAL   0xE616"
+
+.PP
+Definition at line 444 of file ade7880_registers\&.h\&.
+.SS "#define CVA   0xE51B"
+
+.PP
+Definition at line 330 of file ade7880_registers\&.h\&.
+.SS "#define CVAHR   0xE40E"
+
+.PP
+Definition at line 402 of file ade7880_registers\&.h\&.
+.SS "#define CVGAIN   0x4385"
+
+.PP
+Definition at line 339 of file ade7880_registers\&.h\&.
+.SS "#define CVRMS   0x43C5"
+
+.PP
+Definition at line 387 of file ade7880_registers\&.h\&.
+.PP
+Referenced by measure()\&.
+.SS "#define CVRMSOS   0x4394"
+
+.PP
+Definition at line 353 of file ade7880_registers\&.h\&.
+.SS "#define CWATT   0xE515"
+
+.PP
+Definition at line 422 of file ade7880_registers\&.h\&.
+.PP
+Referenced by measure()\&.
+.SS "#define CWATTHR   0xE402"
+
+.PP
+Definition at line 393 of file ade7880_registers\&.h\&.
+.PP
+Referenced by measure()\&.
+.SS "#define CWATTOS   0x438E"
+
+.PP
+Definition at line 347 of file ade7880_registers\&.h\&.
+.SS "#define DICOEFF   0x4388"
+
+.PP
+Definition at line 341 of file ade7880_registers\&.h\&.
+.SS "#define DUMMIY   0xEBFF"
+
+.PP
+Definition at line 31 of file ade7880_registers\&.h\&.
+.SS "#define FIRMS   0xE881"
+
+.PP
+Definition at line 457 of file ade7880_registers\&.h\&.
+.SS "#define FPF   0xE885"
+
+.PP
+Definition at line 461 of file ade7880_registers\&.h\&.
+.SS "#define FVA   0xE884"
+
+.PP
+Definition at line 460 of file ade7880_registers\&.h\&.
+.SS "#define FVAR   0xE883"
+
+.PP
+Definition at line 459 of file ade7880_registers\&.h\&.
+.SS "#define FVRMS   0xE880"
+
+.PP
+Definition at line 456 of file ade7880_registers\&.h\&.
+.SS "#define FWATT   0xE882"
+
+.PP
+Definition at line 458 of file ade7880_registers\&.h\&.
+.SS "#define GAIN   0xE60F"
+
+.PP
+Definition at line 69 of file ade7880_registers\&.h\&.
+.SS "#define GAIN_1   0b000"
+
+.PP
+see the datasheet about this const \fBADE7880\fP http://www.analog.com/static/imported-files/data_sheets/ADE7880.pdf \&. 
+.PP
+Definition at line 17 of file ade7880_registers\&.h\&.
+.SS "#define GAIN_16   0b100"
+
+.PP
+Definition at line 21 of file ade7880_registers\&.h\&.
+.SS "#define GAIN_2   0b001"
+
+.PP
+Definition at line 18 of file ade7880_registers\&.h\&.
+.SS "#define GAIN_4   0b010"
+
+.PP
+Definition at line 19 of file ade7880_registers\&.h\&.
+.SS "#define GAIN_8   0b011"
+
+.PP
+Definition at line 20 of file ade7880_registers\&.h\&.
+.SS "#define HCONFIG   0xE900"
+
+.PP
+Definition at line 488 of file ade7880_registers\&.h\&.
+.SS "#define HPGAIN   0x4398"
+
+.PP
+Definition at line 355 of file ade7880_registers\&.h\&.
+.SS "#define HSDC_CFG   0xE706"
+
+.PP
+Definition at line 453 of file ade7880_registers\&.h\&.
+.SS "#define HX_reg   0xEA08"
+
+.PP
+Definition at line 500 of file ade7880_registers\&.h\&.
+.SS "#define HXIHD   0xE88F"
+
+.PP
+Definition at line 471 of file ade7880_registers\&.h\&.
+.SS "#define HXIRMS   0xE889"
+
+.PP
+Definition at line 465 of file ade7880_registers\&.h\&.
+.SS "#define HXIRMSOS   0x43B4"
+
+.PP
+Definition at line 376 of file ade7880_registers\&.h\&.
+.SS "#define HXPF   0xE88D"
+
+.PP
+Definition at line 469 of file ade7880_registers\&.h\&.
+.SS "#define HXVA   0xE88C"
+
+.PP
+Definition at line 468 of file ade7880_registers\&.h\&.
+.SS "#define HXVAR   0xE88B"
+
+.PP
+Definition at line 467 of file ade7880_registers\&.h\&.
+.SS "#define HXVAROS   0x43B1"
+
+.PP
+Definition at line 373 of file ade7880_registers\&.h\&.
+.SS "#define HXVHD   0xE88E"
+
+.PP
+Definition at line 470 of file ade7880_registers\&.h\&.
+.SS "#define HXVRMS   0xE888"
+
+.PP
+Definition at line 464 of file ade7880_registers\&.h\&.
+.SS "#define HXVRMSOS   0x43B7"
+
+.PP
+Definition at line 379 of file ade7880_registers\&.h\&.
+.SS "#define HXWATT   0xE88A"
+
+.PP
+Definition at line 466 of file ade7880_registers\&.h\&.
+.SS "#define HXWATTOS   0x43AE"
+
+.PP
+Definition at line 370 of file ade7880_registers\&.h\&.
+.SS "#define HY_reg   0xEA09"
+
+.PP
+Definition at line 501 of file ade7880_registers\&.h\&.
+.SS "#define HYIHD   0xE897"
+
+.PP
+Definition at line 479 of file ade7880_registers\&.h\&.
+.SS "#define HYIRMS   0xE891"
+
+.PP
+Definition at line 473 of file ade7880_registers\&.h\&.
+.SS "#define HYIRMSOS   0x43B5"
+
+.PP
+Definition at line 377 of file ade7880_registers\&.h\&.
+.SS "#define HYPF   0xE895"
+
+.PP
+Definition at line 477 of file ade7880_registers\&.h\&.
+.SS "#define HYVA   0xE894"
+
+.PP
+Definition at line 476 of file ade7880_registers\&.h\&.
+.SS "#define HYVAR   0xE893"
+
+.PP
+Definition at line 475 of file ade7880_registers\&.h\&.
+.SS "#define HYVAROS   0x43B2"
+
+.PP
+Definition at line 374 of file ade7880_registers\&.h\&.
+.SS "#define HYVHD   0xE896"
+
+.PP
+Definition at line 478 of file ade7880_registers\&.h\&.
+.SS "#define HYVRMS   0xE890"
+
+.PP
+Definition at line 472 of file ade7880_registers\&.h\&.
+.SS "#define HYVRMSOS   0x43B8"
+
+.PP
+Definition at line 380 of file ade7880_registers\&.h\&.
+.SS "#define HYWATT   0xE892"
+
+.PP
+Definition at line 474 of file ade7880_registers\&.h\&.
+.SS "#define HYWATTOS   0x43AF"
+
+.PP
+Definition at line 371 of file ade7880_registers\&.h\&.
+.SS "#define HZ_reg   0xEA0A"
+
+.PP
+Definition at line 502 of file ade7880_registers\&.h\&.
+.SS "#define HZIHD   0xE89F"
+
+.PP
+Definition at line 487 of file ade7880_registers\&.h\&.
+.SS "#define HZIRMS   0xE899"
+
+.PP
+Definition at line 481 of file ade7880_registers\&.h\&.
+.SS "#define HZIRMSOS   0x43B6"
+
+.PP
+Definition at line 378 of file ade7880_registers\&.h\&.
+.SS "#define HZPF   0xE89D"
+
+.PP
+Definition at line 485 of file ade7880_registers\&.h\&.
+.SS "#define HZVA   0xE89C"
+
+.PP
+Definition at line 484 of file ade7880_registers\&.h\&.
+.SS "#define HZVAR   0xE89B"
+
+.PP
+Definition at line 483 of file ade7880_registers\&.h\&.
+.SS "#define HZVAROS   0x43B3"
+
+.PP
+Definition at line 375 of file ade7880_registers\&.h\&.
+.SS "#define HZVHD   0xE89E"
+
+.PP
+Definition at line 486 of file ade7880_registers\&.h\&.
+.SS "#define HZVRMS   0xE898"
+
+.PP
+Definition at line 480 of file ade7880_registers\&.h\&.
+.SS "#define HZVRMSOS   0x43B9"
+
+.PP
+Definition at line 381 of file ade7880_registers\&.h\&.
+.SS "#define HZWATT   0xE89A"
+
+.PP
+Definition at line 482 of file ade7880_registers\&.h\&.
+.SS "#define HZWATTOS   0x43B0"
+
+.PP
+Definition at line 372 of file ade7880_registers\&.h\&.
+.SS "#define IAWV   0xE50C"
+
+.PP
+Definition at line 413 of file ade7880_registers\&.h\&.
+.SS "#define IBWV   0xE50D"
+
+.PP
+Definition at line 414 of file ade7880_registers\&.h\&.
+.SS "#define ICWV   0xE50E"
+
+.PP
+Definition at line 415 of file ade7880_registers\&.h\&.
+.SS "#define INWV   0xE50F"
+
+.PP
+Definition at line 416 of file ade7880_registers\&.h\&.
+.SS "#define IPEAK   0xE500"
+
+.PP
+Definition at line 403 of file ade7880_registers\&.h\&.
+.SS "#define ISUM   0x43C7"
+
+.PP
+Definition at line 389 of file ade7880_registers\&.h\&.
+.SS "#define ISUMLVL   0x4399"
+
+.PP
+Definition at line 356 of file ade7880_registers\&.h\&.
+.SS "#define ITHDN   0xE887"
+
+.PP
+Definition at line 463 of file ade7880_registers\&.h\&.
+.SS "#define LAST_ADD   0xE9FE"
+
+.PP
+Registers\&. 
+.PP
+Definition at line 314 of file ade7880_registers\&.h\&.
+.PP
+Referenced by spi_ram_protection(), and spi_write()\&.
+.SS "#define LAST_OP   0xEA01"
+
+.PP
+Definition at line 316 of file ade7880_registers\&.h\&.
+.PP
+Referenced by spi_ram_protection(), and spi_write()\&.
+.SS "#define LAST_RWDATA16   0xE9FF"
+
+.PP
+Definition at line 49 of file ade7880_registers\&.h\&.
+.PP
+Referenced by spi_write()\&.
+.SS "#define LAST_RWDATA32   0xE5FF"
+
+.PP
+Definition at line 50 of file ade7880_registers\&.h\&.
+.PP
+Referenced by spi_write()\&.
+.SS "#define LAST_RWDATA8   0xE7FD"
+
+.PP
+Definition at line 48 of file ade7880_registers\&.h\&.
+.PP
+Referenced by spi_ram_protection(), and spi_write()\&.
+.SS "#define LAST_RWDATA_16bit   0xE9FF"
+
+.PP
+Definition at line 320 of file ade7880_registers\&.h\&.
+.SS "#define LAST_RWDATA_24bit   0xE5FF"
+
+.PP
+Definition at line 322 of file ade7880_registers\&.h\&.
+.SS "#define LAST_RWDATA_8bit   0xE7FD"
+
+.PP
+Definition at line 318 of file ade7880_registers\&.h\&.
+.SS "#define LCYCMODE   0xE702"
+
+.PP
+ADE7880 LCYCMODE Register Physical address and structure\&. 
+.PP
+Definition at line 197 of file ade7880_registers\&.h\&.
+.SS "#define LINECYC   0xE60C"
+
+.PP
+Definition at line 434 of file ade7880_registers\&.h\&.
+.SS "#define LPOILVL   0xEC00"
+
+.PP
+Definition at line 503 of file ade7880_registers\&.h\&.
+.SS "#define MASK0   0xE50A"
+
+.PP
+Definition at line 279 of file ade7880_registers\&.h\&.
+.SS "#define MASK1   0xE50B"
+
+.PP
+Definition at line 293 of file ade7880_registers\&.h\&.
+.SS "#define MMODE   0xE700"
+
+.PP
+Definition at line 447 of file ade7880_registers\&.h\&.
+.SS "#define MODE_0_0   0b00"
+
+.PP
+Definition at line 26 of file ade7880_registers\&.h\&.
+.SS "#define MODE_0_1   0b01"
+
+.PP
+Definition at line 27 of file ade7880_registers\&.h\&.
+.SS "#define MODE_1_0   0b10"
+
+.PP
+Definition at line 28 of file ade7880_registers\&.h\&.
+.SS "#define MODE_1_1   0b11"
+
+.PP
+Definition at line 29 of file ade7880_registers\&.h\&.
+.SS "#define NIGAIN   0x4386"
+
+.PP
+Definition at line 340 of file ade7880_registers\&.h\&.
+.SS "#define NIRMS   0x43C6"
+
+.PP
+Definition at line 388 of file ade7880_registers\&.h\&.
+.SS "#define NIRMSOS   0x4395"
+
+.PP
+Definition at line 354 of file ade7880_registers\&.h\&.
+.SS "#define OILVL   0xE507"
+
+.PP
+Definition at line 409 of file ade7880_registers\&.h\&.
+.SS "#define OVLVL   0xE508"
+
+.PP
+Definition at line 410 of file ade7880_registers\&.h\&.
+.SS "#define PEAKCYC   0xE703"
+
+.PP
+Definition at line 450 of file ade7880_registers\&.h\&.
+.SS "#define PHNOLOAD   0xE608"
+
+.PP
+Definition at line 433 of file ade7880_registers\&.h\&.
+.SS "#define PHSIGN   0xE617"
+
+.PP
+ADE7880 PHSIGN Register Physical address and structure\&. 
+.PP
+Definition at line 150 of file ade7880_registers\&.h\&.
+.SS "#define PHSTATUS   0xE600"
+
+.PP
+Definition at line 429 of file ade7880_registers\&.h\&.
+.SS "#define RUN   0xE228"
+
+.PP
+DSP run control register\&. 
+.PP
+Definition at line 53 of file ade7880_registers\&.h\&.
+.SS "#define SAGCYC   0xE704"
+
+.PP
+Definition at line 451 of file ade7880_registers\&.h\&.
+.SS "#define SAGLVL   0xE509"
+
+.PP
+Definition at line 411 of file ade7880_registers\&.h\&.
+.SS "#define STATUS0   0xE502"
+
+.PP
+Definition at line 216 of file ade7880_registers\&.h\&.
+.PP
+Referenced by wait_new_conversion()\&.
+.SS "#define STATUS1   0xE503"
+
+.PP
+Definition at line 265 of file ade7880_registers\&.h\&.
+.SS "#define VANOLOAD   0xE90A"
+
+.PP
+Definition at line 497 of file ade7880_registers\&.h\&.
+.SS "#define VARNOLOAD   0xE909"
+
+.PP
+Definition at line 496 of file ade7880_registers\&.h\&.
+.SS "#define VARTHR   0xEA03"
+
+.PP
+Definition at line 45 of file ade7880_registers\&.h\&.
+.SS "#define VARTHR_DEFULT   0x03"
+
+.PP
+Threshold used in phase total /fundamental reactive power data path\&. 
+.PP
+Definition at line 38 of file ade7880_registers\&.h\&.
+.SS "#define VATHR   0xEA04"
+
+.PP
+Definition at line 46 of file ade7880_registers\&.h\&.
+.SS "#define VATHR_DEFULT   0x03"
+
+.PP
+Threshold used in phase apparent power data path\&. 
+.PP
+Definition at line 39 of file ade7880_registers\&.h\&.
+.SS "#define VAWV   0xE510"
+
+.PP
+Definition at line 417 of file ade7880_registers\&.h\&.
+.SS "#define VBWV   0xE511"
+
+.PP
+Definition at line 418 of file ade7880_registers\&.h\&.
+.SS "#define VCWV   0xE512"
+
+.PP
+Definition at line 419 of file ade7880_registers\&.h\&.
+.SS "#define Version   0xE707"
+
+.PP
+Definition at line 454 of file ade7880_registers\&.h\&.
+.SS "#define VLEVEL   0x439F"
+
+.PP
+Definition at line 47 of file ade7880_registers\&.h\&.
+.SS "#define VLEVEL_DEFULT   0x38000"
+
+.PP
+use Equation 26, Equation 37, Equation 44, Equation 22, and Equation 42 in the datasheet to determine this values 
+.PP
+Definition at line 40 of file ade7880_registers\&.h\&.
+.SS "#define VNOM   0xE520"
+
+.PP
+Definition at line 427 of file ade7880_registers\&.h\&.
+.SS "#define VPEAK   0xE501"
+
+.PP
+Definition at line 404 of file ade7880_registers\&.h\&.
+.SS "#define VTHDN   0xE886"
+
+.PP
+Definition at line 462 of file ade7880_registers\&.h\&.
+.SS "#define WTHR   0xEA02"
+
+.PP
+Physical Address\&. 
+.PP
+Definition at line 44 of file ade7880_registers\&.h\&.
+.SS "#define WTHR_DEFULT   0x03"
+
+.PP
+Threshold registers\&. Threshold used in phase total /fundamental active power data path\&. 
+.PP
+Definition at line 37 of file ade7880_registers\&.h\&.
+.SS "#define ZXTOUT   0xE60D"
+
+.PP
+Definition at line 435 of file ade7880_registers\&.h\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef union \fBaccmode_reg_u\fP \fBaccmode_reg_u\fP"
+
+.SS "typedef enum \fBpga_et\fP \fBpga_et\fP"
+
+.PP
+ADE7880 Gain Register Physical address and structure\&. 
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBmode_et\fP"
+
+.PP
+ADE7880 Register Physical address and structure\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fImode_0_0 \fP\fP
+.TP
+\fB\fImode_0_1 \fP\fP
+.TP
+\fB\fImode_1_0 \fP\fP
+.TP
+\fB\fImode_1_1 \fP\fP
+.PP
+Definition at line 124 of file ade7880_registers\&.h\&.
+.PP
+.nf
+124 {  //see the datasheet about this const
+125    mode_0_0 = MODE_0_0,       
+126    mode_0_1 = MODE_0_1,   
+127    mode_1_0 = MODE_1_0, 
+128    mode_1_1 = MODE_1_1
+129   
+130 }mode_et;
+131   
+.fi
+.SS "enum \fBpga_et\fP"
+
+.PP
+ADE7880 Gain Register Physical address and structure\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIgain_1 \fP\fP
+.TP
+\fB\fIgain_2 \fP\fP
+.TP
+\fB\fIgain_4 \fP\fP
+.TP
+\fB\fIgain_8 \fP\fP
+.TP
+\fB\fIgain_16 \fP\fP
+.PP
+Definition at line 60 of file ade7880_registers\&.h\&.
+.PP
+.nf
+60 { 
+61    gain_1  = GAIN_1,       
+62    gain_2  = GAIN_2,   
+63    gain_4  = GAIN_4, 
+64    gain_8  = GAIN_8,
+65    gain_16 = GAIN_16
+66 }pga_et;
+67 
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for EMS from the source code\&.

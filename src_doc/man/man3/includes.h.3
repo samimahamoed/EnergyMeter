@@ -1,0 +1,252 @@
+.TH "includes.h" 3 "Mon Feb 24 2014" "Version V1" "EMS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+includes.h \- 
+.PP
+\fIFile:\fP \fBIncludes\&.h\fP 
+.br
+  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <inttypes\&.h>\fP
+.br
+\fC#include <stdbool\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <bcm2835\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include 'ade7880_registers\&.h'\fP
+.br
+\fC#include 'rpi_hwio\&.h'\fP
+.br
+\fC#include 'spi_ade7880_protocol\&.h'\fP
+.br
+\fC#include 'srv_cmd_handler\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBphase_data_t\fP"
+.br
+.ti -1c
+.RI "struct \fBmeasured_data_t\fP"
+.br
+.RI "\fIInternal\&. \fP"
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBTYPE\fP(cc)   (((cc >= '1' )) ? ((uint8_t)) : ((uint16_t)))"
+.br
+.ti -1c
+.RI "#define \fBCHIP_ADDRESS1\fP   0x70"
+.br
+.ti -1c
+.RI "#define \fBENABLE\fP   1"
+.br
+.ti -1c
+.RI "#define \fBDISABLE\fP   0"
+.br
+.ti -1c
+.RI "#define \fBDSP_START\fP   0xFF"
+.br
+.ti -1c
+.RI "#define \fB_VNOMAEN\fP   0"
+.br
+.RI "\fIenable disable Apparent Power Calculation Using VNOM register value \fP"
+.ti -1c
+.RI "#define \fBPSM0\fP   0"
+.br
+.RI "\fIinternal use power mode select macros \fP"
+.ti -1c
+.RI "#define \fBPSM1\fP   1"
+.br
+.ti -1c
+.RI "#define \fBPSM2\fP   2"
+.br
+.ti -1c
+.RI "#define \fBPSM3\fP   3"
+.br
+.ti -1c
+.RI "#define \fBVLSB_CONST\fP   211184\&.71337579617834394904458599"
+.br
+.RI "\fILSB constant for voltage reading 24 volt max is assumed\&. \fP"
+.ti -1c
+.RI "#define \fBILSB_CONST\fP   353022\&.88732394"
+.br
+.RI "\fILSB constant for current reading 30 Amp max is assumed\&. \fP"
+.ti -1c
+.RI "#define \fBWHLSB_CONST\fP   (67\&.28)*2\&.275"
+.br
+.RI "\fILSB constant for energy reading\&. \fP"
+.ti -1c
+.RI "#define \fBWATTLSB_CONST\fP   8505"
+.br
+.RI "\fILSB constant for power reading\&. \fP"
+.ti -1c
+.RI "#define \fBTRANSFORMER_RATIO\fP   20\&.56621005"
+.br
+.ti -1c
+.RI "#define \fBCONFIG_FILE_NAME\fP   'config\&.csv'"
+.br
+.RI "\fIdefines configuration file \fP"
+.ti -1c
+.RI "#define \fBCONFIG_CMD_FORMAT\fP   '%hd %s %lu %hhu %hhu'"
+.br
+.RI "\fIconfiguration command format specifier \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int8_t \fBsave_to_file\fP (uint16_t rpi_address, \fBmeasured_data_t\fP data, const char *fileName, uint8_t clean)"
+.br
+.RI "\fI.PP
+ \fP"
+.ti -1c
+.RI "int8_t \fBwait_new_conversion\fP (void)"
+.br
+.RI "\fI.PP
+ \fP"
+.ti -1c
+.RI "int16_t \fBconfig_recheck\fP (const char *config_file, const char *format,\&.\&.\&.)"
+.br
+.RI "\fI.PP
+ \fP"
+.ti -1c
+.RI "void \fBreading_loop\fP ()"
+.br
+.RI "\fI.PP
+ \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fIFile:\fP \fBIncludes\&.h\fP 
+.br
+ 
+
+\fIPurpose:\fP 
+.br
+ contains all header files 
+.PP
+Definition in file \fBincludes\&.h\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define _VNOMAEN   0"
+
+.PP
+enable disable Apparent Power Calculation Using VNOM register value 
+.PP
+Definition at line 46 of file includes\&.h\&.
+.SS "#define CHIP_ADDRESS1   0x70"
+
+.PP
+Definition at line 39 of file includes\&.h\&.
+.PP
+Referenced by main(), measure(), spi_ram_protection(), spi_write(), and wait_new_conversion()\&.
+.SS "#define CONFIG_CMD_FORMAT   '%hd %s %lu %hhu %hhu'"
+
+.PP
+configuration command format specifier 
+.PP
+Definition at line 115 of file includes\&.h\&.
+.PP
+Referenced by reading_loop()\&.
+.SS "#define CONFIG_FILE_NAME   'config\&.csv'"
+
+.PP
+defines configuration file 
+.PP
+Definition at line 114 of file includes\&.h\&.
+.PP
+Referenced by reading_loop()\&.
+.SS "#define DISABLE   0"
+
+.PP
+Definition at line 41 of file includes\&.h\&.
+.PP
+Referenced by main(), spi_ram_protection(), spi_write(), and wait_new_conversion()\&.
+.SS "#define DSP_START   0xFF"
+
+.PP
+Definition at line 45 of file includes\&.h\&.
+.SS "#define ENABLE   1"
+
+.PP
+Definition at line 40 of file includes\&.h\&.
+.PP
+Referenced by main(), reading_loop(), spi_ram_protection(), spi_write(), and wait_new_conversion()\&.
+.SS "#define ILSB_CONST   353022\&.88732394"
+
+.PP
+LSB constant for current reading 30 Amp max is assumed\&. 
+.PP
+Definition at line 79 of file includes\&.h\&.
+.PP
+Referenced by measure()\&.
+.SS "#define PSM0   0"
+
+.PP
+internal use power mode select macros 
+.PP
+Definition at line 50 of file includes\&.h\&.
+.PP
+Referenced by main()\&.
+.SS "#define PSM1   1"
+
+.PP
+Definition at line 51 of file includes\&.h\&.
+.SS "#define PSM2   2"
+
+.PP
+Definition at line 52 of file includes\&.h\&.
+.SS "#define PSM3   3"
+
+.PP
+Definition at line 53 of file includes\&.h\&.
+.SS "#define TRANSFORMER_RATIO   20\&.56621005"
+
+.PP
+Definition at line 95 of file includes\&.h\&.
+.PP
+Referenced by measure()\&.
+.SS "#define TYPE(cc)   (((cc >= '1' )) ? ((uint8_t)) : ((uint16_t)))"
+
+.PP
+Definition at line 13 of file includes\&.h\&.
+.SS "#define VLSB_CONST   211184\&.71337579617834394904458599"
+
+.PP
+LSB constant for voltage reading 24 volt max is assumed\&. 
+.PP
+Definition at line 78 of file includes\&.h\&.
+.PP
+Referenced by measure()\&.
+.SS "#define WATTLSB_CONST   8505"
+
+.PP
+LSB constant for power reading\&. 
+.PP
+Definition at line 81 of file includes\&.h\&.
+.PP
+Referenced by measure()\&.
+.SS "#define WHLSB_CONST   (67\&.28)*2\&.275"
+
+.PP
+LSB constant for energy reading\&. 
+.PP
+Definition at line 80 of file includes\&.h\&.
+.PP
+Referenced by measure()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for EMS from the source code\&.

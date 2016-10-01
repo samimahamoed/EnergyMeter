@@ -1,0 +1,301 @@
+.TH "SERVICE" 3 "Mon Feb 24 2014" "Version V1" "EMS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SERVICE \- 
+.PP
+.PP
+.PP
+.PP
+  
+
+.in +1c
+.ti -1c
+.RI "float \fBmeasure\fP (uint8_t cmd, uint8_t channel, float samples)"
+.br
+.RI "\fI.PP
+ \fP"
+.in -1c
+.in +1c
+.ti -1c
+.RI "uint16_t \fBhex2val\fP (uint8_t cc)"
+.br
+.RI "\fI.PP
+ \fP"
+.in -1c
+.in +1c
+.ti -1c
+.RI "uint16_t \fBmake16\fP (uint8_t *buf, uint16_t idx)"
+.br
+.RI "\fI.PP
+ \fP"
+.in -1c
+.in +1c
+.ti -1c
+.RI "uint8_t \fBmake8\fP (uint8_t *buf, uint16_t idx)"
+.br
+.RI "\fI.PP
+ \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+.PP
+.PP
+.PP
+ 
+
+SERVICE
+This is service module containing recommended measurement reading 
+.br
+ procedures used when fetching measured data form ADE7880\&.And also, 
+.br
+ additional service functions used throught the program are included here 
+.SH "Function Documentation"
+.PP 
+.SS "uint16_t hex2val (uint8_tcc)"
+
+.PP
+.PP
+ \fBParameters:\fP
+.RS 4
+\fIcc\fP Hexadecimal character value to be converted to integer
+.RE
+.PP
+Function converts hex character to the corresponding integer value\&.
+.PP
+\fBReturns:\fP
+.RS 4
+on success returns the resulting 16 bit unsigned integer value\&. 
+.PP
+ 
+.RE
+.PP
+
+.PP
+Definition at line 165 of file srv_cmd_handler\&.c\&.
+.PP
+Referenced by make16(), and make8()\&.
+.PP
+.nf
+166 {
+167     return  (uint16_t)(((cc >= '0' ) && (cc <= '9' )) ? (cc - '0') : (cc - 'A' + 10) );
+168      
+169 }
+.fi
+.SS "uint16_t make16 (uint8_t *buf, uint16_tidx)"
+
+.PP
+.PP
+ \fBParameters:\fP
+.RS 4
+\fIbuf\fP pointer to Hexadecimal character buffer 
+.br
+\fIidx\fP index to first character of 16 bit hex number string 
+.br
+ (four charaters used)\&.
+.RE
+.PP
+Function converts string of hex character to the corresponding 16 bit unsigned integer value\&.
+.PP
+\fBReturns:\fP
+.RS 4
+on success returns the resulting 16 bit unsigned integer value\&. 
+.PP
+ 
+.RE
+.PP
+
+.PP
+Definition at line 185 of file srv_cmd_handler\&.c\&.
+.PP
+References hex2val()\&.
+.PP
+Referenced by main()\&.
+.PP
+.nf
+186 {
+187     return ((hex2val(buf[idx+0])<<12)|(hex2val(buf[idx+1])<<8)|(hex2val(buf[idx+2])<<4)|(hex2val(buf[idx+3])<<0));    
+188 
+189 }
+.fi
+.SS "uint8_t make8 (uint8_t *buf, uint16_tidx)"
+
+.PP
+.PP
+ \fBParameters:\fP
+.RS 4
+\fIbuf\fP pointer to Hexadecimal character buffer 
+.br
+\fIidx\fP index to first character of 16 bit hex number string 
+.br
+ (two charaters used)
+.RE
+.PP
+Function converts string of hex character to the corresponding 8 bit unsigned integer value\&.
+.PP
+\fBReturns:\fP
+.RS 4
+on success returns the resulting 8 bit unsigned integer value\&. 
+.PP
+ 
+.RE
+.PP
+
+.PP
+Definition at line 207 of file srv_cmd_handler\&.c\&.
+.PP
+References hex2val()\&.
+.PP
+Referenced by main()\&.
+.PP
+.nf
+208 {
+209     return (uint8_t)((hex2val(buf[idx+0])<<4)|(hex2val(buf[idx+1]))<<0);    
+210 }
+.fi
+.SS "float measure (uint8_tcmd, uint8_tchannel, floatsamples)"
+
+.PP
+.PP
+ \fBParameters:\fP
+.RS 4
+\fIcmd\fP Indicates the target register value to read 
+.br
+\fIchannel\fP Indicates the target channel 
+.br
+\fIsamples\fP Indicates the number of samples read by the function
+.RE
+.PP
+The Function runs recommended reading procedures designed, to enhance the accuracy of measurements by taking the average of readings taken at different instance\&.
+.PP
+\fBReturns:\fP
+.RS 4
+on success returns the avarge of the measured value, on failure return -1 \&. 
+.PP
+ 
+.RE
+.PP
+
+.PP
+Definition at line 40 of file srv_cmd_handler\&.c\&.
+.PP
+References AIRMS, AVRMS, AWATT, AWATTHR, BIRMS, BVRMS, BWATT, BWATTHR, CHIP_ADDRESS1, CIRMS, CVRMS, CWATT, CWATTHR, ILSB_CONST, measure(), PHASE_A, PHASE_ACTIVE_POWER, PHASE_ACTIVE_WH, PHASE_B, PHASE_C, PHASE_IRMS, PHASE_VRMS, spi_read(), TOTAL_ACTIVE_POWER, TOTAL_ACTIVE_WH, TRANSFORMER_RATIO, VLSB_CONST, wait_new_conversion(), WATTLSB_CONST, and WHLSB_CONST\&.
+.PP
+Referenced by measure(), and reading_loop()\&.
+.PP
+.nf
+40                                                         {
+41 
+42 
+43     float measured_val=0;
+44 
+45 
+46          switch(cmd)
+47         {
+48            
+49                 case  PHASE_VRMS:
+50                 {
+51                                 
+52                     uint16_t ii;
+53                     uint16_t target_reg =  (channel==PHASE_A )?AVRMS
+54                                           :(channel==PHASE_B )?BVRMS
+55                                           :(channel==PHASE_C )?CVRMS
+56                                           :0;                               
+57                     
+58                     if(target_reg==0)return -1;                         
+59                     for(ii=0;ii<samples;ii++){
+60                     if(wait_new_conversion()==-1)return -1;
+61                     measured_val += (uint32_t)(spi_read(BCM2835_SPI_CS0,CHIP_ADDRESS1,target_reg,sizeof(uint32_t))&0xFFFFFF)*TRANSFORMER_RATIO; 
+62                     if(ii%50 == 0)printf('#\n');else printf('#');
+63                     }
+64                     measured_val /=samples;
+65                     
+66             
+67                     return measured_val/VLSB_CONST;
+68                 
+69                 }break;
+70 
+71                 case  PHASE_IRMS:
+72                 {
+73                     uint16_t ii;
+74                     uint16_t target_reg =  (channel==PHASE_A )?AIRMS
+75                                           :(channel==PHASE_B )?BIRMS
+76                                           :(channel==PHASE_C )?CIRMS
+77                                           :0;
+78                     if(target_reg==0)return -1;     
+79                     for(ii=0;ii<samples;ii++){
+80                     if(wait_new_conversion()==-1)return -1;
+81                     measured_val += spi_read(BCM2835_SPI_CS0,CHIP_ADDRESS1,target_reg,sizeof(uint32_t)); 
+82                     if(ii%50 == 0)printf('#\n');else printf('#');
+83                     
+84                     }
+85                     measured_val /=samples;
+86                     
+87                     return measured_val/ILSB_CONST;
+88                 
+89                 }break;
+90                 
+91                 
+92                 case  PHASE_ACTIVE_WH:/*considers also harmoics , trouble? then we change it to fundamental*/
+93                 {
+94             
+95                     uint16_t target_reg =  (channel==PHASE_A )?AWATTHR
+96                                           :(channel==PHASE_B )?BWATTHR
+97                                           :(channel==PHASE_C )?CWATTHR
+98                                           :0;           
+99                                           
+100                     measured_val = spi_read(BCM2835_SPI_CS0,CHIP_ADDRESS1,target_reg,sizeof(uint32_t));
+101                     printf('#');
+102                     return measured_val/WHLSB_CONST;
+103                 
+104                 }break;
+105                 
+106                 case  TOTAL_ACTIVE_WH:/*considers also harmoics */
+107                 {
+108                     
+109                     uint16_t target_reg =  (channel==PHASE_A )?AWATTHR
+110                                           :(channel==PHASE_B )?BWATTHR
+111                                           :(channel==PHASE_C )?CWATTHR
+112                                           :0;           
+113                     
+114                      return  measure(PHASE_ACTIVE_WH,PHASE_A,1)
+115                             +measure(PHASE_ACTIVE_WH,PHASE_B,1)
+116                             +measure(PHASE_ACTIVE_WH,PHASE_C,1);
+117                      
+118                 
+119                 }break;
+120                 
+121                 case  PHASE_ACTIVE_POWER:
+122                 {
+123                     uint16_t target_reg =    (channel==PHASE_A )?AWATT
+124                                             :(channel==PHASE_B )?BWATT
+125                                             :(channel==PHASE_C )?CWATT
+126                                             :0;         
+127                                           
+128                     measured_val = spi_read(BCM2835_SPI_CS0,CHIP_ADDRESS1,target_reg,sizeof(uint32_t));
+129                     printf('#');
+130                     return measured_val/WATTLSB_CONST;
+131                     
+132                 }break;
+133                 
+134                 case  TOTAL_ACTIVE_POWER:
+135                 {
+136                 
+137                             
+138                      return measure(PHASE_ACTIVE_POWER,PHASE_A,1)
+139                             +measure(PHASE_ACTIVE_POWER,PHASE_B,1);
+140                             +measure(PHASE_ACTIVE_POWER,PHASE_C,1);
+141                     
+142                 }break;
+143                 
+144                 default:
+145                 {    
+146                   // return -1;
+147                 }break;
+148      
+149         }
+150 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for EMS from the source code\&.
