@@ -6,25 +6,16 @@ Application made to configure and read Energy
 Meter IC ADE7880 registors via RPi, 
 
 Depending on configuration the application write results to shell window or to a specified file 
-config.csv file is used to configure the program operation via external program. 
+
+
+
+the file config.csv is used to configure the program operation via external program. 
 
 The structure of the command used is as follows  
 
 id(int);fileName;Sampling_Rate(uint32_t);loop_control(bool);pause(bool)
-   |      |           |                       |                    |
-   |      |           |                       |                    |___ Control flag: 
-   |      |           |                       |                           if set to 1 pause reading
-   |      |           |                       |                           and set to 0 resume reading
-   |      |           |                       |________________________ Control flag: 
-   |      |           |                                                   if set to 1, the program will
-   |      |           |                                                   exit reading loop and end execution    
-   |      |           |________________________________________________ Delay_control: 
-   |      |                                                               Adds the specified number of
-   |      |                                                               millsecond delay on the    
-   |      |                                                               main reading loop
-   |      |____________________________________________________________ Sets file name 
-   |                                                                    where data to be saved   
-   |___________________________________________________________________ Sets device id  
+ 
+ 
    
    
  Other supported commands for ADE7880 registors direct access  
