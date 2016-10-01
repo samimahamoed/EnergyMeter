@@ -13,7 +13,7 @@ the file config.csv is used to configure the program operation via external prog
 
 The structure of the command used is as follows  
 
-id(int);fileName;Sampling_Rate(uint32_t);loop_control(bool);pause(bool)
+divice_id(int);fileName;Sampling_Rate(uint32_t);loop_control_flag(bool);pause_flag(bool)
  
  
    
