@@ -24,18 +24,21 @@ divice_id(int);fileName;Sampling_Rate(uint32_t);loop_control_flag(bool);pause_fl
 -> Runs Default configuration procedure. As described in the device datasheet section QUICK SETUP AS ENERGY METER (Outputs resulting message to consol on success or failure.)
 
 driver_ade7880  read  [register phisical address (HEX eg. 0xFFFF)] [register size in byte (decimal)]  
+
 -> Reads Specific register value (Outputs resulting message to consol on success or failure)
 
 driver_ade7880  write [register phisical address (HEX eg. 0xFFFF)] [value to be stored (HEX eg. 0xFFFF)] [register size in byte (decimal)]  
+
 -> Writes the given value to Specific register (Outputs resulting message to consol on success or failure)
 
  
-CALIBRATION CONSTANTS: This constants calculated so that readings fetched from target registers 
+CALIBRATION CONSTANTS: 
+This constants calculated so that readings fetched from target registers 
 can be converted into meaningful values such as amps , volts, kwh, watt. 
 The constants should be adjusted if there is any change to Hardware design 
 The calibration steps can be found from this calibration document 
 http://www.analog.com/static/imported-files/application_notes/AN-1171.pdf . 
-Note
+Note:
 Since all phases on the meter are matched, the same constant can be used 
 for all energy, power,current rms and voltage rms readings on any Rpi
 VLSB_CONST              211184.71337579617834394904458599        LSB constant for voltage reading 24 volt max is assumed
