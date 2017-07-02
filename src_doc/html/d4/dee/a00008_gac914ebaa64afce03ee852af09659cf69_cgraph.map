@@ -1,6 +1,0 @@
-<map id="measure" name="measure">
-<area shape="rect" id="node2" href="$de/d21/a00006.html#ga7ad9f65ee46aca507374096506a0b1c4" title="spi_read" alt="" coords="454,105,525,132"/>
-<area shape="rect" id="node3" href="$d7/d46/a00002.html#ga7b6d584350762c53419945480d6958d3" title="wait_new_conversion" alt="" coords="126,80,269,107"/>
-<area shape="rect" id="node4" href="$d0/d0b/a00004.html#ga369ee0e8379941cbc2c79b90ec3292da" title="config_cmd" alt="" coords="317,55,405,81"/>
-<area shape="rect" id="node5" href="$de/d21/a00006.html#ga2770219ad8ad1eda1817c0df934b47d0" title="spi_write" alt="" coords="325,156,398,183"/>
-</map>

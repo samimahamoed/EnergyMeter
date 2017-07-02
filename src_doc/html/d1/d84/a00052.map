@@ -1,7 +1,0 @@
-<map id="spi_ade7880_protocol.h" name="spi_ade7880_protocol.h">
-<area shape="rect" id="node2" href="$d1/dc6/a00037.html" title="File: Includes.h &#160;" alt="" coords="219,80,300,107"/>
-<area shape="rect" id="node3" href="$d4/d8c/a00035.html" title="File: ade7880_driver.c &#160;" alt="" coords="5,155,123,181"/>
-<area shape="rect" id="node4" href="$d8/d41/a00038.html" title="File: rpi_hwio.c &#160;" alt="" coords="148,155,228,181"/>
-<area shape="rect" id="node5" href="$db/d3a/a00040.html" title="File: spi_ade7880_protocol.c &#160;" alt="" coords="253,155,411,181"/>
-<area shape="rect" id="node6" href="$d5/db6/a00042.html" title="File: srv_cmd_handler.c &#160;" alt="" coords="436,155,567,181"/>
-</map>
