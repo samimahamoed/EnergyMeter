@@ -5,9 +5,7 @@ ADE7880 Energy Meter Driver
 Application made to configure and read Energy 
 Meter IC ADE7880 registors via RPi, 
 
-Depending on configuration the application write results to shell window or to a specified file 
-
-
+Depending on configuration the application write results to shell or to a specified file 
 
 the file config.csv is used to configure the program operation via external program. 
 
